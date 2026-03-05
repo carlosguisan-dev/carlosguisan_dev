@@ -1,0 +1,20 @@
+{
+  "label": "carlosguisan.dev",
+  "author": {
+    "name": "Carlos Guillermo Sánchez Cabezas",
+    "email": "hola@carlosguisan.dev",
+    "url": "https://carlosguisan.dev/"
+	},
+  "preview_path": "./templates/home.html",
+  "screenshot_path": "./images/template-previews/home.png",
+  "enable_domain_stylesheets": false,
+  "responsive_breakpoints": [
+    {
+      "name": "mobile",
+      "mediaQuery": "@media (max-width: 767px)",
+      "previewWidth": {
+        "value": 477
+      }
+    }
+  ]
+}
