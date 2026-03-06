@@ -77,9 +77,67 @@
   -webkit-font-smoothing: antialiased;
 }
 
-/* Fix for HubSpot Editor Drag-and-Drop Containers */
-.dnd-section {
+/* Global Overflow Reset - Fix for horizontal scroll */
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+.body-wrapper {
+  overflow-x: hidden !important;
+  width: 100% !important;
+}
+
+/* HubSpot Drag-and-Drop Grid Support */
+.content-wrapper {
+  margin: 0 auto;
   max-width: {{ theme.spacing.maximum_content_width ~ "px" or "1240px" }};
-  margin-left: auto;
-  margin-right: auto;
+  padding: 0 1rem;
+}
+
+@media screen and (min-width: 1380px) {
+  .content-wrapper {
+    padding: 0;
+  }
+}
+
+.dnd-section > .row-fluid {
+  margin: 0 auto;
+}
+
+.dnd-section .dnd-column {
+  padding: 0 1rem;
+}
+
+@media (max-width: 767px) {
+  .dnd-section .dnd-column {
+    padding: 0;
+  }
+}
+
+/* HubSpot Forms - Minimal resets for better Tailwind compatibility */
+form fieldset {
+  max-width: 100% !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.hs-form-field {
+  margin-bottom: 1.5rem;
+}
+
+.hs-input.invalid.error {
+  border-color: #ef4444 !important; /* Tailwind red-500 */
+}
+
+.hs-error-msg {
+  color: #ef4444 !important;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.hs-button, form input[type="submit"] {
+  @apply inline-block cursor-pointer transition-all;
 }

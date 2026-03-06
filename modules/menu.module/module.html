@@ -1,145 +1,154 @@
-{# Module styles #}
+{# Menu Module aligned with Homepage Asset #} {% set menu_id = module.menu or
+"197725172139" %} {% set menu_tree = menu(menu_id) %}
 
-{% require_css %}
-  <style>
-    {% scope_css %}
+<div class="menu-container">
+  {# Macro for menu items #} {% macro render_menu_items(menu_nodes, depth) %} {%
+  for node in menu_nodes %}
+  <li class="relative group/item">
+    <a
+      href="{{ node.url or 'javascript:void(0);' }}"
+      class="text-sm font-semibold transition-colors duration-200 block py-1
+                  {{ 'text-brand-green dark:text-brand-lime font-bold' if node.activeNode or node.activeBranch else 'text-brand-green dark:text-brand-lime hover:text-brand-lime' }}"
+      {%
+      if
+      node.linkTarget
+      %}target="_blank"
+      rel="noopener"
+      {%
+      endif
+      %}
+    >
+      {{ node.label }}
+    </a>
 
-      {# Menu items - top level #}
-
-      {% if module.styles.text.color.color %}
-        .menu__link {
-          color: {{ module.styles.text.color.color }};
-        }
-
-        .menu__child-toggle-icon {
-          border-top-color: {{ module.styles.text.color.color }};
-        }
-
-        .menu .menu__link:hover,
-        .menu .menu__link:focus {
-          color: {{ color_variant(module.styles.text.color.color, -40) }};
-        }
-
-        .menu__child-toggle-icon:hover,
-        .menu__child-toggle-icon:focus {
-          border-top-color: {{ color_variant(module.styles.text.color.color, -40) }};
-        }
-
-        .menu .menu__link:active {
-          color: {{ color_variant(module.styles.text.color.color, 40) }};
-        }
-
-        .menu__child-toggle-icon:active {
-          border-top-color: {{ color_variant(module.styles.text.color.color, 40) }};
-        }
-
-        .menu .menu__item--depth-1 > .menu__link--active-link:after {
-          background-color: {{ module.styles.text.color.color }};
-        }
+    {% if node.children and depth < module.max_levels %}
+    <ul
+      class="absolute top-full left-0 hidden group-hover/item:block min-w-[200px] shadow-xl rounded-lg py-2 mt-2 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 z-50"
+    >
+      {{ render_menu_items(node.children, depth + 1) }}
+    </ul>
+    {% endif %}
+  </li>
+  {% endfor %} {% endmacro %} {# Desktop Menu - Removed hidden temporarily for
+  debug #}
+  <nav class="hidden md:block" aria-label="Main navigation">
+    <ul class="flex items-center gap-10">
+      {% if menu_tree and menu_tree.children %} {{
+      render_menu_items(menu_tree.children, 1) }} {% else %} {# Visible Debug
+      Info #}
+      <li class="text-[10px] text-red-500 bg-red-50 p-1 border border-red-200">
+        DEBUG: Menu "{{ menu_id }}" is empty or invalid.
+      </li>
       {% endif %}
+    </ul>
+  </nav>
 
-      {# Menu items - submenus #}
-
-      .menu .menu__submenu {
-        {{ module.styles.drop_downs.border.border.css }}
-        {% if module.styles.drop_downs.background.color.color %}
-          background-color: rgba({{ (module.styles.drop_downs.background.color.color or "#000000")|convert_rgb }}, {{ (module.styles.drop_downs.background.color.opacity or 100) / 100 }});
+  {# Mobile Menu Overlay #}
+  <div
+    id="mobile-menu"
+    class="mobile-menu-overlay md:hidden fixed inset-0 z-[9999] bg-white dark:bg-slate-950 flex flex-col"
+  >
+    {# Top Bar - Elevated #}
+    <div
+      class="w-full h-20 shrink-0 flex items-center justify-between px-8 bg-white dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800 shadow-sm"
+    >
+      <a
+        href="{{ module.logo_link.url.href }}"
+        class="flex items-center gap-3 hover:no-underline"
+      >
+        {% if module.logo_light.src or module.logo_dark.src %} {# Light Mode
+        Logo #} {% if module.logo_light.src %}
+        <img
+          src="{{ module.logo_light.src }}"
+          alt="{{ module.logo_light.alt }}"
+          style="width: 100%; max-width: {{ module.logo_styles.max_width }}px; max-height: {{ module.logo_styles.max_height }}px;"
+          class="dark:hidden w-auto"
+        />
+        {% endif %} {# Dark Mode Logo #} {% if module.logo_dark.src %}
+        <img
+          src="{{ module.logo_dark.src }}"
+          alt="{{ module.logo_dark.alt }}"
+          style="width: 100%; max-width: {{ module.logo_styles.max_width }}px; max-height: {{ module.logo_styles.max_height }}px;"
+          class="hidden dark:block w-auto"
+        />
+        {% endif %} {% else %}
+        <div class="text-brand-green dark:text-brand-lime">
+          <span class="material-symbols-outlined text-3xl">eco</span>
+        </div>
+        <h2
+          class="text-xl font-bold tracking-tight text-slate-900 dark:text-white"
+        >
+          GreenSpot
+        </h2>
         {% endif %}
-      }
+      </a>
+      <button
+        id="mobile-menu-close"
+        class="p-2 text-brand-green dark:text-brand-lime hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors active:scale-90"
+      >
+        <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+    </div>
 
-      @media (min-width: 767px) {
-        .menu__submenu--level-2 > .menu__item:first-child:before {
-          {{ module.styles.drop_downs.border.border.css }}
-          {% if module.styles.drop_downs.background.color.color %}
-            background-color: rgba({{ (module.styles.drop_downs.background.color.color or "#000000")|convert_rgb }}, {{ (module.styles.drop_downs.background.color.opacity or 100) / 100 }});
+    {# Menu Content - Full Width & Separators #}
+    <div
+      class="flex-1 overflow-y-auto bg-white dark:bg-slate-950 flex flex-col"
+    >
+      <nav aria-label="Mobile navigation" class="w-full">
+        <ul
+          class="flex flex-col divide-y divide-slate-100 dark:divide-slate-800"
+        >
+          {% if menu_tree and menu_tree.children %} {% for node in
+          menu_tree.children %}
+          <li class="w-full">
+            <a
+              href="{{ node.url or '#' }}"
+              class="w-full py-6 px-8 text-xl font-bold text-brand-green dark:text-brand-lime flex items-center justify-between group active:bg-slate-50 dark:active:bg-slate-900 transition-colors"
+            >
+              <span>{{ node.label }}</span>
+              <span
+                class="material-symbols-outlined text-brand-green dark:text-brand-lime opacity-0 group-active:opacity-100 transition-opacity"
+                >chevron_right</span
+              >
+            </a>
+          </li>
+          {% endfor %} {% else %}
+          <li class="p-8 text-center text-red-500 font-bold">
+            ERROR: No se pudo cargar el menú (ID: {{ menu_id }})
+          </li>
           {% endif %}
-        }
-      }
 
-      .menu__submenu .menu__link,
-      .menu__submenu .menu__link:hover,
-      .menu__submenu .menu__link:focus {
-        {% if module.styles.drop_downs.background.color.color %}
-          background-color: rgba({{ (module.styles.drop_downs.background.color.color or "#000000")|convert_rgb }}, {{ (module.styles.drop_downs.background.color.opacity or 100) / 100 }});
-        {% endif %}
-        {% if module.styles.drop_downs.text.color.color %}
-          color: {{ module.styles.drop_downs.text.color.color }};
-        {% endif %}
-      }
-
-      .menu__submenu .menu__child-toggle-icon,
-      .menu__submenu .menu__child-toggle-icon:hover,
-      .menu__submenu .menu__child-toggle-icon:focus {
-        {% if module.styles.drop_downs.text.color.color %}
-          border-top-color: {{ module.styles.drop_downs.text.color.color }};
-        {% endif %}
-      }
-
-    {% end_scope_css %}
-  </style>
-{% end_require_css %}
-
-{# Menu items #}
-
-{% macro menu_items() %}
-
-  {% set menu = menu(module.menu, "site_root").children %}
-
-  {% macro render_link_item(link, depth) %}
-    <li class="menu__item menu__item--depth-{{ depth|escape_attr }} {{ "menu__item--has-submenu" if link.children and depth < module.max_levels }} {# outputting string no need to escape #}  hs-skip-lang-url-rewrite">
-      {% if link.url %}
-        <a class="menu__link
-          {{ "menu__link--toggle" if link.children and depth < module.max_levels }}{# outputting string no need to escape #}
-          {{ "menu__link--active-branch" if link.activeBranch }}{# outputting string no need to escape #}
-          {{ "menu__link--active-link" if link.activeNode }}" {# outputting string no need to escape #}
-          href="{{ link.url|escape_url }}"
-          {{ 'aria-haspopup="true" aria-expanded="false"' if link.children and depth < module.max_levels }} {# outputting string no need to escape #}
-          {{ 'aria-current="page"' if link.activeNode }} {# outputting string no need to escape #}
-          {{ 'target="_blank" rel="noopener"' if link.linkTarget }}> {# outputting string no need to escape #}
-            {{ link.label|escape_html }}
-        </a>
-      {% else %}
-        {% if link.children and depth < module.max_levels %}
-          <a class="menu__link menu__link--toggle" href="#" aria-haspopup="true" aria-expanded="false">{{ link.label|escape_html }}</a>
-        {% else %}
-          <span class="menu__link">{{ link.label|escape_html }}</span>
-        {% endif %}
-      {% endif %}
-      {% if link.children %}
-        {% if depth and depth < module.max_levels %}
-          {% set depth = depth + 1 %}
-          <button class="menu__child-toggle no-button" aria-expanded="false">
-            <span class="show-for-sr">Show submenu for {{ link.label|escape_html }}</span>
-            <span class="menu__child-toggle-icon"></span>
-          </button>
-          <ul class="menu__submenu menu__submenu--level-{{ depth|escape_attr }} no-list">
-            {% for sublink in link.children %}
-              {{ render_link_item(sublink, depth) }}
-            {% endfor %}
-          </ul>
-          {% endif %}
-      {% endif %}
-    </li>
-  {% endmacro %}
-
-  {% for link in menu %}
-    {{ render_link_item(link, 1) }}
-  {% endfor %}
-
-{% endmacro %}
-
-{# Desktop menu #}
-
-<nav class="menu menu--desktop" aria-label="Main menu">
-  <ul class="menu__wrapper no-list">
-    {{ menu_items() }}
-  </ul>
-</nav>
-
-{# Mobile menu #}
-
-<nav class="menu menu--mobile" aria-label="Main menu">
-  <ul class="menu__wrapper no-list">
-    {{ menu_items() }}
-  </ul>
-</nav>
+          <li
+            class="p-8 bg-white dark:bg-slate-950"
+            style="margin-top: {{ module.cta_styles.margin_top }}px;"
+          >
+            <a
+              href="{{ module.cta_settings.cta_link.url.href }}"
+              {%
+              if
+              module.cta_settings.cta_link.open_in_new_tab
+              %}target="_blank"
+              {%
+              endif
+              %}
+              {%
+              if
+              module.cta_settings.cta_link.no_follow
+              %}rel="nofollow"
+              {%
+              endif
+              %}
+              class="block w-full"
+            >
+              <button
+                class="bg-brand-green text-white w-full py-4 rounded-xl font-bold text-lg active:scale-95 transition-transform"
+              >
+                {{ module.cta_settings.cta_text }}
+              </button>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>

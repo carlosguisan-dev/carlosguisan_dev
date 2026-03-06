@@ -1,0 +1,4 @@
+.dual-logo__image {
+  width: 100%;
+  max-width: var(--logo-max-width);
+}

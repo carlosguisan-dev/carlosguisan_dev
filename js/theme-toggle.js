@@ -19,14 +19,14 @@
         document.documentElement.classList.add(theme);
         document.documentElement.setAttribute('data-theme', theme);
         
-        const toggle = document.querySelector('#theme-toggle');
-        if (toggle) {
+        const toggles = document.querySelectorAll('.js-theme-toggle');
+        toggles.forEach(toggle => {
             toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
             const icon = toggle.querySelector('.material-symbols-outlined');
             if (icon) {
                 icon.textContent = theme === 'dark' ? 'light_mode' : 'dark_mode';
             }
-        }
+        });
     };
 
     // Initialize
@@ -36,14 +36,14 @@
     window.onload = () => {
         reflectPreference(theme);
         
-        const toggle = document.querySelector('#theme-toggle');
-        if (toggle) {
+        const toggles = document.querySelectorAll('.js-theme-toggle');
+        toggles.forEach(toggle => {
             toggle.addEventListener('click', () => {
                 const currentTheme = getColorPreference();
                 const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
                 setPreference(nextTheme);
             });
-        }
+        });
     };
 
     // Sync with system changes

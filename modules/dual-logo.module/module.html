@@ -18,6 +18,7 @@ href %} {% endif %}
   {%
   endif
   %}
+  style="--logo-max-width: {{ module.styles.max_width }}px;"
   class="hover:no-underline flex items-center"
 >
   {% if module.logo_light.src or module.logo_dark.src %} {# Light Mode Logo #}
@@ -30,7 +31,7 @@ href %} {% endif %}
     {{
     loadingAttr
     }}
-    class="dark:hidden max-h-12 w-auto"
+    class="dark:hidden max-h-12 w-auto dual-logo__image"
   />
   {% endif %} {# Dark Mode Logo #} {% if module.logo_dark.src %} {% set
   loadingAttr = module.logo_dark.loading && module.logo_dark.loading !=
@@ -41,7 +42,7 @@ href %} {% endif %}
     {{
     loadingAttr
     }}
-    class="hidden dark:block max-h-12 w-auto"
+    class="hidden dark:block max-h-12 w-auto dual-logo__image"
   />
   {% endif %} {% else %} {# Fallback if no images are set #}
   <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">

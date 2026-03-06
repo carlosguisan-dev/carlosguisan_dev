@@ -1,58 +1,101 @@
 <!--
   templateType: global_partial
-  label: Website header
+  label: Header
 -->
 <nav
-  class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-white/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md"
+  class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-white/10 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md"
 >
   <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-    {# Logo Area #}
-    <div class="flex items-center gap-3">
-      {% module "site_theme_logo" path="../../modules/dual-logo", label="Theme
-      Logo", logo_light = { "src":
-      get_asset_url('/carlosguisan_dev/images/logo/logo-horizontal.svg'), "alt":
-      "Logo GreenSpot" }, logo_dark = { "src":
-      get_asset_url('/carlosguisan_dev/images/logo/logo-blanco-horizontal.svg'),
-      "alt": "Logo GreenSpot" } %}
+    {# Logo Module #}
+    <div class="flex items-center">
+      {% module "logo" path="../../modules/dual-logo", label="Header Logo",
+      logo_light={ "src":
+      get_asset_url('../../images/logo/logo-horizontal.svg'), "alt": "Logo
+      GreenSpot" }, logo_dark={ "src":
+      get_asset_url('../../images/logo/logo-blanco-horizontal.svg'), "alt":
+      "Logo GreenSpot" } %}
     </div>
 
     {# Navigation & Actions #}
-    <div class="hidden md:flex items-center gap-10">
-      {# Primary Menu Module #}
-      <div class="header__navigation">
-        {% module "navigation_primary" path="../../modules/menu", label="Primary
-        Navigation" %}
+    <div class="flex items-center gap-10">
+      {% module "navigation_primary" path="../../modules/menu", label="Primary
+      Navigation", menu="197725172139", logo_light={ "src":
+      get_asset_url('../../images/logo/logo-horizontal.svg'), "alt": "Logo
+      GreenSpot" }, logo_dark={ "src":
+      get_asset_url('../../images/logo/logo-blanco-horizontal.svg'), "alt":
+      "Logo GreenSpot" } %}
+
+      <div class="hidden md:flex items-center gap-4">
+        {# CTA Button #}
+        <button
+          class="bg-brand-green text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-transform active:scale-95 whitespace-nowrap"
+        >
+          Agendar Discovery Call
+        </button>
+
+        {# Theme Toggle #}
+        <button
+          id="theme-toggle"
+          class="js-theme-toggle p-2 rounded-lg text-brand-green dark:text-brand-lime hover:bg-brand-green/10 dark:hover:bg-brand-lime/10 transition-colors"
+          aria-label="Toggle dark mode"
+        >
+          <span class="material-symbols-outlined text-2xl">dark_mode</span>
+        </button>
       </div>
-
-      {# CTA Button (Static for now, can be a module later) #}
-      <button
-        class="bg-brand-green text-white dark:bg-brand-lime dark:text-brand-green px-6 py-2.5 rounded-lg text-sm font-bold transition-transform active:scale-95 hover:opacity-90"
-      >
-        Agendar Discovery Call
-      </button>
-
-      {# Dark Mode Toggle #}
-      <button
-        id="theme-toggle"
-        class="p-2 ml-4 rounded-lg text-brand-green dark:text-brand-lime hover:bg-brand-green/10 dark:hover:bg-brand-lime/10 transition-colors"
-        aria-label="Toggle dark mode"
-      >
-        <span class="material-symbols-outlined">dark_mode</span>
-      </button>
     </div>
 
-    {# Mobile Toggle (Simplified for now) #}
+    {# Mobile Toggle #}
     <div class="md:hidden flex items-center gap-4">
       <button
         id="theme-toggle-mobile"
-        class="p-2 rounded-lg text-brand-green dark:text-brand-lime"
+        class="js-theme-toggle p-2 rounded-lg text-brand-green dark:text-brand-lime transition-transform active:scale-95"
+        aria-label="Toggle dark mode"
       >
-        <span class="material-symbols-outlined">dark_mode</span>
+        <span class="material-symbols-outlined text-2xl">dark_mode</span>
       </button>
-      <span
-        class="material-symbols-outlined text-3xl text-brand-green dark:text-brand-lime"
-        >menu</span
+      <button
+        id="mobile-menu-toggle"
+        class="p-2 rounded-lg text-brand-green dark:text-brand-lime transition-transform active:scale-95"
+        aria-label="Toggle menu"
       >
+        <span id="mobile-menu-icon" class="material-symbols-outlined text-3xl"
+          >menu</span
+        >
+      </button>
     </div>
   </div>
+
+  <script>
+    (function () {
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggle = document.getElementById("mobile-menu-toggle");
+        const closeBtn = document.getElementById("mobile-menu-close");
+        const menu = document.getElementById("mobile-menu");
+        const icon = document.getElementById("mobile-menu-icon");
+
+        if (toggle && menu) {
+          const toggleMenu = (show) => {
+            if (show) {
+              menu.classList.add("is-open");
+              document.body.style.overflow = "hidden";
+            } else {
+              menu.classList.remove("is-open");
+              document.body.style.overflow = "";
+            }
+          };
+
+          toggle.addEventListener("click", () => toggleMenu(true));
+          if (closeBtn) {
+            closeBtn.addEventListener("click", () => toggleMenu(false));
+          }
+
+          // Close on link click
+          const links = menu.querySelectorAll("a");
+          links.forEach((link) => {
+            link.addEventListener("click", () => toggleMenu(false));
+          });
+        }
+      });
+    })();
+  </script>
 </nav>

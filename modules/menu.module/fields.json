@@ -3,7 +3,108 @@
     "label": "Menu",
     "name": "menu",
     "type": "menu",
-    "default": "default"
+    "default": 197725172139
+  },
+  {
+    "label": "Logo (modo claro)",
+    "name": "logo_light",
+    "type": "image",
+    "responsive": true,
+    "resizable": true,
+    "show_loading": true,
+    "default": {
+      "src": "../../images/logo/logo-horizontal.svg",
+      "alt": "Logo GreenSpot",
+      "loading": "lazy"
+    }
+  },
+  {
+    "label": "Logo (modo oscuro)",
+    "name": "logo_dark",
+    "type": "image",
+    "responsive": true,
+    "resizable": true,
+    "show_loading": true,
+    "default": {
+      "src": "../../images/logo/logo-blanco-horizontal.svg",
+      "alt": "Logo GreenSpot",
+      "loading": "lazy"
+    }
+  },
+  {
+    "label": "Logo Link",
+    "name": "logo_link",
+    "type": "link",
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "/"
+      }
+    }
+  },
+  {
+    "label": "Logo Styles",
+    "name": "logo_styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Max width",
+        "name": "max_width",
+        "type": "number",
+        "display": "text",
+        "suffix": "px",
+        "default": 180
+      },
+      {
+        "label": "Max height",
+        "name": "max_height",
+        "type": "number",
+        "display": "text",
+        "suffix": "px",
+        "default": 48
+      }
+    ]
+  },
+  {
+    "label": "CTA Styles",
+    "name": "cta_styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Margin top (Mobile)",
+        "name": "margin_top",
+        "type": "number",
+        "display": "text",
+        "suffix": "px",
+        "default": 32
+      }
+    ]
+  },
+  {
+    "label": "CTA Settings",
+    "name": "cta_settings",
+    "type": "group",
+    "children": [
+      {
+        "label": "CTA Text",
+        "name": "cta_text",
+        "type": "text",
+        "default": "Agendar Discovery Call"
+      },
+      {
+        "label": "CTA Link",
+        "name": "cta_link",
+        "type": "link",
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "#"
+          }
+        }
+      }
+    ]
   },
   {
     "label": "Max levels",
@@ -16,78 +117,5 @@
     "step": 1,
     "required": true,
     "default": 3
-  },
-  {
-    "label": "Styles",
-    "name": "styles",
-    "type": "group",
-    "tab": "STYLE",
-    "children": [
-      {
-        "label": "Text",
-        "name": "text",
-        "type": "group",
-        "children": [
-          {
-            "label": "Color",
-            "name": "color",
-            "type": "color",
-            "visibility": {
-              "hidden_subfields": {
-                "opacity": true
-              }
-            }
-          }
-        ]
-      },
-      {
-        "label": "Drop downs",
-        "name": "drop_downs",
-        "type": "group",
-        "children": [
-          {
-            "label": "Text",
-            "name": "text",
-            "type": "group",
-            "children": [
-              {
-                "label": "Color",
-                "name": "color",
-                "type": "color",
-                "visibility": {
-                  "hidden_subfields": {
-                    "opacity": true
-                  }
-                }
-              }
-            ]
-          },
-          {
-            "label": "Background",
-            "name": "background",
-            "type": "group",
-            "children": [
-              {
-                "label": "Color",
-                "name": "color",
-                "type": "color"
-              }
-            ]
-          },
-          {
-            "label": "Border",
-            "name": "border",
-            "type": "group",
-            "children": [
-              {
-                "label" : "Border",
-                "name" : "border",
-                "type" : "border"
-              }
-            ]
-          }
-        ]
-      }
-    ]
   }
 ]

@@ -46,5 +46,23 @@
       "open_in_new_tab": false,
       "no_follow": false
     }
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Max width",
+        "name": "max_width",
+        "type": "number",
+        "display": "text",
+        "suffix": "px",
+        "min": 20,
+        "max": 500,
+        "default": 180
+      }
+    ]
   }
 ]
