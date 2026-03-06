@@ -1,25 +1,30 @@
 [
   {
-    "name": "logo_light",
     "label": "Logo (modo claro)",
+    "name": "logo_light",
     "type": "image",
+    "responsive": true,
+    "resizable": true,
+    "show_loading": true,
     "default": {
-      "src": "",
-      "alt": "Logo"
+      "loading": "lazy"
     }
   },
   {
-    "name": "logo_dark",
     "label": "Logo (modo oscuro)",
+    "name": "logo_dark",
     "type": "image",
+    "responsive": true,
+    "resizable": true,
+    "show_loading": true,
     "default": {
-      "src": "",
-      "alt": "Logo"
+      "loading": "lazy"
     }
   },
   {
-    "name": "link",
     "label": "Link",
+    "name": "link",
+    "type": "link",
     "supported_types": [
       "URL",
       "CONTENT",
@@ -29,7 +34,6 @@
       "CALL_TO_ACTION",
       "WHATSAPP_NUMBER"
     ],
-    "type": "link",
     "default": {
       "url": {
         "type": "EXTERNAL",
