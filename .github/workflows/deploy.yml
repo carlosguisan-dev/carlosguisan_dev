@@ -1,0 +1,23 @@
+name: HubSpot Deploy Theme
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  deploy:
+    name: Deploy to HubSpot
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy to HubSpot
+        uses: HubSpot/hubspot-cms-deploy-action@v1.7
+        with:
+          src_dir: .
+          dest_dir: carlosguisan_dev
+          hubspot_portal_id: ${{ secrets.HUBSPOT_PORTAL_ID }}
+          hubspot_personal_access_key: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
