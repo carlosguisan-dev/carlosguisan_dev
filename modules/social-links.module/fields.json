@@ -37,8 +37,7 @@
         "icon_set": "fontawesome-6.4.2",
         "default": {
           "name": "linkedin-in",
-          "icon_set": "fontawesome-6.4.2",
-          "type": "REGULAR",
+          "type": "SOLID",
           "unicode": "f08c"
         }
       }
@@ -56,8 +55,7 @@
         },
         "icon": {
           "name": "linkedin-in",
-          "icon_set": "fontawesome-6.4.2",
-          "type": "REGULAR",
+          "type": "SOLID",
           "unicode": "f08c"
         }
       },
@@ -73,8 +71,7 @@
         },
         "icon": {
           "name": "github",
-          "icon_set": "fontawesome-6.4.2",
-          "type": "REGULAR",
+          "type": "SOLID",
           "unicode": "f09b"
         }
       }

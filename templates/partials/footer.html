@@ -9,16 +9,21 @@
     <div class="grid md:grid-cols-4 gap-12 mb-12">
       {# Brand Info #}
       <div class="col-span-1 md:col-span-2">
-        <div class="flex items-center gap-3 mb-4">
-          <span class="material-symbols-outlined text-3xl text-brand-lime"
-            >eco</span
-          >
-          <span class="font-bold text-xl text-brand-lime">GreenSpot</span>
+        <div class="footer-logo mb-6">
+          {% module "footer_logo" path="@hubspot/logo", label="Footer Logo",
+          img={ "override_inherited_src": true, "src":
+          get_asset_url('../../images/logo/logo-blanco-horizontal.svg'), "alt":
+          "GreenSpot Logo" } %}
         </div>
-        <p class="text-brand-lime/80 max-w-xs">
-          Local roots, global quality. Soluciones de ingeniería HubSpot desde el
-          corazón de Costa Rica.
-        </p>
+        <div class="footer-description text-brand-lime/80 max-w-xs">
+          {% module "footer_description" path="@hubspot/rich_text",
+          label="Footer Description", html="
+          <p>
+            Local roots, global quality. Soluciones de ingeniería HubSpot desde
+            el corazón de Costa Rica.
+          </p>
+          " %}
+        </div>
       </div>
 
       {# Navigation Links #}
@@ -47,10 +52,9 @@
         label="Social Links", social_networks=[ { "network_name": "LinkedIn",
         "link": { "url": { "type": "EXTERNAL", "href":
         "https://linkedin.com/in/cguisan/" } }, "icon": { "name": "linkedin-in",
-        "icon_set": "fontawesome-6.4.2", "type": "REGULAR" } }, {
-        "network_name": "GitHub", "link": { "url": { "type": "EXTERNAL", "href":
-        "https://github.com/cguisan" } }, "icon": { "name": "github",
-        "icon_set": "fontawesome-6.4.2", "type": "REGULAR" } } ] %}
+        "type": "SOLID" } }, { "network_name": "GitHub", "link": { "url": {
+        "type": "EXTERNAL", "href": "https://github.com/cguisan" } }, "icon": {
+        "name": "github", "type": "SOLID" } } ] %}
       </div>
     </div>
 
@@ -58,11 +62,16 @@
     <div
       class="pt-8 border-t border-brand-lime/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-brand-lime/60"
     >
-      <span>© {{ year }} GREEN MACAW DEV / GREENSPOT</span>
-      <span
-        >HECHO CON <span class="text-red-500">❤</span> DESDE SARAPIQUÍ, COSTA
-        RICA</span
-      >
+      <div class="footer-copyright">
+        {% module "footer_copyright" path="@hubspot/text", label="Copyright
+        Text", value="© {{ year }} carlosguisan | Carlos Guillermo Sánchez
+        Cabezas" %}
+      </div>
+      <div class="footer-origin">
+        {% module "footer_origin" path="@hubspot/text", label="Origin Text",
+        value='HECHO CON <span class="text-brand-lime">❤</span> DESDE
+        SARAPIQUÍ,COSTA RICA' %}
+      </div>
     </div>
   </div>
 </footer>

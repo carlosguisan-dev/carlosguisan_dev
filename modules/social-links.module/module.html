@@ -1,8 +1,72 @@
-<ul class="space-y-3 text-sm">
+{% require_css %}
+<style>
+  {% scope_css %}
+  .social-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .social-links-list li {
+    margin-bottom: 1.25rem; /* Increased vertical spacing */
+  }
+
+  .social-links-list li:last-child {
+    margin-bottom: 0;
+  }
+
+  .social-links-list .social-link-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .social-links-list .social-link-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    transition: transform 0.2s ease;
+  }
+
+  .social-links-list .social-link-item:hover .social-link-icon-wrap {
+    transform: translateY(-2px);
+  }
+
+  /* Target HubSpot Icon SVG explicitly */
+  .social-links-list i,
+  .social-links-list svg {
+    fill: #bef264 !important; /* brand-lime-vibrant */
+    color: #bef264 !important;
+    transition: fill 0.2s ease, color 0.2s ease;
+  }
+
+  .social-links-list .social-link-item:hover i,
+  .social-links-list .social-link-item:hover svg {
+    fill: #ffffff !important;
+    color: #ffffff !important;
+  }
+
+  .social-links-list .network-label {
+    font-size: 0.875rem;
+    color: #e2e8f0; /* slate-200 */
+    transition: color 0.2s ease;
+  }
+
+  .social-links-list .social-link-item:hover .network-label {
+    color: #ffffff;
+  }
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+<ul class="social-links-list">
   {% for item in module.social_networks %}
   <li>
     <a
-      class="flex items-center gap-3 text-slate-200 hover:text-white transition-colors group"
+      class="social-link-item group"
       href="{{ item.link.url.href }}"
       {%
       if
@@ -20,12 +84,12 @@
       %}
     >
       {% if item.icon.name %}
-      <span class="text-brand-lime group-hover:text-white transition-colors">
-        {% icon name="{{ item.icon.name }}", icon_set="{{ item.icon.set }}",
-        purpose="decorative", style="{{ item.icon.type }}", width="16" %}
+      <span class="social-link-icon-wrap">
+        {% icon name="{{ item.icon.name }}", icon_set="{{ item.icon.icon_set
+        }}", purpose="decorative", style="{{ item.icon.type }}", width="18" %}
       </span>
       {% endif %}
-      <span>{{ item.network_name }}</span>
+      <span class="network-label">{{ item.network_name }}</span>
     </a>
   </li>
   {% endfor %}

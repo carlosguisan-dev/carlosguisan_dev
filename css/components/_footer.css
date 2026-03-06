@@ -3,7 +3,7 @@
 .footer-navigation-wrapper .hs-menu-wrapper ul {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem; /* Matches space-y-2 */
+  gap: 0.75rem; /* Matches refined Social listing */
   list-style: none;
   padding: 0;
   margin: 0;
@@ -19,13 +19,22 @@
   color: #e2e8f0; /* slate-200, matching Social links */
   font-size: 0.875rem; /* text-sm */
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: all 0.3s ease;
   display: inline-block;
   line-height: normal;
 }
 
 .footer-navigation-wrapper .hs-menu-wrapper a:hover {
   color: #fff;
+  transform: translateX(4px);
+}
+
+/* Logo Styling */
+.footer-logo {
+  width: 200px;
+  height: auto;
+  display: block;
+  margin-bottom: 30px;
 }
 
 /* Ensure child wrappers don't interfere with block layout */
