@@ -2,38 +2,24 @@
   {
     "name": "logo_light",
     "label": "Logo (modo claro)",
-    "required": false,
-    "locked": false,
-    "responsive": true,
-    "resizable": true,
     "type": "image",
     "default": {
-      "size_type": "auto",
       "src": "/carlosguisan_dev/images/logo/logo-horizontal.svg",
-      "alt": "Logo",
-      "loading": "disabled"
+      "alt": "Logo"
     }
   },
   {
     "name": "logo_dark",
     "label": "Logo (modo oscuro)",
-    "required": false,
-    "locked": false,
-    "responsive": true,
-    "resizable": true,
     "type": "image",
     "default": {
-      "size_type": "auto",
       "src": "/carlosguisan_dev/images/logo/logo-blanco-horizontal.svg",
-      "alt": "Logo",
-      "loading": "disabled"
+      "alt": "Logo"
     }
   },
   {
     "name": "link",
     "label": "Link",
-    "required": false,
-    "locked": false,
     "supported_types": [
       "URL",
       "CONTENT",
