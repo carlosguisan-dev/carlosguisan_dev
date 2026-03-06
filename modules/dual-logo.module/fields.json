@@ -7,6 +7,8 @@
     "resizable": true,
     "show_loading": true,
     "default": {
+      "src": "",
+      "alt": "Logo",
       "loading": "lazy"
     }
   },
@@ -18,6 +20,8 @@
     "resizable": true,
     "show_loading": true,
     "default": {
+      "src": "",
+      "alt": "Logo",
       "loading": "lazy"
     }
   },
@@ -26,7 +30,7 @@
     "name": "link",
     "type": "link",
     "supported_types": [
-      "URL",
+      "EXTERNAL",
       "CONTENT",
       "FILE",
       "EMAIL_ADDRESS",
@@ -37,7 +41,7 @@
     "default": {
       "url": {
         "type": "EXTERNAL",
-        "href": "/"
+        "href": ""
       },
       "open_in_new_tab": false,
       "no_follow": false
