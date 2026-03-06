@@ -1,0 +1,22 @@
+:root {
+  /* Colors - Initialized with current values, will be overridden by base.css in HubSpot */
+  --color-brand-green: #2d5016;
+  --color-brand-lime: #a3d977;
+  --color-brand-lime-vibrant: #bef264;
+  --color-brand-orange: #ec5b13;
+  --color-forest: #2d5016;
+  --color-primary: #2d5016;
+  --color-accent: #a3d977;
+  --color-accent-vibrant: #bef264;
+  --color-background-light: #fdfefc;
+  --color-background-alt-light: #f3f6f1;
+  --color-background-dark: #0b120c;
+  --color-background-alt-dark: #141d14;
+  --color-background-card-dark: #1d2a1d;
+
+  /* Fonts */
+  --font-sans: "Public Sans", sans-serif;
+  --font-display: "Public Sans", sans-serif;
+  --font-mono: "Fira Code", monospace;
+  --font-body: "Public Sans", sans-serif;
+}

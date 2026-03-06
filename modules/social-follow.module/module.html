@@ -34,7 +34,7 @@
 
         .social-links__icon {
           {% if module.styles.background.color.color %}
-            background-color: rgba({{ module.styles.background.color.color|convert_rgb }}, {{ module.styles.background.color.opacity / 100 }});
+            background-color: rgba({{ (module.styles.background.color.color or "#000000")|convert_rgb }}, {{ (module.styles.background.color.opacity or 100) / 100 }});
           {% endif %}
           {% if module.styles.corner.radius >= 0 %}
             border-radius: {{ module.styles.corner.radius ~ "px" }};

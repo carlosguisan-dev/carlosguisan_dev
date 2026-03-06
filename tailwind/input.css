@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@import "./_variables.css";
+@import "./_layout.css";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Colors */
+  --color-primary: var(--color-primary);
+  --color-brand-green: var(--color-brand-green);
+  --color-brand-lime: var(--color-brand-lime);
+  --color-brand-lime-vibrant: var(--color-brand-lime-vibrant);
+  --color-brand-orange: var(--color-brand-orange);
+  --color-forest: var(--color-forest);
+  --color-accent: var(--color-accent);
+  --color-accent-vibrant: var(--color-accent-vibrant);
+  --color-background-light: var(--color-background-light);
+  --color-background-alt-light: var(--color-background-alt-light);
+  --color-background-dark: var(--color-background-dark);
+  --color-background-alt-dark: var(--color-background-alt-dark);
+  --color-background-card-dark: var(--color-background-card-dark);
+
+  /* Fonts */
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+@layer base {
+  body {
+    @apply text-slate-900 bg-background-light antialiased transition-colors duration-300;
+  }
+  .dark body {
+    @apply text-slate-200 bg-background-dark;
+  }
+}

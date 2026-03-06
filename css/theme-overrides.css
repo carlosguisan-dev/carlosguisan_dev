@@ -69,21 +69,21 @@
 
 {% set button_font = theme.buttons.text.font %}
 {% set button_text_transform = theme.buttons.text.transform %}
-{% set button_bg_color = color(theme.buttons.background.color) %}
+{% set button_bg_color %}{% color theme.buttons.background.color %}{% endset %}
 {% set button_border = theme.buttons.border.border.css %}
 {% set button_corner_radius = theme.buttons.corner.radius ~ 'px' %}
 {% set button_spacing = theme.buttons.spacing.spacing.css %}
 
-{% set button_color_hover = color(theme.buttons.hover.text.color) %}
-{% set button_background_hover = color(theme.buttons.hover.background.color) %}
+{% set button_color_hover %}{% color theme.buttons.hover.text.color %}{% endset %}
+{% set button_background_hover %}{% color theme.buttons.hover.background.color %}{% endset %}
 {% set button_border_hover = theme.buttons.hover.border.border.css %}
 {% set button_corner_radius_hover = theme.buttons.hover.corner.radius ~ 'px' %}
 
 /* 1e. Forms */
-{% set form_bg_color = color(theme.forms.form.background.color) %}
+{% set form_bg_color %}{% color theme.forms.form.background.color %}{% endset %}
 
 {% set form_title_font = theme.forms.title.text.font %}
-{% set form_title_bg_color =  color(theme.forms.title.background.color) %}
+{% set form_title_bg_color %}{% color theme.forms.title.background.color %}{% endset %}
 {% set form_title_spacing = theme.forms.title.spacing.spacing.css %}
 {% set form_title_border = theme.forms.title.border.border.css %}
 {% set form_title_top_left_corner_radius = theme.forms.title.corner.top_left_radius ~ "px" %}
@@ -98,11 +98,11 @@
 
 {% set form_field_placeholder_color = theme.forms.fields.placeholder.color.color %}
 {% set form_field_font_color = theme.forms.fields.text.color.color %}
-{% set form_field_bg_color = color(theme.forms.fields.background.color) %}
+{% set form_field_bg_color %}{% color theme.forms.fields.background.color %}{% endset %}
 {% set form_field_border = theme.forms.fields.border.border.css %}
 {% set form_field_corner_radius = theme.forms.fields.corner.radius ~ 'px' %}
 
-{% set form_bg_color = color(theme.forms.form.background.color) %}
+{% set form_bg_color %}{% color theme.forms.form.background.color %}{% endset %}
 {% set form_padding = theme.forms.form.spacing.spacing.css %}
 {% set form_border = theme.forms.form.border.border.css %}
 {% set form_top_left_corner_radius = theme.forms.form.corner.top_left_radius ~ "px" %}
@@ -112,24 +112,24 @@
 
 
 {% set form_submit_button_font = theme.forms.button.text.font %}
-{% set form_submit_button_bg_color = color(theme.forms.button.background.color) %}
+{% set form_submit_button_bg_color %}{% color theme.forms.button.background.color %}{% endset %}
 {% set form_submit_button_border = theme.forms.button.border.border.css %}
 {% set form_submit_button_spacing = theme.forms.button.spacing.spacing.css %}
 
-{% set form_submit_button_bg_color_hover = color(theme.forms.button.hover.background.color) %}
+{% set form_submit_button_bg_color_hover %}{% color theme.forms.button.hover.background.color %}{% endset %}
 {% set form_submit_button_border_hover = theme.forms.button.hover.border.border.css %}
 {% set form_submit_button_color_hover = theme.forms.button.hover.text.color.color %}
 
 
 /* 1f. Tables */
 
-{% set table_head_bg_color = color(theme.tables.header.background.color) %}
+{% set table_head_bg_color %}{% color theme.tables.header.background.color %}{% endset %}
 {% set table_head_font_color = theme.tables.header.text.color.color %}
 
-{% set table_bg_color = color(theme.tables.table_body.background.color) %}
+{% set table_bg_color %}{% color theme.tables.table_body.background.color %}{% endset %}
 {% set table_font_color = theme.tables.table_body.text.color.color %}
 
-{% set table_footer_bg_color = color(theme.tables.footer.background.color) %}
+{% set table_footer_bg_color %}{% color theme.tables.footer.background.color %}{% endset %}
 {% set table_footer_font_color = theme.tables.footer.text.color.color %}
 
 {% set table_cell_spacing = theme.tables.cells.spacing.spacing.css %}
@@ -139,14 +139,14 @@
 
 {% set nav_font_color = theme.header.menu.text.color.color %}
 {% set nav_drop_down_font_color = theme.header.menu.drop_downs.text.color.color %}
-{% set nav_drop_down_bg_color = color(theme.header.menu.drop_downs.background.color) %}
+{% set nav_drop_down_bg_color %}{% color theme.header.menu.drop_downs.background.color %}{% endset %}
 {% set nav_drop_down_border = theme.header.menu.drop_downs.border.border.css %}
 
-{% set header_bg_color = color(theme.header.background.color) %}
+{% set header_bg_color %}{% color theme.header.background.color %}{% endset %}
 
 /* 1h. Website footer */
 
-{% set footer_bg_color = color(theme.footer.background.color) %}
+{% set footer_bg_color %}{% color theme.footer.background.color %}{% endset %}
 {% set footer_font_color = theme.footer.text.color.color %}
 
 {###########################################################################}
@@ -297,8 +297,8 @@ button:active,
 .hs-button:active,
 .hs-blog-post-listing__post-button:active {
   {{ button_font.style }};
-  background-color: rgba({{ color_variant(theme.buttons.background.color.color, 40)|convert_rgb }}, {{ theme.buttons.background.color.opacity / 100 }});
-  border-color: {{ color_variant(theme.buttons.border.border.top.color, 40) }};
+  background-color: rgba({{ color_variant(theme.buttons.background.color.color or primary_color or "#000000", 40)|convert_rgb }}, {{ (theme.buttons.background.color.opacity or 100) / 100 }});
+  border-color: {{ color_variant(theme.buttons.border.border.top.color or theme.buttons.background.color.color or primary_color or "#000000", 40) }};
 }
 
 {###########################################################################}
@@ -423,8 +423,8 @@ form .hs-button:focus {
 
 form input[type=submit]:active,
 form .hs-button:active {
-  background-color: rgba({{ color_variant(theme.buttons.background.color.color, 40)|convert_rgb }}, {{ theme.buttons.background.color.opacity / 100 }});
-  border-color: {{ color_variant(theme.buttons.border.border.top.color, 40) }};
+  background-color: rgba({{ color_variant(theme.buttons.background.color.color or primary_color or "#000000", 40)|convert_rgb }}, {{ (theme.buttons.background.color.opacity or 100) / 100 }});
+  border-color: {{ color_variant(theme.buttons.border.border.top.color or theme.buttons.background.color.color or primary_color or "#000000", 40) }};
 }
 
 {###########################################################################}

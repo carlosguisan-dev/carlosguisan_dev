@@ -2,42 +2,63 @@
   templateType: global_partial
   label: Footer
 -->
-<footer class="footer">
-  {% dnd_area "footer"
-    label="Footer",
-    class="footer__container content-wrapper"
-  %}
+<footer
+  class="py-16 bg-brand-green text-slate-200 border-t border-brand-lime/10"
+>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-4 gap-12 mb-12">
+      {# Brand Info #}
+      <div class="col-span-1 md:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-3xl text-brand-lime"
+            >eco</span
+          >
+          <span class="font-bold text-xl text-brand-lime">GreenSpot</span>
+        </div>
+        <p class="text-brand-lime/80 max-w-xs">
+          Local roots, global quality. Soluciones de ingeniería HubSpot desde el
+          corazón de Costa Rica.
+        </p>
+      </div>
 
-    {# Social follow and copyright #}
+      {# Navigation Links #}
+      <div>
+        <h4
+          class="font-bold text-brand-lime mb-4 uppercase text-xs tracking-widest"
+        >
+          Navegación
+        </h4>
+        {% module "footer_navigation" path="../../modules/menu", label="Footer
+        Navigation" %}
+      </div>
 
-    {% dnd_section %}
-      {% dnd_column %}
-        {% dnd_row %}
-          {% dnd_module path="../../modules/social-follow" %}
-            {% module_attribute "social_link" is_json=True %}
-              [
-                {"social_account": "facebook-f"},
-                {"social_account": "linkedin-in"},
-                {"social_account": "twitter"},
-                {"social_account": "instagram"}
-              ]
-            {% end_module_attribute %}
-          {% end_dnd_module %}
-        {% end_dnd_row %}
-        {% dnd_row
-          margin={
-            "top": 12,
-            "bottom": 12
-          }
-        %}
-          {% dnd_module
-            path="@hubspot/rich_text",
-            html='<div style="text-align: center; font-size: 0.7rem;"><span>© {{ year }} All rights reserved.</span></div>'
-          %}
-          {% end_dnd_module %}
-        {% end_dnd_row %}
-      {% end_dnd_column %}
-    {% end_dnd_section %}
+      {# Social Links #}
+      <div>
+        <h4
+          class="font-bold text-brand-lime mb-4 uppercase text-xs tracking-widest"
+        >
+          Social
+        </h4>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a class="hover:text-white transition-colors" href="#">LinkedIn</a>
+          </li>
+          <li>
+            <a class="hover:text-white transition-colors" href="#">GitHub</a>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-  {% end_dnd_area %}
+    {# Copyright & Origin #}
+    <div
+      class="pt-8 border-t border-brand-lime/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-brand-lime/60"
+    >
+      <span>© {{ year }} GREEN MACAW DEV / GREENSPOT</span>
+      <span
+        >HECHO CON <span class="text-red-500">❤</span> DESDE SARAPIQUÍ, COSTA
+        RICA</span
+      >
+    </div>
+  </div>
 </footer>

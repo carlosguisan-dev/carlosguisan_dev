@@ -33,7 +33,7 @@ Example:
 
 {% macro color(value) %}
 
-  {% set colorhex = value.color|convert_rgb %}
+  {% set colorhex = (value.color or "#000000")|convert_rgb %}
   {% if value.opacity != null %}
     {% set coloropacity = value.opacity / 100 %}
   {% else %}

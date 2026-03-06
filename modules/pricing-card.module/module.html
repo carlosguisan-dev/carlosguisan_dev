@@ -38,8 +38,8 @@
       {# Features #}
 
       .card__hr {
-        background-color: rgba({{ module.styles.features.border.color.color|convert_rgb }}, {{ module.styles.features.border.color.opacity / 100 }});
-        color: rgba({{ module.styles.features.border.color.color|convert_rgb }}, {{ module.styles.features.border.color.opacity / 100 }});
+        background-color: rgba({{ (module.styles.features.border.color.color or "#000000")|convert_rgb }}, {{ (module.styles.features.border.color.opacity or 100) / 100 }});
+        color: rgba({{ (module.styles.features.border.color.color or "#000000")|convert_rgb }}, {{ (module.styles.features.border.color.opacity or 100) / 100 }});
       }
 
       {% if module.styles.features.alignment.alignment.horizontal_align %}
@@ -77,7 +77,7 @@
 
       .button {
         {% if module.styles.button.background.color.color %}
-          background-color: rgba({{ module.styles.button.background.color.color|convert_rgb }}, {{ module.styles.button.background.color.opacity / 100 }});
+          background-color: rgba({{ (module.styles.button.background.color.color or "#000000")|convert_rgb }}, {{ (module.styles.button.background.color.opacity or 100) / 100 }});
         {% endif %}
         {{ module.styles.button.border.border.css }}
         {% if module.styles.button.corner.radius >= 0 %}
@@ -104,7 +104,7 @@
 
       .card {
         {% if module.styles.card.background.background_type == "color" and module.styles.card.background.color.color %}
-          background-color: rgba({{ module.styles.card.background.color.color|convert_rgb }}, {{ module.styles.card.background.color.opacity / 100 }});
+          background-color: rgba({{ (module.styles.card.background.color.color or "#000000")|convert_rgb }}, {{ (module.styles.card.background.color.opacity or 100) / 100 }});
         {% elif module.styles.card.background.background_type == "gradient" %}
           background: {{ module.styles.card.background.gradient.css }};
         {% elif module.styles.card.background.background_type == "image" %}
