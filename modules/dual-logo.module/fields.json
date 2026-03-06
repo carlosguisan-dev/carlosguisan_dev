@@ -9,7 +9,7 @@
     "type": "image",
     "default": {
       "size_type": "auto",
-      "src": "../../images/logo/logo-horizontal.svg",
+      "src": "/carlosguisan_dev/images/logo/logo-horizontal.svg",
       "alt": "Logo",
       "loading": "disabled"
     }
@@ -24,7 +24,7 @@
     "type": "image",
     "default": {
       "size_type": "auto",
-      "src": "../../images/logo/logo-blanco-horizontal.svg",
+      "src": "/carlosguisan_dev/images/logo/logo-blanco-horizontal.svg",
       "alt": "Logo",
       "loading": "disabled"
     }
