@@ -4,8 +4,9 @@
     "name": "social_networks",
     "type": "group",
     "occurrence": {
-      "default": 2,
-      "min": 1
+      "min": 1,
+      "max": 10,
+      "default": 2
     },
     "children": [
       {
@@ -24,17 +25,21 @@
           "url": {
             "type": "EXTERNAL",
             "href": "https://linkedin.com"
-          }
+          },
+          "open_in_new_tab": true,
+          "no_follow": false
         }
       },
       {
         "label": "Icon",
         "name": "icon",
         "type": "icon",
+        "icon_set": "fontawesome-6.4.2",
         "default": {
           "name": "linkedin-in",
-          "set": "fontawesome-6.4.2",
-          "type": "FAB"
+          "icon_set": "fontawesome-6.4.2",
+          "type": "FAB",
+          "unicode": "f08c"
         }
       }
     ],
@@ -45,12 +50,15 @@
           "url": {
             "type": "EXTERNAL",
             "href": "https://linkedin.com"
-          }
+          },
+          "open_in_new_tab": true,
+          "no_follow": false
         },
         "icon": {
           "name": "linkedin-in",
-          "set": "fontawesome-6.4.2",
-          "type": "FAB"
+          "icon_set": "fontawesome-6.4.2",
+          "type": "FAB",
+          "unicode": "f08c"
         }
       },
       {
@@ -59,12 +67,15 @@
           "url": {
             "type": "EXTERNAL",
             "href": "https://github.com"
-          }
+          },
+          "open_in_new_tab": true,
+          "no_follow": false
         },
         "icon": {
           "name": "github",
-          "set": "fontawesome-6.4.2",
-          "type": "FAB"
+          "icon_set": "fontawesome-6.4.2",
+          "type": "FAB",
+          "unicode": "f09b"
         }
       }
     ]

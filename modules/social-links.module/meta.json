@@ -1,6 +1,6 @@
 {
-  "label": "Social Links (Tailwind)",
-  "content_types": ["PAGE", "BLOG_POST", "BLOG_LISTING"],
+  "label": "Social Links",
+  "content_types": ["SITE_PAGE", "LANDING_PAGE", "BLOG_POST", "BLOG_LISTING"],
   "global": false,
   "icon": "fontawesome-5.14.0:share-alt:SOLID",
   "host_template_types": ["PAGE"]
