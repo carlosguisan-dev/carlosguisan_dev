@@ -4,7 +4,7 @@
     "label": "Logo (modo claro)",
     "type": "image",
     "default": {
-      "src": "/carlosguisan_dev/images/logo/logo-horizontal.svg",
+      "src": "",
       "alt": "Logo"
     }
   },
@@ -13,7 +13,7 @@
     "label": "Logo (modo oscuro)",
     "type": "image",
     "default": {
-      "src": "/carlosguisan_dev/images/logo/logo-blanco-horizontal.svg",
+      "src": "",
       "alt": "Logo"
     }
   },
