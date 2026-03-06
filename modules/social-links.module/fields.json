@@ -1,0 +1,72 @@
+[
+  {
+    "label": "Social Networks",
+    "name": "social_networks",
+    "type": "group",
+    "occurrence": {
+      "default": 2,
+      "min": 1
+    },
+    "children": [
+      {
+        "label": "Network Name",
+        "name": "label",
+        "type": "text",
+        "required": true,
+        "default": "LinkedIn"
+      },
+      {
+        "label": "Link",
+        "name": "link",
+        "type": "link",
+        "required": true,
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "https://linkedin.com"
+          }
+        }
+      },
+      {
+        "label": "Icon",
+        "name": "icon",
+        "type": "icon",
+        "default": {
+          "name": "linkedin-in",
+          "set": "fontawesome-6.4.2",
+          "type": "FAB"
+        }
+      }
+    ],
+    "default": [
+      {
+        "label": "LinkedIn",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "https://linkedin.com"
+          }
+        },
+        "icon": {
+          "name": "linkedin-in",
+          "set": "fontawesome-6.4.2",
+          "type": "FAB"
+        }
+      },
+      {
+        "label": "GitHub",
+        "link": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": "https://github.com"
+          }
+        },
+        "icon": {
+          "name": "github",
+          "set": "fontawesome-6.4.2",
+          "type": "FAB"
+        }
+      }
+    ]
+  }
+]

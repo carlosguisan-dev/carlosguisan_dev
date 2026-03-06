@@ -1,0 +1,4 @@
+/* Components manifest */
+{% include "./_default-modules.css" %}
+{% include "./_footer.css" %}
+{% include "./_header.css" %}

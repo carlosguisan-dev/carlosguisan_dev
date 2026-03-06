@@ -1,0 +1,33 @@
+<!-- Debug: social_networks count = {{ module.social_networks|length }} -->
+<ul class="space-y-3 text-sm">
+  {% for item in module.social_networks %}
+  <li>
+    <a
+      class="flex items-center gap-3 text-slate-200 hover:text-white transition-colors group"
+      href="{{ item.link.url.href }}"
+      {%
+      if
+      item.link.open_in_new_tab
+      %}target="_blank"
+      {%
+      endif
+      %}
+      {%
+      if
+      item.link.no_follow
+      %}rel="nofollow"
+      {%
+      endif
+      %}
+    >
+      {% if item.icon.name %}
+      <span class="text-brand-lime group-hover:text-white transition-colors">
+        {% icon name="{{ item.icon.name }}", icon_set="{{ item.icon.set }}",
+        purpose="decorative", style="{{ item.icon.type }}", width="16" %}
+      </span>
+      {% endif %}
+      <span>{{ item.label }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>

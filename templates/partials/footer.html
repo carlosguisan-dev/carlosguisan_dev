@@ -28,8 +28,12 @@
         >
           Navegación
         </h4>
-        {% module "footer_navigation" path="../../modules/menu", label="Footer
-        Navigation" %}
+        <div class="footer-navigation-wrapper">
+          {% module "footer_navigation" path="@hubspot/simple_menu",
+          label="Footer Navigation", menu_tree=[ { "linkLabel": "Inicio",
+          "linkUrl": "/" }, { "linkLabel": "Servicios", "linkUrl": "/servicios"
+          }, { "linkLabel": "Contacto", "linkUrl": "/contacto" } ] %}
+        </div>
       </div>
 
       {# Social Links #}
@@ -39,14 +43,13 @@
         >
           Social
         </h4>
-        <ul class="space-y-2 text-sm">
-          <li>
-            <a class="hover:text-white transition-colors" href="#">LinkedIn</a>
-          </li>
-          <li>
-            <a class="hover:text-white transition-colors" href="#">GitHub</a>
-          </li>
-        </ul>
+        {% module "social_links" path="../../modules/social-links",
+        label="Social Links", social_networks=[ { "label": "LinkedIn", "link": {
+        "url": { "type": "EXTERNAL", "href": "https://linkedin.com/in/cguisan/"
+        } }, "icon": { "name": "linkedin-in", "set": "fontawesome-6.4.2",
+        "type": "FAB" } }, { "label": "GitHub", "link": { "url": { "type":
+        "EXTERNAL", "href": "https://github.com/cguisan" } }, "icon": { "name":
+        "github", "set": "fontawesome-6.4.2", "type": "FAB" } } ] %}
       </div>
     </div>
 

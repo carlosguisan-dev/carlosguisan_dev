@@ -1,0 +1,3 @@
+/* Elements manifest */
+{% include "./_forms.css" %}
+{% include "./_tables.css" %}

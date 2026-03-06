@@ -1,0 +1,37 @@
+/* Footer Navigation Styles - Matching Social Links */
+
+.footer-navigation-wrapper .hs-menu-wrapper ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Matches space-y-2 */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-navigation-wrapper .hs-menu-wrapper li {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-navigation-wrapper .hs-menu-wrapper a {
+  color: #e2e8f0; /* slate-200, matching Social links */
+  font-size: 0.875rem; /* text-sm */
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: inline-block;
+  line-height: normal;
+}
+
+.footer-navigation-wrapper .hs-menu-wrapper a:hover {
+  color: #fff;
+}
+
+/* Ensure child wrappers don't interfere with block layout */
+.footer-navigation-wrapper .hs-menu-children-wrapper {
+  position: static;
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
