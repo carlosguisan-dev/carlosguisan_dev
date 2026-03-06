@@ -1,0 +1,51 @@
+{# Build href #} {% set href = module.link.url.href %} {% if
+module.link.url.type is equalto "EMAIL_ADDRESS" %} {% set href = "mailto:" +
+href %} {% endif %}
+
+<a
+  href="{{ href }}"
+  {%
+  if
+  module.link.open_in_new_tab
+  %}target="_blank"
+  {%
+  endif
+  %}
+  {%
+  if
+  module.link.rel
+  %}rel="{{ module.link.rel }}"
+  {%
+  endif
+  %}
+  class="hover:no-underline flex items-center"
+>
+  {% if module.logo_light.src or module.logo_dark.src %} {# Light Mode Logo #}
+  {% if module.logo_light.src %} {% set loadingAttr = module.logo_light.loading
+  && module.logo_light.loading != 'disabled' ? 'loading="' ~
+  module.logo_light.loading ~ '"' : '' %}
+  <img
+    src="{{ module.logo_light.src }}"
+    alt="{{ module.logo_light.alt }}"
+    {{
+    loadingAttr
+    }}
+    class="dark:hidden max-h-12 w-auto"
+  />
+  {% endif %} {# Dark Mode Logo #} {% if module.logo_dark.src %} {% set
+  loadingAttr = module.logo_dark.loading && module.logo_dark.loading !=
+  'disabled' ? 'loading="' ~ module.logo_dark.loading ~ '"' : '' %}
+  <img
+    src="{{ module.logo_dark.src }}"
+    alt="{{ module.logo_dark.alt }}"
+    {{
+    loadingAttr
+    }}
+    class="hidden dark:block max-h-12 w-auto"
+  />
+  {% endif %} {% else %} {# Fallback if no images are set #}
+  <h2 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
+    GreenSpot
+  </h2>
+  {% endif %}
+</a>

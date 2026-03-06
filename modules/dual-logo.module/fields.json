@@ -1,0 +1,56 @@
+[
+  {
+    "name": "logo_light",
+    "label": "Logo (modo claro)",
+    "required": false,
+    "locked": false,
+    "responsive": true,
+    "resizable": true,
+    "type": "image",
+    "default": {
+      "size_type": "auto",
+      "src": "../../images/logo/logo-horizontal.svg",
+      "alt": "Logo",
+      "loading": "disabled"
+    }
+  },
+  {
+    "name": "logo_dark",
+    "label": "Logo (modo oscuro)",
+    "required": false,
+    "locked": false,
+    "responsive": true,
+    "resizable": true,
+    "type": "image",
+    "default": {
+      "size_type": "auto",
+      "src": "../../images/logo/logo-blanco-horizontal.svg",
+      "alt": "Logo",
+      "loading": "disabled"
+    }
+  },
+  {
+    "name": "link",
+    "label": "Link",
+    "required": false,
+    "locked": false,
+    "supported_types": [
+      "URL",
+      "CONTENT",
+      "FILE",
+      "EMAIL_ADDRESS",
+      "BLOG",
+      "CALL_TO_ACTION",
+      "WHATSAPP_NUMBER"
+    ],
+    "type": "link",
+    "default": {
+      "url": {
+        "type": "EXTERNAL",
+        "href": "/"
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    }
+  }
+]

@@ -8,18 +8,12 @@
   <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
     {# Logo Area #}
     <div class="flex items-center gap-3">
-      <div class="text-brand-green dark:text-brand-lime">
-        <span class="material-symbols-outlined material-icons text-4xl"
-          >eco</span
-        >
-      </div>
-      <a href="/" class="hover:no-underline">
-        <h2
-          class="text-xl font-bold tracking-tight text-slate-900 dark:text-white"
-        >
-          GreenSpot
-        </h2>
-      </a>
+      {% module "site_theme_logo" path="../../modules/dual-logo", label="Theme
+      Logo", logo_light = { "src":
+      get_asset_url('/carlosguisan_dev/images/logo/logo-horizontal.svg'), "alt":
+      "Logo GreenSpot" }, logo_dark = { "src":
+      get_asset_url('/carlosguisan_dev/images/logo/logo-blanco-horizontal.svg'),
+      "alt": "Logo GreenSpot" } %}
     </div>
 
     {# Navigation & Actions #}

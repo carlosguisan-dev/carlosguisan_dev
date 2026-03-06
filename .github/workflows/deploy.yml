@@ -19,5 +19,5 @@ jobs:
         with:
           src_dir: .
           dest_dir: carlosguisan_dev
-          hubspot_portal_id: ${{ secrets.HUBSPOT_PORTAL_ID }}
-          hubspot_personal_access_key: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
+          portal_id: ${{ secrets.HUBSPOT_PORTAL_ID }}
+          personal_access_key: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
