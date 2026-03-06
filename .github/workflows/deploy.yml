@@ -14,10 +14,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install HubSpot CLI
+        run: npm install -g @hubspot/cli@latest
+
       - name: Deploy to HubSpot
-        uses: HubSpot/hubspot-cms-deploy-action@v1.7
-        with:
-          src_dir: .
-          dest_dir: carlosguisan_dev
-          portal_id: ${{ secrets.HUBSPOT_PORTAL_ID }}
-          personal_access_key: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
+        env:
+          HUBSPOT_PERSONAL_ACCESS_KEY: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
+          HUBSPOT_ACCOUNT_ID: ${{ secrets.HUBSPOT_PORTAL_ID }}
+        run: |
+          hs cms upload . carlosguisan_dev --use-env
