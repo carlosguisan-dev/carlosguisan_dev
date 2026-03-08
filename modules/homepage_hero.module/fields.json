@@ -64,6 +64,55 @@
         "type": "text",
         "display": "textarea",
         "default": "/* Optimize HubSpot Portal */\nasync function scaleArchitecture(portal) {\n  const currentStatus = await portal.getHealth();\n  if (currentStatus.isLegacy) {\n    return await portal.refactor({\n      engine: 'HubL',\n      performance: '99+',\n      scalability: true\n    });\n  }\n}"
+      },
+      {
+        "label": "Client Logos",
+        "name": "client_logos",
+        "type": "group",
+        "occurrence": {
+          "min": 0,
+          "max": 10,
+          "default": 5
+        },
+        "children": [
+          {
+            "label": "Logo Type",
+            "name": "logo_type",
+            "type": "choice",
+            "choices": [
+              ["text", "Text"],
+              ["image", "Image"]
+            ],
+            "default": "text",
+            "display": "radio"
+          },
+          {
+            "label": "Logo Text",
+            "name": "logo_text",
+            "type": "text",
+            "default": "Company Name",
+            "visibility": {
+              "controlling_field": "logo_type",
+              "controlling_value_regex": "text"
+            }
+          },
+          {
+            "label": "Logo Image",
+            "name": "logo_image",
+            "type": "image",
+            "visibility": {
+              "controlling_field": "logo_type",
+              "controlling_value_regex": "image"
+            }
+          }
+        ],
+        "default": [
+          { "logo_type": "text", "logo_text": "SaaS Global" },
+          { "logo_type": "text", "logo_text": "Fintech Co" },
+          { "logo_type": "text", "logo_text": "EduTech Pro" },
+          { "logo_type": "text", "logo_text": "MarTech Solutions" },
+          { "logo_type": "text", "logo_text": "HealthStack" }
+        ]
       }
     ]
   },

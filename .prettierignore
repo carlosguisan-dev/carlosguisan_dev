@@ -1,0 +1,6 @@
+# Ignore HubSpot Theme files
+**/*.html
+**/*.css
+**/*.json
+**/*.js
+# Except if they are in node_modules or something similar (though usually excluded by default)
