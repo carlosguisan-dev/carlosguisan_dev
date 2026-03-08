@@ -121,5 +121,52 @@
       %}
       {% end_dnd_module %}
     {% end_dnd_section %}
+    {% dnd_section
+      background_color="#f9faf8",
+      full_width=true,
+      padding={
+        "top": "120px",
+        "bottom": "120px",
+        "left": "0",
+        "right": "0"
+      },
+      margin={
+        "top": 0,
+        "bottom": 0
+      }
+    %}
+      {% dnd_module
+        path="../modules/homepage_portfolio_item",
+        content={
+          "image": {
+            "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAfRkRCVnzG1pMtXnqvI7fxVYocyHXW8IDAYbxwyhEoyioTdmcrsv_FXw6UxCMoYO-aHRLZmNCA_e0NTrxQafh1v0AQr3AZKsMj-d-EyiOgZJKLgvL14zp9AXWhO1K7HYravfPD0-zjJ7s0k4C0DtnyaY-qslO7ByWRQPhcOLfocQzJ2s3r1s2mwB4hb0fGRbWB5c_DHrP30B_TInXY0sb78MsgYW2HJ6CFdp1TsfgcR-mycJR1MnOCdrn_CxK0wsxQ339wsA5dt-E",
+            "alt": "Vista previa de portal HubSpot refactorizado"
+          },
+          "tags": [
+            "Custom Objects",
+            "HubL"
+          ],
+          "title": "Ecosistema Global de Datos",
+          "description": "Refactorización completa de la infraestructura de leads para una multinacional de logística, integrando sistemas legacy con HubSpot CMS.",
+          "metrics": [
+            {
+              "metric_value": "-80%",
+              "metric_label": "Reducción en trabajo manual de data-entry"
+            },
+            {
+              "metric_value": "+45%",
+              "metric_label": "Mejora en velocidad de carga (LCP)"
+            }
+          ],
+          "link_text": "Leer caso de estudio"
+        },
+        styles={
+          "image_position": "left",
+          "dark_mode_style": "alt",
+          "accent_color": { "color": "#00a854" }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_section %}
 {% end_dnd_area %}
 {% endblock body %}

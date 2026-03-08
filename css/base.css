@@ -27,9 +27,9 @@ body {
   /* Backgrounds */
   --color-background-light: #fdfefc;
   --color-background-alt-light: #f3f6f1;
-  --color-background-dark: #0b120c;
-  --color-background-alt-dark: #141d14;
-  --color-background-card-dark: #1d2a1d;
+  --color-background-dark: #070a07;
+  --color-background-alt-dark: #0f170f;
+  --color-background-card-dark: #162216;
 
   /* Typography */
   --font-sans: "Public Sans", sans-serif;
@@ -155,8 +155,6 @@ form fieldset {
 
 /* Background differentiation in Dark Mode */
 /* Deep/Primary background (used for Hero and specific modules) */
-.dark .dnd-section.js-dark-section:has(.hero-section),
-.dark .dnd-section.js-dark-section:has(.hero-section)[style],
 .dark .dnd-section.js-dark-section:has(.js-dark-deep),
 .dark .dnd-section.js-dark-section:has(.js-dark-deep)[style] {
   background-color: var(--color-background-dark) !important;

@@ -47,6 +47,7 @@
           {
             "label": "Show Icon",
             "name": "show_icon",
+            "id": "show_icon",
             "type": "boolean",
             "default": true
           },

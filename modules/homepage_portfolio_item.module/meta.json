@@ -1,0 +1,10 @@
+{
+  "label": "Portfolio Item",
+  "name": "homepage_portfolio_item",
+  "is_available_for_new_content": true,
+  "status": "published",
+  "host_template_types": [
+    "PAGE"
+  ],
+  "icon": "fa-briefcase"
+}

@@ -20,7 +20,7 @@
         document.documentElement.setAttribute('data-theme', theme);
         
         // Hack for DND sections that can't have classes in HubL
-        const dndOverrides = document.querySelectorAll('.js-feature-cards, .hero-section');
+        const dndOverrides = document.querySelectorAll('.js-feature-cards, .hero-section, .js-portfolio-item, .js-dark-deep, .js-dark-alt');
         dndOverrides.forEach(el => {
             const section = el.closest('.dnd-section');
             if (section) {
