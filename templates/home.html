@@ -168,5 +168,41 @@
       %}
       {% end_dnd_module %}
     {% end_dnd_section %}
+    {% dnd_section
+      background_color="#070a07",
+      full_width=true,
+      padding={
+        "top": "0",
+        "bottom": "0",
+        "left": "0",
+        "right": "0"
+      },
+      margin={
+        "top": 0,
+        "bottom": 0
+      }
+    %}
+      {% dnd_module
+        path="../modules/homepage_philosophy",
+        content={
+          "icon_image": {
+            "src": "../../images/logo/favicon.svg",
+            "alt": "Green Macaw Logo"
+          },
+          "title": "Local roots, global quality.",
+          "text": "<p>Desde las montañas de Sarapiquí, Costa Rica, opero bajo el concepto de <strong>Green Macaw Engineering</strong>: Soluciones que respetan el entorno del negocio, son vibrantes, inteligentes y diseñadas para perdurar en el tiempo.</p>"
+        },
+        styles={
+          "dark_mode_style": "deep",
+          "spacing": {
+            "padding": {
+              "top": { "value": 0, "units": "px" },
+              "bottom": { "value": 0, "units": "px" }
+            }
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_section %}
 {% end_dnd_area %}
 {% endblock body %}

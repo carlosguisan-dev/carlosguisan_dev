@@ -1,0 +1,71 @@
+{% set module_id = name %}
+{% require_css %}
+<style>
+  {% scope_css %}
+    .philosophy-{{ module_id }} {
+      {{ module.styles.spacing.css }}
+      position: relative;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      {% if module.content.bg_image.src %}
+        background-image: url('{{ module.content.bg_image.src }}');
+      {% endif %}
+    }
+    
+    .philosophy-{{ module_id }}::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(7, 10, 7, 0.4), rgba(7, 10, 7, 0.7));
+      z-index: 1;
+    }
+
+    .philosophy-{{ module_id }} .glass-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    .dark .philosophy-{{ module_id }} .glass-card {
+      background: rgba(7, 10, 7, 0.4);
+      border: 1px solid rgba(148, 242, 27, 0.1);
+    }
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+{% set dark_style = module.styles.dark_mode_style or "deep" %}
+
+<section class="philosophy-{{ module_id }} js-philosophy js-dark-{{ dark_style }} py-32 flex items-center justify-center min-h-[70vh]">
+  <div class="max-w-4xl mx-auto px-6 relative z-10">
+    <div class="glass-card p-12 md:p-20 rounded-3xl text-center border border-white/10">
+      {% if module.content.icon_image.src or module.content.icon %}
+        <div class="inline-flex items-center justify-center mb-8">
+          {% if module.content.icon_image.src %}
+            <img src="{{ module.content.icon_image.src }}" alt="{{ module.content.icon_image.alt }}" class="size-16 object-contain">
+          {% else %}
+            <div class="size-20 rounded-2xl bg-brand-lime/20 text-brand-lime flex items-center justify-center">
+              <span class="material-symbols-outlined text-5xl">{{ module.content.icon }}</span>
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if module.content.title %}
+        <h2 class="text-4xl md:text-6xl font-black text-white tracking-tight mb-8">
+          {{ module.content.title }}
+        </h2>
+      {% endif %}
+
+      {% if module.content.text %}
+        <div class="text-lg md:text-2xl text-slate-200/90 leading-relaxed font-medium">
+          {% inline_rich_text field="content.text", value="{{ module.content.text }}" %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

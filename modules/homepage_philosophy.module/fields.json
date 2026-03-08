@@ -1,0 +1,66 @@
+[
+  {
+    "label": "Content",
+    "name": "content",
+    "type": "group",
+    "children": [
+      {
+        "label": "Background Image",
+        "name": "bg_image",
+        "type": "image",
+        "default": {
+          "src": "../../images/philosophy_bg.png",
+          "alt": "Bosque nuboso de Costa Rica"
+        }
+      },
+      {
+        "label": "Icon (Material Symbol)",
+        "name": "icon",
+        "type": "text",
+        "default": "eco"
+      },
+      {
+        "label": "Icon (Image)",
+        "name": "icon_image",
+        "type": "image"
+      },
+      {
+        "label": "Title",
+        "name": "title",
+        "type": "text",
+        "default": "Filosofía de Ingeniería"
+      },
+      {
+        "label": "Text",
+        "name": "text",
+        "type": "richtext",
+        "default": "<p>Creo en sistemas que respetan el entorno digital. Mi enfoque combina la precisión técnica con la sostenibilidad a largo plazo, utilizando HubSpot como plataforma para construir ecosistemas de datos eficientes y escalables.</p>"
+      }
+    ]
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Dark Mode Style",
+        "name": "dark_mode_style",
+        "type": "choice",
+        "choices": [
+          ["deep", "Deep Dark"],
+          ["alt", "Alt Dark"]
+        ],
+        "default": "deep",
+        "display": "radio"
+      },
+      {
+        "label": "Spacing",
+        "name": "spacing",
+        "type": "spacing",
+        "display": "composite"
+      }
+    ]
+  }
+]
