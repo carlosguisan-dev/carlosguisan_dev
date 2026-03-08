@@ -76,6 +76,7 @@
         },
         "children": [
           {
+            "id": "logo_type",
             "label": "Logo Type",
             "name": "logo_type",
             "type": "choice",
