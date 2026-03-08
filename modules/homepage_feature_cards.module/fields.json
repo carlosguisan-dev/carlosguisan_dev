@@ -1,0 +1,148 @@
+[
+  {
+    "label": "Cards",
+    "name": "cards",
+    "type": "group",
+    "children": [
+      {
+        "label": "Section Header",
+        "name": "section_header",
+        "type": "group",
+        "children": [
+          {
+            "label": "Title",
+            "name": "title",
+            "type": "richtext",
+            "default": "El crecimiento rápido suele romper los portales.<br/><span class=\"text-primary\">Yo los refactorizo.</span>"
+          }
+        ]
+      },
+      {
+        "label": "Items",
+        "name": "items",
+        "type": "group",
+        "occurrence": {
+          "min": 1,
+          "max": 6,
+          "default": 2
+        },
+        "children": [
+          {
+            "label": "Icon Type",
+            "name": "icon_type",
+            "type": "choice",
+            "choices": [
+              [
+                "material-symbols-outlined",
+                "Material Symbols"
+              ],
+              [
+                "material-icons",
+                "Material Icons"
+              ],
+              [
+                "fontawesome",
+                "Font Awesome"
+              ]
+            ],
+            "default": "material-symbols-outlined",
+            "display": "select"
+          },
+          {
+            "label": "Icon Identifier",
+            "name": "icon_id",
+            "placeholder": "database, code, or fa-rocket",
+            "type": "text",
+            "default": "database"
+          },
+          {
+            "label": "Mono Label",
+            "name": "mono_label",
+            "type": "text",
+            "default": ">_ ESTRATEGIA"
+          },
+          {
+            "label": "Card Title",
+            "name": "card_title",
+            "type": "text",
+            "default": "Raíces Profundas"
+          },
+          {
+            "label": "Content",
+            "name": "content",
+            "type": "richtext",
+            "default": "Arquitectura técnica sobre HubSpot CRM. Limpieza de propiedades duplicadas, configuración de Custom Objects y automatizaciones que soportan el volumen sin romperse."
+          }
+        ],
+        "default": [
+          {
+            "icon_type": "material-symbols-outlined",
+            "icon_id": "database",
+            "mono_label": ">_ ESTRATEGIA",
+            "card_title": "Raíces Profundas",
+            "content": "Arquitectura técnica sobre HubSpot CRM. Limpieza de propiedades duplicadas, configuración de Custom Objects y automatizaciones que soportan el volumen sin romperse."
+          },
+          {
+            "icon_type": "material-symbols-outlined",
+            "icon_id": "code",
+            "mono_label": ">_ EJECUCIÓN",
+            "card_title": "Destreza Frontend",
+            "content": "Desarrollo de módulos complejos en CMS Hub utilizando HubL, CSS moderno y JavaScript de alto rendimiento. Experiencias web rápidas para el usuario y fáciles de editar para marketing."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Columns",
+        "name": "columns",
+        "type": "choice",
+        "choices": [
+          [
+            "2",
+            "2 Columns"
+          ],
+          [
+            "3",
+            "3 Columns"
+          ]
+        ],
+        "default": "2",
+        "display": "radio"
+      },
+      {
+        "label": "Background Color",
+        "name": "bg_color",
+        "type": "color",
+        "default": {
+          "color": "#f9faf8",
+          "opacity": 100
+        }
+      },
+      {
+        "label": "Text Color",
+        "name": "text_color",
+        "type": "color",
+        "default": {
+          "color": "#0f172a",
+          "opacity": 100
+        }
+      },
+      {
+        "label": "Accent Color",
+        "name": "accent_color",
+        "type": "color",
+        "default": {
+          "color": "#2d5016",
+          "opacity": 100
+        }
+      }
+    ]
+  }
+]

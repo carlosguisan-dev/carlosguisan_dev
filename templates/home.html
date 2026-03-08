@@ -9,9 +9,41 @@
     {% dnd_section
       background_color="#2d5016",
       full_width=true,
-      vertical_alignment="MIDDLE" %}
+      vertical_alignment="MIDDLE",
+      padding={
+        "top": "120px",
+        "bottom": "120px",
+        "left": "0",
+        "right": "0"
+      },
+      margin={
+        "top": 0,
+        "bottom": 0
+      }
+    %}
       {% dnd_module
-        path="../modules/homepage_hero" %}{% end_dnd_module %}
+        path="../modules/homepage_hero"
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_section %}
+    {% dnd_section
+      background_color="#f9faf8",
+      full_width=true,
+      padding={
+        "top": "120px",
+        "bottom": "120px",
+        "left": "0",
+        "right": "0"
+      },
+      margin={
+        "top": 0,
+        "bottom": 0
+      }
+    %}
+      {% dnd_module
+        path="../modules/homepage_feature_cards"
+      %}
+      {% end_dnd_module %}
     {% end_dnd_section %}
   {% end_dnd_area %}
 {% endblock body %}

@@ -1,4 +1,5 @@
 {% set module_id = name %}
+{% require_css %}
 <style>
   {% scope_css %}
     .hero-{{ module_id }} {
@@ -13,7 +14,8 @@
     }
   {% end_scope_css %}
 </style>
-<section class="hero-{{ module_id }} py-24 md:py-32 overflow-hidden relative text-white">
+{% end_require_css %}
+<section class="hero-{{ module_id }} hero-section overflow-hidden relative text-white">
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 text-left">
     <div class="flex flex-col items-start gap-8 text-left">
       {% if module.content.mono_label %}

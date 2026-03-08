@@ -1,0 +1,9 @@
+{
+  "global": false,
+  "host_template_types": [
+    "PAGE"
+  ],
+  "icon": "fa-th-large",
+  "is_available_for_new_content": true,
+  "label": "Feature Cards"
+}

@@ -19,6 +19,19 @@
         document.documentElement.classList.add(theme);
         document.documentElement.setAttribute('data-theme', theme);
         
+        // Hack for DND sections that can't have classes in HubL
+        const dndOverrides = document.querySelectorAll('.js-feature-cards, .hero-section');
+        dndOverrides.forEach(el => {
+            const section = el.closest('.dnd-section');
+            if (section) {
+                if (theme === 'dark') {
+                    section.classList.add('js-dark-section');
+                } else {
+                    section.classList.remove('js-dark-section');
+                }
+            }
+        });
+
         const toggles = document.querySelectorAll('.js-theme-toggle');
         toggles.forEach(toggle => {
             toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');

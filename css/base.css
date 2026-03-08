@@ -115,16 +115,11 @@ body {
 
 .dnd-section > .row-fluid {
   margin: 0 auto;
+  max-width: none;
 }
 
 .dnd-section .dnd-column {
-  padding: 0 1rem;
-}
-
-@media (max-width: 767px) {
-  .dnd-section .dnd-column {
-    padding: 0;
-  }
+  /* Removed padding: 0 to let HubSpot handle it via vertical_spacing */
 }
 
 /* HubSpot Forms - Minimal resets for better Tailwind compatibility */
@@ -151,4 +146,28 @@ form fieldset {
 
 .hs-button, form input[type="submit"] {
   @apply inline-block cursor-pointer transition-all;
+}
+
+/* Specific override for DND sections with explicit background colors in dark mode */
+.dark .dnd-section.js-dark-section {
+  background-image: none !important;
+}
+
+/* Background differentiation in Dark Mode */
+/* Hero section stays with the deeper brand green/dark */
+.dark .dnd-section.js-dark-section:has(.hero-section),
+.dark .dnd-section.js-dark-section:has(.hero-section)[style] {
+  background-color: var(--color-background-dark) !important;
+}
+
+/* Feature Cards section uses a slightly lighter alt-dark background */
+.dark .dnd-section.js-dark-section:has(.js-feature-cards),
+.dark .dnd-section.js-dark-section:has(.js-feature-cards)[style] {
+  background-color: var(--color-background-alt-dark) !important;
+}
+
+/* beat HubSpot's scoped module CSS (which uses ID + class specificity) */
+.dark .dnd-section.js-dark-section [class*="features-"],
+.dark .dnd-section.js-dark-section [class*="hero-"] {
+  background-color: transparent !important;
 }

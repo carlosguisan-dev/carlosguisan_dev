@@ -1,0 +1,65 @@
+{% set module_id = name %}
+{% require_css %}
+<style>
+  {% scope_css %}
+    .features-{{ module_id }} {
+      background-color: {{ module.styles.bg_color.color }};
+      color: {{ module.styles.text_color.color }};
+      {{ module.styles.spacing.css }}
+    }
+    .features-{{ module_id }} .icon-container {
+      background-color: {{ module.styles.accent_color.color }}1a; /* 10% opacity hex */
+      color: {{ module.styles.accent_color.color }};
+    }
+    .features-{{ module_id }} .mono-label {
+      color: {{ module.styles.accent_color.color }};
+    }
+    .features-{{ module_id }} .card-item:hover {
+      border-color: {{ module.styles.accent_color.color }};
+    }
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+<section class="features-{{ module_id }} js-feature-cards transition-colors">
+  <div class="max-w-7xl mx-auto px-6">
+    {% if module.cards.section_header.title %}
+      <h2 class="text-3xl md:text-5xl font-black mb-16 text-center md:text-left leading-tight dark:text-white">
+        {% inline_rich_text field="cards.section_header.title", value="{{ module.cards.section_header.title }}" %}
+      </h2>
+    {% endif %}
+
+    {% set columns = module.styles.columns or "2" %}
+    <div class="grid gap-8 {% if columns == '2' %}md:grid-cols-2{% else %}md:grid-cols-3{% endif %}">
+      {% for item in module.cards.items %}
+        <div class="card-item p-10 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 group transition-all hover:bg-slate-50 dark:hover:bg-slate-800/50">
+          <div class="icon-container size-14 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
+            {% if item.icon_type == "fontawesome" %}
+              <i class="fa {{ item.icon_id }} text-3xl"></i>
+            {% else %}
+              <span class="{{ item.icon_type }} text-3xl">{{ item.icon_id }}</span>
+            {% endif %}
+          </div>
+          
+          {% if item.mono_label %}
+            <span class="mono-label font-mono font-bold mb-2 block uppercase text-sm tracking-widest">
+              {{ item.mono_label }}
+            </span>
+          {% endif %}
+          
+          {% if item.card_title %}
+            <h3 class="text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+              {{ item.card_title }}
+            </h3>
+          {% endif %}
+          
+          {% if item.content %}
+            <div class="text-slate-600 dark:text-slate-300 leading-relaxed">
+              {% inline_rich_text field="cards.items[loop.index0].content", value="{{ item.content }}" %}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
