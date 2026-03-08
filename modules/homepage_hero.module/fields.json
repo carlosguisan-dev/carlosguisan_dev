@@ -1,0 +1,110 @@
+[
+  {
+    "label": "Content",
+    "name": "content",
+    "type": "group",
+    "children": [
+      {
+        "label": "Mono Label",
+        "name": "mono_label",
+        "type": "text",
+        "default": "// HUBSPOT SOLUTIONS ARCHITECT & CMS DEVELOPER"
+      },
+      {
+        "label": "Headline",
+        "name": "headline",
+        "type": "richtext",
+        "default": "Arquitectura escalable. <span class=\"text-brand-lime\">Código impecable.</span>"
+      },
+      {
+        "label": "Description",
+        "name": "description",
+        "type": "richtext",
+        "default": "Especialista en refactorización de portales HubSpot y ejecución frontend de alto rendimiento para equipos que no pueden permitirse fallos técnicos."
+      },
+      {
+        "label": "Primary Button",
+        "name": "primary_button",
+        "type": "group",
+        "children": [
+          {
+            "label": "Text",
+            "name": "text",
+            "type": "text",
+            "default": "Iniciar evaluación gratis"
+          },
+          {
+            "label": "Link",
+            "name": "link",
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "label": "Secondary Button",
+        "name": "secondary_button",
+        "type": "group",
+        "children": [
+          {
+            "label": "Text",
+            "name": "text",
+            "type": "text",
+            "default": "Ver portafolio"
+          },
+          {
+            "label": "Link",
+            "name": "link",
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "label": "Code Snippet",
+        "name": "code_snippet",
+        "type": "text",
+        "display": "textarea",
+        "default": "/* Optimize HubSpot Portal */\nasync function scaleArchitecture(portal) {\n  const currentStatus = await portal.getHealth();\n  if (currentStatus.isLegacy) {\n    return await portal.refactor({\n      engine: 'HubL',\n      performance: '99+',\n      scalability: true\n    });\n  }\n}"
+      }
+    ]
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Background Color",
+        "name": "bg_color",
+        "type": "color",
+        "default": {
+          "color": "#2d5016",
+          "opacity": 100
+        }
+      },
+      {
+        "label": "Text Color",
+        "name": "text_color",
+        "type": "color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        }
+      },
+      {
+        "label": "Lime Accents",
+        "name": "lime_accent",
+        "type": "color",
+        "default": {
+          "color": "#a3d977",
+          "opacity": 100
+        }
+      },
+      {
+        "label": "Spacing",
+        "name": "spacing",
+        "type": "spacing"
+      }
+    ]
+  }
+]

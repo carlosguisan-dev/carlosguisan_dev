@@ -1,14 +1,17 @@
-/*
-  templateType: none
-  label: Base Styles (HubL Variables Bridge)
-*/
+/* Global Layout Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 
-/* 
-   BASE DESIGN SYSTEM BRIDGE
-   This file provides the CSS variables that Tailwind classes will reference.
-   It is processed by HubSpot, allowing HubL variables to be used.
-*/
-
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip; /* Fix for right-side spacing without breaking sticky */
+  position: relative;
+}
 :root {
   /* Colors - Mapping HubSpot Theme Fields to CSS Variable Tokens */
   --color-brand-green: {{ theme.global_colors.primary.color or "#2d5016" }};
@@ -77,16 +80,24 @@
   -webkit-font-smoothing: antialiased;
 }
 
-/* Global Overflow Reset - Fix for horizontal scroll */
-html, body {
-  overflow-x: hidden !important;
-  width: 100% !important;
-  position: relative !important;
+/* Global Layout Reset */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
-.body-wrapper {
-  overflow-x: hidden !important;
+.body-wrapper,
+.body-container-wrapper {
   width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
 }
 
 /* HubSpot Drag-and-Drop Grid Support */

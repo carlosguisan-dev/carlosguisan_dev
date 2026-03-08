@@ -1,12 +1,11 @@
-/* {% set total_columns_count = 12 %} */
-
 /* 
    HubSpot D&D Strict Compatibility Grid
-   Designed to work with HubSpot Drag & Drop editor and Tailwind CSS v4.
+   Master implementation using Tailwind CSS v4 logic.
+   Ensures no horizontal overflow while maintaining HubSpot class structure.
 */
 
 :root {
-  --hs-grid-gutter: 20px; /* Base gutter in pixels, can be mapped to Tailwind gap-5 */
+  --hs-grid-gutter: 0px; /* Defaulted to 0 to ensure backgrounds touch edges */
   --hs-max-width: 1200px;
 }
 
@@ -26,76 +25,81 @@
   width: 100%;
   margin-right: auto;
   margin-left: auto;
-  padding-right: calc(var(--hs-grid-gutter) / 2);
-  padding-left: calc(var(--hs-grid-gutter) / 2);
+  padding-right: 0;
+  padding-left: 0;
 }
 
-/* Rows */
+/* Rows - Using flexbox but avoiding negative margins that cause right-side gaps */
 .row-fluid,
 .dnd-row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: calc(var(--hs-grid-gutter) / -2);
-  margin-left: calc(var(--hs-grid-gutter) / -2);
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-/* Base Column behavior (Mobile First) */
-/* 
-{% for span_num in range(1, total_columns_count + 1) %}
-  {{ ".row-fluid .span" ~ span_num }},
-  {{ ".dnd-column.span" ~ span_num }},
-  {{ ".widget-span.span" ~ span_num }}{{ loop.last ? "" : "," }}
-{%- endfor -%} */
-
-.row-fluid [class*="span"],
-.dnd-column[class*="span"],
-.widget-span[class*="span"] {
+/* Support for nested rows */
+.row-fluid .row-fluid {
   width: 100%;
-  padding-right: calc(var(--hs-grid-gutter) / 2);
-  padding-left: calc(var(--hs-grid-gutter) / 2);
+}
+
+/* Columns - Mobile First */
+.row-fluid [class*='span'],
+.dnd-column[class*='span'],
+.widget-span[class*='span'] {
+  width: 100%;
+  padding-left: var(--hs-grid-gutter);
+  padding-right: var(--hs-grid-gutter);
   min-height: 1px;
 }
 
 /* Desktop layout (768px+) */
 @media (min-width: 768px) {
-  /* 
-  {% for span_num in range(1, total_columns_count + 1) %}
-    {{ ".row-fluid .span" ~ span_num }},
-    {{ ".dnd-column.span" ~ span_num }},
-    {{ ".widget-span.span" ~ span_num }} {
-      width: {{ (span_num / total_columns_count) * 100 }}%;
-      flex: 0 0 {{ (span_num / total_columns_count) * 100 }}%;
-      max-width: {{ (span_num / total_columns_count) * 100 }}%;
-    }
-  {% endfor %}
-  */
-
-  /* Fallback static classes for local testing (span4, span6, span12) */
+  /* Strictly matching HubSpot's 12-column system */
+  .span1 {
+    width: 8.33333333%;
+  }
+  .span2 {
+    width: 16.66666667%;
+  }
+  .span3 {
+    width: 25%;
+  }
   .span4 {
-    width: 33.333333%;
-    flex: 0 0 33.333333%;
-    max-width: 33.333333%;
+    width: 33.33333333%;
+  }
+  .span5 {
+    width: 41.66666667%;
   }
   .span6 {
     width: 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
+  }
+  .span7 {
+    width: 58.33333333%;
+  }
+  .span8 {
+    width: 66.66666667%;
+  }
+  .span9 {
+    width: 75%;
+  }
+  .span10 {
+    width: 83.33333333%;
+  }
+  .span11 {
+    width: 91.66666667%;
   }
   .span12 {
     width: 100%;
-    flex: 0 0 100%;
-    max-width: 100%;
+  }
+
+  .row-fluid {
+    flex-wrap: nowrap; /* HubSpot grid often behaves like this in D&D */
   }
 }
 
 /* HubSpot specific widget spacing fix */
 .widget-span {
-  margin-bottom: var(--hs-grid-gutter);
-}
-
-/* Helper for nested rows */
-.row-fluid .row-fluid {
-  margin-right: calc(var(--hs-grid-gutter) / -2);
-  margin-left: calc(var(--hs-grid-gutter) / -2);
-  width: auto;
+  margin-bottom: 0;
 }

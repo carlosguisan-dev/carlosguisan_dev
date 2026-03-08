@@ -7,7 +7,9 @@
     "watch": "tailwindcss -i ./tailwind/input.css -o ./css/tailwind-built.css --watch"
   },
   "devDependencies": {
-    "tailwindcss": "latest",
-    "@tailwindcss/cli": "latest"
+    "@hubspot/prettier-plugin-hubl": "^0.2.5",
+    "@tailwindcss/cli": "latest",
+    "prettier": "^2.8.8",
+    "tailwindcss": "latest"
   }
 }

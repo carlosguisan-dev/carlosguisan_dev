@@ -1,0 +1,12 @@
+{
+  "name": "Homepage Hero",
+  "display_name": "Homepage Hero",
+  "icon": "fa-rocket",
+  "is_available_for_new_content": true,
+  "external_js": [],
+  "external_css": [],
+  "module_id": null,
+  "master_id": null,
+  "path": null,
+  "label": "Homepage Hero"
+}

@@ -1,0 +1,16 @@
+{
+  "plugins": ["@hubspot/prettier-plugin-hubl"],
+  "overrides": [
+    {
+      "files": "*.html",
+      "options": {
+        "parser": "hubl"
+      }
+    }
+  ],
+  "printWidth": 180,
+  "tabWidth": 2,
+  "useTabs": false,
+  "singleQuote": true,
+  "bracketSameLine": true
+}

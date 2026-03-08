@@ -31,7 +31,7 @@
 /* 1a. Containers */
 
 {% set container_width = theme.spacing.maximum_content_width ~ 'px' %}
-{% set dnd_section_padding = theme.spacing.vertical_spacing ~ 'px ' ~ '1rem' %}
+{% set dnd_section_padding = theme.spacing.vertical_spacing ~ 'px' %}
 
 /* 1b. Colors */
 
@@ -159,7 +159,10 @@
 
 .dnd-section,
 .content-wrapper--vertical-spacing {
-  padding: {{ dnd_section_padding }};
+  padding-top: {{ dnd_section_padding }};
+  padding-bottom: {{ dnd_section_padding }};
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .dnd-section > .row-fluid {

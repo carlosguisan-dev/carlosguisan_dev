@@ -1,0 +1,107 @@
+{% set module_id = name %}
+<style>
+  {% scope_css %}
+    .hero-{{ module_id }} {
+      background-color:{{ module.styles.bg_color.color }};
+      color:{{ module.styles.text_color.color }}; {{ module.styles.spacing.css }}
+    }
+    .hero-{{ module_id }} .text-brand-lime {
+      color: {{ module.styles.lime_accent.color }};
+    }
+    .hero-{{ module_id }} .code-text {
+      color: {{ module.styles.lime_accent.color }};
+    }
+  {% end_scope_css %}
+</style>
+<section
+  class="hero-{{ module_id }} py-24 md:py-32 overflow-hidden relative text-white"
+>
+  <div
+    class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center relative z-10 text-left"
+  >
+    <div class="flex flex-col items-start gap-8 text-left">
+      {% if module.content.mono_label %}
+        <span
+          class="font-mono text-brand-lime text-sm tracking-widest uppercase bg-white/10 px-3 py-1 rounded"
+        >
+          {{ module.content.mono_label }}
+        </span>
+      {% endif %}
+      <h1
+        class="text-5xl md:text-7xl font-black leading-[1.1] tracking-tight m-0"
+      >
+        {% inline_rich_text
+          field="content.headline",
+          value="{{ module.content.headline }}" %}
+      </h1>
+      <div
+        class="text-lg md:text-xl text-slate-200/90 max-w-lg leading-relaxed"
+      >
+        {% inline_rich_text
+          field="content.description",
+          value="{{ module.content.description }}" %}
+      </div>
+      <div class="flex flex-wrap gap-4 pt-4 items-start">
+        {% if module.content.primary_button.text %}
+          <a
+            href="{{ module.content.primary_button.link.url.href or "#" }}"
+            class="bg-brand-lime text-brand-green hover:bg-white px-8 py-4 rounded-xl font-bold text-lg transition-all"
+            {% if module.content.primary_button.link.open_in_new_tab %}
+              target="_blank"
+            {% endif %}
+            {% if module.content.primary_button.link.no_follow %}
+              rel="nofollow"
+            {% endif %}
+          >
+            {{ module.content.primary_button.text }}
+          </a>
+        {% endif %}{% if module.content.secondary_button.text %}
+          <a
+            href="{{ module.content.secondary_button.link.url.href or "#" }}"
+            class="border-2 border-white/30 hover:border-white text-white px-8 py-4 rounded-xl font-bold text-lg transition-all"
+            {% if module.content.secondary_button.link.open_in_new_tab %}
+              target="_blank"
+            {% endif %}
+            {% if module.content.secondary_button.link.no_follow %}
+              rel="nofollow"
+            {% endif %}
+          >
+            {{ module.content.secondary_button.text }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="hidden md:block relative">
+      <div
+        class="absolute inset-0 bg-brand-lime/10 blur-[100px] rounded-full"
+      ></div>
+      <div
+        class="relative bg-black/40 border border-white/5 p-6 rounded-2xl backdrop-blur-md"
+      >
+        <pre
+          class="font-mono text-xs text-brand-lime leading-relaxed m-0"
+        ><span class="text-slate-500">/* Optimize HubSpot Portal */</span>
+async function scaleArchitecture(portal) {
+  const currentStatus = await portal.getHealth();
+  if (currentStatus.isLegacy) {
+    return await portal.refactor({
+      engine: <span class="text-white">'HubL'</span>,
+      performance: <span class="text-white">'99+'</span>,
+      scalability: <span class="text-white">true</span>
+    });
+  }
+}</pre>
+      </div>
+    </div>
+  </div>
+  <!-- Client Logos -->
+  <div
+    class="max-w-7xl mx-auto px-6 mt-32 opacity-40 grayscale flex flex-wrap justify-between items-center gap-8 text-white"
+  >
+    <span class="font-bold text-xl tracking-tight">SaaS Global</span>
+    <span class="font-bold text-xl tracking-tight">Fintech Co</span>
+    <span class="font-bold text-xl tracking-tight">EduTech Pro</span>
+    <span class="font-bold text-xl tracking-tight">MarTech Solutions</span>
+    <span class="font-bold text-xl tracking-tight">HealthStack</span>
+  </div>
+</section>
