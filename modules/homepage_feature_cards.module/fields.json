@@ -14,6 +14,23 @@
             "name": "title",
             "type": "richtext",
             "default": "El crecimiento rápido suele romper los portales.<br/><span class=\"text-primary\">Yo los refactorizo.</span>"
+          },
+          {
+            "label": "Description",
+            "name": "description",
+            "type": "richtext",
+            "default": ""
+          },
+          {
+            "label": "Header Layout",
+            "name": "header_layout",
+            "type": "choice",
+            "choices": [
+              ["centered", "Centered"],
+              ["split", "Split (Title Left, Description Right)"]
+            ],
+            "default": "centered",
+            "display": "radio"
           }
         ]
       },
@@ -28,8 +45,15 @@
         },
         "children": [
           {
+            "label": "Show Icon",
+            "name": "show_icon",
+            "type": "boolean",
+            "default": true
+          },
+          {
             "label": "Icon Type",
             "name": "icon_type",
+            "id": "icon_type",
             "type": "choice",
             "choices": [
               [
@@ -46,14 +70,22 @@
               ]
             ],
             "default": "material-symbols-outlined",
-            "display": "select"
+            "display": "select",
+            "visibility": {
+              "controlling_field": "show_icon",
+              "controlling_value_regex": "true"
+            }
           },
           {
             "label": "Icon Identifier",
             "name": "icon_id",
             "placeholder": "database, code, or fa-rocket",
             "type": "text",
-            "default": "database"
+            "default": "database",
+            "visibility": {
+              "controlling_field": "show_icon",
+              "controlling_value_regex": "true"
+            }
           },
           {
             "label": "Mono Label",
@@ -114,6 +146,17 @@
           ]
         ],
         "default": "2",
+        "display": "radio"
+      },
+      {
+        "label": "Dark Mode style",
+        "name": "dark_mode_style",
+        "type": "choice",
+        "choices": [
+          ["deep", "Deep Dark (Primary)"],
+          ["alt", "Alt Dark (Lighter)"]
+        ],
+        "default": "alt",
         "display": "radio"
       },
       {

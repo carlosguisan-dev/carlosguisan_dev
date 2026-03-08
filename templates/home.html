@@ -41,9 +41,85 @@
       }
     %}
       {% dnd_module
-        path="../modules/homepage_feature_cards"
+        path="../modules/homepage_feature_cards",
+        cards={
+          "items": [
+            {
+              "show_icon": true,
+              "icon_type": "material-symbols-outlined",
+              "icon_id": "database",
+              "mono_label": ">_ ESTRATEGIA",
+              "card_title": "Raíces Profundas",
+              "content": "Arquitectura técnica sobre HubSpot CRM. Limpieza de propiedades duplicadas, configuración de Custom Objects y automatizaciones que soportan el volumen sin romperse."
+            },
+            {
+              "show_icon": true,
+              "icon_type": "material-symbols-outlined",
+              "icon_id": "code",
+              "mono_label": ">_ EJECUCIÓN",
+              "card_title": "Destreza Frontend",
+              "content": "Desarrollo de módulos complejos en CMS Hub utilizando HubL, CSS moderno y JavaScript de alto rendimiento. Experiencias web rápidas para el usuario y fáciles de editar para marketing."
+            }
+          ]
+        },
+        styles={
+          "columns": "2",
+          "bg_color": { "color": "#f9faf8" },
+          "dark_mode_style": "alt"
+        }
       %}
       {% end_dnd_module %}
     {% end_dnd_section %}
-  {% end_dnd_area %}
+      {% dnd_section
+      background_color="#fdfefc",
+      full_width=true,
+      padding={
+        "top": "120px",
+        "bottom": "120px",
+        "left": "0",
+        "right": "0"
+      },
+      margin={
+        "top": 0,
+        "bottom": 0
+      }
+    %}
+      {% dnd_module
+        path="../modules/homepage_feature_cards",
+        cards={
+          "section_header": {
+            "title": "Ingeniería bajo tus propias reglas.",
+            "description": "Soluciones diseñadas para empresas que escalan con HubSpot como núcleo tecnológico.",
+            "header_layout": "split"
+          },
+          "items": [
+            {
+              "show_icon": false,
+              "mono_label": "[ PROYECTOS ]",
+              "card_title": "Refactorización de Portal",
+              "content": "Auditoría y limpieza profunda de portales HubSpot existentes para recuperar la eficiencia y eliminar la deuda técnica."
+            },
+            {
+              "show_icon": false,
+              "mono_label": "[ CMS HUB ]",
+              "card_title": "Diseño de Sistemas",
+              "content": "Creación de temas y módulos globales personalizados que permiten al equipo de marketing construir páginas en minutos."
+            },
+            {
+              "show_icon": false,
+              "mono_label": "[ RETAINERS ]",
+              "card_title": "Arquitecto Fraccional",
+              "content": "Soporte técnico continuo y consultoría estratégica para asegurar que HubSpot crezca alineado a los objetivos de negocio."
+            }
+          ]
+        },
+        styles={
+          "columns": "3",
+          "bg_color": { "color": "#fdfefc" },
+          "dark_mode_style": "deep"
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_section %}
+{% end_dnd_area %}
 {% endblock body %}

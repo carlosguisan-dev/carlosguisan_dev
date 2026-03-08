@@ -154,15 +154,17 @@ form fieldset {
 }
 
 /* Background differentiation in Dark Mode */
-/* Hero section stays with the deeper brand green/dark */
+/* Deep/Primary background (used for Hero and specific modules) */
 .dark .dnd-section.js-dark-section:has(.hero-section),
-.dark .dnd-section.js-dark-section:has(.hero-section)[style] {
+.dark .dnd-section.js-dark-section:has(.hero-section)[style],
+.dark .dnd-section.js-dark-section:has(.js-dark-deep),
+.dark .dnd-section.js-dark-section:has(.js-dark-deep)[style] {
   background-color: var(--color-background-dark) !important;
 }
 
-/* Feature Cards section uses a slightly lighter alt-dark background */
-.dark .dnd-section.js-dark-section:has(.js-feature-cards),
-.dark .dnd-section.js-dark-section:has(.js-feature-cards)[style] {
+/* Alt Dark background (slightly lighter, used for alternating sections) */
+.dark .dnd-section.js-dark-section:has(.js-dark-alt),
+.dark .dnd-section.js-dark-section:has(.js-dark-alt)[style] {
   background-color: var(--color-background-alt-dark) !important;
 }
 
