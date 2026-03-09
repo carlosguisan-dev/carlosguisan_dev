@@ -39,7 +39,7 @@
         {% if module.content.primary_button.text %}
           <a
             href="{{ module.content.primary_button.link.url.href or "#" }}"
-            class="bg-brand-lime text-brand-green hover:bg-white px-8 py-4 rounded-xl font-bold text-lg transition-all"
+            class="btn btn-primary px-8 py-4 rounded-xl text-lg"
             {% if module.content.primary_button.link.open_in_new_tab %}
               target="_blank"
             {% endif %}
@@ -52,7 +52,7 @@
         {% endif %}{% if module.content.secondary_button.text %}
           <a
             href='{{ module.content.secondary_button.link.url.href or "#" }}'
-            class="border-2 border-white/30 hover:border-white text-white px-8 py-4 rounded-xl font-bold text-lg transition-all"
+            class="btn btn-outline px-8 py-4 rounded-xl text-lg"
             {% if module.content.secondary_button.link.open_in_new_tab %}
               target="_blank"
             {% endif %}

@@ -1,0 +1,64 @@
+[
+  {
+    "label": "Content",
+    "name": "content",
+    "type": "group",
+    "children": [
+      {
+        "label": "Title",
+        "name": "title",
+        "type": "richtext",
+        "default": "<h2>¿Listo para ordenar la casa y escalar tu portal?</h2>"
+      },
+      {
+        "label": "Subtext",
+        "name": "subtext",
+        "type": "richtext",
+        "default": "<p>Evaluación técnica de 15 minutos para identificar cuellos de botella en tu arquitectura de HubSpot.</p>"
+      },
+      {
+        "label": "CTA Button",
+        "name": "cta_button",
+        "type": "group",
+        "children": [
+          {
+            "label": "Text",
+            "name": "text",
+            "type": "text",
+            "default": "Iniciar mi evaluación ahora"
+          },
+          {
+            "label": "Link",
+            "name": "link",
+            "type": "link"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Dark Mode Style",
+        "name": "dark_mode_style",
+        "type": "choice",
+        "choices": [
+          ["deep", "Deep Dark"],
+          ["alt", "Alt Dark"]
+        ],
+        "default": "alt",
+        "display": "radio"
+      },
+      {
+        "label": "Spacing",
+        "name": "spacing",
+        "type": "spacing",
+        "display": "composite"
+      }
+    ]
+  }
+]

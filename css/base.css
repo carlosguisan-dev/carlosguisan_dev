@@ -153,14 +153,24 @@ form fieldset {
   background-image: none !important;
 }
 
-/* Background differentiation in Dark Mode */
-/* Deep/Primary background (used for Hero and specific modules) */
+/* Background differentiation in both modes */
+/* Primary/Deep background (Hero, Philosophy, specific modules) */
+.dnd-section.js-dark-section:has(.js-dark-deep),
+.dnd-section.js-dark-section:has(.js-dark-deep)[style] {
+  background-color: var(--color-background-light) !important;
+}
+
 .dark .dnd-section.js-dark-section:has(.js-dark-deep),
 .dark .dnd-section.js-dark-section:has(.js-dark-deep)[style] {
   background-color: var(--color-background-dark) !important;
 }
 
-/* Alt Dark background (slightly lighter, used for alternating sections) */
+/* Secondary/Alt background (The Hook, Portfolio, CTA) */
+.dnd-section.js-dark-section:has(.js-dark-alt),
+.dnd-section.js-dark-section:has(.js-dark-alt)[style] {
+  background-color: var(--color-background-alt-light) !important;
+}
+
 .dark .dnd-section.js-dark-section:has(.js-dark-alt),
 .dark .dnd-section.js-dark-section:has(.js-dark-alt)[style] {
   background-color: var(--color-background-alt-dark) !important;

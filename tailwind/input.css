@@ -33,3 +33,26 @@
     @apply text-slate-200 bg-background-dark;
   }
 }
+
+@layer components {
+  /* Global Button Aesthetics */
+  .btn {
+    @apply inline-flex items-center justify-center font-bold transition-all duration-300 active:scale-95 cursor-pointer text-center;
+  }
+
+  .btn-primary {
+    @apply bg-brand-lime text-brand-green shadow-lg shadow-brand-lime/20 hover:bg-white hover:text-brand-green hover:shadow-xl dark:hover:bg-white dark:hover:text-brand-green;
+  }
+
+  .btn-primary-alt {
+    @apply bg-brand-lime text-brand-green shadow-lg shadow-brand-lime/20 hover:bg-brand-green hover:text-brand-lime hover:shadow-brand-green/30 hover:shadow-xl dark:hover:bg-white dark:hover:text-brand-green dark:hover:shadow-white/20;
+  }
+
+  .btn-secondary {
+    @apply bg-brand-green text-white shadow-lg shadow-brand-green/20 hover:bg-brand-lime hover:text-brand-green hover:shadow-xl dark:hover:bg-brand-lime dark:hover:text-brand-green;
+  }
+
+  .btn-outline {
+    @apply border-2 border-white/30 text-white hover:border-white hover:bg-white/10 dark:hover:bg-white/10;
+  }
+}

@@ -62,7 +62,7 @@
         {% endif %}
 
         {% if module.content.metrics %}
-          <ul class="space-y-4 w-full m-0 p-0 list-none">
+          <ul class="flex flex-col gap-6 w-full m-0 p-0 list-none">
             {% for metric in module.content.metrics %}
               <li class="flex items-center gap-4 p-4 rounded-lg bg-slate-50 dark:bg-slate-800/30 border-l-4 accent-border m-0">
                 <span class="text-2xl font-bold accent-text">{{ metric.metric_value }}</span>

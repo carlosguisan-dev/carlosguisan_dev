@@ -1,7 +1,6 @@
 {% set module_id = name %}
 {% require_css %}
 <style>
-  {% scope_css %}
     .philosophy-{{ module_id }} {
       {{ module.styles.spacing.css }}
       position: relative;
@@ -9,63 +8,90 @@
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
+      overflow: hidden;
       {% if module.content.bg_image.src %}
         background-image: url('{{ module.content.bg_image.src }}');
       {% endif %}
     }
-    
+
+    /* No section-level overlay in light mode as requested */
     .philosophy-{{ module_id }}::before {
+      display: none;
+    }
+    
+    .dark .philosophy-{{ module_id }}::before {
+      display: block;
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(7, 10, 7, 0.4), rgba(7, 10, 7, 0.7));
+      background: rgba(7, 10, 7, 0.75); /* Darker overlay for better contrast */
       z-index: 1;
     }
 
+    /* Container Layering */
+    .philosophy-{{ module_id }} .glass-outer {
+      background: transparent;
+      border: none; /* Completely transparent outer container */
+      z-index: 10;
+    }
+
+    .dark .philosophy-{{ module_id }} .glass-outer {
+      background: transparent;
+      border: none;
+    }
+
     .philosophy-{{ module_id }} .glass-card {
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      background: rgba(255, 255, 255, 0.7); /* Increased opacity for better text contrast */
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.1);
     }
 
     .dark .philosophy-{{ module_id }} .glass-card {
-      background: rgba(7, 10, 7, 0.4);
-      border: 1px solid rgba(148, 242, 27, 0.1);
+      background: rgba(7, 10, 7, 0.7); /* Deep moss glass */
+      backdrop-filter: blur(30px);
+      -webkit-backdrop-filter: blur(30px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     }
-  {% end_scope_css %}
 </style>
 {% end_require_css %}
 
 {% set dark_style = module.styles.dark_mode_style or "deep" %}
 
-<section class="philosophy-{{ module_id }} js-philosophy js-dark-{{ dark_style }} py-32 flex items-center justify-center min-h-[70vh]">
-  <div class="max-w-4xl mx-auto px-6 relative z-10">
-    <div class="glass-card p-12 md:p-20 rounded-3xl text-center border border-white/10">
-      {% if module.content.icon_image.src or module.content.icon %}
-        <div class="inline-flex items-center justify-center mb-8">
-          {% if module.content.icon_image.src %}
-            <img src="{{ module.content.icon_image.src }}" alt="{{ module.content.icon_image.alt }}" class="size-16 object-contain">
-          {% else %}
-            <div class="size-20 rounded-2xl bg-brand-lime/20 text-brand-lime flex items-center justify-center">
-              <span class="material-symbols-outlined text-5xl">{{ module.content.icon }}</span>
-            </div>
-          {% endif %}
-        </div>
-      {% endif %}
+<section class="philosophy-{{ module_id }} js-philosophy js-dark-{{ dark_style }} py-48 md:py-64 flex items-center justify-center min-h-[85vh]">
+  <div class="max-w-4xl mx-auto px-6 relative z-10 w-full">
+    <!-- Outer glass layer -->
+    <div class="glass-outer p-4 md:p-10 rounded-[56px]">
+      <!-- Inner card content -->
+      <div class="glass-card p-12 md:p-24 rounded-[40px] text-center shadow-2xl">
+        
+        {% if module.content.icon_image.src or module.content.icon %}
+          <div class="inline-flex items-center justify-center mb-10">
+            {% if module.content.icon_image.src %}
+              <img src="{{ module.content.icon_image.src }}" alt="{{ module.content.icon_image.alt }}" class="size-24 object-contain transition-all duration-300">
+            {% else %}
+              <div class="size-24 rounded-3xl bg-brand-lime/20 text-brand-lime flex items-center justify-center">
+                <span class="material-symbols-outlined text-6xl">{{ module.content.icon }}</span>
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
 
-      {% if module.content.title %}
-        <h2 class="text-4xl md:text-6xl font-black text-white tracking-tight mb-8">
-          {{ module.content.title }}
-        </h2>
-      {% endif %}
+        {% if module.content.title %}
+          <h2 class="text-4xl md:text-7xl font-black text-slate-950 dark:text-white tracking-tight leading-tight mb-8">
+            {{ module.content.title }}
+          </h2>
+        {% endif %}
 
-      {% if module.content.text %}
-        <div class="text-lg md:text-2xl text-slate-200/90 leading-relaxed font-medium">
-          {% inline_rich_text field="content.text", value="{{ module.content.text }}" %}
-        </div>
-      {% endif %}
+        {% if module.content.text %}
+          <div class="text-lg md:text-2xl text-slate-900 dark:text-white/95 leading-relaxed font-semibold">
+            {% inline_rich_text field="content.text", value="{{ module.content.text }}" %}
+          </div>
+        {% endif %}
+        
+      </div>
     </div>
   </div>
 </section>
