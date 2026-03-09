@@ -44,13 +44,7 @@
       {
         "label": "Meeting Link",
         "name": "meeting_link",
-        "type": "url",
-        "default": {
-          "url": {
-            "type": "EXTERNAL",
-            "href": ""
-          }
-        }
+        "type": "url"
       },
       {
         "label": "Requirements",
@@ -94,15 +88,7 @@
       {
         "label": "HubSpot Form",
         "name": "form",
-        "type": "form",
-        "default": {
-          "form_id": null,
-          "response_type": "inline",
-          "message": "Gracias por contactarnos.",
-          "redirect_id": null,
-          "redirect_url": null,
-          "gotowebinar_webinar_id": null
-        }
+        "type": "form"
       }
     ]
   },

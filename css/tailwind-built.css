@@ -25,6 +25,7 @@
     --spacing: 0.25rem;
     --container-xs: 20rem;
     --container-sm: 24rem;
+    --container-md: 28rem;
     --container-lg: 32rem;
     --container-2xl: 42rem;
     --container-3xl: 48rem;
@@ -348,9 +349,6 @@
   .block {
     display: block;
   }
-  .contents {
-    display: contents;
-  }
   .flex {
     display: flex;
   }
@@ -600,21 +598,6 @@
     border-left-style: var(--tw-border-style);
     border-left-width: 4px;
   }
-  .border-brand-lime {
-    border-color: var(--color-brand-lime);
-  }
-  .border-brand-lime\/10 {
-    border-color: var(--color-brand-lime);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-brand-lime) 10%, transparent);
-    }
-  }
-  .border-brand-lime\/20 {
-    border-color: var(--color-brand-lime);
-    @supports (color: color-mix(in lab, red, red)) {
-      border-color: color-mix(in oklab, var(--color-brand-lime) 20%, transparent);
-    }
-  }
   .border-red-200 {
     border-color: var(--color-red-200);
   }
@@ -638,12 +621,6 @@
   }
   .bg-background-light {
     background-color: var(--color-background-light);
-  }
-  .bg-background-light\/80 {
-    background-color: var(--color-background-light);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-background-light) 80%, transparent);
-    }
   }
   .bg-black {
     background-color: var(--color-black);
@@ -675,11 +652,8 @@
   .bg-red-50 {
     background-color: var(--color-red-50);
   }
-  .bg-slate-50 {
-    background-color: var(--color-slate-50);
-  }
-  .bg-slate-100 {
-    background-color: var(--color-slate-100);
+  .bg-slate-900 {
+    background-color: var(--color-slate-900);
   }
   .bg-slate-900\/60 {
     background-color: color-mix(in srgb, oklch(20.8% 0.042 265.755) 60%, transparent);
@@ -897,12 +871,6 @@
   }
   .text-brand-lime-vibrant {
     color: var(--color-brand-lime-vibrant);
-  }
-  .text-brand-lime\/60 {
-    color: var(--color-brand-lime);
-    @supports (color: color-mix(in lab, red, red)) {
-      color: color-mix(in oklab, var(--color-brand-lime) 60%, transparent);
-    }
   }
   .text-brand-lime\/80 {
     color: var(--color-brand-lime);
@@ -1133,16 +1101,6 @@
       }
     }
   }
-  .hover\:bg-brand-green\/10 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-brand-green);
-        @supports (color: color-mix(in lab, red, red)) {
-          background-color: color-mix(in oklab, var(--color-brand-green) 10%, transparent);
-        }
-      }
-    }
-  }
   .hover\:bg-brand-green\/95 {
     &:hover {
       @media (hover: hover) {
@@ -1160,13 +1118,6 @@
       }
     }
   }
-  .hover\:bg-slate-50 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-slate-50);
-      }
-    }
-  }
   .hover\:bg-slate-100 {
     &:hover {
       @media (hover: hover) {
@@ -1178,13 +1129,6 @@
     &:hover {
       @media (hover: hover) {
         color: var(--color-brand-green);
-      }
-    }
-  }
-  .hover\:text-brand-lime {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-brand-lime);
       }
     }
   }
@@ -1425,6 +1369,11 @@
       }
     }
   }
+  .dark\:bg-\[\#162216\] {
+    &:where(.dark, .dark *) {
+      background-color: #162216;
+    }
+  }
   .dark\:bg-background-alt-dark {
     &:where(.dark, .dark *) {
       background-color: var(--color-background-alt-dark);
@@ -1435,43 +1384,9 @@
       background-color: var(--color-background-dark);
     }
   }
-  .dark\:bg-background-dark\/80 {
-    &:where(.dark, .dark *) {
-      background-color: var(--color-background-dark);
-      @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, var(--color-background-dark) 80%, transparent);
-      }
-    }
-  }
-  .dark\:bg-slate-800 {
-    &:where(.dark, .dark *) {
-      background-color: var(--color-slate-800);
-    }
-  }
-  .dark\:bg-slate-800\/30 {
-    &:where(.dark, .dark *) {
-      background-color: color-mix(in srgb, oklch(27.9% 0.041 260.031) 30%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, var(--color-slate-800) 30%, transparent);
-      }
-    }
-  }
-  .dark\:bg-slate-800\/50 {
-    &:where(.dark, .dark *) {
-      background-color: color-mix(in srgb, oklch(27.9% 0.041 260.031) 50%, transparent);
-      @supports (color: color-mix(in lab, red, red)) {
-        background-color: color-mix(in oklab, var(--color-slate-800) 50%, transparent);
-      }
-    }
-  }
   .dark\:bg-slate-900 {
     &:where(.dark, .dark *) {
       background-color: var(--color-slate-900);
-    }
-  }
-  .dark\:bg-slate-950 {
-    &:where(.dark, .dark *) {
-      background-color: var(--color-slate-950);
     }
   }
   .dark\:text-brand-lime {
@@ -1519,35 +1434,11 @@
       }
     }
   }
-  .dark\:hover\:bg-brand-lime\/10 {
-    &:where(.dark, .dark *) {
-      &:hover {
-        @media (hover: hover) {
-          background-color: var(--color-brand-lime);
-          @supports (color: color-mix(in lab, red, red)) {
-            background-color: color-mix(in oklab, var(--color-brand-lime) 10%, transparent);
-          }
-        }
-      }
-    }
-  }
   .dark\:hover\:bg-slate-800 {
     &:where(.dark, .dark *) {
       &:hover {
         @media (hover: hover) {
           background-color: var(--color-slate-800);
-        }
-      }
-    }
-  }
-  .dark\:hover\:bg-slate-800\/50 {
-    &:where(.dark, .dark *) {
-      &:hover {
-        @media (hover: hover) {
-          background-color: color-mix(in srgb, oklch(27.9% 0.041 260.031) 50%, transparent);
-          @supports (color: color-mix(in lab, red, red)) {
-            background-color: color-mix(in oklab, var(--color-slate-800) 50%, transparent);
-          }
         }
       }
     }

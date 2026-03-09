@@ -1,0 +1,88 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Thank You Page
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+  {% dnd_area "thank_you_content_v7"
+    label="Main content",
+    class="body-container body-container--thank-you"
+  %}
+    {# 1. Hero / Header #}
+    {% dnd_section 
+      full_width=true,
+      padding={ "top": 120, "bottom": 20 },
+      class="js-dark-section js-dark-alt"
+    %}
+      {% dnd_column width=12 %}
+        {% dnd_row %}
+          {% dnd_module path="@hubspot/rich_text",
+            html="<p class='font-mono text-brand-lime font-medium text-sm tracking-widest mb-6 text-center uppercase'>// SISTEMA_RECIBIDO</p>"
+          %}{% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+          {% dnd_module path="@hubspot/rich_text",
+            html="<h1 class='text-brand-green dark:text-white text-4xl md:text-5xl font-black leading-tight mb-8 text-center tracking-tight'>¡Mensaje recibido con éxito!</h1>"
+          %}{% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+          {% dnd_module path="@hubspot/rich_text",
+            html="<p class='text-slate-600 dark:text-brand-lime/80 text-lg md:text-xl leading-relaxed mb-12 max-w-2xl mx-auto text-center'>Gracias por tu interés. Analizaré los detalles técnicos de tu propuesta y me pondré en contacto contigo en las próximas 24-48 horas laborables.</p>"
+          %}{% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {# 2. Action Card Box (Dark Mode Optimized via js-action-card) #}
+    {% dnd_section
+      full_width=false,
+      padding={ "top": 60, "bottom": 60, "left": 40, "right": 40 },
+      margin={ "top": 0, "bottom": 60 },
+      class="js-action-card border border-slate-200 dark:border-white/10 rounded-3xl shadow-premium-lg"
+    %}
+      {% dnd_column width=12 %}
+        {% dnd_row %}
+          {# Fixed Offsets to avoid overlap: [Empty 2] [Button 4] [Button 4] [Empty 2] #}
+          {% dnd_module path="../modules/button",
+            offset=2,
+            width=4,
+            button_style="primary",
+            button_text="Volver al Inicio",
+            show_icon=true,
+            icon_name="home",
+            link={ "url": { "href": "/", "type": "CONTENT" } },
+            styles={ "alignment": { "alignment": { "horizontal_align": "RIGHT" } } }
+          %}{% end_dnd_module %}
+          {% dnd_module path="../modules/button",
+            offset=6,
+            width=4,
+            button_style="secondary",
+            button_text="Ver Proyectos Recientes",
+            show_icon=true,
+            icon_name="database",
+            link={ "url": { "href": "/#portafolio", "type": "EXTERNAL" } },
+            styles={ "alignment": { "alignment": { "horizontal_align": "LEFT" } } }
+          %}{% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {# 3. Secondary Text #}
+    {% dnd_section
+      full_width=true,
+      padding={ "top": 20, "bottom": 120 },
+      class="js-dark-section js-dark-alt"
+    %}
+      {% dnd_column width=12 %}
+        {% dnd_row %}
+          {% dnd_module path="@hubspot/rich_text",
+            html="<p class='text-slate-500 dark:text-slate-400 text-base mb-12 text-center max-w-lg mx-auto'>Mientras tanto, puedes revisar mi blog o seguirme en redes sociales para ver en qué estoy trabajando.</p>"
+          %}{% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+  {% end_dnd_area %}
+{% endblock body %}

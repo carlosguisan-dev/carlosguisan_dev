@@ -1,0 +1,39 @@
+{% set total_columns_count = 12 %}
+
+:root {
+  --column-gap: 20px;
+}
+
+/* Mobile layout */
+.row-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  justify-content: center; /* Centering as default */
+  gap: var(--column-gap); /* Add gap between flex items */
+}
+
+/* Base span styles */
+[class*="span"] {
+  /* Remove width: 100% to allow gap to work with flex basis */
+  min-height: 1px;
+  box-sizing: border-box;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+  .row-fluid {
+    flex-wrap: nowrap;
+  }
+
+  {% for span_num in range(1, total_columns_count + 1) %}
+    .span{{ span_num }} {
+      /* Calculate width taking gaps into account for a perfect fit */
+      /* Note: In a gap-based flex row, widths are ( span/12 * 100% ) - adjustment */
+      flex: 0 0 auto; 
+      width: calc(({{ span_num }} / {{ total_columns_count }}) * 100% - (var(--column-gap) * ({{ total_columns_count - span_num }} / {{ total_columns_count }})));
+    }
+  {% endfor %}
+}

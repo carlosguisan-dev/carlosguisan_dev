@@ -76,6 +76,8 @@ body {
   --radius-xl: 0.75rem;
   --radius-2xl: 1rem;
   --radius-3xl: 1.5rem;
+  /* HubSpot Grid Variables */
+  --hs-grid-gutter: 20px;
 }
 
 /* Material Symbols support */
@@ -210,4 +212,11 @@ form fieldset {
 .dark .dnd-section.js-dark-section [class*="features-"],
 .dark .dnd-section.js-dark-section [class*="hero-"] {
   background-color: transparent !important;
+}
+/* Action Card - Consistent background across modes */
+.js-action-card {
+  background-color: white !important;
+}
+.dark .js-action-card {
+  background-color: #162216 !important; /* Matches --color-background-card-dark */
 }

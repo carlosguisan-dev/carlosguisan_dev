@@ -1,5 +1,35 @@
 [
   {
+    "label": "Button Style",
+    "name": "button_style",
+    "type": "choice",
+    "choices": [
+      ["primary", "Primary (Solid)"],
+      ["secondary", "Secondary (Outline)"],
+      ["ghost", "Ghost (No Border/BG)"]
+    ],
+    "default": "primary"
+  },
+  {
+    "label": "Show Icon",
+    "name": "show_icon",
+    "type": "boolean",
+    "default": false
+  },
+  {
+    "label": "Icon Name",
+    "name": "icon_name",
+    "type": "text",
+    "default": "home",
+    "help_text": "Material Symbol name (e.g., home, calendar_today, database_search)"
+  },
+  {
+    "label": "Extra Classes",
+    "name": "extra_classes",
+    "type": "text",
+    "default": ""
+  },
+  {
     "label": "Button link",
     "name": "link",
     "type": "link",
