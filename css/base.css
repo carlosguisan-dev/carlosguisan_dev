@@ -14,31 +14,36 @@ body {
 }
 :root {
   /* Colors - Mapping HubSpot Theme Fields to CSS Variable Tokens */
-  --color-brand-green: {{ theme.global_colors.primary.color or "#2d5016" }};
-  --color-brand-lime: #a3d977;
-  --color-brand-lime-vibrant: #bef264;
-  --color-brand-orange: #ec5b13;
-  --color-forest: {{ theme.global_colors.primary.color or "#2d5016" }};
+  --color-brand-green: {{ theme.brand_colors.brand_green.color or "#2D5016" }};
+  --color-brand-lime: {{ theme.brand_colors.brand_lime.color or "#A3D977" }};
+  --color-brand-lime-vibrant: {{ theme.brand_colors.brand_lime_vibrant.color or "#BEF264" }};
+  --color-brand-orange: {{ theme.brand_colors.brand_orange.color or "#EC5B13" }};
+  --color-forest: {{ theme.brand_colors.forest.color or "#2D5016" }};
   
-  --color-primary: {{ theme.global_colors.primary.color or "#2d5016" }};
-  --color-accent: #a3d977;
-  --color-accent-vibrant: #bef264;
+  --color-primary: {{ theme.brand_colors.brand_green.color or "#2D5016" }};
+  --color-accent: {{ theme.brand_colors.brand_lime.color or "#A3D977" }};
+  --color-accent-vibrant: {{ theme.brand_colors.brand_lime_vibrant.color or "#BEF264" }};
   
   /* Backgrounds */
-  --color-background-light: #fdfefc;
-  --color-background-alt-light: #f3f6f1;
-  --color-background-dark: #070a07;
-  --color-background-alt-dark: #0f170f;
-  --color-background-card-dark: #162216;
+  --color-background-light: {{ theme.backgrounds.light.background_light.color or "#fdfefc" }};
+  --color-background-alt-light: {{ theme.backgrounds.light.background_alt_light.color or "#f3f6f1" }};
+  --color-background-dark: {{ theme.backgrounds.dark.background_dark.color or "#070a07" }};
+  --color-background-alt-dark: {{ theme.backgrounds.dark.background_alt_dark.color or "#0f170f" }};
+  --color-background-card-dark: {{ theme.backgrounds.dark.card_dark.color or "#162216" }};
 
   /* Typography */
-  --font-sans: "Public Sans", sans-serif;
-  --font-display: "Public Sans", sans-serif;
-  --font-mono: "Fira Code", monospace;
-  --font-body: "Public Sans", sans-serif;
+  --font-sans: {{ theme.typography.sans.font or "Public Sans" }}, sans-serif;
+  --font-display: {{ theme.typography.display.font or "Public Sans" }}, sans-serif;
+  --font-mono: {{ theme.typography.mono.font or "Fira Code" }}, monospace;
+  --font-body: {{ theme.typography.sans.font or "Public Sans" }}, sans-serif;
 
+  /* Button Overrides */
+  --btn-radius: {{ theme.buttons.corner.radius ~ "px" or "1rem" }};
+  --btn-primary-bg: {{ theme.brand_colors.brand_lime.color or "#A3D977" }};
+  --btn-primary-text: {{ theme.brand_colors.brand_green.color or "#2D5016" }};
+  
   /* Premium Elevation & Shadows */
-  --shadow-premium: 0 10px 30px -10px rgba(45, 80, 22, 0.12), 0 4px 10px -5px rgba(45, 80, 22, 0.05);
+  --shadow-premium: 0 10px 30px -10px rgba(45, 80, 22, 0.12), 0 4px 10px -5px rgba(45, 80, 22, 0.05); /* Ideally RGB value of brand-green */
   --shadow-premium-lg: 0 20px 50px -15px rgba(45, 80, 22, 0.15);
   --shadow-premium-xl: 0 35px 70px -15px rgba(45, 80, 22, 0.2), 0 10px 20px -10px rgba(45, 80, 22, 0.1);
   

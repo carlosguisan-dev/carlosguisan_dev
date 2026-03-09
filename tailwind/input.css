@@ -38,14 +38,19 @@
   /* Global Button Aesthetics */
   .btn {
     @apply inline-flex items-center justify-center font-bold transition-all duration-300 active:scale-95 cursor-pointer text-center;
+    border-radius: var(--btn-radius);
   }
 
   .btn-primary {
-    @apply bg-brand-lime text-brand-green shadow-lg shadow-brand-lime/20 hover:bg-white hover:text-brand-green hover:shadow-xl dark:hover:bg-white dark:hover:text-brand-green;
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    @apply shadow-lg shadow-brand-lime/20 hover:bg-white hover:text-brand-green hover:shadow-xl dark:hover:bg-white dark:hover:text-brand-green;
   }
 
   .btn-primary-alt {
-    @apply bg-brand-lime text-brand-green shadow-lg shadow-brand-lime/20 hover:bg-brand-green hover:text-brand-lime hover:shadow-brand-green/30 hover:shadow-xl dark:hover:bg-white dark:hover:text-brand-green dark:hover:shadow-white/20;
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    @apply shadow-lg shadow-brand-lime/20 hover:bg-brand-green hover:text-brand-lime hover:shadow-brand-green/30 hover:shadow-xl dark:hover:bg-white dark:hover:text-brand-green dark:hover:shadow-white/20;
   }
 
   .btn-secondary {
