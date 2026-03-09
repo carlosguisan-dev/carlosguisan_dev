@@ -38,6 +38,30 @@ body {
   --font-mono: {{ theme.typography.mono.font or "Fira Code" }}, monospace;
   --font-body: {{ theme.typography.sans.font or "Public Sans" }}, sans-serif;
 
+  /* Header & Menu Configuration */
+  --header-link-light: {{ theme.header.menu.link_colors.light.text_light.color }};
+  --header-link-hover-light: {{ theme.header.menu.link_colors.light.hover_light.color }};
+  --header-link-dark: {{ theme.header.menu.link_colors.dark.text_dark.color }};
+  --header-link-hover-dark: {{ theme.header.menu.link_colors.dark.hover_dark.color }};
+
+  --header-bg-light: {{ theme.header.menu.header_container.light.bg_color.color }};
+  --header-bg-light-opacity: {{ theme.header.menu.header_container.light.bg_color.opacity / 100 }};
+  --header-border-light: {{ theme.header.menu.header_container.light.border_color.color }};
+  
+  --header-bg-dark: {{ theme.header.menu.header_container.dark.bg_color.color }};
+  --header-bg-dark-opacity: {{ theme.header.menu.header_container.dark.bg_color.opacity / 100 }};
+  --header-border-dark: {{ theme.header.menu.header_container.dark.border_color.color }};
+
+  /* Footer Configuration */
+  --footer-bg: {{ theme.footer.container_styles.bg_color.color }};
+  --footer-border: {{ theme.footer.container_styles.border_color.color }};
+  --footer-border-opacity: {{ theme.footer.container_styles.border_color.opacity / 100 }};
+  
+  --footer-text: {{ theme.footer.text_colors.base_text.color }};
+  --footer-accent: {{ theme.footer.text_colors.accent_text.color }};
+  --footer-link: {{ theme.footer.text_colors.link_color.color }};
+  --footer-link-hover: {{ theme.footer.text_colors.link_hover.color }};
+
   /* Button Overrides */
   --btn-radius: {{ theme.buttons.corner.radius ~ "px" or "1rem" }};
   --btn-primary-bg: {{ theme.brand_colors.brand_lime.color or "#A3D977" }};

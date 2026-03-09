@@ -1,14 +1,31 @@
 {# Menu Module aligned with Homepage Asset #} {% set menu_id = module.menu or
 "197725172139" %} {% set menu_tree = menu(menu_id) %}
 
+{% require_css %}
+<style>
+  .site-menu-link {
+    color: var(--header-link-light);
+  }
+  .site-menu-link:hover {
+    color: var(--header-link-hover-light);
+  }
+  .dark .site-menu-link {
+    color: var(--header-link-dark);
+  }
+  .dark .site-menu-link:hover {
+    color: var(--header-link-hover-dark);
+  }
+</style>
+{% end_require_css %}
+
 <div class="menu-container">
   {# Macro for menu items #} {% macro render_menu_items(menu_nodes, depth) %} {%
   for node in menu_nodes %}
   <li class="relative group/item">
     <a
       href="{{ node.url or 'javascript:void(0);' }}"
-      class="text-sm font-semibold transition-colors duration-200 block py-1
-                  {{ 'text-brand-green dark:text-brand-lime font-bold' if node.activeNode or node.activeBranch else 'text-brand-green dark:text-brand-lime hover:text-brand-lime' }}"
+      class="site-menu-link text-sm font-semibold transition-colors duration-200 block py-1
+                  {{ 'font-bold' if node.activeNode or node.activeBranch }}"
       {%
       if
       node.linkTarget
@@ -72,7 +89,7 @@
           class="hidden dark:block w-auto"
         />
         {% endif %} {% else %}
-        <div class="text-brand-green dark:text-brand-lime">
+        <div class="site-menu-link">
           <span class="material-symbols-outlined text-3xl">eco</span>
         </div>
         <h2
@@ -84,7 +101,7 @@
       </a>
       <button
         id="mobile-menu-close"
-        class="p-2 text-brand-green dark:text-brand-lime hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors active:scale-90"
+        class="site-menu-link p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors active:scale-90"
       >
         <span class="material-symbols-outlined text-3xl">close</span>
       </button>
@@ -103,11 +120,11 @@
           <li class="w-full">
             <a
               href="{{ node.url or '#' }}"
-              class="w-full py-6 px-8 text-xl font-bold text-brand-green dark:text-brand-lime flex items-center justify-between group active:bg-slate-50 dark:active:bg-slate-900 transition-colors"
+              class="site-menu-link w-full py-6 px-8 text-xl font-bold flex items-center justify-between group active:bg-slate-50 dark:active:bg-slate-900 transition-colors"
             >
               <span>{{ node.label }}</span>
               <span
-                class="material-symbols-outlined text-brand-green dark:text-brand-lime opacity-0 group-active:opacity-100 transition-opacity"
+                class="material-symbols-outlined site-menu-link opacity-0 group-active:opacity-100 transition-opacity"
                 >chevron_right</span
               >
             </a>

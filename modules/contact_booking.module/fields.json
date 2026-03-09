@@ -1,0 +1,122 @@
+[
+  {
+    "label": "Hero Section",
+    "name": "hero",
+    "type": "group",
+    "children": [
+      {
+        "label": "Pre-title",
+        "name": "pre_title",
+        "type": "text",
+        "default": "// INICIAR_SISTEMA"
+      },
+      {
+        "label": "Title",
+        "name": "title",
+        "type": "richtext",
+        "default": "Hablemos de tu ecosistema <span style='color: var(--color-brand-green);'>HubSpot.</span>"
+      },
+      {
+        "label": "Description",
+        "name": "description",
+        "type": "text",
+        "default": "¿Atrapado con deuda técnica, necesitas escalar un portal complejo o buscas un partner técnico para tu agencia? Cuéntame tu reto y estructuremos la solución."
+      }
+    ]
+  },
+  {
+    "label": "Booking Info (Left Column)",
+    "name": "booking",
+    "type": "group",
+    "children": [
+      {
+        "label": "Secondary Title",
+        "name": "title",
+        "type": "text",
+        "default": "¿Prefieres ir directo al grano?"
+      },
+      {
+        "label": "Secondary Description",
+        "name": "description",
+        "type": "text",
+        "default": "Reserva una sesión de descubrimiento de 30 minutos. Analizaremos tu arquitectura actual y definiremos los primeros pasos técnicos sin rodeos comerciales."
+      },
+      {
+        "label": "Meeting Link",
+        "name": "meeting_link",
+        "type": "url",
+        "default": {
+          "url": {
+            "type": "EXTERNAL",
+            "href": ""
+          }
+        }
+      },
+      {
+        "label": "Requirements",
+        "name": "requirements",
+        "type": "group",
+        "children": [
+          {
+            "label": "Requirements List",
+            "name": "items",
+            "type": "group",
+            "occurrence": {
+              "min": null,
+              "max": null,
+              "sorting_label_field": null,
+              "default": 3
+            },
+            "children": [
+              {
+                "label": "Requirement Text",
+                "name": "text",
+                "type": "text",
+                "default": "Figma como única fuente de verdad"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Form (Right Column)",
+    "name": "form_section",
+    "type": "group",
+    "children": [
+      {
+        "label": "Form Title",
+        "name": "title",
+        "type": "text",
+        "default": "Cuéntame sobre el proyecto"
+      },
+      {
+        "label": "HubSpot Form",
+        "name": "form",
+        "type": "form",
+        "default": {
+          "form_id": null,
+          "response_type": "inline",
+          "message": "Gracias por contactarnos.",
+          "redirect_id": null,
+          "redirect_url": null,
+          "gotowebinar_webinar_id": null
+        }
+      }
+    ]
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "children": [
+      {
+        "label": "Inherit Theme Styles",
+        "name": "inherit_theme",
+        "type": "boolean",
+        "default": true
+      }
+    ]
+  }
+]

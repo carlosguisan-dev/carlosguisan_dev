@@ -1,9 +1,30 @@
-<!--
-  templateType: global_partial
-  label: Header
--->
+{% require_css %}
+<style>
+  .site-header {
+    background-color: color-mix(in srgb, var(--header-bg-light) calc(var(--header-bg-light-opacity) * 100%), transparent);
+    border-bottom-color: var(--header-border-light);
+  }
+  .dark .site-header {
+    background-color: color-mix(in srgb, var(--header-bg-dark) calc(var(--header-bg-dark-opacity) * 100%), transparent);
+    border-bottom-color: var(--header-border-dark);
+  }
+  
+  .site-header-icon {
+    color: var(--header-link-light);
+  }
+  .site-header-icon:hover {
+    background-color: color-mix(in srgb, var(--header-link-light) 10%, transparent);
+  }
+  .dark .site-header-icon {
+    color: var(--header-link-dark);
+  }
+  .dark .site-header-icon:hover {
+    background-color: color-mix(in srgb, var(--header-link-dark) 10%, transparent);
+  }
+</style>
+{% end_require_css %}
 <nav
-  class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-white/10 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md"
+  class="site-header w-full border-b {% if theme.header.menu.behavior.fixed_header != false %}sticky top-0 z-50{% endif %} {% if theme.header.menu.behavior.glassmorphism != false %}backdrop-blur-md{% endif %}"
 >
   <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
     {# Logo Module #}
@@ -36,7 +57,7 @@
         {# Theme Toggle #}
         <button
           id="theme-toggle"
-          class="js-theme-toggle p-2 rounded-lg text-brand-green dark:text-brand-lime hover:bg-brand-green/10 dark:hover:bg-brand-lime/10 transition-colors"
+          class="site-header-icon js-theme-toggle p-2 rounded-lg transition-colors"
           aria-label="Toggle dark mode"
         >
           <span class="material-symbols-outlined text-2xl">dark_mode</span>
@@ -48,14 +69,14 @@
     <div class="md:hidden flex items-center gap-4">
       <button
         id="theme-toggle-mobile"
-        class="js-theme-toggle p-2 rounded-lg text-brand-green dark:text-brand-lime transition-transform active:scale-95"
+        class="site-header-icon js-theme-toggle p-2 rounded-lg transition-transform active:scale-95"
         aria-label="Toggle dark mode"
       >
         <span class="material-symbols-outlined text-2xl">dark_mode</span>
       </button>
       <button
         id="mobile-menu-toggle"
-        class="p-2 rounded-lg text-brand-green dark:text-brand-lime transition-transform active:scale-95"
+        class="site-header-icon p-2 rounded-lg transition-transform active:scale-95"
         aria-label="Toggle menu"
       >
         <span id="mobile-menu-icon" class="material-symbols-outlined text-3xl"

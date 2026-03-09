@@ -1,0 +1,135 @@
+{# Contact Booking Module #}
+<section class="contact-booking js-dark-section py-12 md:py-24 transition-colors duration-300">
+  <div class="max-w-6xl mx-auto px-6 js-dark-deep">
+    
+    {# Top Section / Hero #}
+    <div class="mb-16 md:mb-24">
+      <p class="font-mono text-brand-green dark:text-brand-lime font-medium text-sm tracking-wider mb-4 uppercase">
+        {{ module.hero.pre_title|default("// INICIAR_SISTEMA") }}
+      </p>
+      
+      <h1 class="text-slate-900 dark:text-white text-4xl md:text-6xl font-extrabold leading-[1.1] mb-6 max-w-3xl">
+        {{ module.hero.title|default("Hablemos de tu ecosistema <span class='text-brand-green font-bold'>HubSpot.</span>") }}
+      </h1>
+      
+      <p class="text-slate-600 dark:text-brand-lime/80 text-lg md:text-xl leading-relaxed max-w-2xl">
+        {{ module.hero.description|default("¿Atrapado con deuda técnica, necesitas escalar un portal complejo o buscas un partner técnico para tu agencia? Cuéntame tu reto y estructuremos la solución.") }}
+      </p>
+    </div>
+
+    {# 2-Column Grid #}
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-start">
+      
+      {# Left Column: Discovery Call & Prerequisites #}
+      <div class="space-y-10">
+        <div>
+          <h2 class="text-slate-900 dark:text-white text-2xl md:text-3xl font-bold mb-4">
+            {{ module.booking.title|default("¿Prefieres ir directo al grano?") }}
+          </h2>
+          <p class="text-slate-600 dark:text-brand-lime/80 mb-8 leading-relaxed">
+            {{ module.booking.description|default("Reserva una sesión de descubrimiento de 30 minutos. Analizaremos tu arquitectura actual y definiremos los primeros pasos técnicos sin rodeos comerciales.") }}
+          </p>
+          
+          <button 
+            id="open-meeting-modal"
+            class="flex items-center gap-3 bg-brand-green hover:bg-brand-green/95 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-brand-green/20 group uppercase tracking-wide text-sm"
+            data-meeting-url="{{ module.booking.meeting_link.url.href|default('#') }}"
+          >
+            <span class="material-symbols-outlined text-brand-lime group-hover:scale-110 transition-transform">calendar_today</span>
+            Agendar en HubSpot Meetings
+          </button>
+        </div>
+
+        {# Pre-requisites Box #}
+        {% if module.booking.requirements.items or true %}
+          <div class="bg-brand-lime/10 border border-color-brand-lime/20 rounded-2xl p-8">
+            <h3 class="font-mono text-brand-green dark:text-white font-bold text-sm mb-6 flex items-center gap-2 uppercase">
+              <span class="material-symbols-outlined text-base">code</span>
+              &gt;_ REQUISITOS_PREVIOS
+            </h3>
+            <ul class="space-y-4">
+              {% for item in module.booking.requirements.items %}
+                <li class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-brand-green dark:text-brand-lime fill-brand-lime text-xl">check_circle</span>
+                  <span class="text-slate-700 dark:text-slate-300 font-medium">{{ item.text }}</span>
+                </li>
+              {% endfor %}
+              {% if not module.booking.requirements.items %}
+                <li class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-brand-green dark:text-brand-lime fill-brand-lime text-xl">check_circle</span>
+                  <span class="text-slate-700 dark:text-slate-300 font-medium">Figma como única fuente de verdad</span>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+        {% endif %}
+      </div>
+
+      {# Right Column: Form #}
+      <div class="bg-white dark:bg-slate-900 rounded-3xl p-8 md:p-10 shadow-[0_20px_50px_rgba(45,80,22,0.08)] border border-slate-100 dark:border-slate-800 transition-colors">
+        <h3 class="text-slate-900 dark:text-white text-2xl font-bold mb-8">
+          {{ module.form_section.title }}
+        </h3>
+        <div class="contact-form-container">
+          {% form
+            form_to_use="{{ module.form_section.form.form_id }}",
+            response_response_type="{{ module.form_section.form.response_type }}",
+            response_message="{{ module.form_section.form.message }}",
+            response_redirect_id="{{ module.form_section.form.redirect_id }}",
+            response_redirect_url="{{ module.form_section.form.redirect_url }}"
+          %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Meeting Modal Overlay #}
+<div id="meeting-modal" class="fixed inset-0 z-[10000] hidden flex items-center justify-center p-4 md:p-6">
+  <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm" id="modal-overlay"></div>
+  <div class="relative bg-white dark:bg-slate-900 w-full max-w-4xl h-[90vh] md:h-auto md:min-h-[600px] rounded-3xl shadow-2xl overflow-hidden flex flex-col">
+    <div class="flex items-center justify-between p-6 border-b border-slate-100 dark:border-slate-800 shrink-0">
+      <h3 class="text-xl font-bold text-slate-900 dark:text-white">Agendar Sesión de Descubrimiento</h3>
+      <button id="close-meeting-modal" class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+    </div>
+    <div class="flex-1 overflow-hidden">
+      <iframe id="meeting-iframe" class="w-full h-full border-0" src="" frameborder="0"></iframe>
+    </div>
+  </div>
+</div>
+
+{% require_js %}
+<script>
+  (function() {
+    const openBtn = document.getElementById('open-meeting-modal');
+    const closeBtn = document.getElementById('close-meeting-modal');
+    const overlay = document.getElementById('modal-overlay');
+    const modal = document.getElementById('meeting-modal');
+    const iframe = document.getElementById('meeting-iframe');
+
+    if (openBtn && modal) {
+      openBtn.addEventListener('click', () => {
+        const url = openBtn.getAttribute('data-meeting-url');
+        if (url) {
+          // HubSpot meetings embed URL often needs ?embed=true for clean UI
+          const embedUrl = url.includes('?') ? `${url}&embed=true` : `${url}?embed=true`;
+          iframe.src = embedUrl;
+          modal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    }
+
+    const closeModal = () => {
+      modal.classList.add('hidden');
+      iframe.src = '';
+      document.body.style.overflow = '';
+    };
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (overlay) overlay.addEventListener('click', closeModal);
+  })();
+</script>
+{% end_require_js %}

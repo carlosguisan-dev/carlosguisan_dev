@@ -1,0 +1,137 @@
+/* Contact Booking Module Styles */
+
+.contact-booking {
+  --form-bg: var(--color-background-light);
+  --form-border: var(--color-background-alt-light);
+}
+
+.dark .contact-booking {
+  --form-bg: var(--color-background-alt-dark);
+  --form-border: rgba(255, 255, 255, 0.1);
+}
+
+/* HubSpot Form Styling Overrides */
+.contact-form-container .hs-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.contact-form-container .hs-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.contact-form-container fieldset {
+  max-width: 100% !important;
+  margin-bottom: 0 !important;
+}
+
+.contact-form-container label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-brand-green);
+  margin-bottom: 0.5rem;
+  margin-left: 0.25rem;
+}
+
+.dark .contact-form-container label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-form-container input[type="text"],
+.contact-form-container input[type="email"],
+.contact-form-container input[type="tel"],
+.contact-form-container input[type="number"],
+.contact-form-container select,
+.contact-form-container textarea {
+  width: 100% !important;
+  border-radius: 0.75rem !important;
+  border: 1px solid var(--form-border) !important;
+  background-color: var(--form-bg) !important;
+  padding: 0.75rem 1rem !important;
+  font-size: 1rem !important;
+  color: #0f172a !important;
+  transition: all 0.2s ease !important;
+  outline: none !important;
+}
+
+.dark .contact-form-container input[type="text"],
+.dark .contact-form-container input[type="email"],
+.dark .contact-form-container input[type="tel"],
+.dark .contact-form-container select,
+.dark .contact-form-container textarea {
+  color: #f1f5f9 !important;
+}
+
+.contact-form-container input:focus,
+.contact-form-container select:focus,
+.contact-form-container textarea:focus {
+  border-color: var(--color-brand-lime) !important;
+  box-shadow: 0 0 0 4px rgba(163, 217, 119, 0.1) !important;
+}
+
+.contact-form-container .hs-button {
+  width: 100% !important;
+  padding: 1rem !important;
+  border-radius: 0.75rem !important;
+  border: 2px solid var(--color-brand-green) !important;
+  background-color: transparent !important;
+  color: var(--color-brand-green) !important;
+  font-weight: 700 !important;
+  font-size: 1rem !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  margin-top: 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+}
+
+.dark .contact-form-container .hs-button {
+  border-color: var(--color-brand-green) !important;
+  color: white !important;
+}
+
+.contact-form-container .hs-button:hover {
+  background-color: var(--color-brand-green) !important;
+  color: white !important;
+}
+
+/* Modal Animations */
+#meeting-modal:not(.hidden) {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Custom Scrollbar for iframe container if needed */
+.contact-form-container textarea {
+  min-height: 120px;
+}
+
+/* Error messages */
+.contact-form-container .hs-error-msg {
+  font-size: 0.75rem;
+  color: #ef4444;
+  margin-top: 0.25rem;
+  margin-left: 0.5rem;
+}
+
+/* Form confirmation message */
+.contact-form-container .submitted-message {
+  padding: 2rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-brand-green);
+}
+
+.dark .contact-form-container .submitted-message {
+  color: var(--color-brand-lime);
+}

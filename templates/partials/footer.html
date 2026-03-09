@@ -1,9 +1,33 @@
-<!--
-  templateType: global_partial
-  label: Footer
--->
+{% require_css %}
+<style>
+  .site-footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    border-top-color: color-mix(in srgb, var(--footer-border) calc(var(--footer-border-opacity) * 100%), transparent);
+  }
+  .site-footer-accent {
+    color: var(--footer-accent);
+  }
+  .site-footer-description {
+    color: color-mix(in srgb, var(--footer-accent) 80%, transparent);
+  }
+  .site-footer-link {
+    color: var(--footer-link);
+  }
+  .site-footer-link:hover {
+    color: var(--footer-link-hover);
+  }
+  .site-footer-copyright {
+    color: color-mix(in srgb, var(--footer-accent) 60%, transparent);
+  }
+  .site-footer-border {
+    border-top-color: color-mix(in srgb, var(--footer-border) calc(var(--footer-border-opacity) * 100%), transparent);
+  }
+</style>
+{% end_require_css %}
+
 <footer
-  class="py-16 bg-brand-green text-slate-200 border-t border-brand-lime/10"
+  class="site-footer py-16 border-t"
 >
   <div class="max-w-7xl mx-auto px-6">
     <div class="grid md:grid-cols-4 gap-12 mb-12">
@@ -15,7 +39,7 @@
           get_asset_url('../../images/logo/logo-blanco-horizontal.svg'), "alt":
           "GreenSpot Logo" } %}
         </div>
-        <div class="footer-description text-brand-lime/80 max-w-xs">
+        <div class="site-footer-description max-w-xs">
           {% module "footer_description" path="@hubspot/rich_text",
           label="Footer Description", html="
           <p>
@@ -29,7 +53,7 @@
       {# Navigation Links #}
       <div>
         <h4
-          class="font-bold text-brand-lime mb-4 uppercase text-xs tracking-widest"
+          class="font-bold site-footer-accent mb-4 uppercase text-xs tracking-widest"
         >
           Navegación
         </h4>
@@ -44,7 +68,7 @@
       {# Social Links #}
       <div>
         <h4
-          class="font-bold text-brand-lime mb-4 uppercase text-xs tracking-widest"
+          class="font-bold site-footer-accent mb-4 uppercase text-xs tracking-widest"
         >
           Social
         </h4>
@@ -60,7 +84,7 @@
 
     {# Copyright & Origin #}
     <div
-      class="pt-8 border-t border-brand-lime/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-brand-lime/60"
+      class="site-footer-border pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono site-footer-copyright"
     >
       <div class="footer-copyright">
         {% module "footer_copyright" path="@hubspot/text", label="Copyright
@@ -69,7 +93,7 @@
       </div>
       <div class="footer-origin">
         {% module "footer_origin" path="@hubspot/text", label="Origin Text",
-        value='HECHO CON <span class="text-brand-lime">❤</span> DESDE
+        value='HECHO CON <span class="site-footer-accent">❤</span> DESDE
         SARAPIQUÍ,COSTA RICA' %}
       </div>
     </div>
