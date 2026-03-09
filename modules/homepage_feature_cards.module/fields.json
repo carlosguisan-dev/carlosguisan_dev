@@ -164,6 +164,11 @@
         "label": "Background Color",
         "name": "bg_color",
         "type": "color",
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "theme.backgrounds.light.background_light.color"
+          }
+        },
         "default": {
           "color": "#f9faf8",
           "opacity": 100
@@ -173,6 +178,11 @@
         "label": "Text Color",
         "name": "text_color",
         "type": "color",
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "theme.brand_colors.brand_green.color"
+          }
+        },
         "default": {
           "color": "#0f172a",
           "opacity": 100
@@ -182,6 +192,11 @@
         "label": "Accent Color",
         "name": "accent_color",
         "type": "color",
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "theme.brand_colors.brand_green.color"
+          }
+        },
         "default": {
           "color": "#2d5016",
           "opacity": 100

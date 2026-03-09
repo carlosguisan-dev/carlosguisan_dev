@@ -161,6 +161,11 @@
                 "label": "Color",
                 "name": "color",
                 "type": "color",
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.brand_colors.brand_lime_vibrant.color"
+                  }
+                },
                 "visibility": {
                   "hidden_subfields": {
                     "opacity": true
@@ -177,7 +182,12 @@
               {
                 "label": "Font",
                 "name": "font",
-                "type": "font"
+                "type": "font",
+                "inherited_value": {
+                  "property_value_paths": {
+                    "font": "theme.typography.sans.font"
+                  }
+                }
               }
             ]
           },
@@ -186,10 +196,15 @@
             "name": "border",
             "type": "group",
             "children": [
-              {
+               {
                 "label": "Color",
                 "name": "color",
-                "type": "color"
+                "type": "color",
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.brand_colors.brand_lime_vibrant.color"
+                  }
+                }
               }
             ]
           },
@@ -221,7 +236,12 @@
               {
                 "label": "Font",
                 "name": "font",
-                "type": "font"
+                "type": "font",
+                "inherited_value": {
+                  "property_value_paths": {
+                    "font": "theme.typography.display.font"
+                  }
+                }
               }
             ]
           },
@@ -253,7 +273,12 @@
               {
                 "label": "Font",
                 "name": "font",
-                "type": "font"
+                "type": "font",
+                "inherited_value": {
+                  "property_value_paths": {
+                    "font": "theme.typography.sans.font"
+                  }
+                }
               }
             ]
           },
@@ -265,7 +290,12 @@
               {
                 "label": "Color",
                 "name": "color",
-                "type": "color"
+                "type": "color",
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.brand_colors.brand_green.color"
+                  }
+                }
               }
             ]
           },
@@ -357,6 +387,11 @@
                 "label": "Color",
                 "name": "color",
                 "type": "color",
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.backgrounds.light.background_alt_light.color"
+                  }
+                },
                 "visibility": {
                   "controlling_field": "styles.card.background.background_type",
                   "controlling_value_regex": "color",

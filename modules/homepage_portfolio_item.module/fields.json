@@ -109,6 +109,11 @@
         "label": "Accent Color",
         "name": "accent_color",
         "type": "color",
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "theme.brand_colors.brand_lime_vibrant.color"
+          }
+        },
         "default": {
           "color": "#94F21B"
         }

@@ -155,6 +155,11 @@
             "label": "Color",
             "name": "color",
             "type": "color",
+            "inherited_value": {
+              "property_value_paths": {
+                "color": "theme.brand_colors.brand_green.color"
+              }
+            },
             "visibility": {
               "hidden_subfields": {
                 "opacity": true
@@ -188,7 +193,12 @@
           {
             "label": "Color",
             "name": "color",
-            "type": "color"
+            "type": "color",
+            "inherited_value": {
+              "property_value_paths": {
+                "color": "theme.backgrounds.light.background_light.color"
+              }
+            }
           }
         ]
       },

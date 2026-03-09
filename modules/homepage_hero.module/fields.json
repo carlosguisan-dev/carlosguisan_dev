@@ -127,6 +127,11 @@
         "label": "Background Color",
         "name": "bg_color",
         "type": "color",
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "theme.brand_colors.brand_green.color"
+          }
+        },
         "default": {
           "color": "#2d5016",
           "opacity": 100
@@ -136,6 +141,11 @@
         "label": "Text Color",
         "name": "text_color",
         "type": "color",
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "theme.backgrounds.light.background_light.color"
+          }
+        },
         "default": {
           "color": "#FFFFFF",
           "opacity": 100
@@ -145,6 +155,11 @@
         "label": "Lime Accents",
         "name": "lime_accent",
         "type": "color",
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "theme.brand_colors.brand_lime.color"
+          }
+        },
         "default": {
           "color": "#a3d977",
           "opacity": 100

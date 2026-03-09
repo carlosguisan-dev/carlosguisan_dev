@@ -40,7 +40,12 @@
           {
             "label": "Font",
             "name": "font",
-            "type": "font"
+            "type": "font",
+            "inherited_value": {
+              "property_value_paths": {
+                "font": "theme.typography.sans.font"
+              }
+            }
           }
         ]
       },
@@ -52,7 +57,12 @@
           {
             "label": "Color",
             "name": "color",
-            "type": "color"
+            "type": "color",
+            "inherited_value": {
+              "property_value_paths": {
+                "color": "theme.brand_colors.brand_green.color"
+              }
+            }
           }
         ]
       },

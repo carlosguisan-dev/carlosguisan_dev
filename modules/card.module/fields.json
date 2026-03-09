@@ -115,6 +115,11 @@
                 "label": "Color",
                 "name": "color",
                 "type": "color",
+                "inherited_value": {
+                  "property_value_paths": {
+                    "color": "theme.backgrounds.light.background_light.color"
+                  }
+                },
                 "visibility": {
                   "controlling_field": "styles.card.background.background_type",
                   "controlling_value_regex": "color",
