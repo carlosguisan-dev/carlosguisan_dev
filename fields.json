@@ -43,6 +43,14 @@
         "default": {
           "color": "#2D5016"
         }
+      },
+      {
+        "label": "Dark Slate (Text)",
+        "name": "dark_slate",
+        "type": "color",
+        "default": {
+          "color": "#0f172a"
+        }
       }
     ]
   },

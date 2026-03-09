@@ -19,6 +19,7 @@ body {
   --color-brand-lime-vibrant: {{ theme.brand_colors.brand_lime_vibrant.color or "#BEF264" }};
   --color-brand-orange: {{ theme.brand_colors.brand_orange.color or "#EC5B13" }};
   --color-forest: {{ theme.brand_colors.forest.color or "#2D5016" }};
+  --color-dark-slate: {{ theme.brand_colors.dark_slate.color or "#0f172a" }};
   
   --color-primary: {{ theme.brand_colors.brand_green.color or "#2D5016" }};
   --color-accent: {{ theme.brand_colors.brand_lime.color or "#A3D977" }};
