@@ -119,7 +119,7 @@
           { "icon": "check", "title": "Drag-and-Drop modules", "description": "Componentes modulares altamente configurables para que el equipo de marketing tenga total autonomía." },
           { "icon": "speed", "title": "Core Web Vitals", "description": "Optimización de carga crítica, lazy loading nativo de HubSpot y minimización de JS externo." }
         ],
-        "code_snippet": "{% set courses = hubdb_table_rows(123456) %}\n// Loop through courses database\n{% for item in courses %}\n  <div class=\"course-card\">\n    <h3>{{ item.name }}</h3>\n    <p>{{ item.description|truncate(150) }}</p>\n    <span>{{ item.category.name }}</span>\n  </div>\n{% endfor %}",
+        "code_snippet": "set courses = hubdb_table_rows(123456)\nfor item in courses\n  div.course-card\n    h3 = item.name\n    p = item.description\n    span = item.category.name\n  endfor",
         "code_filename": "dynamic_listing.hubl"
       },
       styles={
@@ -172,7 +172,7 @@
     {% dnd_module
       path="../modules/project-testimonial",
       content={
-        "quote": "\"La visión técnica de este proyecto transformó por completo nuestra forma de trabajar. No solo tenemos un sitio más rápido, sino un ecosistema HubSpot que realmente escala con nuestro negocio.\"",
+        "quote": '"La visión técnica de este proyecto transformó por completo nuestra forma de trabajar. No solo tenemos un sitio más rápido, sino un ecosistema HubSpot que realmente escala con nuestro negocio."',
         "author_name": "Elena Rodriguez",
         "author_role": "Directora de Tecnología, EduGroup International"
       }

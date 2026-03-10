@@ -123,7 +123,7 @@
           { "icon": "check", "title": "Lighthouse 98/100", "description": "Puntuación de rendimiento optimizada." },
           { "icon": "speed", "title": "HubL Optimized", "description": "Server-side rendering para tiempos de carga mínimos." }
         ],
-        "code_snippet": "{% set products = hubdb_table_rows(\"554210\") %}\n<!-- Dynamic Loop -->\n{% for row in products %}\n  <div class=\"product-card\">\n    <h3>{{ row.name }}</h3>\n    <p>Price: {{ row.price|format_currency }}</p>\n  </div>\n{% endfor %}",
+        "code_snippet": "set products = hubdb_table_rows(554210)\nfor row in products\n  div.product-card\n    h3 = row.name\n    p = row.price | format_currency\n  endfor",
         "code_filename": "dynamic_listing.hubl"
       },
       styles={
