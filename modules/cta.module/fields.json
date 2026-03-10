@@ -5,6 +5,13 @@
     "type": "group",
     "children": [
       {
+        "label": "Icon",
+        "name": "icon",
+        "type": "text",
+        "default": "",
+        "help_text": "Material Symbols icon name (e.g. psychology). Leave empty to hide."
+      },
+      {
         "label": "Title",
         "name": "title",
         "type": "richtext",
@@ -26,6 +33,35 @@
             "name": "text",
             "type": "text",
             "default": "Iniciar mi evaluación ahora"
+          },
+          {
+            "label": "Link",
+            "name": "link",
+            "type": "link"
+          }
+        ]
+      },
+      {
+        "label": "Show Secondary Button",
+        "name": "show_secondary_button",
+        "type": "boolean",
+        "default": false,
+        "display": "toggle"
+      },
+      {
+        "label": "Secondary Button",
+        "name": "secondary_button",
+        "type": "group",
+        "visibility": {
+          "controlling_field": "content.show_secondary_button",
+          "controlling_value_regex": "true"
+        },
+        "children": [
+          {
+            "label": "Text",
+            "name": "text",
+            "type": "text",
+            "default": "Ver Portfolio"
           },
           {
             "label": "Link",

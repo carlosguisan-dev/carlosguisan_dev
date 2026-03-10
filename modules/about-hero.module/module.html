@@ -1,0 +1,63 @@
+{% set module_id = name %}
+{% require_css %}
+<style>
+  {% scope_css %}
+    .about-hero-{{ module_id }} {
+      {{ module.styles.spacing.css }}
+    }
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+<section class="about-hero-{{ module_id }} relative overflow-hidden pt-12 pb-24 lg:pt-20 lg:pb-32 js-dark-deep">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div class="flex flex-col gap-6">
+        {% if module.content.mono_label %}
+          <span class="font-mono text-accent font-semibold tracking-wider text-sm lg:text-base bg-accent/10 px-4 py-1.5 rounded-full w-fit border border-accent/20">
+            {{ module.content.mono_label }}
+          </span>
+        {% endif %}
+        
+        <h1 class="text-primary dark:text-white text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.1] tracking-tight">
+          {% inline_rich_text field="content.headline", value="{{ module.content.headline }}" %}
+        </h1>
+        
+        <div class="text-lg text-slate-600 dark:text-brand-lime/80 max-w-xl leading-relaxed">
+          {% inline_rich_text field="content.description", value="{{ module.content.description }}" %}
+        </div>
+        
+        {% if module.content.button_text %}
+          <div class="flex items-center gap-4 pt-4">
+            <a href="{{ module.content.button_link.url.href or '#' }}" 
+               class="bg-primary text-white dark:bg-accent dark:text-primary px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:translate-y-[-2px] transition-all no-underline"
+               {% if module.content.button_link.open_in_new_tab %}target="_blank"{% endif %}
+               {% if module.content.button_link.rel %}rel="{{ module.content.button_link.rel }}"{% endif %}>
+              {{ module.content.button_text }} 
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </a>
+          </div>
+        {% endif %}
+      </div>
+      
+      <div class="relative group">
+        <div class="absolute -inset-4 bg-accent/20 rounded-2xl blur-3xl group-hover:bg-accent/30 transition-all"></div>
+        <div class="relative bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-2xl overflow-hidden border border-slate-200 dark:border-white/5">
+          <div class="aspect-[4/5] rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800">
+            {% if module.content.image.src %}
+              <img class="w-full h-full object-cover" 
+                   src="{{ module.content.image.src }}" 
+                   alt="{{ module.content.image.alt }}"
+                   loading="lazy">
+            {% endif %}
+          </div>
+          
+          <div class="absolute bottom-8 left-8 right-8 p-4 bg-primary/90 dark:bg-slate-950/90 backdrop-blur-md rounded-lg border border-white/10 text-white">
+            <p class="font-mono text-[10px] text-accent mb-1">{{ module.content.status_label }}</p>
+            <p class="text-xs md:text-sm font-medium">{{ module.content.status_text }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

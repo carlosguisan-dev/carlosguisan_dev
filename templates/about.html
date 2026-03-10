@@ -7,35 +7,119 @@
 {% extends "./layouts/base.html" %}
 
 {% block body %}
-{% dnd_area "dnd_area"
+{% dnd_area "about_dnd_area"
   label="Main section",
   class="body-container body-container--about"
 %}
-
-  {# Two column image left #}
-
+  
+  {# Section 1: Hero #}
   {% dnd_section
-    vertical_alignment="TOP"
+    vertical_alignment="MIDDLE",
+    full_width=true,
+    padding={ "top": "0", "bottom": "0" },
+    margin={ "top": "0", "bottom": "0" }
   %}
     {% dnd_module
-      path="@hubspot/linked_image",
-      img={
-        "alt": "Coworkers sitting together and smiling outside.",
-        "loading": "disabled",
-        "max_height": 449,
-        "max_width": 605,
-        "size_type": "auto_custom_max",
-        "src": get_asset_url("../images/team-image.jpg")
-      },
-      offset=0,
-      width=6
+      path="../modules/about-hero"
     %}
     {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# Section 2: Philosophy #}
+  {% dnd_section
+    vertical_alignment="TOP",
+    full_width=true,
+    padding={ "top": "0", "bottom": "0" },
+    margin={ "top": "0", "bottom": "0" }
+  %}
     {% dnd_module
-      path="@hubspot/rich_text",
-      html="<h1>Meet our team</h1><p>Use this page to help your visitors learn more about you. Include images so that folks will recognize you at conferences and events.</p>"
-      offset=6,
-      width=6
+      path="../modules/about-philosophy"
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# Section 3: 3-Card Analogy #}
+  {% dnd_section
+    vertical_alignment="TOP",
+    full_width=true,
+    background_color="#FFFFFF",
+    padding={ "top": "120px", "bottom": "120px" },
+    margin={ "top": "0", "bottom": "0" }
+  %}
+    {% dnd_module
+      path="../modules/homepage_feature_cards",
+      cards={
+        "items": [
+          {
+            "show_icon": true,
+            "icon_type": "material-symbols-outlined",
+            "icon_id": "account_tree",
+            "card_title": "Raíces Profundas (Arquitectura)",
+            "content": "Expertise avanzado en HubDB, Objetos Personalizados y estructuras de datos complejas. Construyo la base sólida que sostiene toda tu estrategia de CRM."
+          },
+          {
+            "show_icon": true,
+            "icon_type": "material-symbols-outlined",
+            "icon_id": "terminal",
+            "card_title": "Destreza en el Dosel (Frontend)",
+            "content": "Creación de experiencias pixel-perfect usando HubL, CSS moderno y JS. Interfaces fluidas que capturan la atención como el plumaje de una lapa roja."
+          },
+          {
+            "show_icon": true,
+            "icon_type": "material-symbols-outlined",
+            "icon_id": "handshake",
+            "card_title": "Vínculo Cooperativo (Soporte)",
+            "content": "Retainers dedicados y alianzas estratégicas para el crecimiento a largo plazo. Soporte técnico continuo que evoluciona con tu portal."
+          }
+        ]
+      },
+      styles={
+        "columns": "3",
+        "bg_color": { "color": "#FFFFFF" },
+        "dark_mode_style": "alt",
+        "accent_color": { "color": "#00a854" }
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# Section 4: Tech Stack #}
+  {% dnd_section
+    vertical_alignment="TOP",
+    full_width=true,
+    padding={ "top": "0", "bottom": "0" },
+    margin={ "top": "0", "bottom": "0" }
+  %}
+    {% dnd_module
+      path="../modules/about-tech-stack"
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# Section 5: CTA #}
+  {% dnd_section
+    vertical_alignment="TOP",
+    full_width=true,
+    padding={ "top": "120px", "bottom": "120px" },
+    margin={ "top": "0", "bottom": "0" }
+  %}
+    {% dnd_module
+      path="../modules/cta",
+      content={
+        "icon": "psychology",
+        "title": "<h2>¿Listo para plantar bases sólidas en tu portal?</h2>",
+        "subtext": "<p>Transformemos tu ecosistema digital HubSpot en una herramienta de ingeniería de alta precisión.</p>",
+        "cta_button": {
+          "text": "Agendar Discovery Call"
+        },
+        "show_secondary_button": true,
+        "secondary_button": {
+          "text": "Ver Portfolio"
+        }
+      },
+      styles={
+        "dark_mode_style": "alt"
+      }
     %}
     {% end_dnd_module %}
   {% end_dnd_section %}

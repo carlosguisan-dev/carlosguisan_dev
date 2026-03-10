@@ -1,0 +1,73 @@
+[
+  {
+    "label": "Content",
+    "name": "content",
+    "type": "group",
+    "children": [
+      {
+        "label": "Mono Label",
+        "name": "mono_label",
+        "type": "text",
+        "default": "// CONOCE AL ARQUITECTO"
+      },
+      {
+        "label": "Headline",
+        "name": "headline",
+        "type": "richtext",
+        "default": "Mucho más que código. Alta ingeniería desde el <span class=\"text-accent italic\">bosque lluvioso.</span>"
+      },
+      {
+        "label": "Description",
+        "name": "description",
+        "type": "richtext",
+        "default": "<p>Combinando la precisión de la ingeniería de software con la resiliencia orgánica de la naturaleza de Sarapiquí.</p>"
+      },
+      {
+        "label": "Button Text",
+        "name": "button_text",
+        "type": "text",
+        "default": "Ver Metodología"
+      },
+      {
+        "label": "Button Link",
+        "name": "button_link",
+        "type": "link"
+      },
+      {
+        "label": "Image",
+        "name": "image",
+        "type": "image",
+        "default": {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuA_qtxEI90ifU3QExEJZ-oGMjX8KhklE9vVLbKxSBP_19imc6GhXU6aI-BdKA6m3ipDlDk_vJ15UESMq8ckTiAUmpY6F-WW0xYrxtGNM7PWIKg0ADa4BKUCxJHq7b54_drkydylqkaDxxUuvnwbmmR920oAVAoIo5aZTxsgHGb62lEh33renkn7A0ZXZI6wdiBZCWcQoFQAPQJDHuKUJnBMB8Iv4XKVsEYo4u32b-jRML0HfZ9cTbLxAlvsBieyV26q5kN80r-3syc",
+          "alt": "Professional portrait"
+        }
+      },
+      {
+        "label": "Status Label",
+        "name": "status_label",
+        "type": "text",
+        "default": "// SYSTEM STATUS"
+      },
+      {
+        "label": "Status Text",
+        "name": "status_text",
+        "type": "text",
+        "default": "Roots deep, system operational."
+      }
+    ]
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Spacing",
+        "name": "spacing",
+        "type": "spacing",
+        "display": "composite"
+      }
+    ]
+  }
+]

@@ -1,0 +1,106 @@
+{% set module_id = name %}
+{% require_css %}
+<style>
+  {% scope_css %}
+    .tech-stack-{{ module_id }} {
+      {{ module.styles.spacing.css }}
+    }
+    .tech-group {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .tech-group.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+<section id="tech-stack-{{ module_id }}" class="tech-stack-{{ module_id }} py-24 bg-primary text-white js-dark-deep">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+      <div>
+        {% if module.content.mono_label %}
+          <span class="font-mono text-accent text-sm mb-4 block">{{ module.content.mono_label }}</span>
+        {% endif %}
+        <h2 class="text-4xl font-bold">{{ module.content.title }}</h2>
+      </div>
+      
+      {% if module.content.status_text %}
+        <div class="text-accent/60 font-mono text-sm hidden lg:block js-tech-status">
+          Compilation: <span class="js-counter">0</span>% efficient
+        </div>
+      {% endif %}
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      {% for group in module.content.groups %}
+        <div class="tech-group js-tech-group">
+          <h4 class="font-mono text-accent text-xs font-bold mb-6 tracking-widest uppercase">{{ group.group_label }}</h4>
+          <div class="flex flex-wrap gap-3">
+            {% for tag in group.tags %}
+              <span class="px-3 py-1.5 border border-accent/30 rounded text-xs font-mono hover:bg-accent/10 transition-colors">
+                {{ tag }}
+              </span>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% require_js %}
+<script>
+(function() {
+  const sectionId = 'tech-stack-{{ module_id }}';
+  const section = document.getElementById(sectionId);
+  if (!section) return;
+
+  const counter = section.querySelector('.js-counter');
+  const groups = section.querySelectorAll('.js-tech-group');
+  
+  const animate = () => {
+    let count = 0;
+    const duration = 1500; // Faster animation for better feel
+    const interval = 16;   // ~60fps
+    const totalSteps = duration / interval;
+    const stepIncrement = 100 / totalSteps;
+    
+    const timer = setInterval(() => {
+      count += stepIncrement;
+      if (count >= 100) {
+        count = 100;
+        clearInterval(timer);
+      }
+      
+      if (counter) counter.textContent = Math.floor(count);
+      
+      // Reveal groups based on progress percentages
+      const threshold = 100 / (groups.length + 1); // Stagger them
+      groups.forEach((group, index) => {
+        if (count >= (index + 1) * threshold && !group.classList.contains('is-visible')) {
+          group.classList.add('is-visible');
+        }
+      });
+    }, interval);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      // Trigger when at least 25% of the section is visible
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.25) {
+        animate();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { 
+    threshold: [0, 0.25, 0.5] // Multiple thresholds for better detection
+  });
+
+  observer.observe(section);
+})();
+</script>
+{% end_require_js %}

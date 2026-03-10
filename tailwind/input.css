@@ -58,6 +58,7 @@
   }
 
   .btn-outline {
-    @apply border-2 border-white/30 text-white hover:border-white hover:bg-white/10 dark:hover:bg-white/10;
+    @apply border-2 border-primary/20 text-primary hover:border-primary hover:bg-primary/5 
+           dark:border-white/30 dark:text-white dark:hover:border-white dark:hover:bg-white/10;
   }
 }

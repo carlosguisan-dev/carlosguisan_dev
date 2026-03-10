@@ -1,0 +1,12 @@
+{
+  "name": "About Tech Stack",
+  "display_name": "About Tech Stack",
+  "icon": "fa-layer-group",
+  "is_available_for_new_content": true,
+  "external_js": [],
+  "external_css": [],
+  "module_id": null,
+  "master_id": null,
+  "path": null,
+  "label": "About Tech Stack"
+}

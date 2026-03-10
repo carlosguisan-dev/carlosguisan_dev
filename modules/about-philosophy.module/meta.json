@@ -1,0 +1,12 @@
+{
+  "name": "About Philosophy",
+  "display_name": "About Philosophy",
+  "icon": "fa-quote-left",
+  "is_available_for_new_content": true,
+  "external_js": [],
+  "external_css": [],
+  "module_id": null,
+  "master_id": null,
+  "path": null,
+  "label": "About Philosophy"
+}
