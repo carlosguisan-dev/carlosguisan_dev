@@ -119,7 +119,7 @@
           { "icon": "check", "title": "Drag-and-Drop modules", "description": "Componentes modulares altamente configurables para que el equipo de marketing tenga total autonomía." },
           { "icon": "speed", "title": "Core Web Vitals", "description": "Optimización de carga crítica, lazy loading nativo de HubSpot y minimización de JS externo." }
         ],
-        "code_snippet": "set courses = hubdb_table_rows(123456)\nfor item in courses\n  div.course-card\n    h3 = item.name\n    p = item.description\n    span = item.category.name\n  endfor",
+        "code_snippet": "{% raw %}{% set courses = hubdb_table_rows(123456) %} | <!-- Loop through database --> | {% for item in courses %} |   <div class=\"course-card\"> |     <h3>{{ item.name }}</h3> |     <p>{{ item.description|truncate(150) }}</p> |     <span>{{ item.category.name }}</span> |   </div> | {% endfor %}{% endraw %}",
         "code_filename": "dynamic_listing.hubl"
       },
       styles={

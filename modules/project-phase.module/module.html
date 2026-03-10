@@ -130,7 +130,7 @@
                 {% endif %}
               </div>
               <div class="p-6 font-mono text-sm leading-relaxed overflow-x-auto">
-                <pre class="text-white m-0">{{ module.content.code_snippet }}</pre>
+                <pre class="text-white m-0">{{ module.content.code_snippet|replace(" | ", "\n") }}</pre>
               </div>
             </div>
           {% endif %}
