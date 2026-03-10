@@ -4,7 +4,7 @@
   label: GreenSpot - Blog Listing
   screenshotPath: ../images/template-previews/blog-index.png
 -->
-{% set template_css = "../../css/templates/blog.css" %}
+{% set template_css = "../css/templates/blog.css" %}
 {% extends "./layouts/base.html" %}
 
 {% block body %}
@@ -16,7 +16,7 @@
 
   <section class="max-w-7xl mx-auto px-6 py-16">
     {% module "blog_hero"
-      path="../../modules/blog-hero.module"
+      path="../modules/blog-hero.module"
     %}
   </section>
 
@@ -128,7 +128,7 @@
 
   <section class="max-w-7xl mx-auto px-6">
     {% module "blog_subscribe"
-      path="../../modules/blog-subscribe.module"
+      path="../modules/blog-subscribe.module"
     %}
   </section>
 
