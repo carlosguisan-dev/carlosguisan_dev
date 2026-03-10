@@ -10,25 +10,70 @@
 {% set pageTitle = "Error 404 | Page not found" %}
 
 {% block body %}
-<section class="content-wrapper">
-  <div class="error-page" data-error="404">
-    {% module "content"
-      path="@hubspot/rich_text",
-      html="<h1>Page not found.</h1>"
-    %}
-    {% module "button"
-      path="../../modules/button",
-      button_text="Go Home"
-      link={
-        "url":
-          {
-            "type": "EXTERNAL",
-            "href": "/"
-          },
-          "open_in_new_tab": false,
-          "no_follow": false
-      }
-    %}
+<main class="min-h-[calc(100vh-180px)] flex flex-col items-center justify-center px-6 py-12 relative overflow-hidden">
+    <!-- BEGIN: VisualHero -->
+    <div class="relative mb-12 flex items-center justify-center h-[350px] md:h-[450px]" data-purpose="error-graphic">
+      <div class="font-extrabold leading-none text-primary/5 select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 tracking-tighter" style="font-size: clamp(12rem, 30vw, 25rem);">
+        404
+      </div>
+      <div class="relative z-10 flex flex-col items-center">
+        <!-- Iconic Nature/Eco Element -->
+        <span class="material-symbols-outlined text-accent drop-shadow-[0_0_30px_rgba(163,217,119,0.5)] glitch-effect" style="font-variation-settings: 'FILL' 1; font-size: clamp(8rem, 15vw, 15rem);">eco</span>
+      </div>
+    </div>
+    <!-- END: VisualHero -->
+
+    <!-- Text Block -->
+    <div class="space-y-6 z-10 text-center">
+      <p class="mono-text text-accent font-medium tracking-wider text-sm uppercase text-center">
+        // ERROR_404 : RUTA_NO_ENCONTRADA
+      </p>
+      <h1 class="text-4xl md:text-6xl font-bold text-primary tracking-tight leading-tight text-center">
+        Visibilidad nula en el dosel.
+      </h1>
+      <p class="text-lg text-primary/70 max-w-lg mx-auto leading-relaxed text-center">
+        En los densos bosques de la arquitectura de datos, la visibilidad a menudo es nula... La página que buscas no existe o fue movida a un nuevo entorno de producción.
+      </p>
+    </div>
+
+    <!-- Navigation Terminal -->
+    <div class="mt-12 w-full max-w-md bg-primary rounded-xl p-8 shadow-2xl border border-white/10 flex flex-col items-center">
+      <div class="flex items-center justify-center gap-2 mb-6 border-b border-white/10 pb-4 w-full">
+        <div class="flex gap-1.5">
+          <div class="size-2.5 rounded-full bg-red-400"></div>
+          <div class="size-2.5 rounded-full bg-yellow-400"></div>
+          <div class="size-2.5 rounded-full bg-green-400"></div>
+        </div>
+        <span class="mono-text text-[10px] text-accent/60 ml-4 uppercase tracking-widest">hubspot_shell_v2.0.4</span>
+      </div>
+      
+      <div class="space-y-6 text-center w-full">
+        {% module "back_button"
+          path="../../modules/button.module",
+          button_text="Emitir llamado (Volver al Inicio)",
+          button_classes="w-full bg-accent hover:bg-white text-primary font-bold py-4 rounded-lg flex items-center justify-center gap-3 transition-all transform hover:-translate-y-1 shadow-md",
+          link={
+            "url": {
+              "type": "EXTERNAL",
+              "href": "/"
+            },
+            "open_in_new_tab": false,
+            "no_follow": false
+          }
+        %}
+        
+        <div class="flex flex-col gap-4">
+          <a class="mono-text text-white/80 hover:text-accent flex items-center justify-center gap-3 group transition-colors" href="/servicios">
+            <span class="text-accent group-hover:scale-110 transition-transform">&gt;&nbsp;_</span>
+            Revisar la Arquitectura (Servicios)
+          </a>
+          <a class="mono-text text-white/80 hover:text-accent flex items-center justify-center gap-3 group transition-colors" href="/blog">
+            <span class="text-accent group-hover:scale-110 transition-transform">&gt;&nbsp;_</span>
+            Buscar en la base de datos (Blog GreenSpot)
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
+</main>
 {% endblock body %}

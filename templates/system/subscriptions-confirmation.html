@@ -7,14 +7,118 @@
 {% set template_css = "../../css/templates/system.css" %}
 {% extends "../layouts/base.html" %}
 {# pageTitle is used on system templates for setting a value for the title tag #}
-{% set pageTitle = "Confirm subscriptions" %}
+{% set pageTitle = "Confirmación de Suscripción" %}
+
+
 
 {% block body %}
-<section class="content-wrapper">
-  <div class="systems-page">
-    {% module "subscriptions_confirmation"
-      path="@hubspot/email_subscriptions_confirmation"
-    %}
-  </div>
-</section>
-{% endblock body %}
+<main class="flex flex-col md:flex-row min-h-screen">
+  <!-- Left Panel: Feedback Form Area -->
+  <section class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-background-light dark:bg-background-dark">
+    <div class="max-w-md mx-auto md:mx-0">
+      <!-- Custom High-Fidelity Confirmation UI -->
+      <div id="custom-confirmation-ui">
+        <!-- Success Header -->
+        <div class="mb-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-outlined text-primary text-3xl font-bold">check_circle</span>
+            <span class="mono-text text-xs tracking-widest opacity-60 uppercase text-primary font-bold">// SYSTEM_UPDATED</span>
+          </div>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-[#2D5016] mb-4 tracking-tight leading-tight">Transmisión Actualizada.</h1>
+          <h2 id="custom-confirmation-email" class="mono-text font-semibold text-sm text-primary bg-accent/10 border-l-4 border-accent p-4 my-6">[ INICIANDO SINCRONIZACIÓN... ]</h2>
+          <div id="custom-confirmation-success-msg" class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed font-light mb-8">
+            Tus preferencias de comunicación en el ecosistema han sido reconfiguradas con éxito.
+          </div>
+          
+          <div class="success-divider border-b border-slate-200 dark:border-slate-800 w-full mb-10 mt-2"></div>
+        </div>
+
+        <!-- Optional Diagnostic Form -->
+        <div id="custom-confirmation-survey">
+          <p class="mono-text text-xs font-bold text-primary mb-2 uppercase tracking-widest block"><span class="text-accent">&gt;_</span> DIAGNÓSTICO_DE_DESCONEXIÓN (Opcional):</p>
+          <p class="text-sm text-slate-500 italic mb-8">Ayúdame a calibrar el sistema. ¿Cuál fue el motivo principal para darte de baja?</p>
+          
+          <div class="space-y-4 mb-4">
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input type="radio" name="custom-unsubscribe-reason" value="NO_LONGER_INTERESTED" class="w-4 h-4 border-slate-300 text-[#2D5016] focus:ring-[#2D5016] bg-transparent">
+              <span class="text-sm text-[#2D5016] dark:text-[#A3D977] opacity-90 group-hover:opacity-100 transition-opacity">La temática ya no es de mi interés</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input type="radio" name="custom-unsubscribe-reason" value="DID_NOT_SIGN_UP" class="w-4 h-4 border-slate-300 text-[#2D5016] focus:ring-[#2D5016] bg-transparent">
+              <span class="text-sm text-[#2D5016] dark:text-[#A3D977] opacity-90 group-hover:opacity-100 transition-opacity">No recuerdo haber autorizado esta transmisión</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input type="radio" name="custom-unsubscribe-reason" value="TOO_MANY_EMAILS" class="w-4 h-4 border-slate-300 text-[#2D5016] focus:ring-[#2D5016] bg-transparent">
+              <span class="text-sm text-[#2D5016] dark:text-[#A3D977] opacity-90 group-hover:opacity-100 transition-opacity">Sobrecarga de datos</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input type="radio" name="custom-unsubscribe-reason" value="IRRELEVANT_CONTENT" class="w-4 h-4 border-slate-300 text-[#2D5016] focus:ring-[#2D5016] bg-transparent">
+              <span class="text-sm text-[#2D5016] dark:text-[#A3D977] opacity-90 group-hover:opacity-100 transition-opacity">Baja relevancia</span>
+            </label>
+            <label class="flex items-center gap-3 cursor-pointer group">
+              <input type="radio" name="custom-unsubscribe-reason" value="OTHER" class="w-4 h-4 border-slate-300 text-[#2D5016] focus:ring-[#2D5016] bg-transparent">
+              <span class="text-sm text-[#2D5016] dark:text-[#A3D977] opacity-90 group-hover:opacity-100 transition-opacity">Otra variable</span>
+            </label>
+          </div>
+
+          <textarea id="custom-confirmation-textarea" class="hidden w-full px-4 py-3 rounded-xl border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-800 focus:ring-2 focus:ring-[#2D5016]/20 focus:border-[#2D5016] outline-none transition-all text-sm mb-4 mt-2" placeholder="Detallar motivo..."></textarea>
+          
+          <button id="custom-confirmation-submit" type="button" class="px-8 py-3 bg-white border-2 border-[#2D5016] text-[#2D5016] hover:bg-[#2D5016] hover:text-white font-bold transition-all text-sm whitespace-nowrap active:scale-95 uppercase tracking-widest mt-4 block">ENVIAR DIAGNÓSTICO</button>
+        </div>
+
+        <div id="custom-confirmation-survey-success" class="hidden text-[#2D5016] font-bold text-sm mt-4 p-4 bg-[#2D5016]/10 rounded-lg">
+          Gracias por enviar tus comentarios.
+        </div>
+      </div>
+
+      <!-- Hidden Native Form Container -->
+      <div id="native-confirmation-container" class="hs-native-forms-hidden hidden pb-0 mb-0 opacity-0 overflow-hidden h-0 w-0 absolute pointer-events-none -z-50">
+        {% module "subscriptions_confirmation"
+          path="@hubspot/email_subscriptions_confirmation",
+          header="Transmisión Actualizada",
+          link_text="Ir al Centro de Notificaciones"
+        %}
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
+        <a class="mono-text text-sm text-primary hover:text-accent transition-colors flex items-center gap-2 group" href="/">
+          <span class="group-hover:-translate-x-1 transition-transform">&lt;_</span> Volver al despliegue principal
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Right Panel: Branding Section -->
+  <section class="hidden md:flex w-1/2 bg-primary relative overflow-hidden flex-col justify-center p-12 md:p-24">
+    <!-- Abstract Pattern Overlay -->
+    <div class="absolute inset-0 branding-pattern opacity-30"></div>
+    <div class="absolute inset-0 wireframe-grid opacity-10"></div>
+    
+    <!-- Visual Content -->
+    <div class="relative z-10 flex flex-col items-center text-center">
+      <div class="mb-12 opacity-40">
+        <!-- Shield/Hexagon with Checkmark - matches original mockup -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="180" height="200" viewBox="0 0 180 200" fill="none">
+          <path d="M90 10L165 50V110C165 155 130 185 90 195C50 185 15 155 15 110V50L90 10Z" stroke="#A3D977" stroke-width="2" fill="#A3D977" fill-opacity="0.08"/>
+          <path d="M90 30L150 62V112C150 148 120 173 90 182C60 173 30 148 30 112V62L90 30Z" stroke="#A3D977" stroke-width="1" fill="#A3D977" fill-opacity="0.05"/>
+          <path d="M65 100L82 117L115 84" stroke="#A3D977" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+      <blockquote class="max-w-md">
+        <p class="text-white text-2xl md:text-3xl font-light leading-snug font-display">
+          Gracias por tu tiempo en el ecosistema. Las puertas de la arquitectura siempre estarán abiertas.
+        </p>
+      </blockquote>
+    </div>
+
+    <!-- Bottom Info -->
+    <div class="absolute bottom-12 left-0 right-0 text-center">
+      <div class="inline-flex items-center gap-3">
+        <div class="h-[1px] w-8 bg-accent/30"></div>
+        <span class="mono-text text-[10px] text-accent/50 tracking-[0.3em] uppercase">Architecture Persistence Unit</span>
+        <div class="h-[1px] w-8 bg-accent/30"></div>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

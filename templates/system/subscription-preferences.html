@@ -5,16 +5,57 @@
   screenshotPath: ../../images/template-previews/subscription-preferences.png
 -->
 {% set template_css = "../../css/templates/system.css" %}
+{{ require_js(get_asset_url("../../js/templates/system-dom-refiner.js"), { position: "footer" }) }}
 {% extends "../layouts/base.html" %}
 {# pageTitle is used on system templates for setting a value for the title tag #}
-{% set pageTitle = "Subscription preferences" %}
+{% set pageTitle = "Centro de Notificaciones" %}
+
+
 
 {% block body %}
-<section class="content-wrapper">
-  <div class="systems-page">
-    {% module "subscription_preferences"
-      path="@hubspot/email_subscriptions"
-    %}
-  </div>
-</section>
-{% endblock body %}
+<main class="min-h-screen">
+  <!-- Split Screen Layout -->
+  <section class="flex flex-col md:flex-row min-h-screen">
+    <!-- Left Panel: Preferences Form -->
+    <div class="w-full md:w-1/2 flex items-center justify-center p-8 md:p-12 bg-background-light dark:bg-background-dark">
+      <div class="w-full max-w-md">
+        <!-- Preferences Form -->
+        <div class="hs-membership-form-wrapper">
+          {% module "subscription_preferences"
+            path="@hubspot/email_subscriptions",
+            header="Centro de Notificaciones",
+            email_description="Si este nodo no te pertenece, ignora esta sesión para mantener la integridad de los datos.",
+            subscription_list_label="Configura tus frecuencias de transmisión y categorías de interés:",
+            unsubscribe_all_text="¿PREFIERES APAGAR LAS TRANSMISIONES?",
+            unsubscribe_all_option_text="Desconectar de todos los nodos (Baja total).",
+            button_text="Actualizar Preferencias de Transmisión"
+          %}
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
+          <a class="mono-text text-sm text-primary hover:text-accent transition-colors flex items-center gap-2 group" href="/">
+            <span class="group-hover:-translate-x-1 transition-transform">&lt;_</span> Volver al despliegue principal
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Panel: Branding Panel -->
+    <div class="hidden md:flex w-1/2 bg-primary relative flex-col justify-end p-12 md:p-24 overflow-hidden">
+      <div class="absolute inset-0 branding-pattern opacity-30"></div>
+      <div class="absolute inset-0 wireframe-grid opacity-10"></div>
+      
+      <!-- Abstract Geometry -->
+      <div class="absolute top-1/4 left-1/4 w-1/2 opacity-20 text-accent">
+        <span class="material-symbols-outlined text-[10rem]">hub</span>
+      </div>
+
+      <div class="relative z-10 max-w-md">
+        <p class="text-2xl font-light text-white leading-relaxed italic font-display">
+          "Comunicación clara. <span class="text-accent font-semibold">Cero spam.</span> Respeto absoluto por tu bandeja de entrada."
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+{% endblock %}

@@ -5,38 +5,97 @@
   screenshotPath: ../../images/template-previews/membership-register.png
 -->
 {% set template_css = "../../css/templates/system.css" %}
+{{ require_js(get_asset_url("../../js/templates/system-dom-refiner.js"), { position: "footer" }) }}
 {% extends "../layouts/base.html" %}
 {# pageTitle is used on system templates for setting a value for the title tag #}
 {% set pageTitle = "Membership | Register" %}
 
-{% block header %}
-{% endblock %}
+
 
 {% block body %}
-<section class="content-wrapper">
-  <div class="systems-page">
-    {% module "content"
-      path="@hubspot/rich_text",
-      html="<h1>Welcome!</h1><p>Set up your password to sign in and see the content you now have access to.</p>"
-    %}
-    <div class="form-container">
-      {% member_register "my_register"
-        email_label="Email",
-        password_confirm_label="Confirm Password",
-        password_label="Password",
-        submit_button_text="Save Password"
-      %}
+<main class="min-h-screen flex flex-col md:flex-row">
+  <!-- Left Column: Registration Form -->
+  <section class="w-full md:w-1/2 flex flex-col justify-center items-center p-8 md:p-16 bg-background-light dark:bg-background-dark">
+    <div class="form-wrapper max-w-md w-full">
+      <header class="mb-8">
+        <span class="mono-text text-xs text-primary tracking-widest uppercase block mb-2">// SETUP_DE_ENTORNO</span>
+        <h1 class="text-4xl font-bold text-primary mb-2 tracking-tight leading-tight">Inicialización de Cuenta</h1>
+        <p class="text-slate-600 dark:text-slate-400 text-sm">Configura tus credenciales para acceder al ecosistema.</p>
+      </header>
+
+      <!-- Custom Shadow-Sync UI: Registration -->
+      <div id="custom-register-ui" class="space-y-6">
+        <div class="form-field-group flex flex-col gap-2">
+          <label class="text-sm font-semibold text-primary">Correo electrónico corporativo</label>
+          <input id="custom-register-email" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm" placeholder="ejemplo@empresa.com" type="email">
+        </div>
+
+        <div class="form-field-group flex flex-col gap-2">
+          <label class="text-sm font-semibold text-primary">Clave criptográfica (Contraseña)</label>
+          <div class="relative">
+            <input id="custom-register-password" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm pr-12" placeholder="••••••••" type="password">
+            <button type="button" class="password-toggle absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-primary transition-colors focus:outline-none" data-target="custom-register-password">
+              <span class="material-symbols-outlined text-xl">visibility</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-field-group flex flex-col gap-2">
+          <label class="text-sm font-semibold text-primary">Validar clave</label>
+          <div class="relative">
+            <input id="custom-register-password-confirm" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm pr-12" placeholder="••••••••" type="password">
+            <button type="button" class="password-toggle absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-primary transition-colors focus:outline-none" data-target="custom-register-password-confirm">
+              <span class="material-symbols-outlined text-xl">visibility</span>
+            </button>
+          </div>
+        </div>
+
+        <button id="custom-register-submit" class="w-full bg-primary hover:bg-primary/90 text-accent font-bold py-4 rounded-xl flex items-center justify-center gap-3 transition-all transform hover:-translate-y-0.5 shadow-lg active:scale-95 mt-4">
+          Inicializar Entorno (Crear cuenta)
+        </button>
+      </div>
+
+      <!-- Native HubSpot Forms (Hidden) -->
+      <div class="hs-native-forms-hidden absolute opacity-0 pointer-events-none overflow-hidden h-0 w-0">
+        <div class="hs-membership-form-wrapper">
+          {% member_register "my_register"
+            email_label="Correo electrónico corporativo",
+            password_confirm_label="Validar clave",
+            password_label="Clave criptográfica (Contraseña)",
+            submit_button_text="Inicializar Entorno (Crear cuenta)"
+          %}
+        </div>
+      </div>
+
+      <!-- Security Protocol Box -->
+      <div class="bg-accent/10 border-l-4 border-accent p-4 rounded mt-6 mb-8">
+        <p class="mono-text text-[11px] text-primary leading-relaxed">
+          &gt;_ PROTOCOLO_DE_SEGURIDAD: Mínimo 12 caracteres. Debe incluir 3 de 4 elementos: minúscula, mayúscula, número o carácter especial.
+        </p>
+      </div>
+
+      <footer class="text-center pt-8 border-t border-slate-200 dark:border-slate-800">
+        <p class="text-xs text-slate-500 font-medium">
+          ¿Problemas técnicos en el despliegue? <a href="mailto:{{ site_settings.membershipWebsiteAdmin }}" class="text-primary font-bold hover:underline">Contactar al Arquitecto.</a>
+        </p>
+      </footer>
     </div>
-    <div>
-      {% module_block module "membership_admin_content"
-        label="Contact admin",
-        path="@hubspot/rich_text"
-      %}
-        {% module_attribute "html" %}
-          <p>Having trouble? <a href="{{ ("mailto:" ~ site_settings.membershipWebsiteAdmin)|escape_url }}">Contact the admin</a>.</p>
-        {% end_module_attribute %}
-      {% end_module_block %}
+  </section>
+
+  <!-- Right Column: Branding -->
+  <section class="hidden md:flex w-1/2 bg-primary relative overflow-hidden items-center justify-center p-16">
+    <!-- Visual Effects -->
+    <div class="absolute inset-0 opacity-20 pointer-events-none">
+      <div class="absolute top-1/4 left-1/4 w-full h-full bg-accent blur-[120px] rounded-full"></div>
     </div>
-  </div>
-</section>
+    <div class="absolute inset-0 opacity-30 branding-pattern"></div>
+    
+    <div class="relative z-10 max-w-sm text-center">
+      <p class="text-white text-2xl md:text-3xl font-light leading-snug tracking-tight mb-6 font-display">
+        Construyendo ecosistemas escalables. Código impecable. Cero deuda técnica.
+      </p>
+      <span class="mono-text text-xs text-accent tracking-widest uppercase block mt-8">v2.4.0-stable // NEXUS_CORE</span>
+    </div>
+  </section>
+</main>
 {% endblock %}

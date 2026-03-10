@@ -5,39 +5,166 @@
   screenshotPath: ../../images/template-previews/membership-login.png
 -->
 {% set template_css = "../../css/templates/system.css" %}
+{{ require_js(get_asset_url("../../js/templates/system-dom-refiner.js"), { position: "footer" }) }}
 {% extends "../layouts/base.html" %}
 {# pageTitle is used on system templates for setting a value for the title tag #}
 {% set pageTitle = "Membership | Login" %}
 
-{% block header %}
-{% endblock %}
+
 
 {% block body %}
-<section class="content-wrapper">
-  <div class="systems-page">
-    {% module "content"
-      path="@hubspot/rich_text",
-      html="<h1>Sign in to view this page</h1><p>This page is only available to people who have been given access.</p>"
-    %}
-    <div class="form-container">
+<main class="min-h-screen flex flex-col md:flex-row">
+  <!-- Left Panel: Login Form -->
+  <section class="w-full md:w-1/2 flex flex-col justify-center items-center p-8 md:p-12 bg-background-light dark:bg-background-dark">
+    <div class="max-w-md w-full space-y-8">
+      <!-- Header Section -->
+      <div class="space-y-4">
+        <div class="space-y-2">
+          <p class="mono-text text-xs font-bold tracking-widest text-accent uppercase">
+            // PORTAL_PRIVADO
+          </p>
+          <h1 class="text-4xl md:text-5xl font-black text-primary leading-tight">
+            Acceso al Ecosistema
+          </h1>
+          <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
+            Área restringida para usuarios autorizados. Por favor, introduzca sus credenciales.
+          </p>
+        </div>
+      </div>
+
+      <!-- Custom Shadow-Sync UI: Main Login -->
+      <div id="custom-login-ui" class="space-y-6">
+        <div class="form-field-group flex flex-col gap-2">
+          <label class="text-sm font-semibold text-primary">Correo electrónico</label>
+          <input id="custom-login-email" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm" placeholder="ejemplo@empresa.com" type="email">
+        </div>
+        <div class="form-field-group flex flex-col gap-2">
+          <label class="text-sm font-semibold text-primary">Contraseña</label>
+          <div class="relative">
+            <input id="custom-login-password" class="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm pr-12" placeholder="••••••••" type="password">
+            <button type="button" class="password-toggle absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-primary transition-colors focus:outline-none" data-target="custom-login-password">
+              <span class="material-symbols-outlined text-xl">visibility</span>
+            </button>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-slate-500">
+          <input id="custom-login-remember" type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary">
+          <label for="custom-login-remember">Recordarme</label>
+        </div>
+        <button id="custom-login-submit" class="w-full bg-primary hover:bg-primary/90 text-accent font-bold py-4 rounded-xl flex items-center justify-center gap-3 transition-all transform hover:-translate-y-0.5 shadow-lg active:scale-95">
+          Iniciar Sesión
+        </button>
+      </div>
+
+
+      <!-- Passwordless Divider -->
+      <div class="relative py-8">
+        <div class="absolute inset-0 flex items-center">
+          <div class="w-full border-t border-slate-200 dark:border-slate-800 opacity-50"></div>
+        </div>
+        <div class="relative flex justify-center text-[10px] uppercase tracking-[0.2em]">
+          <span class="bg-background-light dark:bg-background-dark px-4 text-slate-400 font-mono">o continúa con</span>
+        </div>
+      </div>
+
+      <!-- Custom Shadow-Sync UI: Passwordless Area -->
+      <div id="custom-passwordless-ui" class="space-y-4">
+        <p class="font-mono text-xs font-bold text-primary flex items-center gap-2 mb-4 uppercase tracking-wider">
+          <span class="text-accent">&gt;_</span> ACCESO SIN CONTRASEÑA
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <input id="custom-passwordless-email" class="flex-grow px-4 py-3 rounded-xl border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm" placeholder="Enlace mágico por email" type="email">
+          <button id="custom-passwordless-submit" class="px-8 py-3 bg-white border-2 border-primary text-primary hover:bg-primary hover:text-accent font-bold rounded-xl transition-all text-sm whitespace-nowrap shadow-sm active:scale-95">
+            Enviar Enlace
+          </button>
+        </div>
+      </div>
+
+
+      <!-- Footer Links -->
+      <footer class="pt-12 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <a class="text-xs font-medium text-slate-500 hover:text-primary flex items-center gap-2 transition-colors uppercase tracking-wider" href="mailto:{{ site_settings.membershipWebsiteAdmin }}">
+          <span class="material-symbols-outlined text-lg">mail</span>
+          ¿Necesitas una invitación?
+        </a>
+        <a class="text-xs font-medium text-slate-500 hover:text-primary flex items-center gap-2 transition-colors uppercase tracking-wider custom-trigger-reset" href="javascript:void(0)">
+          <span class="material-symbols-outlined text-lg">lock_reset</span>
+          ¿Olvidó su contraseña?
+        </a>
+        <a class="text-xs font-medium text-slate-500 hover:text-primary flex items-center gap-2 transition-colors uppercase tracking-wider" href="#">
+          <span class="material-symbols-outlined text-lg">support_agent</span>
+          Soporte Técnico
+        </a>
+      </footer>
+    </div>
+  </section>
+
+  <!-- Right Panel: Visual Brand -->
+  <section class="hidden md:flex w-1/2 relative bg-primary overflow-hidden items-center justify-center p-16">
+    <!-- Background Decorative Elements -->
+    <div class="absolute inset-0 opacity-20 pointer-events-none">
+      <div class="absolute top-[-10%] right-[-10%] w-[60%] h-[80%] rounded-full bg-accent blur-[120px]"></div>
+      <div class="absolute bottom-[-5%] left-[-5%] w-[40%] h-[60%] rounded-full bg-accent blur-[100px]"></div>
+    </div>
+    
+    <!-- Abstract Graphic Placeholder -->
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <div class="w-full h-full bg-cover bg-center mix-blend-overlay opacity-40" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmGt0ck24x344MW_mrsc3UQ1jx-euNYkxfyU2G2MU9MmU02msIJF-LHWCA-tqXhiZ8lL6aMm4Na9ZSAwig6AUc0rPCgny5KC3BughJqYH6-umwVeyCvu4owN5ARjeyFI3RGme0fQp0TVQgdo3oxOnB_HmmMt7awlfl7ANEfXgKnO-SJFnrDIi_5PXcVDdBKq58FG23niY5Zr05c9UZlRqYbTve-M5Qwd4A8Tk3CakFLy7RAhFt7AGKSzbCMLtsMqXNEFuG9ysWTzU');">
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/80 to-transparent"></div>
+    </div>
+
+    <!-- Text Overlay Content -->
+    <div class="relative z-10 max-w-lg space-y-8">
+      <div class="size-16 bg-accent/20 rounded-2xl flex items-center justify-center border border-accent/30 backdrop-blur-sm">
+        <span class="material-symbols-outlined text-accent text-4xl">rocket_launch</span>
+      </div>
+      <h2 class="text-4xl lg:text-5xl font-black text-white leading-tight font-display">
+        Estrategia para escalar. Código para ejecutar.
+      </h2>
+      <p class="text-accent text-xl font-light leading-relaxed">
+        Todo en un solo Partner Técnico. Gestiona tu infraestructura, despliega con confianza y escala sin límites.
+      </p>
+      
+      <div class="flex items-center gap-6 pt-4">
+        <div class="flex -space-x-3">
+          <div class="size-10 rounded-full border-2 border-primary bg-slate-200 overflow-hidden">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_2DSCgPRFY6Qa6loPT_iqtIsrlyol3tTfqZrjL_4C_7YtDIsNWqq0Y_8Pgp2V1hVDF2SoozSMuOh0zdBp56CPM1om-m6dgzA6SC55oD4e5wYthw5rRyh7avZVwIJXw_mChpHL1VA5z8-TSDQem0QrGo1YoqLeCidZiGEfPeutT2_aaWojekT6oK_F_G2e1Ff5wHzMC5WUccCC9PIhpXewfntPHK6RKBEWf8hLjfdXieqPtY0NHn5rnDzQuol7TZePR1XiB2ZikG8" alt="User">
+          </div>
+          <div class="size-10 rounded-full border-2 border-primary bg-slate-200 overflow-hidden">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0AuijJvp6wxVzqVH7CT8S3yXjhWvtdQS4T-JMfwghB3542r2LIqb4QGFTrWB-8mrLMXxrf1-c--OixZJ1VhtbS-_8ZOb0ltxyNXUT1-z2tz3k94BKoWO6OLAFdgO8maeend5dkZsnevDSBEQ4ycyaDGZ7RlQFTpcOwC1tegxzLhOBTavpat9JNW8WhH3GE9CyfKIXc2Bph-R_WLU76kf686gMOdozdfMPqme7wNFHK-Z-A3akZcKP3g6-a5_0AAIvLyZsrjU9za8" alt="User">
+          </div>
+          <div class="size-10 rounded-full border-2 border-primary bg-slate-200 overflow-hidden">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt3kr-qvssGQYRsANmrpIkZFQhN1gI696NHVS3SXWZeLw53KGDtzjkXOEPlnqnIJKUrPRASICH0ayKAQC4ib67wJGts2uq5Ai08yf3043_p9EoMsMPpjyl-YryHErEEY3Boqp8Yu2LB7VqWEW2mwuhrj3hL0vCJSHYHpMhc2DwTD8_IrEDIZvpc7b9cBPVZnFhJP-iFlO7gyZmPVQFRf9eYvvsindyVjM1DOOXOk0WiK2LRNJUM-Qa8HGBpF-0uAYH2hAA4Ve16bY" alt="User">
+          </div>
+        </div>
+        <p class="text-white/80 text-sm font-medium">
+          Únete a más de <span class="text-accent">500+</span> empresas líderes.
+        </p>
+      </div>
+    </div>
+
+    <!-- Terminal-style bottom accent -->
+    <div class="absolute bottom-8 left-8 right-8 flex justify-between items-center font-mono text-[10px] text-white/30 uppercase tracking-[0.2em]">
+      <div>NODE_STATUS: STABLE</div>
+      <div>SECURE_ENCRYPTION: AES-256</div>
+      <div>SYSTEM_V: 4.2.0-PRO</div>
+    </div>
+  </section>
+  <!-- Native HubSpot Forms (Hidden for production) -->
+  <div class="hs-native-forms-hidden absolute opacity-0 pointer-events-none overflow-hidden h-0 w-0">
+    <div class="hs-membership-form-wrapper">
       {% member_login "my_login"
-        email_label= "Email",
-        password_label= "Password",
-        remember_me_label= "Remember Me",
-        reset_password_text= "Forgot your password?",
-        submit_button_text= "Login"
+        email_label= "Correo electrónico",
+        password_label= "Contraseña",
+        remember_me_label= "Recordarme",
+        reset_password_text= "¿Olvidó su contraseña?",
+        submit_button_text= "Iniciar Sesión"
       %}
     </div>
-    <div>
-      {% module_block module "membership_admin_content"
-        label="Contact admin",
-        path="@hubspot/rich_text"
-      %}
-        {% module_attribute "html" %}
-          <p>Having trouble? <a href="{{ ("mailto:" ~ site_settings.membershipWebsiteAdmin)|escape_url }}">Contact the admin</a>.</p>
-        {% end_module_attribute %}
-      {% end_module_block %}
+    <div class="hs-passwordless-sync-area">
+      {# Se moverá dinámicamente aquí el passwordless si existe #}
     </div>
   </div>
-</section>
+</main>
 {% endblock %}

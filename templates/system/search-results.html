@@ -9,40 +9,59 @@
 {# pageTitle is used on system templates for setting a value for the title tag #}
 {% set pageTitle = "Search results" %}
 
+
+
 {% block body %}
-<section class="content-wrapper">
-  <div class="systems-page systems-page--search-results">
-    {%- if (get_asset_version("@hubspot/search_results") == 0) -%}
-      {% if request.query_dict.term %}
-        {% set search_query = request.query_dict.term %}
-      {% elif request.query_dict.q %}
-        {# v3 search api support #}
-        {% set search_query = request.query_dict.q %}
+<main class="min-h-screen">
+  <!-- Search Header Section -->
+  <section class="search-results__header">
+    <div class="max-w-4xl mx-auto">
+      <p class="mono-text text-primary text-sm font-medium mb-4 uppercase tracking-widest">// QUERY_RESULTS</p>
+      
+      {% if request.query_dict.q %}
+        <h1 class="search-results__query-title">
+          Resultados para: <span class="search-results__query-hl">"{{ request.query_dict.q|escape_html }}"</span>
+        </h1>
+      {% else %}
+        <h1 class="search-results__query-title">Resultados de búsqueda</h1>
       {% endif %}
 
-      {% module_block module 'search_results_content'
-        label='Search results heading',
-        path='@hubspot/rich_text'
+      <div class="search-results__input-group">
+        <form action="/{{ site_settings.content_search_results_page_path }}" class="flex flex-col md:flex-row gap-3 w-full">
+          <div class="search-results__input-wrapper">
+            <span class="material-symbols-outlined font-bold">search</span>
+            <input class="search-results__input focus:ring-4 focus:ring-primary/50 outline-none" name="q" placeholder="Buscar en el ecosistema..." type="text" value="{{ (request.query_dict.q|escape_html) if request.query_dict.q else '' }}"/>
+          </div>
+          <button class="bg-primary hover:bg-primary/90 text-accent font-bold px-10 py-4 rounded-xl transition-all flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined font-bold">search</span>
+            Buscar
+          </button>
+        </form>
+      </div>
+
+      {% if search_results.total > 0 %}
+        <p class="mono-text text-primary/80 text-sm mt-6">
+          &gt;_ Mostrando {{ search_results.offset + 1 }}–{{ (search_results.offset + search_results.limit) if (search_results.offset + search_results.limit) < search_results.total else search_results.total }} de {{ search_results.total }} coincidencias en el ecosistema.
+        </p>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Results List -->
+  <section class="py-12 px-6">
+    <div class="max-w-3xl mx-auto">
+      {% module "search_results"
+        path="@hubspot/search_results",
+        show_pagination=true,
+        no_results_copy="No se han encontrado coincidencias en la arquitectura de datos para esta consulta.",
+        results_details={
+          "show_featured_image": true,
+          "show_author": false,
+          "show_date": true,
+          "show_description": true
+        }
       %}
-        {% module_attribute 'html' %}
-          <h1>Results for &ldquo;{{ search_query|escape_html }}&rdquo;</h1>
-        {% end_module_attribute %}
-      {% end_module_block %}
-
-        {% module "search_results"
-          path="@hubspot/search_results"
-        %}
-
-      {%- else -%}
-
-        {% module "search_results"
-          path="@hubspot/search_results",
-          title={
-            "show_title": "true"
-          }
-        %}
-
-    {%- endif -%}
-  </div>
-</section>
-{% endblock body %}
+    </div>
+  </section>
+</main>
+{% endblock %}
