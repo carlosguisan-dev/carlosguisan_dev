@@ -1,0 +1,12 @@
+{
+  "name": "Blog Hero",
+  "display_name": "Blog Hero",
+  "icon": "fa-newspaper",
+  "is_available_for_new_content": true,
+  "external_js": [],
+  "external_css": [],
+  "module_id": null,
+  "master_id": null,
+  "path": null,
+  "label": "Blog Hero"
+}

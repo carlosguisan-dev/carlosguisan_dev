@@ -1,0 +1,27 @@
+[
+  {
+    "label": "Content",
+    "name": "content",
+    "type": "group",
+    "children": [
+      {
+        "label": "Mono Label",
+        "name": "mono_label",
+        "type": "text",
+        "default": "GREENSPOT : EL BLOG TÉCNICO"
+      },
+      {
+        "label": "Title",
+        "name": "title",
+        "type": "text",
+        "default": "Ecosistemas HubSpot explicados a fondo."
+      },
+      {
+        "label": "Search Placeholder",
+        "name": "search_placeholder",
+        "type": "text",
+        "default": "Buscar guías técnicas, funciones HubL o arquitectura..."
+      }
+    ]
+  }
+]

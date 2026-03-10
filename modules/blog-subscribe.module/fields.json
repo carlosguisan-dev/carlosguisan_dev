@@ -1,0 +1,39 @@
+[
+  {
+    "label": "Content",
+    "name": "content",
+    "type": "group",
+    "children": [
+      {
+        "label": "Title",
+        "name": "title",
+        "type": "text",
+        "default": "No te pierdas en el dosel de la documentación."
+      },
+      {
+        "label": "Description",
+        "name": "description",
+        "type": "text",
+        "default": "Recibe cada quincena una dosis seleccionada de arquitectura HubSpot y trucos de desarrollo HubL directamente en tu bandeja."
+      },
+      {
+        "label": "Button Text",
+        "name": "button_text",
+        "type": "text",
+        "default": "Suscribirme"
+      },
+      {
+        "label": "Disclaimer",
+        "name": "disclaimer",
+        "type": "text",
+        "default": "Sin spam. Solo código y estrategia."
+      },
+      {
+        "label": "Placeholder",
+        "name": "placeholder",
+        "type": "text",
+        "default": "tu@email.com"
+      }
+    ]
+  }
+]

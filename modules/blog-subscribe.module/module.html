@@ -1,0 +1,35 @@
+{# Blog Subscribe Module — Newsletter CTA #}
+<section class="blog-subscribe mb-24">
+  <div class="bg-accent/10 border border-accent/20 rounded-[2.5rem] p-10 lg:p-20 text-center relative overflow-hidden">
+    {# Decorative icon #}
+    <div class="absolute top-0 right-0 p-10 opacity-10">
+      <span class="material-symbols-outlined text-9xl text-primary dark:text-white">alternate_email</span>
+    </div>
+
+    <div class="relative z-10 max-w-2xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary dark:text-white mb-6 font-display">
+        {{ module.content.title }}
+      </h2>
+
+      <p class="text-primary dark:text-white/70 mb-10 text-lg">
+        {{ module.content.description }}
+      </p>
+
+      {# HubSpot Blog Subscribe Form #}
+      <div class="blog-subscribe__form">
+        {% blog_subscribe "blog_subscription"
+          response_message="¡Gracias por suscribirte!",
+          button_text="{{ module.content.button_text }}",
+          label=""
+        %}
+      </div>
+
+      {% if module.content.disclaimer %}
+        <p class="mt-4 text-[10px] uppercase font-mono text-primary/40 dark:text-white/40 tracking-widest">
+          {{ module.content.disclaimer }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+

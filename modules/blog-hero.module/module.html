@@ -1,0 +1,52 @@
+{# Blog Hero Module — Search + Tag Filters #}
+<header class="blog-hero text-center mb-16 max-w-3xl mx-auto">
+  {# Mono subtitle #}
+  {% if module.content.mono_label %}
+    <p class="font-mono text-accent font-medium text-xs tracking-widest uppercase mb-4">
+      {{ module.content.mono_label }}
+    </p>
+  {% endif %}
+
+  {# Title #}
+  <h1 class="text-5xl md:text-6xl font-bold text-primary dark:text-slate-100 leading-tight mb-8 font-display">
+    {{ module.content.title }}
+  </h1>
+
+  {# Search #}
+  <div class="relative max-w-2xl mx-auto mb-10">
+    <form action="/{{ site_settings.content_search_results_page_path }}" class="blog-hero__search-form">
+      <div class="flex items-center bg-white dark:bg-slate-800 border border-primary/10 dark:border-white/10 rounded-2xl p-2 shadow-sm focus-within:ring-2 focus-within:ring-accent transition-all">
+        <span class="material-symbols-outlined text-slate-400 px-3">search</span>
+        <input
+          class="w-full bg-transparent border-none focus:ring-0 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 outline-none"
+          placeholder="{{ module.content.search_placeholder }}"
+          type="text"
+          name="q"
+          aria-label="Buscar en el blog"
+        />
+      </div>
+    </form>
+  </div>
+
+  {# Topic Filters #}
+  {% set topics_list = blog_topics(group.id, 250) %}
+  {% if topics_list %}
+    <div class="flex flex-wrap justify-center gap-3">
+      <a href="{{ group.absolute_url }}"
+         class="font-mono text-xs px-6 py-2 rounded-full font-medium transition-colors
+                {% if not topic %}
+                  bg-primary text-white
+                {% else %}
+                  bg-white dark:bg-slate-800 border border-primary/10 dark:border-white/10 text-primary dark:text-white hover:border-accent
+                {% endif %}">
+        Todos
+      </a>
+      {% for topic in topics_list %}
+        <a href="{{ blog_tag_url(group.id, topic.slug) }}"
+           class="font-mono text-xs px-6 py-2 rounded-full font-medium transition-colors bg-white dark:bg-slate-800 border border-primary/10 dark:border-white/10 text-primary dark:text-white hover:border-accent">
+          {{ topic.name }}
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+</header>

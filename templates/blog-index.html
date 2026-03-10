@@ -1,72 +1,148 @@
 <!--
   templateType: blog_listing
   isAvailableForNewContent: true
-  label: Boilerplate - blog listing
+  label: GreenSpot - Blog Listing
   screenshotPath: ../images/template-previews/blog-index.png
 -->
 {% set template_css = "../../css/templates/blog.css" %}
 {% extends "./layouts/base.html" %}
 
 {% block body %}
-{% dnd_area "dnd_area"
-  label="Main section",
-  class="body-container body-container--blog-index"
-%}
+<div class="body-container body-container--blog-index">
 
-  {# Hero banner #}
+  {# ═══════════════════════════════════════════════════
+     HERO — Search + Topic Filters
+     ═══════════════════════════════════════════════════ #}
 
-  {% dnd_section
-    background_color="#f8fafc",
-    max_width=600,
-    padding={
-      "default": {
-        "top": 80,
-        "right": 0,
-        "bottom": 80,
-        "left": 0
-      },
-      "mobile": {
-        "top": 80,
-        "right": 20,
-        "bottom": 80,
-        "left": 20
-      }
-    }
-  %}
-    {% dnd_column %}
-      {% dnd_row %}
-        {% dnd_module
-          path="@hubspot/rich_text",
-          html='<div style="text-align: center;"><h1>Blog</h1><p>Use this space to tell everyone about what you have to offer.</p></div>'
-        %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-      {% dnd_row %}
-        {% dnd_module
-          path="@hubspot/blog_subscribe",
-          title=""
-        %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-    {% end_dnd_column %}
-  {% end_dnd_section %}
+  <section class="max-w-7xl mx-auto px-6 py-16">
+    {% module "blog_hero"
+      path="../../modules/blog-hero.module"
+    %}
+  </section>
 
-  {# Blog listings and pagination #}
+  {# ═══════════════════════════════════════════════════
+     FEATURED ARTICLE — First post, horizontal card
+     ═══════════════════════════════════════════════════ #}
 
-  {% dnd_section
-    vertical_alignment="TOP"
-  %}
-    {% dnd_column %}
-      {% dnd_row %}
-        {% dnd_module path="@hubspot/blog_posts" %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-      {% dnd_row %}
-        {% dnd_module path="@hubspot/pagination" %}
-        {% end_dnd_module %}
-      {% end_dnd_row %}
-    {% end_dnd_column %}
-  {% end_dnd_section %}
+  {% if contents %}
+    {% set featured = contents[0] %}
+    <section class="max-w-7xl mx-auto px-6 mb-20">
+      <a href="{{ featured.absolute_url }}" class="blog-featured group block">
+        <div class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden border border-primary/10 dark:border-white/10 flex flex-col lg:flex-row transition-all hover:shadow-2xl hover:shadow-primary/5">
+          {# Image #}
+          {% if featured.featured_image %}
+            <div class="lg:w-1/2 h-80 lg:h-auto overflow-hidden">
+              <img
+                alt="{{ featured.featured_image_alt_text|escape_attr }}"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                src="{{ featured.featured_image }}"
+                loading="eager"
+              />
+            </div>
+          {% endif %}
+          {# Content #}
+          <div class="lg:w-1/2 p-10 lg:p-16 flex flex-col justify-center">
+            {# Tag + Reading time #}
+            <div class="flex items-center gap-3 mb-6">
+              {% if featured.tag_list %}
+                <span class="font-mono text-[10px] bg-accent/20 text-primary dark:text-white px-3 py-1 rounded-sm font-bold uppercase tracking-tighter">
+                  {{ featured.tag_list[0].name }}
+                </span>
+              {% endif %}
+            </div>
+            <h2 class="text-3xl font-bold text-primary dark:text-slate-100 mb-6 font-display leading-tight group-hover:text-primary/80 dark:group-hover:text-white/80 transition-colors">
+              {{ featured.name }}
+            </h2>
+            <p class="text-slate-600 dark:text-brand-lime/80 mb-8 leading-relaxed">
+              {{ featured.post_summary|truncatehtml(200)|striptags }}
+            </p>
+            {# Author #}
+            <div class="flex items-center gap-4">
+              <div class="size-10 rounded-full bg-accent/30 flex items-center justify-center overflow-hidden">
+                {% if featured.blog_post_author.avatar %}
+                  <img src="{{ featured.blog_post_author.avatar }}" alt="{{ featured.blog_post_author.display_name }}" class="w-full h-full object-cover" />
+                {% else %}
+                  <span class="material-symbols-outlined text-primary dark:text-white">person</span>
+                {% endif %}
+              </div>
+              <div>
+                <p class="text-sm font-bold text-primary dark:text-slate-200">{{ featured.blog_post_author.display_name }}</p>
+                <p class="text-xs text-slate-400">{{ featured.publish_date_localized }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </section>
 
-{% end_dnd_area %}
+    {# ═══════════════════════════════════════════════════
+       ARTICLE GRID — Remaining posts, 3 columns
+       ═══════════════════════════════════════════════════ #}
+
+    {% if contents|length > 1 %}
+      <section class="max-w-7xl mx-auto px-6 mb-24">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {% for post in contents %}
+            {% if not loop.first %}
+              <a href="{{ post.absolute_url }}" class="blog-card group block cursor-pointer">
+                {# Image #}
+                {% if post.featured_image %}
+                  <div class="aspect-video rounded-2xl overflow-hidden mb-6 border border-primary/5 dark:border-white/10">
+                    <img
+                      alt="{{ post.featured_image_alt_text|escape_attr }}"
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      src="{{ post.featured_image }}"
+                      loading="lazy"
+                    />
+                  </div>
+                {% endif %}
+                {# Tag #}
+                {% if post.tag_list %}
+                  <span class="font-mono text-[10px] text-accent font-bold uppercase tracking-widest mb-3 block">
+                    {{ post.tag_list[0].name }}
+                  </span>
+                {% endif %}
+                {# Title #}
+                <h3 class="text-xl font-bold text-primary dark:text-slate-100 mb-3 font-display group-hover:text-accent transition-colors">
+                  {{ post.name }}
+                </h3>
+                {# Excerpt #}
+                <p class="text-sm text-slate-600 dark:text-brand-lime/80 line-clamp-3 mb-4">
+                  {{ post.post_summary|truncatehtml(120)|striptags }}
+                </p>
+                {# Date + Reading time #}
+                <div class="flex items-center justify-between text-[11px] text-slate-400 uppercase tracking-widest font-mono">
+                  <span>{{ post.publish_date_localized }}</span>
+                </div>
+              </a>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+    {% endif %}
+  {% endif %}
+
+  {# ═══════════════════════════════════════════════════
+     NEWSLETTER SUBSCRIBE
+     ═══════════════════════════════════════════════════ #}
+
+  <section class="max-w-7xl mx-auto px-6">
+    {% module "blog_subscribe"
+      path="../../modules/blog-subscribe.module"
+    %}
+  </section>
+
+  {# ═══════════════════════════════════════════════════
+     PAGINATION
+     ═══════════════════════════════════════════════════ #}
+
+  <section class="max-w-7xl mx-auto px-6 pb-16">
+    <div class="blog-pagination flex justify-center">
+      {% module "blog_pagination"
+        path="@hubspot/pagination"
+      %}
+    </div>
+  </section>
+
+</div>
 {% endblock body %}
