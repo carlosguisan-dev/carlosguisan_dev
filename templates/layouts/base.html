@@ -7,11 +7,9 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-
-    {% if page_meta.html_title or pageTitle %}
-    <title>{{ page_meta.html_title or pageTitle }}</title>
-    {% endif %} {% if brand_settings.favicon.src %}
-    <link rel="shortcut icon" href="{{ brand_settings.favicon.src }}" />
+    <title>{{ page_meta.html_title or pageTitle or "carlosguisan" }}</title>
+    {% if brand_settings.favicon.src %}
+      <link rel="shortcut icon" href="{{ brand_settings.favicon.src }}" />
     {% endif %}
     <meta name="description" content="{{ page_meta.meta_description }}" />
 
@@ -37,9 +35,8 @@
       rel="stylesheet"
     />
 
-    {# Dark Mode Initializer #} {{
-    require_js(get_asset_url("../../js/theme-toggle.js"), { position: "head" })
-    }}
+    {# Dark Mode Initializer #}
+    {{ require_js(get_asset_url("../../js/theme-toggle.js"), { position: "head" }) }}
     {{ require_css(get_asset_url("../../css/main.css")) }}
     {% if template_css %}
       {{ require_css(get_asset_url(template_css)) }}
