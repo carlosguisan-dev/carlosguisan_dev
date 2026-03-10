@@ -1,0 +1,232 @@
+[
+  {
+    "label": "Projects Tab Label",
+    "name": "projects_tab_label",
+    "type": "text",
+    "default": "Proyectos"
+  },
+  {
+    "label": "Retainers Tab Label",
+    "name": "retainers_tab_label",
+    "type": "text",
+    "default": "Retainers"
+  },
+  {
+    "label": "Pricing Cards",
+    "name": "cards",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 6,
+      "default": 3
+    },
+    "children": [
+      {
+        "label": "Mono Label",
+        "name": "mono_label",
+        "type": "text",
+        "default": "[ SERVICIO ]"
+      },
+      {
+        "label": "Title",
+        "name": "title",
+        "type": "text",
+        "default": "Plan Name"
+      },
+      {
+        "label": "Price Prefix",
+        "name": "price_prefix",
+        "type": "text",
+        "default": "Desde"
+      },
+      {
+        "label": "Price",
+        "name": "price",
+        "type": "text",
+        "default": "$0"
+      },
+      {
+        "label": "Price Suffix",
+        "name": "price_suffix",
+        "type": "text",
+        "default": "USD"
+      },
+      {
+        "label": "Feature Icon",
+        "name": "feature_icon",
+        "type": "choice",
+        "choices": [
+          ["check_circle", "Check Circle"],
+          ["verified", "Verified"]
+        ],
+        "display": "radio",
+        "default": "check_circle"
+      },
+      {
+        "label": "Features",
+        "name": "features",
+        "type": "text",
+        "occurrence": {
+          "min": 1,
+          "max": 12,
+          "default": 4
+        },
+        "default": [
+          "Feature one",
+          "Feature two",
+          "Feature three",
+          "Feature four"
+        ]
+      },
+      {
+        "label": "Is Featured",
+        "name": "is_featured",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "label": "Featured Badge Text",
+        "name": "featured_badge_text",
+        "type": "text",
+        "default": "Más Popular"
+      },
+      {
+        "label": "Button Text",
+        "name": "button_text",
+        "type": "text",
+        "default": "Seleccionar"
+      },
+      {
+        "label": "Button Link",
+        "name": "button_link",
+        "type": "link",
+        "supported_types": ["EXTERNAL", "CONTENT"],
+        "default": {
+          "url": {
+            "content_id": null,
+            "type": "EXTERNAL",
+            "href": "#"
+          }
+        }
+      }
+    ],
+    "default": [
+      {
+        "mono_label": "[ EL ARQUITECTO ]",
+        "title": "Sistemas Dinámicos",
+        "price_prefix": "Desde",
+        "price": "$2,250",
+        "price_suffix": "USD",
+        "feature_icon": "check_circle",
+        "features": [
+          "Implementación HubDB & CRM Objects",
+          "Arquitectura de Datos Personalizada",
+          "Workflows de Automatización Avanzada",
+          "Documentación Técnica de Procesos"
+        ],
+        "is_featured": false,
+        "featured_badge_text": "Más Popular",
+        "button_text": "Seleccionar",
+        "button_link": { "url": { "type": "EXTERNAL", "href": "#" } }
+      },
+      {
+        "mono_label": "[ EL DEVELOPER ]",
+        "title": "Tema Personalizado",
+        "price_prefix": "Desde",
+        "price": "$2,400",
+        "price_suffix": "USD",
+        "feature_icon": "verified",
+        "features": [
+          "Desarrollo HubL de Alto Rendimiento",
+          "Figma to Code (Pixel Perfect)",
+          "Módulos Custom Drag-and-Drop",
+          "QA Riguroso & Optimización Core Web Vitals"
+        ],
+        "is_featured": true,
+        "featured_badge_text": "Más Popular",
+        "button_text": "Seleccionar Plan",
+        "button_link": { "url": { "type": "EXTERNAL", "href": "#" } }
+      },
+      {
+        "mono_label": "[ DESPLIEGUE RÁPIDO ]",
+        "title": "Child Themes & LPs",
+        "price_prefix": "Desde",
+        "price": "$412",
+        "price_suffix": "USD",
+        "feature_icon": "check_circle",
+        "features": [
+          "Configuración de Child Themes",
+          "Creación de Landing Pages Conversion-Ready",
+          "Ajustes de Branding UI/UX",
+          "Soporte de Lanzamiento"
+        ],
+        "is_featured": false,
+        "featured_badge_text": "Más Popular",
+        "button_text": "Seleccionar",
+        "button_link": { "url": { "type": "EXTERNAL", "href": "#" } }
+      }
+    ]
+  },
+  {
+    "label": "Retainer",
+    "name": "retainer",
+    "type": "group",
+    "children": [
+      {
+        "label": "Icon",
+        "name": "icon",
+        "type": "text",
+        "default": "engineering"
+      },
+      {
+        "label": "Title",
+        "name": "title",
+        "type": "text",
+        "default": "Partner Técnico Mensual"
+      },
+      {
+        "label": "Description",
+        "name": "description",
+        "type": "text",
+        "default": "Optimización continua, consultoría y desarrollo proactivo."
+      },
+      {
+        "label": "Price",
+        "name": "price",
+        "type": "text",
+        "default": "$63"
+      },
+      {
+        "label": "Price Unit",
+        "name": "price_unit",
+        "type": "text",
+        "default": "USD/hora"
+      },
+      {
+        "label": "Contract Info",
+        "name": "contract_info",
+        "type": "text",
+        "default": "Contratos de 20h - 40h mensuales"
+      }
+    ]
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Dark Mode Style",
+        "name": "dark_mode_style",
+        "type": "choice",
+        "choices": [
+          ["deep", "Deep Dark"],
+          ["alt", "Alt Dark"]
+        ],
+        "default": "alt",
+        "display": "radio"
+      }
+    ]
+  }
+]

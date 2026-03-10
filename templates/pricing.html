@@ -7,14 +7,176 @@
 {% extends "./layouts/base.html" %}
 
 {% block body %}
-{% dnd_area "dnd_area"
-  label="Main section",
+{% dnd_area "pricing_dnd"
+  label="Pricing",
   class="body-container body-container--pricing"
 %}
 
-  {# Pricing #}
+  {# Hero Section #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "0",
+      "bottom": "0",
+      "left": "0",
+      "right": "0"
+    },
+    margin={
+      "top": 0,
+      "bottom": 0
+    }
+  %}
+    {% dnd_module
+      path="../modules/pricing-hero",
+      content={
+        "mono_label": "// MODELOS_DE_INVERSION",
+        "title": "Transparencia técnica.<br/>Cero costos ocultos.",
+        "subtitle": "Ingeniería de alta calidad aplicada a ecosistemas CRM. Sin sorpresas, solo arquitectura escalable diseñada para el crecimiento de tu negocio."
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
 
-  {% include_dnd_partial path="../sections/pricing.html" %}
+  {# Pricing Cards (Toggle + Tabs) #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "0",
+      "bottom": "0",
+      "left": "0",
+      "right": "0"
+    },
+    margin={
+      "top": 0,
+      "bottom": 0
+    }
+  %}
+    {% dnd_module
+      path="../modules/pricing-cards",
+      projects_tab_label="Proyectos",
+      retainers_tab_label="Retainers",
+      cards=[
+        {
+          "mono_label": "[ EL ARQUITECTO ]",
+          "title": "Sistemas Dinámicos",
+          "price_prefix": "Desde",
+          "price": "$2,250",
+          "price_suffix": "USD",
+          "feature_icon": "check_circle",
+          "features": ["Implementación HubDB & CRM Objects", "Arquitectura de Datos Personalizada", "Workflows de Automatización Avanzada", "Documentación Técnica de Procesos"],
+          "is_featured": false,
+          "featured_badge_text": "Más Popular",
+          "button_text": "Seleccionar",
+          "button_link": { "url": { "href": "#" } }
+        },
+        {
+          "mono_label": "[ EL DEVELOPER ]",
+          "title": "Tema Personalizado",
+          "price_prefix": "Desde",
+          "price": "$2,400",
+          "price_suffix": "USD",
+          "feature_icon": "verified",
+          "features": ["Desarrollo HubL de Alto Rendimiento", "Figma to Code (Pixel Perfect)", "Módulos Custom Drag-and-Drop", "QA Riguroso & Optimización Core Web Vitals"],
+          "is_featured": true,
+          "featured_badge_text": "Más Popular",
+          "button_text": "Seleccionar Plan",
+          "button_link": { "url": { "href": "#" } }
+        },
+        {
+          "mono_label": "[ DESPLIEGUE RÁPIDO ]",
+          "title": "Child Themes & LPs",
+          "price_prefix": "Desde",
+          "price": "$412",
+          "price_suffix": "USD",
+          "feature_icon": "check_circle",
+          "features": ["Configuración de Child Themes", "Creación de Landing Pages Conversion-Ready", "Ajustes de Branding UI/UX", "Soporte de Lanzamiento"],
+          "is_featured": false,
+          "featured_badge_text": "Más Popular",
+          "button_text": "Seleccionar",
+          "button_link": { "url": { "href": "#" } }
+        }
+      ],
+      retainer={
+        "icon": "engineering",
+        "title": "Partner Técnico Mensual",
+        "description": "Optimización continua, consultoría y desarrollo proactivo.",
+        "price": "$63",
+        "price_unit": "USD/hora",
+        "contract_info": "Contratos de 20h - 40h mensuales"
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# Terms Terminal #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "0",
+      "bottom": "0",
+      "left": "0",
+      "right": "0"
+    },
+    margin={
+      "top": 0,
+      "bottom": 0
+    }
+  %}
+    {% dnd_module
+      path="../modules/pricing-terms",
+      content={
+        "terminal_title": ">_ CONDICIONES_COMERCIALES.md",
+        "sections": [
+          {
+            "section_heading": "# ESTRUCTURA DE PAGOS",
+            "section_body": "<p>50% Inicial para reserva de kickoff / 50% Finalización (entrega de QA).</p>"
+          },
+          {
+            "section_heading": "# FLUJO DE TRABAJO",
+            "section_body": "<p>1. Figma es el 'Source of Truth' para UI.<br/>2. Revisión de Sprint semanal via Slack/Asana.<br/>3. Documentación técnica incluida en GitHub.</p>"
+          },
+          {
+            "section_heading": "# EXCLUSIONES",
+            "section_body": "<p>No incluye costos de licencias HubSpot, compra de dominios, o APIs de terceros. Todo requerimiento fuera de scope será cotizado bajo tarifa horaria de retainer.</p>"
+          }
+        ]
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# Final CTA #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "120px",
+      "bottom": "120px",
+      "left": "0",
+      "right": "0"
+    },
+    margin={
+      "top": 0,
+      "bottom": 0
+    }
+  %}
+    {% dnd_module
+      path="../modules/homepage_cta",
+      content={
+        "title": "¿Listo para escalar tu infraestructura?",
+        "subtext": "Hablemos sobre tus objetivos de negocio y cómo la arquitectura de HubSpot puede potenciar tu crecimiento.",
+        "cta_button": {
+          "text": "Agendar Discovery Call",
+          "link": {
+            "url": { "href": "#" }
+          }
+        }
+      },
+      styles={
+        "dark_mode_style": "alt"
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
 
 {% end_dnd_area %}
 {% endblock body %}

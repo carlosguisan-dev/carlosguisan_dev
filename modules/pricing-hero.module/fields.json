@@ -1,0 +1,46 @@
+[
+  {
+    "label": "Content",
+    "name": "content",
+    "type": "group",
+    "children": [
+      {
+        "label": "Mono Label",
+        "name": "mono_label",
+        "type": "text",
+        "default": "// MODELOS_DE_INVERSION"
+      },
+      {
+        "label": "Title",
+        "name": "title",
+        "type": "richtext",
+        "default": "Transparencia técnica.<br/>Cero costos ocultos."
+      },
+      {
+        "label": "Subtitle",
+        "name": "subtitle",
+        "type": "text",
+        "default": "Ingeniería de alta calidad aplicada a ecosistemas CRM. Sin sorpresas, solo arquitectura escalable diseñada para el crecimiento de tu negocio."
+      }
+    ]
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Dark Mode Style",
+        "name": "dark_mode_style",
+        "type": "choice",
+        "choices": [
+          ["deep", "Deep Dark"],
+          ["alt", "Alt Dark"]
+        ],
+        "default": "alt",
+        "display": "radio"
+      }
+    ]
+  }
+]

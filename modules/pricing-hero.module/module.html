@@ -1,0 +1,26 @@
+{% set module_id = name %}
+{% set dark_style = module.styles.dark_mode_style or "alt" %}
+
+<header class="pricing-hero-{{ module_id }} js-dark-{{ dark_style }} relative pt-20 pb-12 px-6 transition-colors">
+  <div class="max-w-4xl mx-auto text-center">
+
+    {% if module.content.mono_label %}
+      <p class="font-mono text-accent text-sm font-medium tracking-widest mb-6 uppercase">
+        {{ module.content.mono_label }}
+      </p>
+    {% endif %}
+
+    {% if module.content.title %}
+      <div class="text-5xl md:text-6xl font-bold tracking-tight leading-[1.1] mb-8 text-primary dark:text-white">
+        {% inline_rich_text field="content.title", value="{{ module.content.title }}" %}
+      </div>
+    {% endif %}
+
+    {% if module.content.subtitle %}
+      <p class="text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+        {{ module.content.subtitle }}
+      </p>
+    {% endif %}
+
+  </div>
+</header>

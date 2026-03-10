@@ -1,0 +1,184 @@
+{% set module_id = name %}
+{% set dark_style = module.styles.dark_mode_style or "alt" %}
+
+<section class="pricing-cards-{{ module_id }} js-dark-{{ dark_style }} max-w-7xl mx-auto px-6 mb-24">
+
+  {# Toggle #}
+  <div class="flex justify-center mb-16">
+    <div class="bg-forest/5 dark:bg-white/5 p-1.5 rounded-2xl flex items-center border border-forest/10 dark:border-white/10">
+      <button
+        class="js-pricing-tab px-8 py-2.5 rounded-xl text-sm font-bold transition-all"
+        data-tab="projects"
+        data-active="true"
+        aria-pressed="true"
+      >
+        {{ module.projects_tab_label }}
+      </button>
+      <button
+        class="js-pricing-tab px-8 py-2.5 rounded-xl text-sm font-bold transition-all"
+        data-tab="retainers"
+        data-active="false"
+        aria-pressed="false"
+      >
+        {{ module.retainers_tab_label }}
+      </button>
+    </div>
+  </div>
+
+  {# Tab 1: Projects Cards Grid #}
+  <div class="js-pricing-panel" data-panel="projects">
+    <div class="grid md:grid-cols-3 gap-8 items-stretch">
+      {% for card in module.cards %}
+        <div class="
+          bg-white dark:bg-background-card-dark
+          {% if card.is_featured %}
+            border-t-8 border-primary dark:border-accent shadow-xl relative scale-105 z-10
+          {% else %}
+            border border-forest/10 dark:border-white/10 shadow-sm hover:shadow-md
+          {% endif %}
+          p-8 rounded-3xl flex flex-col h-full transition-shadow
+        ">
+
+          {# Featured Badge #}
+          {% if card.is_featured %}
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary dark:bg-accent text-white dark:text-primary text-[10px] font-bold px-4 py-1 rounded-full tracking-widest uppercase whitespace-nowrap">
+              {{ card.featured_badge_text }}
+            </div>
+          {% endif %}
+
+          {# Mono Label #}
+          <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-forest/40 dark:text-white/40 mb-4">
+            {{ card.mono_label }}
+          </p>
+
+          {# Title #}
+          <h3 class="text-2xl font-bold mb-2 text-primary dark:text-white">
+            {{ card.title }}
+          </h3>
+
+          {# Price #}
+          <div class="flex items-baseline gap-1 mb-6">
+            <span class="text-forest/60 dark:text-white/60 text-sm font-semibold">{{ card.price_prefix }}</span>
+            <span class="text-3xl font-bold text-primary dark:text-white">{{ card.price }}</span>
+            <span class="text-forest/60 dark:text-white/60 text-sm font-medium">{{ card.price_suffix }}</span>
+          </div>
+
+          {# Features #}
+          <ul class="space-y-4 mb-10 flex-grow">
+            {% for feature in card.features %}
+              <li class="flex items-start gap-3 text-sm text-forest/80 dark:text-white/70">
+                <span class="material-symbols-outlined text-accent text-lg shrink-0">{{ card.feature_icon }}</span>
+                {{ feature }}
+              </li>
+            {% endfor %}
+          </ul>
+
+          {# Button #}
+          {% if card.is_featured %}
+            <a href="{{ card.button_link.url.href }}"
+               class="w-full bg-primary dark:bg-accent text-white dark:text-primary py-3 rounded-xl font-bold hover:opacity-90 transition-all text-center block"
+               {% if card.button_link.open_in_new_tab %}target="_blank"{% endif %}
+            >
+              {{ card.button_text }}
+            </a>
+          {% else %}
+            <a href="{{ card.button_link.url.href }}"
+               class="w-full border-2 border-forest dark:border-accent py-3 rounded-xl font-bold text-forest dark:text-accent hover:bg-forest hover:text-white dark:hover:bg-accent dark:hover:text-primary transition-all text-center block"
+               {% if card.button_link.open_in_new_tab %}target="_blank"{% endif %}
+            >
+              {{ card.button_text }}
+            </a>
+          {% endif %}
+
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {# Tab 2: Retainers Banner #}
+  <div class="js-pricing-panel hidden" data-panel="retainers">
+    <div class="bg-accent/20 dark:bg-accent/10 rounded-[2rem] p-10 flex flex-col md:flex-row items-center justify-between gap-8 border border-accent/30 dark:border-accent/20">
+      <div class="flex items-center gap-6">
+        <div class="bg-white dark:bg-background-card-dark p-4 rounded-2xl shadow-sm">
+          <span class="material-symbols-outlined text-primary dark:text-accent text-4xl">{{ module.retainer.icon }}</span>
+        </div>
+        <div>
+          <h4 class="text-2xl font-bold mb-1 text-primary dark:text-white">{{ module.retainer.title }}</h4>
+          <p class="text-forest/70 dark:text-white/70 font-medium">{{ module.retainer.description }}</p>
+        </div>
+      </div>
+      <div class="text-center md:text-right">
+        <p class="text-4xl font-bold mb-1 text-primary dark:text-white">
+          {{ module.retainer.price }}
+          <span class="text-lg font-medium">{{ module.retainer.price_unit }}</span>
+        </p>
+        <p class="text-sm font-mono text-forest/60 dark:text-white/40">{{ module.retainer.contract_info }}</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+{# Tab switching JS #}
+{% require_js %}
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var container = document.querySelector('.pricing-cards-{{ module_id }}');
+    if (!container) return;
+
+    var tabs = container.querySelectorAll('.js-pricing-tab');
+    var panels = container.querySelectorAll('.js-pricing-panel');
+
+    function activateTab(targetTab) {
+      tabs.forEach(function(tab) {
+        var isActive = tab.getAttribute('data-tab') === targetTab;
+        tab.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        tab.setAttribute('data-active', isActive ? 'true' : 'false');
+      });
+      panels.forEach(function(panel) {
+        if (panel.getAttribute('data-panel') === targetTab) {
+          panel.classList.remove('hidden');
+        } else {
+          panel.classList.add('hidden');
+        }
+      });
+    }
+
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        activateTab(this.getAttribute('data-tab'));
+      });
+    });
+  });
+</script>
+{% end_require_js %}
+
+{# Tab active states CSS — NOT scoped so dark mode ancestor selectors work #}
+{% require_css %}
+<style>
+  .pricing-cards-{{ module_id }} .js-pricing-tab[data-active="true"] {
+    background-color: var(--color-forest);
+    color: #fff;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+  }
+  .pricing-cards-{{ module_id }} .js-pricing-tab[data-active="false"] {
+    background-color: transparent;
+    color: rgba(30, 60, 40, 0.6);
+  }
+  .pricing-cards-{{ module_id }} .js-pricing-tab[data-active="false"]:hover {
+    color: var(--color-forest);
+  }
+
+  /* Dark mode */
+  .dark .pricing-cards-{{ module_id }} .js-pricing-tab[data-active="true"] {
+    background-color: var(--color-accent);
+    color: var(--color-primary);
+  }
+  .dark .pricing-cards-{{ module_id }} .js-pricing-tab[data-active="false"] {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .dark .pricing-cards-{{ module_id }} .js-pricing-tab[data-active="false"]:hover {
+    color: rgba(255, 255, 255, 0.95);
+  }
+</style>
+{% end_require_css %}
