@@ -41,8 +41,8 @@
         "type": "group",
         "children": [
           {
-            "label": "Label",
-            "name": "label",
+            "label": "Heading",
+            "name": "heading",
             "type": "text",
             "default": "El Reto (Arquitectura)"
           },
@@ -60,8 +60,8 @@
         "type": "group",
         "children": [
           {
-            "label": "Label",
-            "name": "label",
+            "label": "Heading",
+            "name": "heading",
             "type": "text",
             "default": "La Solución (Desarrollo)"
           },
@@ -119,8 +119,8 @@
         "image": { "src": "", "alt": "Project 1" },
         "tags": ["Custom Objects", "HubDB"],
         "title": "Arquitectura CRM para Real Estate Global",
-        "challenge": { "label": "El Reto (Arquitectura)", "description": "Centralizar un inventario de +5,000 propiedades dinámicas en 12 países." },
-        "solution": { "label": "La Solución (Desarrollo)", "description": "Modelado de Objetos Personalizados vinculados a HubDB para visualización dinámica." },
+        "challenge": { "heading": "El Reto (Arquitectura)", "description": "Centralizar un inventario de +5,000 propiedades dinámicas en 12 países." },
+        "solution": { "heading": "La Solución (Desarrollo)", "description": "Modelado de Objetos Personalizados vinculados a HubDB para visualización dinámica." },
         "link": { "url": { "href": "#" } },
         "link_text": "Leer caso completo",
         "is_coming_soon": false,
@@ -132,8 +132,8 @@
         "image": { "src": "", "alt": "Project 2" },
         "tags": ["HubSpot CMS", "API Integration"],
         "title": "Portal de Membresías con HubDB",
-        "challenge": { "label": "El Reto (Arquitectura)", "description": "Creación de un área privada para 10,000 usuarios con contenido restringido." },
-        "solution": { "label": "La Solución (Desarrollo)", "description": "Implementación de Webhooks y Serverless Functions para sincronizar estados de membresía." },
+        "challenge": { "heading": "El Reto (Arquitectura)", "description": "Creación de un área privada para 10,000 usuarios con contenido restringido." },
+        "solution": { "heading": "La Solución (Desarrollo)", "description": "Implementación de Webhooks y Serverless Functions para sincronizar estados de membresía." },
         "link": { "url": { "href": "#" } },
         "link_text": "Leer caso completo",
         "is_coming_soon": false,
@@ -145,8 +145,8 @@
         "image": { "src": "", "alt": "" },
         "tags": [],
         "title": "Integración Enterprise ERP–HubSpot",
-        "challenge": { "label": "", "description": "" },
-        "solution": { "label": "", "description": "" },
+        "challenge": { "heading": "", "description": "" },
+        "solution": { "heading": "", "description": "" },
         "link": { "url": { "href": "#" } },
         "link_text": "",
         "is_coming_soon": true,

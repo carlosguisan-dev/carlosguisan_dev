@@ -78,16 +78,16 @@
             <h3 class="text-primary dark:text-white font-display font-bold text-2xl mb-6">{{ card.title }}</h3>
 
             <div class="space-y-6 mb-8 flex-grow">
-              {% if card.challenge.label and card.challenge.description %}
+              {% if card.challenge.heading and card.challenge.description %}
                 <div>
-                  <h4 class="font-mono text-[10px] text-accent font-bold uppercase tracking-wider mb-2">{{ card.challenge.label }}</h4>
+                  <h4 class="font-mono text-[10px] text-accent font-bold uppercase tracking-wider mb-2">{{ card.challenge.heading }}</h4>
                   <p class="text-slate-600 dark:text-brand-lime/80 text-sm leading-relaxed">{{ card.challenge.description }}</p>
                 </div>
               {% endif %}
 
-              {% if card.solution.label and card.solution.description %}
+              {% if card.solution.heading and card.solution.description %}
                 <div>
-                  <h4 class="font-mono text-[10px] text-accent font-bold uppercase tracking-wider mb-2">{{ card.solution.label }}</h4>
+                  <h4 class="font-mono text-[10px] text-accent font-bold uppercase tracking-wider mb-2">{{ card.solution.heading }}</h4>
                   <p class="text-slate-600 dark:text-brand-lime/80 text-sm leading-relaxed">{{ card.solution.description }}</p>
                 </div>
               {% endif %}

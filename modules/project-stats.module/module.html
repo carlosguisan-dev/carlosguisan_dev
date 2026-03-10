@@ -14,7 +14,7 @@
     {% for stat in module.content.stats %}
       <div class="text-center md:text-left">
         <div class="font-mono text-5xl font-black text-brand-lime mb-2">{{ stat.value }}</div>
-        <p class="text-slate-300 font-medium">{{ stat.label }}</p>
+        <p class="text-slate-300 font-medium">{{ stat.stat_label }}</p>
       </div>
     {% endfor %}
   </div>
@@ -31,7 +31,7 @@
             <span class="material-symbols-outlined text-brand-lime text-4xl mb-6">{{ stat.icon }}</span>
           {% endif %}
           <h3 class="text-brand-lime font-mono text-4xl font-bold mb-2">{{ stat.value }}</h3>
-          <p class="text-white/80 font-medium">{{ stat.label }}</p>
+          <p class="text-white/80 font-medium">{{ stat.stat_label }}</p>
           {% if stat.sublabel %}
             <div class="mt-4 pt-4 border-t border-white/10 text-white/40 text-xs font-mono uppercase">{{ stat.sublabel }}</div>
           {% endif %}
