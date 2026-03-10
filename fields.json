@@ -125,7 +125,7 @@
         "name": "display",
         "type": "font",
         "default": {
-          "font": "Public Sans",
+          "font": "Work Sans",
           "font_set": "GOOGLE",
           "fallback": "sans-serif"
         }
@@ -135,7 +135,7 @@
         "name": "sans",
         "type": "font",
         "default": {
-          "font": "Public Sans",
+          "font": "Work Sans",
           "font_set": "GOOGLE",
           "fallback": "sans-serif"
         }

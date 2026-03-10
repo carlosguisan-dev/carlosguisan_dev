@@ -28,7 +28,7 @@ Este documento detalla el plan para personalizar las plantillas de sistema del t
 ## Notas Técnicas
 
 - **Estilos:** Se extraerán los gradientes, patrones de wireframe y configuraciones de color de los assets para integrarlos en `css/templates/system.css` o directamente en las plantillas según corresponda.
-- **Fuentes:** Se mantendrán las definidas en `base.html` (Public Sans y Fira Code).
+- **Fuentes:** Se mantendrán las definidas en `base.html` (Work Sans y Fira Code).
 - **Layouts:** Se usará el bloque `{% block body %}` para inyectar el contenido, omitiendo el header y footer del asset.
 
 ## Progreso de Implementación

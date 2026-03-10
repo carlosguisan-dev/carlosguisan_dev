@@ -1,4 +1,6 @@
 .dual-logo__image {
   width: 100%;
   max-width: var(--logo-max-width);
+  height: 48px; /* max-h-12 is 48px, fixing it here ensures space is reserved */
+  object-fit: contain;
 }

@@ -33,10 +33,10 @@ body {
   --color-background-card-dark: {{ theme.backgrounds.dark.card_dark.color or "#162216" }};
 
   /* Typography */
-  --font-sans: {{ theme.typography.sans.font or "Public Sans" }}, sans-serif;
-  --font-display: {{ theme.typography.display.font or "Public Sans" }}, sans-serif;
+  --font-sans: {{ theme.typography.sans.font or "Work Sans" }}, sans-serif;
+  --font-display: {{ theme.typography.display.font or "Work Sans" }}, sans-serif;
   --font-mono: {{ theme.typography.mono.font or "Fira Code" }}, monospace;
-  --font-body: {{ theme.typography.sans.font or "Public Sans" }}, sans-serif;
+  --font-body: {{ theme.typography.sans.font or "Work Sans" }}, sans-serif;
 
   /* Header & Menu Configuration */
   --header-link-light: {{ theme.header.menu.link_colors.light.text_light.color }};

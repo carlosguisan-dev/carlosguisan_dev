@@ -22,8 +22,7 @@ Usa estas clases para fondos (`bg-{color}`), texto (`text-{color}`) y bordes (`b
 - `text-brand-lime-vibrant`: Para estados activos o links.
 - `text-slate-200`: Ideal para párrafos sobre fondos oscuros.
 
-> [!TIP]
-> **Opacidad**: Puedes combinar cualquier color con opacidad usando `/`.
+> [!TIP] > **Opacidad**: Puedes combinar cualquier color con opacidad usando `/`.
 > Ejemplo: `text-brand-lime/80` (Verde lima al 80% de opacidad).
 
 ---
@@ -40,11 +39,7 @@ Hemos estandarizado los botones para mantener la coherencia visual.
 ### Ejemplo:
 
 ```html
-<button
-  class="bg-brand-green text-white px-6 py-2.5 rounded-lg font-bold transition-transform active:scale-95 shadow-md hover:shadow-lg"
->
-  Agendar Discovery Call
-</button>
+<button class="bg-brand-green text-white px-6 py-2.5 rounded-lg font-bold transition-transform active:scale-95 shadow-md hover:shadow-lg">Agendar Discovery Call</button>
 ```
 
 ---
@@ -80,9 +75,9 @@ El tema utiliza transiciones suaves para una experiencia premium.
 
 | Tipo        | Clase Tailwind | Variable CSS     | Fuente                        |
 | :---------- | :------------- | :--------------- | :---------------------------- |
-| **Display** | `font-display` | `--font-display` | Public Sans (Títulos)         |
+| **Display** | `font-display` | `--font-display` | Work Sans (Títulos)           |
 | **Mono**    | `font-mono`    | `--font-mono`    | Fira Code (Código, Copyright) |
-| **Base**    | `font-sans`    | `--font-sans`    | Public Sans (Cuerpo)          |
+| **Base**    | `font-sans`    | `--font-sans`    | Work Sans (Cuerpo)            |
 
 ### Utilidades de Texto comunes:
 
@@ -98,9 +93,7 @@ El tema utiliza transiciones suaves para una experiencia premium.
 
 - **Prefijo `dark:`**: Siempre disponible para adaptar cualquier componente.
   ```html
-  <div class="border-slate-200 dark:border-white/10 p-4 rounded shadow">
-    Contenido con borde y sombra adaptable.
-  </div>
+  <div class="border-slate-200 dark:border-white/10 p-4 rounded shadow">Contenido con borde y sombra adaptable.</div>
   ```
 
 ---

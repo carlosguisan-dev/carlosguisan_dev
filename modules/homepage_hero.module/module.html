@@ -68,7 +68,7 @@
     <div class="hidden md:block relative">
       <div class="absolute inset-0 bg-brand-lime/10 blur-[100px] rounded-full"></div>
       <div class="relative bg-black/40 border border-white/5 p-6 rounded-2xl backdrop-blur-md">
-        <pre class="font-mono text-xs text-brand-lime leading-relaxed m-0">
+        <pre class="font-mono text-xs text-brand-lime leading-relaxed m-0 min-h-[140px]">
           <span class="text-slate-500">/* Optimize HubSpot Portal */</span>
           async function scaleArchitecture(portal) {
             const currentStatus = await portal.getHealth();
@@ -99,7 +99,7 @@
     
     {% for item in logos %}
       {% if item.logo_type == "text" or not item.logo_type %}
-        <span class="font-bold text-xl tracking-tight">{{ item.logo_text }}</span>
+        <span class="font-bold text-xl tracking-tight inline-block min-w-[120px]">{{ item.logo_text }}</span>
       {% elif item.logo_type == "image" and item.logo_image.src %}
         <img
           src="{{ item.logo_image.src }}"

@@ -61,6 +61,8 @@
                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 alt="{{ card.image.alt }}"
                 src="{{ card.image.src }}"
+                width="{{ card.image.width }}"
+                height="{{ card.image.height }}"
                 loading="lazy"
               />
               {% if card.tags %}
