@@ -1,0 +1,44 @@
+{% set module_id = name %}
+{% set dark_style = module.styles.dark_mode_style or "alt" %}
+
+<header class="portfolio-hero-{{ module_id }} js-dark-{{ dark_style }} relative pt-20 pb-16 px-6 transition-colors">
+  <div class="max-w-4xl mx-auto text-center">
+
+    {% if module.content.mono_label %}
+      <p class="font-mono text-accent text-sm font-medium tracking-widest mb-6 uppercase">
+        {{ module.content.mono_label }}
+      </p>
+    {% endif %}
+
+    {% if module.content.title %}
+      <div class="text-primary dark:text-white font-display font-extrabold text-5xl md:text-7xl tracking-tight leading-[1.1] mb-8">
+        {{ module.content.title }}
+      </div>
+    {% endif %}
+
+    {% if module.content.subtitle %}
+      <p class="text-slate-600 dark:text-brand-lime/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+        {{ module.content.subtitle }}
+      </p>
+    {% endif %}
+
+  </div>
+
+  {# Filter Nav #}
+  {% if module.content.filter_tags %}
+    <div class="max-w-5xl mx-auto mt-16 flex flex-wrap justify-center gap-3">
+      {% for tag in module.content.filter_tags %}
+        <button class="portfolio-filter-pill px-6 py-2 rounded-full border font-mono text-xs font-medium transition-all
+          {% if loop.first %}
+            border-primary/20 dark:border-brand-lime/30 bg-accent text-primary font-bold shadow-sm
+          {% else %}
+            border-primary/10 dark:border-white/10 hover:border-primary/30 dark:hover:border-white/30 text-slate-500 dark:text-slate-400
+          {% endif %}
+        ">
+          {{ tag }}
+        </button>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+</header>

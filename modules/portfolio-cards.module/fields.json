@@ -1,0 +1,178 @@
+[
+  {
+    "label": "Cards",
+    "name": "cards",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 12,
+      "default": 3
+    },
+    "children": [
+      {
+        "label": "Image",
+        "name": "image",
+        "type": "image",
+        "default": {
+          "src": "",
+          "alt": "Project image"
+        }
+      },
+      {
+        "label": "Tags",
+        "name": "tags",
+        "type": "text",
+        "occurrence": {
+          "min": 0,
+          "max": 5,
+          "default": 2
+        },
+        "default": ["Custom Objects", "HubDB"]
+      },
+      {
+        "label": "Title",
+        "name": "title",
+        "type": "text",
+        "default": "Arquitectura CRM para Real Estate Global"
+      },
+      {
+        "label": "Challenge",
+        "name": "challenge",
+        "type": "group",
+        "children": [
+          {
+            "label": "Label",
+            "name": "label",
+            "type": "text",
+            "default": "El Reto (Arquitectura)"
+          },
+          {
+            "label": "Description",
+            "name": "description",
+            "type": "text",
+            "default": "Centralizar un inventario de +5,000 propiedades dinámicas en 12 países, garantizando integridad de datos y filtrado en tiempo real sin latencia."
+          }
+        ]
+      },
+      {
+        "label": "Solution",
+        "name": "solution",
+        "type": "group",
+        "children": [
+          {
+            "label": "Label",
+            "name": "label",
+            "type": "text",
+            "default": "La Solución (Desarrollo)"
+          },
+          {
+            "label": "Description",
+            "name": "description",
+            "type": "text",
+            "default": "Modelado de Objetos Personalizados vinculados a HubDB para visualización dinámica."
+          }
+        ]
+      },
+      {
+        "label": "Link",
+        "name": "link",
+        "type": "link",
+        "default": {
+          "url": {
+            "href": "#"
+          }
+        }
+      },
+      {
+        "label": "Link Text",
+        "name": "link_text",
+        "type": "text",
+        "default": "Leer caso completo"
+      },
+      {
+        "label": "Coming Soon",
+        "name": "is_coming_soon",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "label": "Coming Soon Label",
+        "name": "coming_soon_label",
+        "type": "text",
+        "default": "[ EN DESARROLLO ]"
+      },
+      {
+        "label": "Coming Soon Description",
+        "name": "coming_soon_description",
+        "type": "text",
+        "default": ""
+      },
+      {
+        "label": "Coming Soon Tech Stack",
+        "name": "coming_soon_tech_stack",
+        "type": "text",
+        "default": ""
+      }
+    ],
+    "default": [
+      {
+        "image": { "src": "", "alt": "Project 1" },
+        "tags": ["Custom Objects", "HubDB"],
+        "title": "Arquitectura CRM para Real Estate Global",
+        "challenge": { "label": "El Reto (Arquitectura)", "description": "Centralizar un inventario de +5,000 propiedades dinámicas en 12 países." },
+        "solution": { "label": "La Solución (Desarrollo)", "description": "Modelado de Objetos Personalizados vinculados a HubDB para visualización dinámica." },
+        "link": { "url": { "href": "#" } },
+        "link_text": "Leer caso completo",
+        "is_coming_soon": false,
+        "coming_soon_label": "",
+        "coming_soon_description": "",
+        "coming_soon_tech_stack": ""
+      },
+      {
+        "image": { "src": "", "alt": "Project 2" },
+        "tags": ["HubSpot CMS", "API Integration"],
+        "title": "Portal de Membresías con HubDB",
+        "challenge": { "label": "El Reto (Arquitectura)", "description": "Creación de un área privada para 10,000 usuarios con contenido restringido." },
+        "solution": { "label": "La Solución (Desarrollo)", "description": "Implementación de Webhooks y Serverless Functions para sincronizar estados de membresía." },
+        "link": { "url": { "href": "#" } },
+        "link_text": "Leer caso completo",
+        "is_coming_soon": false,
+        "coming_soon_label": "",
+        "coming_soon_description": "",
+        "coming_soon_tech_stack": ""
+      },
+      {
+        "image": { "src": "", "alt": "" },
+        "tags": [],
+        "title": "Integración Enterprise ERP–HubSpot",
+        "challenge": { "label": "", "description": "" },
+        "solution": { "label": "", "description": "" },
+        "link": { "url": { "href": "#" } },
+        "link_text": "",
+        "is_coming_soon": true,
+        "coming_soon_label": "[ EN DESARROLLO ]",
+        "coming_soon_description": "Sincronización bidireccional compleja de inventarios y pedidos entre SAP y HubSpot utilizando middleware customizado sobre AWS Lambda.",
+        "coming_soon_tech_stack": "Tech Stack: AWS, Node.js, GraphQL"
+      }
+    ]
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Dark Mode Style",
+        "name": "dark_mode_style",
+        "type": "choice",
+        "choices": [
+          ["deep", "Deep Dark"],
+          ["alt", "Alt Dark"]
+        ],
+        "default": "alt",
+        "display": "radio"
+      }
+    ]
+  }
+]

@@ -1,0 +1,214 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Case Study
+  screenshotPath: ../images/template-previews/case-study.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+{% dnd_area "case_study_dnd"
+  label="Case Study",
+  class="body-container body-container--case-study"
+%}
+
+  {# Hero Section #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "0",
+      "bottom": "0",
+      "left": "0",
+      "right": "0"
+    },
+    margin={ "top": 0, "bottom": 0 }
+  %}
+    {% dnd_module
+      path="../modules/project-detail-hero",
+      content={
+        "mono_label": "// CASO DE ESTUDIO: SECTOR EDUCACIÓN",
+        "title": "Arquitectura Escalable para Plataformas Educativas",
+        "tags": ["Custom Objects", "HubDB", "HubL"],
+        "hero_image": {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuC0YWFjBSfQLUU2uI2cODqdfCVN4OCgEFXhnnKJS_Nm4f1V6iKY2lGJ04Dh0ZbgH8wN_nJsZ2fFvXOE5sBRcHK8RrbPH8gdGXY0IyDhzrsIUUCwm5O0ECS-rlrRVTn_rpQZ_q5dfmF8UaBLJ9lTEEgKZwD3XZebXBVkNb1FNKke0IXRJtCU__Q9SSRSGBcYqLejxoo7BL5FDfoDaV9uOTzhQDvpXci-PowEp-48L7FaGwmyZIyrq77j4sQESftJLPM2wNB2mvExMZA",
+          "alt": "Dashboard de datos y esquema técnico de HubSpot"
+        }
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# The Problem #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "0",
+      "bottom": "0",
+      "left": "0",
+      "right": "0"
+    },
+    margin={ "top": 0, "bottom": 0 }
+  %}
+    {% dnd_module
+      path="../modules/project-problem",
+      content={
+        "icon": "settings_suggest",
+        "alert_label": "",
+        "title": "El problema: Crecimiento frenado por deuda técnica",
+        "paragraphs": [
+          "<p>La institución educativa presentaba una arquitectura de datos fragmentada. La información de los estudiantes residía en silos, lo que generaba duplicidad de registros y una experiencia de usuario (UX) inconsistente en el portal de alumnos.</p>",
+          "<p>La falta de una estructura de Custom Objects impedía la automatización de procesos críticos de matriculación, resultando en una carga administrativa inasumible durante los periodos pico.</p>"
+        ]
+      },
+      styles={
+        "bg_style": "alt"
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# Phase 1: Architecture (Cards layout) #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "0",
+      "bottom": "0",
+      "left": "0",
+      "right": "0"
+    },
+    margin={ "top": 0, "bottom": 0 }
+  %}
+    {% dnd_module
+      path="../modules/project-phase",
+      content={
+        "phase_number": "01",
+        "phase_label": "DATA MODELING",
+        "title": "Fase 1: Modelado de Datos y Arquitectura",
+        "items": [
+          { "icon": "database", "title": "HubDB Engine", "description": "Implementación de bases de datos relacionales dinámicas para la gestión de catálogo de cursos y sedes." },
+          { "icon": "filter_list", "title": "Data Cleaning", "description": "Normalización de datos históricos mediante scripts de limpieza masiva y validaciones nativas." },
+          { "icon": "lock_person", "title": "Membership Logic", "description": "Creación de niveles de acceso personalizados basados en propiedades de contacto segmentadas." }
+        ]
+      },
+      styles={
+        "layout": "cards",
+        "bg_style": "alt"
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# Phase 2: Frontend Development (Checklist + Code) #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "0",
+      "bottom": "0",
+      "left": "0",
+      "right": "0"
+    },
+    margin={ "top": 0, "bottom": 0 }
+  %}
+    {% dnd_module
+      path="../modules/project-phase",
+      content={
+        "phase_number": "02",
+        "phase_label": "FRONTEND DEV",
+        "title": "Fase 2: Desarrollo Frontend Nativo",
+        "items": [
+          { "icon": "check", "title": "Drag-and-Drop modules", "description": "Componentes modulares altamente configurables para que el equipo de marketing tenga total autonomía." },
+          { "icon": "speed", "title": "Core Web Vitals", "description": "Optimización de carga crítica, lazy loading nativo de HubSpot y minimización de JS externo." }
+        ],
+        "code_snippet": "{% set courses = hubdb_table_rows(123456) %}\n// Loop through courses database\n{% for item in courses %}\n  <div class=\"course-card\">\n    <h3>{{ item.name }}</h3>\n    <p>{{ item.description|truncate(150) }}</p>\n    <span>{{ item.category.name }}</span>\n  </div>\n{% endfor %}",
+        "code_filename": "dynamic_listing.hubl"
+      },
+      styles={
+        "layout": "checklist_code",
+        "bg_style": "transparent"
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# Results Strip #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "0",
+      "bottom": "0",
+      "left": "0",
+      "right": "0"
+    },
+    margin={ "top": 0, "bottom": 0 }
+  %}
+    {% dnd_module
+      path="../modules/project-stats",
+      content={
+        "stats": [
+          { "value": "-80%", "label": "Tiempo de Gestión Manual", "sublabel": "", "icon": "" },
+          { "value": "100%", "label": "Core Web Vitals (Passed)", "sublabel": "", "icon": "" },
+          { "value": "98/100", "label": "Lighthouse Performance", "sublabel": "", "icon": "" }
+        ]
+      },
+      styles={
+        "bg_style": "forest",
+        "layout": "inline"
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# Testimonial #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "0",
+      "bottom": "0",
+      "left": "0",
+      "right": "0"
+    },
+    margin={ "top": 0, "bottom": 0 }
+  %}
+    {% dnd_module
+      path="../modules/project-testimonial",
+      content={
+        "quote": "\"La visión técnica de este proyecto transformó por completo nuestra forma de trabajar. No solo tenemos un sitio más rápido, sino un ecosistema HubSpot que realmente escala con nuestro negocio.\"",
+        "author_name": "Elena Rodriguez",
+        "author_role": "Directora de Tecnología, EduGroup International"
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# CTA #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "120px",
+      "bottom": "120px",
+      "left": "0",
+      "right": "0"
+    },
+    margin={ "top": 0, "bottom": 0 }
+  %}
+    {% dnd_module
+      path="../modules/homepage_cta",
+      content={
+        "title": "¿Tu ecosistema HubSpot necesita esta misma precisión?",
+        "subtext": "",
+        "cta_button": {
+          "text": "Agendar Discovery Call",
+          "link": {
+            "url": { "href": "#" }
+          }
+        }
+      },
+      styles={
+        "dark_mode_style": "alt"
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+{% end_dnd_area %}
+{% endblock body %}

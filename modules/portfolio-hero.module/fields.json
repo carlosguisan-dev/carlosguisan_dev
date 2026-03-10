@@ -1,0 +1,62 @@
+[
+  {
+    "label": "Content",
+    "name": "content",
+    "type": "group",
+    "children": [
+      {
+        "label": "Mono Label",
+        "name": "mono_label",
+        "type": "text",
+        "default": "// CASOS DE ESTUDIO Y ARQUITECTURA"
+      },
+      {
+        "label": "Title",
+        "name": "title",
+        "type": "richtext",
+        "default": "Ecosistemas que escalan. <br/><em>Código que rinde.</em>"
+      },
+      {
+        "label": "Subtitle",
+        "name": "subtitle",
+        "type": "text",
+        "default": "Soluciones técnicas de alto rendimiento centradas en la escalabilidad de datos y la experiencia de usuario dentro del ecosistema HubSpot."
+      },
+      {
+        "label": "Filter Tags",
+        "name": "filter_tags",
+        "type": "text",
+        "occurrence": {
+          "min": 0,
+          "max": 10,
+          "default": 4
+        },
+        "default": [
+          "Todos",
+          "Sistemas Dinámicos",
+          "Temas Personalizados",
+          "Migraciones"
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Dark Mode Style",
+        "name": "dark_mode_style",
+        "type": "choice",
+        "choices": [
+          ["deep", "Deep Dark"],
+          ["alt", "Alt Dark"]
+        ],
+        "default": "alt",
+        "display": "radio"
+      }
+    ]
+  }
+]

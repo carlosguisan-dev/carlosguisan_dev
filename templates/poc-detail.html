@@ -1,0 +1,251 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: PoC Detail
+  screenshotPath: ../images/template-previews/poc-detail.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+{% dnd_area "poc_detail_dnd"
+  label="PoC Detail",
+  class="body-container body-container--poc-detail"
+%}
+
+  {# Hero Section #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "0",
+      "bottom": "0",
+      "left": "0",
+      "right": "0"
+    },
+    margin={ "top": 0, "bottom": 0 }
+  %}
+    {% dnd_module
+      path="../modules/project-detail-hero",
+      content={
+        "mono_label": "// PRUEBA DE CONCEPTO (PoC)",
+        "title": "Technical Scalability: Beyond Static Systems",
+        "tags": ["HubDB", "Dynamic Pages", "API Integration"],
+        "hero_image": {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuDqnR6a4pOKk8wCJ84zL0TSLFwcMh9j-z4yxVCRejzngyRcYpwB_gSqtIKo-Dv6rjt4bHWNAgk7c5X4sWGEeLzOf_549E1t5um2_OTNeXQyPJpYqxVSxDEIFGgDIJ8LATJDxkFK4Ka65XfHlkM3EW30swSEWJvAibg-kNb7T1rdusAzLKUVNXL1mm7KUyqjCyUOjY3VqSzSDvrn96t7sdPiNJ5mj663LcDlSH54Jvd9a53uSAxpZBuEHs32inLsMTtZez_147KnhMY",
+          "alt": "Technical architecture diagram"
+        }
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# The Industry Problem #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "0",
+      "bottom": "0",
+      "left": "0",
+      "right": "0"
+    },
+    margin={ "top": 0, "bottom": 0 }
+  %}
+    {% dnd_module
+      path="../modules/project-problem",
+      content={
+        "icon": "warning",
+        "alert_label": "Alerta Técnica",
+        "title": "¿Tu portal sufre de Deuda Técnica?",
+        "paragraphs": [
+          "<p>La mayoría de las implementaciones de HubSpot fallan al escalar porque dependen de sistemas estáticos y páginas clonadas manualmente. Cada nuevo producto o servicio añade una capa de complejidad operativa que asfixia al equipo de marketing.</p>",
+          "<p>Esta PoC demuestra cómo transformar un CMS rígido en un motor de datos dinámico capaz de gestionar miles de activos con un solo punto de mantenimiento centralizado.</p>"
+        ]
+      },
+      styles={
+        "bg_style": "white"
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# Phase 1: Data Modeling (Checklist + Image) #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "0",
+      "bottom": "0",
+      "left": "0",
+      "right": "0"
+    },
+    margin={ "top": 0, "bottom": 0 }
+  %}
+    {% dnd_module
+      path="../modules/project-phase",
+      content={
+        "phase_number": "01",
+        "phase_label": "DATA MODELING",
+        "title": "Fase 1: Modelado de Datos y Arquitectura",
+        "items": [
+          { "icon": "check_circle", "title": "HubDB Schema Design", "description": "Estructuración de tablas relacionales para catálogos dinámicos complejos." },
+          { "icon": "check_circle", "title": "Object Relationships", "description": "Vinculación de Custom Objects con el frontend para una experiencia de usuario rica." },
+          { "icon": "check_circle", "title": "Data Normalization", "description": "Limpieza y estandarización de entradas para garantizar un SEO impecable." }
+        ],
+        "side_image": {
+          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuBsv3ypRd_S26pKuFbd_AJtlGjloaemSmRUIULDR1XHxnF_w1FZi5AZpFTjjmqe1nEReVVtCL_Vya87Zd5ObK85hG5uTK3iNddkqV0E2671UA9t-r5IIRQ4TGjJwg1w0fS9ldGFbtoX_JW2Pfc8AESW6SDY-5EUmI9ILYRw7P9K_7R_DRlWvbOJaiSHq5pY9GvyIpWtpzbqxTQ_HF5xtjjLZ2oNrc-b8AVFxyFbCWbWbzFXxhNkXwO4hOxqr_f7peuYXXrpvq91oHo",
+          "alt": "Server data architecture visualization"
+        }
+      },
+      styles={
+        "layout": "checklist_image",
+        "bg_style": "transparent"
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# Phase 2: Execution (Checklist + Code) #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "0",
+      "bottom": "0",
+      "left": "0",
+      "right": "0"
+    },
+    margin={ "top": 0, "bottom": 0 }
+  %}
+    {% dnd_module
+      path="../modules/project-phase",
+      content={
+        "phase_number": "02",
+        "phase_label": "EXECUTION",
+        "title": "Performance & HubL",
+        "items": [
+          { "icon": "check", "title": "Lighthouse 98/100", "description": "Puntuación de rendimiento optimizada." },
+          { "icon": "speed", "title": "HubL Optimized", "description": "Server-side rendering para tiempos de carga mínimos." }
+        ],
+        "code_snippet": "{% set products = hubdb_table_rows(\"554210\") %}\n<!-- Dynamic Loop -->\n{% for row in products %}\n  <div class=\"product-card\">\n    <h3>{{ row.name }}</h3>\n    <p>Price: {{ row.price|format_currency }}</p>\n  </div>\n{% endfor %}",
+        "code_filename": "dynamic_listing.hubl"
+      },
+      styles={
+        "layout": "checklist_code",
+        "bg_style": "transparent"
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# Technical Proof Dashboard #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "0",
+      "bottom": "0",
+      "left": "0",
+      "right": "0"
+    },
+    margin={ "top": 0, "bottom": 0 }
+  %}
+    {% dnd_module
+      path="../modules/project-stats",
+      content={
+        "stats": [
+          { "value": "1 Única", "label": "Plantilla Dinámica para 500+ páginas", "sublabel": "SCALABILITY METRIC", "icon": "layers" },
+          { "value": "100%", "label": "Core Web Vitals Performance", "sublabel": "GAUGE SCORE", "icon": "speed" },
+          { "value": "-90%", "label": "Tiempo Operativo de Mantenimiento", "sublabel": "OPERATIONAL EFFICIENCY", "icon": "trending_down" }
+        ]
+      },
+      styles={
+        "bg_style": "primary",
+        "layout": "cards"
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# Real-World Applicability #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "0",
+      "bottom": "0",
+      "left": "0",
+      "right": "0"
+    },
+    margin={ "top": 0, "bottom": 0 }
+  %}
+    {% dnd_module
+      path="../modules/homepage_feature_cards",
+      cards={
+        "section_header": {
+          "title": "Casos de Aplicación Real",
+          "description": "Soluciones escalables diseñadas para industrias que manejan grandes volúmenes de información.",
+          "header_layout": "center"
+        },
+        "items": [
+          {
+            "show_icon": true,
+            "icon_type": "material-symbols-outlined",
+            "icon_id": "real_estate_agent",
+            "mono_label": "",
+            "card_title": "Real Estate Catalogs",
+            "content": "Gestión automática de inventarios de propiedades, filtros avanzados y mapas dinámicos."
+          },
+          {
+            "show_icon": true,
+            "icon_type": "material-symbols-outlined",
+            "icon_id": "hub",
+            "mono_label": "",
+            "card_title": "B2B Resource Centers",
+            "content": "Centralización de whitepapers, webinars y casos de éxito categorizados por industria y rol."
+          },
+          {
+            "show_icon": true,
+            "icon_type": "material-symbols-outlined",
+            "icon_id": "inventory_2",
+            "mono_label": "",
+            "card_title": "Product Directories",
+            "content": "Directorios de productos técnicos con especificaciones dinámicas comparativas."
+          }
+        ]
+      },
+      styles={
+        "columns": "3",
+        "bg_color": { "color": "#f9faf8" },
+        "dark_mode_style": "alt"
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# CTA #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "120px",
+      "bottom": "120px",
+      "left": "0",
+      "right": "0"
+    },
+    margin={ "top": 0, "bottom": 0 }
+  %}
+    {% dnd_module
+      path="../modules/homepage_cta",
+      content={
+        "title": "¿Necesitas un motor de datos escalable?",
+        "subtext": "Hablemos sobre cómo transformar tu portal HubSpot en un sistema de alta eficiencia preparado para el crecimiento.",
+        "cta_button": {
+          "text": "Agendar Discovery Call",
+          "link": {
+            "url": { "href": "#" }
+          }
+        }
+      },
+      styles={
+        "dark_mode_style": "alt"
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+{% end_dnd_area %}
+{% endblock body %}

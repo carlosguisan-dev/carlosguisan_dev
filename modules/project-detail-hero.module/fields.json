@@ -1,0 +1,60 @@
+[
+  {
+    "label": "Content",
+    "name": "content",
+    "type": "group",
+    "children": [
+      {
+        "label": "Mono Label",
+        "name": "mono_label",
+        "type": "text",
+        "default": "// CASO DE ESTUDIO: SECTOR EDUCACIÓN"
+      },
+      {
+        "label": "Title",
+        "name": "title",
+        "type": "text",
+        "default": "Arquitectura Escalable para Plataformas Educativas"
+      },
+      {
+        "label": "Tags",
+        "name": "tags",
+        "type": "text",
+        "occurrence": {
+          "min": 0,
+          "max": 10,
+          "default": 3
+        },
+        "default": ["Custom Objects", "HubDB", "HubL"]
+      },
+      {
+        "label": "Hero Image",
+        "name": "hero_image",
+        "type": "image",
+        "default": {
+          "src": "",
+          "alt": "Project hero image"
+        }
+      }
+    ]
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Dark Mode Style",
+        "name": "dark_mode_style",
+        "type": "choice",
+        "choices": [
+          ["deep", "Deep Dark"],
+          ["alt", "Alt Dark"]
+        ],
+        "default": "alt",
+        "display": "radio"
+      }
+    ]
+  }
+]

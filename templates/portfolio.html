@@ -1,0 +1,159 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Portfolio
+  screenshotPath: ../images/template-previews/portfolio.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+{% dnd_area "portfolio_dnd"
+  label="Portfolio",
+  class="body-container body-container--portfolio"
+%}
+
+  {# Hero Section #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "0",
+      "bottom": "0",
+      "left": "0",
+      "right": "0"
+    },
+    margin={
+      "top": 0,
+      "bottom": 0
+    }
+  %}
+    {% dnd_module
+      path="../modules/portfolio-hero",
+      content={
+        "mono_label": "// CASOS DE ESTUDIO Y ARQUITECTURA",
+        "title": "Ecosistemas que escalan. <br/><em class=\"text-slate-900/70 dark:text-white/70\">Código que rinde.</em>",
+        "subtitle": "Soluciones técnicas de alto rendimiento centradas en la escalabilidad de datos y la experiencia de usuario dentro del ecosistema HubSpot.",
+        "filter_tags": [
+          "Todos",
+          "Sistemas Dinámicos",
+          "Temas Personalizados",
+          "Migraciones"
+        ]
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# Portfolio Grid #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "0",
+      "bottom": "0",
+      "left": "0",
+      "right": "0"
+    },
+    margin={
+      "top": 0,
+      "bottom": 0
+    }
+  %}
+    {% dnd_module
+      path="../modules/portfolio-cards",
+      cards=[
+        {
+          "image": {
+            "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuAllwamyel1SJA4JoviIki7pGXv-Thi7aG8p4YclSMcZYphD_ZDA61ZOTvvz8dHuXee2tsR0j_DBznEe9xGQqNii56lReHFvF6faQt6j9ajDH4P7pTlYWqskS1cmQg_rshYavuZ3iM0xWoDLqS8LYwGmVi4d4osj72LjxXgp3bSPdIsUWJLTruyEDMjUn0MbyxtHhdDeE-5JsiiddnCvWZ5UAAlsX5bIZJ9eT8wTH2RPMOKMW287CAf5xKOSE51x5knXz80HivEzng",
+            "alt": "Arquitectura CRM para sector inmobiliario"
+          },
+          "tags": ["Custom Objects", "HubDB"],
+          "title": "Arquitectura CRM para Real Estate Global",
+          "challenge": {
+            "label": "El Reto (Arquitectura)",
+            "description": "Centralizar un inventario de +5,000 propiedades dinámicas en 12 países, garantizando integridad de datos y filtrado en tiempo real sin latencia."
+          },
+          "solution": {
+            "label": "La Solución (Desarrollo)",
+            "description": "Modelado de Objetos Personalizados vinculados a HubDB para visualización dinámica. Frontend desarrollado con Vue.js embebido en módulos de HubSpot CMS."
+          },
+          "link": { "url": { "href": "#" } },
+          "link_text": "Leer caso completo",
+          "is_coming_soon": false,
+          "coming_soon_label": "",
+          "coming_soon_description": "",
+          "coming_soon_tech_stack": ""
+        },
+        {
+          "image": {
+            "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuD48ytvDGNg6kiGx11fkN6e1Innx2JbmB-AxCu1A23NjXdb9KXjU4hLtbN1nyLtgj1VVBgN5jz0VDbof18k_CA9YgJ-uXpxcFK6Ir1idNJumXHwy6su5Xtp1qQfwy203XrFThUMU52T0lE3CHofi1Fi9JFW_hIi8WP5_siILQx4pyjrJo_pxynr1HhV-H4X52KhmfdUuivQF2zjXzIk7N-qHZBJMzwk7KXhzeH6JCWYZwUaQqCIxFWN-l_RdNaNVnSH4kH2Uq9AqXc",
+            "alt": "Portal de membresías dashboard"
+          },
+          "tags": ["HubSpot CMS", "API Integration"],
+          "title": "Portal de Membresías con HubDB",
+          "challenge": {
+            "label": "El Reto (Arquitectura)",
+            "description": "Creación de un área privada para 10,000 usuarios con contenido restringido basado en niveles de suscripción gestionados externamente."
+          },
+          "solution": {
+            "label": "La Solución (Desarrollo)",
+            "description": "Implementación de Webhooks y Serverless Functions para sincronizar estados de membresía y renderizado condicional de componentes."
+          },
+          "link": { "url": { "href": "#" } },
+          "link_text": "Leer caso completo",
+          "is_coming_soon": false,
+          "coming_soon_label": "",
+          "coming_soon_description": "",
+          "coming_soon_tech_stack": ""
+        },
+        {
+          "image": { "src": "", "alt": "" },
+          "tags": [],
+          "title": "Integración Enterprise ERP–HubSpot",
+          "challenge": { "label": "", "description": "" },
+          "solution": { "label": "", "description": "" },
+          "link": { "url": { "href": "#" } },
+          "link_text": "",
+          "is_coming_soon": true,
+          "coming_soon_label": "[ EN DESARROLLO ]",
+          "coming_soon_description": "Sincronización bidireccional compleja de inventarios y pedidos entre SAP y HubSpot utilizando middleware customizado sobre AWS Lambda. Optimizando el ciclo de vida del cliente B2B.",
+          "coming_soon_tech_stack": "Tech Stack: AWS, Node.js, GraphQL"
+        }
+      ]
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# CTA Section #}
+  {% dnd_section
+    full_width=true,
+    padding={
+      "top": "120px",
+      "bottom": "120px",
+      "left": "0",
+      "right": "0"
+    },
+    margin={
+      "top": 0,
+      "bottom": 0
+    }
+  %}
+    {% dnd_module
+      path="../modules/homepage_cta",
+      content={
+        "title": "¿Listo para escalar tu ecosistema HubSpot?",
+        "subtext": "Soluciones técnicas que respetan el entorno del negocio y están diseñadas para perdurar.",
+        "cta_button": {
+          "text": "Agendar Discovery Call",
+          "link": {
+            "url": { "href": "#" }
+          }
+        }
+      },
+      styles={
+        "dark_mode_style": "alt"
+      }
+    %}
+    {% end_dnd_module %}
+  {% end_dnd_section %}
+
+{% end_dnd_area %}
+{% endblock body %}

@@ -1,0 +1,42 @@
+{% set module_id = name %}
+{% set dark_style = module.styles.dark_mode_style or "alt" %}
+
+<header class="project-hero-{{ module_id }} js-dark-{{ dark_style }} pt-16 pb-20 px-6 transition-colors">
+  <div class="max-w-5xl mx-auto">
+
+    {% if module.content.mono_label %}
+      <p class="font-mono text-accent font-semibold tracking-wider mb-6 text-sm">
+        {{ module.content.mono_label }}
+      </p>
+    {% endif %}
+
+    {% if module.content.title %}
+      <h1 class="text-5xl md:text-7xl font-black text-primary dark:text-white leading-[1.1] mb-8">
+        {% inline_text field="content.title", value="{{ module.content.title }}" %}
+      </h1>
+    {% endif %}
+
+    {% if module.content.tags %}
+      <div class="flex flex-wrap gap-3 mb-12">
+        {% for tag in module.content.tags %}
+          <span class="font-mono text-xs font-medium px-4 py-2 bg-slate-100 dark:bg-slate-800 border border-primary/10 dark:border-white/10 rounded-lg text-slate-600 dark:text-brand-lime/80">
+            [ {{ tag }} ]
+          </span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if module.content.hero_image.src %}
+      <div class="w-full aspect-video rounded-3xl overflow-hidden bg-slate-200 shadow-2xl relative">
+        <div class="absolute inset-0 bg-gradient-to-tr from-forest/20 to-transparent"></div>
+        <img
+          alt="{{ module.content.hero_image.alt }}"
+          class="w-full h-full object-cover"
+          src="{{ module.content.hero_image.src }}"
+          loading="lazy"
+        />
+      </div>
+    {% endif %}
+
+  </div>
+</header>

@@ -1,0 +1,42 @@
+{% set module_id = name %}
+{% set dark_style = module.styles.dark_mode_style or "alt" %}
+{% set bg = module.styles.bg_style or "alt" %}
+
+{% set bg_classes = {
+  "light": "bg-background-light dark:bg-background-card-dark/50",
+  "alt": "bg-background-alt-light dark:bg-background-alt-dark",
+  "white": "bg-white dark:bg-slate-900 border-y border-slate-100 dark:border-white/5"
+} %}
+
+<section class="project-problem-{{ module_id }} js-dark-{{ dark_style }} py-24 px-6 {{ bg_classes[bg] }} transition-colors">
+  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
+
+    {# Left Column: Icon + Title #}
+    <div>
+      {% if module.content.alert_label %}
+        <div class="inline-flex items-center gap-2 text-amber-600 mb-4">
+          <span class="material-symbols-outlined">{{ module.content.icon }}</span>
+          <span class="font-mono text-xs font-bold uppercase tracking-widest">{{ module.content.alert_label }}</span>
+        </div>
+      {% elif module.content.icon %}
+        <span class="material-symbols-outlined text-4xl text-forest dark:text-brand-lime mb-4 block">{{ module.content.icon }}</span>
+      {% endif %}
+
+      {% if module.content.title %}
+        <h2 class="text-4xl font-black leading-tight text-primary dark:text-white">
+          {% inline_text field="content.title", value="{{ module.content.title }}" %}
+        </h2>
+      {% endif %}
+    </div>
+
+    {# Right Column: Paragraphs #}
+    <div class="space-y-6">
+      {% for paragraph in module.content.paragraphs %}
+        <div class="text-xl text-slate-600 dark:text-brand-lime/80 leading-relaxed">
+          {{ paragraph }}
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

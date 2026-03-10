@@ -1,0 +1,113 @@
+{% set module_id = name %}
+{% set dark_style = module.styles.dark_mode_style or "alt" %}
+
+<section class="portfolio-cards-{{ module_id }} js-dark-{{ dark_style }} max-w-7xl mx-auto px-6 pb-32 transition-colors">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+    {% for card in module.cards %}
+
+      {% if card.is_coming_soon %}
+        {# ── Coming Soon Card (full width) ── #}
+        <article class="lg:col-span-2 relative bg-primary rounded-2xl p-1 overflow-hidden">
+          <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, #fff 1px, transparent 0); background-size: 32px 32px;"></div>
+          <div class="border-2 border-dashed border-white/20 rounded-xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 bg-primary relative z-10">
+            <div class="flex-1 space-y-6">
+              {% if card.coming_soon_label %}
+                <span class="inline-block bg-accent/20 text-accent border border-accent/30 font-mono text-[10px] px-3 py-1 rounded uppercase tracking-widest font-bold">
+                  {{ card.coming_soon_label }}
+                </span>
+              {% endif %}
+
+              <h3 class="text-white font-display font-bold text-3xl md:text-4xl">{{ card.title }}</h3>
+
+              {% if card.coming_soon_description %}
+                <p class="text-white/70 text-base max-w-xl leading-relaxed">
+                  {{ card.coming_soon_description }}
+                </p>
+              {% endif %}
+
+              {% if card.coming_soon_tech_stack %}
+                <div class="flex items-center gap-4">
+                  <div class="flex -space-x-2">
+                    <div class="size-8 rounded-full border-2 border-primary bg-slate-800 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-white text-xs">cloud</span>
+                    </div>
+                    <div class="size-8 rounded-full border-2 border-primary bg-slate-800 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-white text-xs">database</span>
+                    </div>
+                    <div class="size-8 rounded-full border-2 border-primary bg-slate-800 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-white text-xs">sync</span>
+                    </div>
+                  </div>
+                  <span class="text-white/50 font-mono text-[10px] uppercase">{{ card.coming_soon_tech_stack }}</span>
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="hidden md:flex w-48 h-48 border-2 border-accent/20 rounded-full items-center justify-center animate-pulse">
+              <span class="material-symbols-outlined text-accent text-6xl opacity-40">engineering</span>
+            </div>
+          </div>
+        </article>
+
+      {% else %}
+        {# ── Regular Project Card ── #}
+        <article class="group bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 shadow-xl shadow-primary/5 dark:shadow-none flex flex-col h-full">
+
+          {# Image #}
+          {% if card.image.src %}
+            <div class="aspect-video w-full overflow-hidden bg-slate-100 dark:bg-slate-700 relative">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                alt="{{ card.image.alt }}"
+                src="{{ card.image.src }}"
+                loading="lazy"
+              />
+              {% if card.tags %}
+                <div class="absolute top-4 left-4 flex gap-2">
+                  {% for tag in card.tags %}
+                    <span class="bg-primary text-white font-mono text-[10px] px-3 py-1 rounded-sm uppercase tracking-tighter">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+
+          {# Content #}
+          <div class="p-8 flex flex-col flex-grow">
+            <h3 class="text-primary dark:text-white font-display font-bold text-2xl mb-6">{{ card.title }}</h3>
+
+            <div class="space-y-6 mb-8 flex-grow">
+              {% if card.challenge.label and card.challenge.description %}
+                <div>
+                  <h4 class="font-mono text-[10px] text-accent font-bold uppercase tracking-wider mb-2">{{ card.challenge.label }}</h4>
+                  <p class="text-slate-600 dark:text-brand-lime/80 text-sm leading-relaxed">{{ card.challenge.description }}</p>
+                </div>
+              {% endif %}
+
+              {% if card.solution.label and card.solution.description %}
+                <div>
+                  <h4 class="font-mono text-[10px] text-accent font-bold uppercase tracking-wider mb-2">{{ card.solution.label }}</h4>
+                  <p class="text-slate-600 dark:text-brand-lime/80 text-sm leading-relaxed">{{ card.solution.description }}</p>
+                </div>
+              {% endif %}
+            </div>
+
+            {% if card.link.url.href and card.link_text %}
+              <a class="inline-flex items-center text-primary dark:text-white font-bold text-sm border-b-2 border-accent pb-1 w-fit group-hover:gap-2 transition-all" href="{{ card.link.url.href }}"
+                {% if card.link.open_in_new_tab %}target="_blank"{% endif %}
+                {% if card.link.no_follow %}rel="nofollow"{% endif %}
+              >
+                {{ card.link_text }}
+                <span class="material-symbols-outlined text-sm ml-1">north_east</span>
+              </a>
+            {% endif %}
+          </div>
+
+        </article>
+      {% endif %}
+
+    {% endfor %}
+
+  </div>
+</section>

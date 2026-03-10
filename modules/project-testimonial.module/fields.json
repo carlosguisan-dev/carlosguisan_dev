@@ -1,0 +1,46 @@
+[
+  {
+    "label": "Content",
+    "name": "content",
+    "type": "group",
+    "children": [
+      {
+        "label": "Quote",
+        "name": "quote",
+        "type": "richtext",
+        "default": "\"La visión técnica de este proyecto transformó por completo nuestra forma de trabajar.\""
+      },
+      {
+        "label": "Author Name",
+        "name": "author_name",
+        "type": "text",
+        "default": "Elena Rodriguez"
+      },
+      {
+        "label": "Author Role",
+        "name": "author_role",
+        "type": "text",
+        "default": "Directora de Tecnología, EduGroup International"
+      }
+    ]
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Dark Mode Style",
+        "name": "dark_mode_style",
+        "type": "choice",
+        "choices": [
+          ["deep", "Deep Dark"],
+          ["alt", "Alt Dark"]
+        ],
+        "default": "alt",
+        "display": "radio"
+      }
+    ]
+  }
+]

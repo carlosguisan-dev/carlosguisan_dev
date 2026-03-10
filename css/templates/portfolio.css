@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Portfolio & Project Detail Styles
+   Covers: portfolio.html, case-study.html, poc-detail.html
+   ========================================================================== */
+
+/* ── Filter Pills ── */
+.portfolio-filter-pill {
+  cursor: pointer;
+}
+
+.portfolio-filter-pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.portfolio-filter-pill:active {
+  transform: translateY(0);
+}
+
+/* ── Portfolio Card Hover ── */
+.portfolio-cards-wrapper article.group:hover img {
+  transform: scale(1.05);
+}
+
+.portfolio-cards-wrapper article.group:hover a {
+  gap: 0.5rem;
+}
+
+/* ── Coming Soon Pulse ── */
+@keyframes gentle-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+.portfolio-cards-wrapper .animate-pulse {
+  animation: gentle-pulse 3s ease-in-out infinite;
+}
+
+/* ── Code Block in Phase Module ── */
+.project-phase-wrapper pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+/* ── Stats Strip Responsive ── */
+@media (max-width: 768px) {
+  .project-stats-wrapper .flex {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ── Testimonial Quote ── */
+.project-testimonial-wrapper blockquote {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ── Dark Mode Transitions ── */
+.body-container--portfolio,
+.body-container--case-study,
+.body-container--poc-detail {
+  transition: background-color 0.3s ease;
+}
+
+/* ── Hero Image Gradient Overlay ── */
+.project-hero-wrapper .bg-gradient-to-tr {
+  pointer-events: none;
+}
+
+/* ── Phase Cards Hover ── */
+.project-phase-wrapper .bg-white:hover,
+.project-phase-wrapper .dark\:bg-slate-800:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* ── Tag Pills ── */
+.project-detail-hero-wrapper .font-mono span {
+  transition: background-color 0.2s ease;
+}
+
+/* ── Portfolio Grid Gap Adjustments ── */
+@media (min-width: 1024px) {
+  .body-container--portfolio .grid {
+    gap: 3rem;
+  }
+}

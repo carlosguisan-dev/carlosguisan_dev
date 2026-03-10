@@ -1,0 +1,80 @@
+[
+  {
+    "label": "Content",
+    "name": "content",
+    "type": "group",
+    "children": [
+      {
+        "label": "Stats",
+        "name": "stats",
+        "type": "group",
+        "occurrence": {
+          "min": 1,
+          "max": 5,
+          "default": 3
+        },
+        "children": [
+          {
+            "label": "Value",
+            "name": "value",
+            "type": "text",
+            "default": "-80%"
+          },
+          {
+            "label": "Label",
+            "name": "label",
+            "type": "text",
+            "default": "Tiempo de Gestión Manual"
+          },
+          {
+            "label": "Sublabel",
+            "name": "sublabel",
+            "type": "text",
+            "default": ""
+          },
+          {
+            "label": "Icon",
+            "name": "icon",
+            "type": "text",
+            "default": ""
+          }
+        ],
+        "default": [
+          { "value": "-80%", "label": "Tiempo de Gestión Manual", "sublabel": "", "icon": "" },
+          { "value": "100%", "label": "Core Web Vitals (Passed)", "sublabel": "", "icon": "" },
+          { "value": "98/100", "label": "Lighthouse Performance", "sublabel": "", "icon": "" }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Background Style",
+        "name": "bg_style",
+        "type": "choice",
+        "choices": [
+          ["forest", "Forest Green"],
+          ["primary", "Primary Dark"]
+        ],
+        "default": "forest",
+        "display": "radio"
+      },
+      {
+        "label": "Layout",
+        "name": "layout",
+        "type": "choice",
+        "choices": [
+          ["inline", "Inline Strip"],
+          ["cards", "Cards with Icons"]
+        ],
+        "default": "inline",
+        "display": "radio"
+      }
+    ]
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "label": "Content",
+    "name": "content",
+    "type": "group",
+    "children": [
+      {
+        "label": "Icon",
+        "name": "icon",
+        "type": "text",
+        "default": "settings_suggest"
+      },
+      {
+        "label": "Alert Label",
+        "name": "alert_label",
+        "type": "text",
+        "default": ""
+      },
+      {
+        "label": "Title",
+        "name": "title",
+        "type": "text",
+        "default": "El problema: Crecimiento frenado por deuda técnica"
+      },
+      {
+        "label": "Paragraphs",
+        "name": "paragraphs",
+        "type": "richtext",
+        "occurrence": {
+          "min": 1,
+          "max": 5,
+          "default": 2
+        },
+        "default": [
+          "La institución educativa presentaba una arquitectura de datos fragmentada.",
+          "La falta de una estructura de Custom Objects impedía la automatización de procesos críticos."
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Background Style",
+        "name": "bg_style",
+        "type": "choice",
+        "choices": [
+          ["light", "Light"],
+          ["alt", "Alt"],
+          ["white", "White"]
+        ],
+        "default": "alt",
+        "display": "radio"
+      },
+      {
+        "label": "Dark Mode Style",
+        "name": "dark_mode_style",
+        "type": "choice",
+        "choices": [
+          ["deep", "Deep Dark"],
+          ["alt", "Alt Dark"]
+        ],
+        "default": "alt",
+        "display": "radio"
+      }
+    ]
+  }
+]
