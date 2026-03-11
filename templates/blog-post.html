@@ -45,7 +45,7 @@
       <div class="flex items-center gap-4 mb-10 pb-10 border-b border-slate-200 dark:border-white/10">
         <div class="h-12 w-12 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700 border-2 border-primary dark:border-accent">
           {% if content.blog_post_author.avatar %}
-            <img class="h-full w-full object-cover" src="{{ content.blog_post_author.avatar }}" alt="{{ content.blog_post_author.display_name }}" />
+            <img class="h-full w-full object-cover" src="{{ resize_image_url(content.blog_post_author.avatar, 96, 96) }}" alt="{{ content.blog_post_author.display_name }}" width="48" height="48" loading="lazy" />
           {% else %}
             <div class="h-full w-full flex items-center justify-center">
               <span class="material-symbols-outlined text-primary dark:text-accent">person</span>
@@ -68,8 +68,10 @@
           <div class="aspect-video w-full rounded-xl bg-slate-100 dark:bg-slate-900 overflow-hidden relative">
             <img
               class="w-full h-full object-cover"
-              src="{{ content.featured_image }}"
+              src="{{ resize_image_url(content.featured_image, 1600) }}"
               alt="{{ content.featured_image_alt_text }}"
+              width="800"
+              height="450"
               loading="eager"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
@@ -113,7 +115,7 @@
         <div class="blog-author-bio mt-20 p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-white/10 shadow-sm flex flex-col sm:flex-row gap-8 items-center sm:items-start">
           <div class="h-24 w-24 shrink-0 overflow-hidden rounded-xl border-2 border-slate-100 dark:border-white/10 shadow-md">
             {% if content.blog_post_author.avatar %}
-              <img class="h-full w-full object-cover" src="{{ content.blog_post_author.avatar }}" alt="{{ content.blog_post_author.display_name }}" />
+              <img class="h-full w-full object-cover" src="{{ resize_image_url(content.blog_post_author.avatar, 192, 192) }}" alt="{{ content.blog_post_author.display_name }}" width="96" height="96" loading="lazy" />
             {% else %}
               <div class="h-full w-full bg-accent/20 flex items-center justify-center">
                 <span class="material-symbols-outlined text-3xl text-primary dark:text-accent">person</span>
@@ -167,7 +169,7 @@
           <a href="{{ post.absolute_url }}" class="blog-card group block cursor-pointer" aria-label="Blog post: {{ post.name|escape_attr }}">
             {% if post.featured_image %}
               <div class="aspect-video rounded-2xl overflow-hidden mb-6 border border-primary/5 dark:border-white/10">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="{{ post.featured_image }}" alt="{{ post.featured_image_alt_text|escape_attr }}" loading="lazy" />
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="{{ resize_image_url(post.featured_image, 800) }}" alt="{{ post.featured_image_alt_text|escape_attr }}" width="400" height="225" loading="lazy" />
               </div>
             {% endif %}
             {% if post.tag_list %}
