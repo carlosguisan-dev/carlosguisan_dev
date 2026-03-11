@@ -1,0 +1,117 @@
+[
+  {
+    "name": "header",
+    "label": "Header",
+    "type": "group",
+    "children": [
+      {
+        "name": "mono_label",
+        "label": "Mono Label",
+        "type": "text",
+        "default": "< carlosguisan >"
+      },
+      {
+        "name": "title",
+        "label": "Section Title",
+        "type": "text",
+        "default": "Soluciones a Medida"
+      }
+    ]
+  },
+  {
+    "name": "services",
+    "label": "Service Cards",
+    "type": "group",
+    "occurrence": {
+      "min": 0,
+      "max": null,
+      "default": null,
+      "sorting_label_field": "title"
+    },
+    "default": [
+      {
+        "tag": "[ PROYECTOS HIGH-TICKET ]",
+        "title": "Auditorías y Sistemas Dinámicos",
+        "feature_1": "Auditoría técnica de infraestructura HubSpot.",
+        "feature_2": "Refactorización de HubDB y CRM Objects.",
+        "feature_3": "Optimización avanzada de Core Web Vitals (LCP/CLS).",
+        "feature_4": "Arquitectura de datos para escalabilidad empresarial.",
+        "price": "Desde $2,500 / proyecto"
+      },
+      {
+        "tag": "[ DESARROLLO A MEDIDA ]",
+        "title": "Temas Personalizados y CMS Hub",
+        "feature_1": "Desarrollo de Temas (Boilerplate-free) con HubL.",
+        "feature_2": "Módulos complejos, dinámicos y reutilizables.",
+        "feature_3": "Migraciones pixel-perfect desde Figma/Webflow.",
+        "feature_4": "Integración nativa con APIs externas y JS.",
+        "price": "Cotización según alcance"
+      },
+      {
+        "tag": "[ INGRESO RECURRENTE ]",
+        "title": "Mantenimiento y Retainers",
+        "feature_1": "Soporte técnico prioritario (SLA < 4h).",
+        "feature_2": "Actualizaciones continuas de UX/UI y seguridad.",
+        "feature_3": "Resolución proactiva de bugs y deuda técnica.",
+        "feature_4": "Consultoría estratégica mensual de arquitectura.",
+        "price": "Desde $800 / mes"
+      }
+    ],
+    "children": [
+      {
+        "name": "tag",
+        "label": "Tag Label",
+        "type": "text"
+      },
+      {
+        "name": "title",
+        "label": "Card Title",
+        "type": "text"
+      },
+      {
+        "name": "feature_1",
+        "label": "Feature 1",
+        "type": "text"
+      },
+      {
+        "name": "feature_2",
+        "label": "Feature 2",
+        "type": "text"
+      },
+      {
+        "name": "feature_3",
+        "label": "Feature 3",
+        "type": "text"
+      },
+      {
+        "name": "feature_4",
+        "label": "Feature 4",
+        "type": "text"
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "name": "styles",
+    "label": "Styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "name": "spacing",
+        "label": "Spacing",
+        "type": "spacing",
+        "default": {
+          "padding": {
+            "top": { "value": 80, "units": "px" },
+            "bottom": { "value": 80, "units": "px" }
+          }
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,50 @@
+{# Services Methodology Module #}
+{% require_css %}
+<style>
+  {% scope_css %}
+    .services-methodology-{{ module_id }} {
+      {{ module.styles.spacing.css }}
+    }
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+<section class="services-methodology-{{ module_id }} bg-background-alt-light dark:bg-background-alt-dark">
+  <div class="max-w-7xl mx-auto px-6">
+    
+    {# Header #}
+    <div class="max-w-2xl mx-auto text-center mb-20">
+      <h2 class="text-4xl font-bold text-slate-900 dark:text-white mb-6">
+        {{ module.header.title }}
+      </h2>
+      <p class="text-lg text-slate-600 dark:text-slate-400">
+        {{ module.header.subtitle }}
+      </p>
+    </div>
+
+    {# Steps Grid #}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+      {% for step in module.steps %}
+        <div class="flex gap-8 bg-white/50 dark:bg-white/5 p-8 rounded-3xl border border-white dark:border-white/5 backdrop-blur-sm shadow-sm">
+          
+          <div class="flex-shrink-0 w-16 h-16 rounded-2xl bg-brand-green/10 dark:bg-brand-lime/10 flex items-center justify-center text-brand-green dark:text-brand-lime">
+            <span class="material-symbols-outlined text-4xl leading-none">
+              {{ step.icon }}
+            </span>
+          </div>
+
+          <div>
+            <h4 class="text-xl font-bold text-slate-900 dark:text-white mb-3">
+              {{ step.title }}
+            </h4>
+            <p class="text-slate-600 dark:text-slate-400 leading-relaxed">
+              {{ step.description }}
+            </p>
+          </div>
+
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

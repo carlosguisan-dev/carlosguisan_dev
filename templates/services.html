@@ -1,0 +1,188 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Servicios
+  screenshotPath: ../images/screenshots/services.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<main class="services-page">
+  {% dnd_area "services_dnd" %}
+    
+    {# Hero Section #}
+    {% dnd_section
+      full_width=true,
+      padding={ "top": "0", "bottom": "0" },
+      margin={ "top": "0", "bottom": "0" }
+    %}
+      {% dnd_module 
+        path="../modules/services-hero",
+        content={
+          "mono_label": "// EXPERTISE TÉCNICO EN HUBSPOT CMS",
+          "title": "Arquitectura de Soluciones y CMS de Alto Impacto",
+          "description": "Transformo portales corporativos en activos estratégicos. Optimizando el rendimiento, eliminando la deuda técnica y escalando su negocio en el ecosistema HubSpot.",
+          "primary_cta_text": "Ver Servicios",
+          "secondary_cta_text": "Hablar con un Experto"
+        },
+        styles={
+          "spacing": {
+            "padding": {
+              "top": { "value": 160, "units": "px" },
+              "bottom": { "value": 120, "units": "px" }
+            }
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_section %}
+
+    {# Problem Section #}
+    {% dnd_section
+      full_width=true,
+      padding={ "top": "0", "bottom": "0" },
+      margin={ "top": "0", "bottom": "0" }
+    %}
+      {% dnd_module 
+        path="../modules/services-problem",
+        content={
+          "title": "¿Tu portal de HubSpot te impulsa o te frena?",
+          "description": "<p>Muchos equipos enfrentan el mismo muro: flujos de trabajo rotos, temas de CMS lentos que dañan el SEO y una arquitectura de datos que nadie entiende. La deuda técnica en HubSpot no solo cuesta dinero, cuesta agilidad competitiva.</p>",
+          "icon_1": "settings",
+          "icon_2": "account_tree",
+          "icon_3": "memory"
+        },
+        styles={
+          "spacing": {
+            "padding": {
+              "top": { "value": 120, "units": "px" },
+              "bottom": { "value": 120, "units": "px" }
+            }
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_section %}
+
+    {# Ladder Section #}
+    {% dnd_section
+      full_width=true,
+      padding={ "top": "0", "bottom": "0" },
+      margin={ "top": "0", "bottom": "0" }
+    %}
+      {% dnd_module 
+        path="../modules/services-ladder",
+        header={
+          "mono_label": "< carlosguisan >",
+          "title": "Soluciones a Medida"
+        },
+        services=[
+          {
+            "tag": "[ EL ARQUITECTO ]",
+            "title": "Sistemas Dinámicos",
+            "feature_1": "Implementación HubDB & CRM Objects",
+            "feature_2": "Arquitectura de datos y portal base",
+            "feature_3": "Workflows de automatización avanzada",
+            "feature_4": "Documentación técnica de procesos",
+            "price": "Desde $2,250 USD"
+          },
+          {
+            "tag": "[ EL DEVELOPER ]",
+            "title": "Tema Personalizado",
+            "feature_1": "Desarrollo HubL de alto rendimiento",
+            "feature_2": "Conversión Figma to Code pixel-perfect",
+            "feature_3": "Módulos custom drag-and-drop",
+            "feature_4": "Optimización seo técnico y Web Vitals",
+            "price": "Desde $2,400 USD"
+          },
+          {
+            "tag": "[ PARTNER CONTINUO ]",
+            "title": "Retainer Técnico",
+            "feature_1": "Optimización e iteración continua del CMS",
+            "feature_2": "Soporte y resolución proactiva de bugs",
+            "feature_3": "Consultoría estratégica del ecosistema",
+            "feature_4": "Contratos flexibles de 20h - 40h mensuales",
+            "price": "$63 USD / hora"
+          }
+        ],
+        styles={
+          "spacing": {
+            "padding": {
+              "top": { "value": 120, "units": "px" },
+              "bottom": { "value": 120, "units": "px" }
+            }
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_section %}
+
+    {# Methodology Section #}
+    {% dnd_section
+      full_width=true,
+      padding={ "top": "0", "bottom": "0" },
+      margin={ "top": "0", "bottom": "0" }
+    %}
+      {% dnd_module 
+        path="../modules/services-methodology",
+        header={
+          "title": "Cómo trabajamos: Rigor y Claridad",
+          "subtitle": "Un proceso estructurado para eliminar la incertidumbre técnica."
+        },
+        steps=[
+          {
+            "icon": "calendar_month",
+            "title": "Planificación Ágil",
+            "description": "Sprints definidos y entregas constantes para mantener el ritmo del proyecto sin sorpresas."
+          },
+          {
+            "icon": "token",
+            "title": "Figma to HubSpot",
+            "description": "Traducción pixel-perfect de diseños complejos a código HubL limpio y optimizado."
+          },
+          {
+            "icon": "verified_user",
+            "title": "Seguridad y QA",
+            "description": "Pruebas exhaustivas en todos los navegadores y validación de seguridad de datos."
+          },
+          {
+            "icon": "handshake",
+            "title": "Socio Estratégico",
+            "description": "No somos solo ejecutores; nos involucramos en los objetivos de negocio de tu portal."
+          }
+        ],
+        styles={
+          "spacing": {
+            "padding": {
+              "top": { "value": 120, "units": "px" },
+              "bottom": { "value": 120, "units": "px" }
+            }
+          }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_section %}
+
+    {# Final CTA #}
+    {% dnd_section
+      full_width=true,
+      padding={ "top": "120px", "bottom": "120px" },
+      margin={ "top": "0", "bottom": "0" }
+    %}
+      {% dnd_module
+        path="../modules/cta",
+        content={
+          "title": "¿Listo para escalar tu infraestructura en HubSpot?",
+          "description": "Hablemos sobre tus desafíos técnicos y cómo podemos construir una solución que realmente funcione para tu equipo de marketing y ventas.",
+          "show_icon": true,
+          "icon_name": "rocket_launch",
+          "cta_text": "Agendar Discovery Call",
+          "cta_link": { "url": { "type": "EXTERNAL", "href": "#" } }
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_section %}
+
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

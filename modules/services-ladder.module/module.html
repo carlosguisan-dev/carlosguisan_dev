@@ -1,0 +1,80 @@
+{# Services Ladder Module #}
+{% require_css %}
+<style>
+  {% scope_css %}
+    .services-ladder-{{ module_id }} {
+      {{ module.styles.spacing.css }}
+    }
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+<section id="servicios" class="services-ladder-{{ module_id }} bg-background-light dark:bg-background-dark">
+  <div class="max-w-7xl mx-auto px-6">
+    
+    {# Header #}
+    <div class="text-center mb-16">
+      {% if module.header.mono_label %}
+        <span class="font-mono text-brand-green dark:text-brand-lime text-sm tracking-widest block mb-4 uppercase">
+          {{ module.header.mono_label }}
+        </span>
+      {% endif %}
+      <h2 class="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-100">
+        {{ module.header.title }}
+      </h2>
+    </div>
+
+    {# Ladder Grid #}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for item in module.services %}
+        <article class="group flex flex-col bg-white dark:bg-slate-800/40 p-10 rounded-3xl border border-slate-100 dark:border-white/5 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-500">
+          
+          <span class="font-mono text-[10px] tracking-widest text-brand-green dark:text-brand-lime uppercase mb-6 block opacity-70">
+            {{ item.tag }}
+          </span>
+
+          <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-8 group-hover:text-brand-green dark:group-hover:text-brand-lime transition-colors">
+            {{ item.title }}
+          </h3>
+
+          <div class="flex-grow prose prose-slate dark:prose-invert prose-sm mb-10">
+            <ul class="space-y-4 list-none p-0">
+              {% if item.feature_1 %}
+                <li class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-brand-lime text-lg">check_circle</span>
+                  <span>{{ item.feature_1 }}</span>
+                </li>
+              {% endif %}
+              {% if item.feature_2 %}
+                <li class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-brand-lime text-lg">check_circle</span>
+                  <span>{{ item.feature_2 }}</span>
+                </li>
+              {% endif %}
+              {% if item.feature_3 %}
+                <li class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-brand-lime text-lg">check_circle</span>
+                  <span>{{ item.feature_3 }}</span>
+                </li>
+              {% endif %}
+              {% if item.feature_4 %}
+                <li class="flex items-start gap-3">
+                  <span class="material-symbols-outlined text-brand-lime text-lg">check_circle</span>
+                  <span>{{ item.feature_4 }}</span>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+
+          <div class="pt-8 border-t border-slate-100 dark:border-white/5">
+            <div class="font-mono font-bold text-brand-green dark:text-brand-lime text-lg">
+              {{ item.price }}
+            </div>
+          </div>
+
+        </article>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

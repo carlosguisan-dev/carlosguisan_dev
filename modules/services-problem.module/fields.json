@@ -1,0 +1,58 @@
+[
+  {
+    "name": "content",
+    "label": "Content",
+    "type": "group",
+    "children": [
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "¿Tu portal de HubSpot te impulsa o te frena?"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "richtext",
+        "default": "<p>Muchos equipos enfrentan el mismo muro: flujos de trabajo rotos, temas de CMS lentos que dañan el SEO y una arquitectura de datos que nadie entiende. La deuda técnica en HubSpot no solo cuesta dinero, cuesta agilidad competitiva.</p>"
+      },
+      {
+        "name": "icon_1",
+        "label": "Icon 1 (Material Symbol ID)",
+        "type": "text",
+        "default": "settings"
+      },
+      {
+        "name": "icon_2",
+        "label": "Icon 2 (Material Symbol ID)",
+        "type": "text",
+        "default": "account_tree"
+      },
+      {
+        "name": "icon_3",
+        "label": "Icon 3 (Material Symbol ID)",
+        "type": "text",
+        "default": "memory"
+      }
+    ]
+  },
+  {
+    "name": "styles",
+    "label": "Styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "name": "spacing",
+        "label": "Spacing",
+        "type": "spacing",
+        "default": {
+          "padding": {
+            "top": { "value": 80, "units": "px" },
+            "bottom": { "value": 80, "units": "px" }
+          }
+        }
+      }
+    ]
+  }
+]

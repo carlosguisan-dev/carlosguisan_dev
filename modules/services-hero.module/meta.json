@@ -1,0 +1,12 @@
+{
+  "display_name": "Services Hero",
+  "is_available_for_new_content": true,
+  "guid": "services_hero_migrated",
+  "icon": "fontawesome-5.14.0/solid/stars",
+  "host_template_types": [
+    "PAGE"
+  ],
+  "module_tag": "services_hero",
+  "full_width": false,
+  "content_types": []
+}

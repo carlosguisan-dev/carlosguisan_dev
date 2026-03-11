@@ -1,0 +1,45 @@
+{# Services Hero Module #}
+{% require_css %}
+<style>
+  {% scope_css %}
+    .services-hero-{{ module_id }} {
+      {{ module.styles.spacing.css }}
+    }
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+<section class="services-hero-{{ module_id }} relative overflow-hidden bg-background-light dark:bg-background-dark">
+  {# Pattern Overlay #}
+  <div class="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none">
+    <div class="absolute inset-0" style="background-image: radial-gradient(var(--color-brand-green) 1px, transparent 1px); background-size: 40px 40px;"></div>
+  </div>
+
+  <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+    {% if module.content.mono_label %}
+      <span class="inline-block font-mono text-brand-green dark:text-brand-lime text-sm mb-6 tracking-widest bg-brand-lime/10 dark:bg-brand-lime/5 px-4 py-1.5 rounded-full">
+        {{ module.content.mono_label }}
+      </span>
+    {% endif %}
+
+    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-slate-100 mb-8 leading-tight tracking-tight">
+      {{ module.content.title }}
+    </h1>
+
+    <div class="text-xl text-slate-600 dark:text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+      {{ module.content.description }}
+    </div>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
+      <a href="{{ module.content.primary_cta.url.href }}" 
+         class="btn btn-primary px-10 py-5 rounded-2xl text-xl w-full sm:w-auto">
+        {{ module.content.primary_cta_text }}
+      </a>
+      
+      <a href="{{ module.content.secondary_cta.url.href }}" 
+         class="btn btn-outline px-10 py-5 rounded-2xl text-xl w-full sm:w-auto">
+        {{ module.content.secondary_cta_text }}
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,90 @@
+[
+  {
+    "name": "header",
+    "label": "Header",
+    "type": "group",
+    "children": [
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "Cómo trabajamos: Rigor y Claridad"
+      },
+      {
+        "name": "subtitle",
+        "label": "Subtitle",
+        "type": "text",
+        "default": "Un proceso estructurado para eliminar la incertidumbre técnica."
+      }
+    ]
+  },
+  {
+    "name": "steps",
+    "label": "Steps",
+    "type": "group",
+    "occurrence": {
+      "min": 0,
+      "max": null,
+      "default": null,
+      "sorting_label_field": "title"
+    },
+    "default": [
+      {
+        "icon": "calendar_month",
+        "title": "Planificación Ágil",
+        "description": "Sprints definidos y entregas constantes para mantener el ritmo del proyecto sin sorpresas."
+      },
+      {
+        "icon": "token",
+        "title": "Figma to HubSpot",
+        "description": "Traducción pixel-perfect de diseños complejos a código HubL limpio y optimizado."
+      },
+      {
+        "icon": "verified_user",
+        "title": "Seguridad y QA",
+        "description": "Pruebas exhaustivas en todos los navegadores y validación de seguridad de datos."
+      },
+      {
+        "icon": "handshake",
+        "title": "Socio Estratégico",
+        "description": "No somos solo ejecutores; nos involucramos en los objetivos de negocio de tu portal."
+      }
+    ],
+    "children": [
+      {
+        "name": "icon",
+        "label": "Material Icon ID",
+        "type": "text"
+      },
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "text"
+      }
+    ]
+  },
+  {
+    "name": "styles",
+    "label": "Styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "name": "spacing",
+        "label": "Spacing",
+        "type": "spacing",
+        "default": {
+          "padding": {
+            "top": { "value": 80, "units": "px" },
+            "bottom": { "value": 80, "units": "px" }
+          }
+        }
+      }
+    ]
+  }
+]

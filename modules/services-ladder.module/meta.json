@@ -1,0 +1,12 @@
+{
+  "display_name": "Services Ladder",
+  "is_available_for_new_content": true,
+  "guid": "services_ladder_migrated",
+  "icon": "fontawesome-5.14.0/solid/layer-group",
+  "host_template_types": [
+    "PAGE"
+  ],
+  "module_tag": "services_ladder",
+  "full_width": false,
+  "content_types": []
+}

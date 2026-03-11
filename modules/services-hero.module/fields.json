@@ -1,0 +1,74 @@
+[
+  {
+    "name": "content",
+    "label": "Content",
+    "type": "group",
+    "children": [
+      {
+        "name": "mono_label",
+        "label": "Mono Label",
+        "type": "text",
+        "default": "// EXPERTISE TÉCNICO EN HUBSPOT CMS"
+      },
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "Arquitectura de Soluciones y CMS de Alto Impacto"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "richtext",
+        "default": "Transformo portales corporativos en activos estratégicos. Optimizando el rendimiento, eliminando la deuda técnica y escalando su negocio en el ecosistema HubSpot."
+      },
+      {
+        "name": "primary_cta",
+        "label": "Primary CTA",
+        "type": "link",
+        "default": {
+          "url": { "type": "CONTENT", "content_id": null, "href": "#servicios" }
+        }
+      },
+      {
+        "name": "primary_cta_text",
+        "label": "Primary CTA Text",
+        "type": "text",
+        "default": "Ver Servicios"
+      },
+      {
+        "name": "secondary_cta",
+        "label": "Secondary CTA",
+        "type": "link",
+        "default": {
+          "url": { "type": "EXTERNAL", "href": "#contacto" }
+        }
+      },
+      {
+        "name": "secondary_cta_text",
+        "label": "Secondary CTA Text",
+        "type": "text",
+        "default": "Hablar con un Experto"
+      }
+    ]
+  },
+  {
+    "name": "styles",
+    "label": "Styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "name": "spacing",
+        "label": "Spacing",
+        "type": "spacing",
+        "default": {
+          "padding": {
+            "top": { "value": 128, "units": "px" },
+            "bottom": { "value": 80, "units": "px" }
+          }
+        }
+      }
+    ]
+  }
+]
