@@ -12,24 +12,24 @@
 {% set dark_style = module.styles.dark_mode_style or "alt" %}
 
 <section class="cta-{{ module_id }} js-cta js-dark-{{ dark_style }} flex items-center justify-center">
-  <div class="max-w-4xl mx-auto px-6 text-center">
+  <div class="max-w-5xl mx-auto px-6 text-center">
 
     {% if module.content.icon %}
       <div class="mb-8 flex justify-center">
-        <div class="p-3 bg-accent/10 rounded-full">
-          <span class="material-symbols-outlined text-4xl text-primary dark:text-white">{{ module.content.icon }}</span>
+        <div class="p-4 bg-brand-lime/10 rounded-full">
+          <span class="material-symbols-outlined text-5xl md:text-6xl text-brand-lime">{{ module.content.icon }}</span>
         </div>
       </div>
     {% endif %}
 
     {% if module.content.title %}
-      <div class="text-4xl md:text-7xl font-black text-slate-900 dark:text-white tracking-tight leading-tight mb-8">
+      <div class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-950 dark:text-white tracking-tight leading-tight mb-8">
         {% inline_rich_text field="content.title", value="{{ module.content.title }}" %}
       </div>
     {% endif %}
 
     {% if module.content.subtext %}
-      <div class="text-lg md:text-2xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed mb-12">
+      <div class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-[1.8] mb-12 text-pretty font-medium">
         {% inline_rich_text field="content.subtext", value="{{ module.content.subtext }}" %}
       </div>
     {% endif %}

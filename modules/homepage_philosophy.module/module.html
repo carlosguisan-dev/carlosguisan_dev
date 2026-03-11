@@ -61,11 +61,11 @@
 {% set dark_style = module.styles.dark_mode_style or "deep" %}
 
 <section class="philosophy-{{ module_id }} js-philosophy js-dark-{{ dark_style }} py-48 md:py-64 flex items-center justify-center min-h-[85vh]">
-  <div class="max-w-4xl mx-auto px-6 relative z-10 w-full">
+  <div class="max-w-5xl mx-auto px-6 relative z-10 w-full">
     <!-- Outer glass layer -->
     <div class="glass-outer p-4 md:p-10 rounded-[56px]">
       <!-- Inner card content -->
-      <div class="glass-card p-12 md:p-24 rounded-[40px] text-center shadow-2xl">
+      <div class="glass-card p-10 md:p-20 rounded-[40px] text-center shadow-2xl">
         
         {% if module.content.icon_image.src or module.content.icon %}
           <div class="inline-flex items-center justify-center mb-10">
@@ -80,13 +80,13 @@
         {% endif %}
 
         {% if module.content.title %}
-          <h2 class="text-4xl md:text-7xl font-black text-slate-950 dark:text-white tracking-tight leading-tight mb-8">
+          <h2 class="text-4xl md:text-6xl font-black text-slate-950 dark:text-white tracking-tight leading-tight mb-8">
             {{ module.content.title }}
           </h2>
         {% endif %}
 
         {% if module.content.text %}
-          <div class="text-lg md:text-2xl text-slate-900 dark:text-white/95 leading-relaxed font-semibold">
+          <div class="text-[17px] md:text-xl text-slate-900 dark:text-white/95 leading-[1.8] font-medium text-pretty space-y-4">
             {% inline_rich_text field="content.text", value="{{ module.content.text }}" %}
           </div>
         {% endif %}

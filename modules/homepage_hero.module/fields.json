@@ -8,19 +8,19 @@
         "label": "Mono Label",
         "name": "mono_label",
         "type": "text",
-        "default": "// HUBSPOT SOLUTIONS ARCHITECT & CMS DEVELOPER"
+        "default": "// Senior HubSpot Content Hub Architect & CMS Developer"
       },
       {
         "label": "Headline",
         "name": "headline",
         "type": "richtext",
-        "default": "Arquitectura escalable. <span class=\"text-brand-lime\">Código impecable.</span>"
+        "default": "Arquitectura escalable <span class=\"text-brand-lime\">para el ecosistema Hubspot.</span>"
       },
       {
         "label": "Description",
         "name": "description",
         "type": "richtext",
-        "default": "Especialista en refactorización de portales HubSpot y ejecución frontend de alto rendimiento para equipos que no pueden permitirse fallos técnicos."
+        "default": "Desarrollo sistemas dinámicos, elimino deuda técnica y construyo infraestructuras de contenido listas para IA. Código de alta ingeniería desde el corazón de Sarapiquí."
       },
       {
         "label": "Primary Button",
@@ -31,7 +31,7 @@
             "label": "Text",
             "name": "text",
             "type": "text",
-            "default": "Iniciar evaluación gratis"
+            "default": "Ver Soluciones Técnicas"
           },
           {
             "label": "Link",

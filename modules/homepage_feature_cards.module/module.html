@@ -25,14 +25,14 @@
   <div class="max-w-7xl mx-auto px-6">
     {% set header = module.cards.section_header %}
     {% if header.title %}
-      <div class="mb-16 {% if header.header_layout == 'split' %}flex flex-col md:flex-row justify-between items-center md:items-end gap-6 text-center md:text-left{% endif %}">
+      <div class="mb-16 {% if header.header_layout == 'split' %}flex flex-col md:flex-row justify-between items-center md:items-center gap-6 text-center md:text-left{% endif %}">
         <div class="{% if header.header_layout == 'split' %}flex-1 w-full{% else %}text-center md:text-left{% endif %}">
-          <h2 class="text-3xl md:text-5xl font-black leading-tight dark:text-white">
+          <h2 class="text-3xl md:text-5xl font-black leading-tight dark:text-white m-0">
             {% inline_rich_text field="cards.section_header.title", value="{{ header.title }}" %}
           </h2>
         </div>
         {% if header.description %}
-          <div class="{% if header.header_layout == 'split' %}max-w-sm mb-1 text-slate-600 dark:text-slate-400 w-full{% else %}max-w-2xl mx-auto text-slate-600 dark:text-slate-400 mt-4 text-center md:text-left{% endif %}">
+          <div class="{% if header.header_layout == 'split' %}max-w-sm text-slate-600 dark:text-slate-400 w-full{% else %}max-w-2xl mx-auto text-slate-600 dark:text-slate-400 mt-4 text-center md:text-left{% endif %}">
             {% inline_rich_text field="cards.section_header.description", value="{{ header.description }}" %}
           </div>
         {% endif %}
@@ -44,11 +44,11 @@
       {% for item in module.cards.items %}
         <div class="card-item p-10 rounded-2xl border border-slate-200 dark:border-slate-800 bg-background-light dark:bg-background-dark group transition-all hover:bg-background-alt-light dark:hover:bg-background-alt-dark">
           {% if item.show_icon %}
-            <div class="icon-container size-14 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110">
+            <div class="icon-container size-14 rounded-xl flex items-center justify-center mb-6 transition-transform group-hover:scale-110 overflow-hidden">
               {% if item.icon_type == "fontawesome" %}
                 <i class="fa {{ item.icon_id }} text-3xl"></i>
               {% else %}
-                <span class="{{ item.icon_type }} text-3xl">{{ item.icon_id }}</span>
+                <span class="{{ item.icon_type }} text-3xl w-8 h-8 flex items-center justify-center text-center overflow-hidden leading-none">{{ item.icon_id }}</span>
               {% endif %}
             </div>
           {% endif %}

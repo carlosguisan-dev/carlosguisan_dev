@@ -28,18 +28,18 @@
 
     {# Material Symbols (Modern) #}
     <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
       rel="stylesheet"
     />
 
     {# Material Icons (Legacy Fallback) #}
     <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap"
       rel="stylesheet"
     />
 
     {# Dark Mode Initializer #}
-    {{ require_js(get_asset_url("../../js/theme-toggle.js"), { position: "head" }) }}
+    {{ require_js(get_asset_url("../../js/theme-toggle.js"), { position: "head", defer: true }) }}
     {{ require_css(get_asset_url("../../css/main.css")) }}
     {% if template_css %}
       {{ require_css(get_asset_url(template_css)) }}

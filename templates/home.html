@@ -43,22 +43,27 @@
       {% dnd_module
         path="../modules/homepage_feature_cards",
         cards={
+          "section_header": {
+            "title": "<span class=\"text-brand-lime\">Tu contenido en HubSpot es infraestructura,</span><br/> no solo páginas.",
+            "description": "",
+            "header_layout": "centered"
+          },
           "items": [
             {
               "show_icon": true,
               "icon_type": "material-symbols-outlined",
               "icon_id": "database",
-              "mono_label": ">_ ESTRATEGIA",
-              "card_title": "Raíces Profundas",
-              "content": "Arquitectura técnica sobre HubSpot CRM. Limpieza de propiedades duplicadas, configuración de Custom Objects y automatizaciones que soportan el volumen sin romperse."
+              "mono_label": ">_ Del Mantenimiento a la Arquitectura",
+              "card_title": "Elimina la Deuda Técnica.",
+              "content": 'Un sitio lento o un código desordenado "ensucia" tus datos y frustra a tu equipo de marketing. Refactorizo tu portal para que sea rápido, modular y fácil de editar.'
             },
             {
               "show_icon": true,
               "icon_type": "material-symbols-outlined",
               "icon_id": "code",
-              "mono_label": ">_ EJECUCIÓN",
-              "card_title": "Destreza Frontend",
-              "content": "Desarrollo de módulos complejos en CMS Hub utilizando HubL, CSS moderno y JavaScript de alto rendimiento. Experiencias web rápidas para el usuario y fáciles de editar para marketing."
+              "mono_label": ">_ De la Consultoría a la Estrategia Técnica",
+              "card_title": "Consultoría en Sistemas Dinámicos.",
+              "content": "Deja de crear páginas estáticas una por una. Diseñamos juntos sistemas basados en HubDB y Custom Objects que automatizan tu contenido y escalan sin esfuerzo."
             }
           ]
         },
@@ -88,28 +93,28 @@
         path="../modules/homepage_feature_cards",
         cards={
           "section_header": {
-            "title": "Ingeniería bajo tus propias reglas.",
-            "description": "Soluciones diseñadas para empresas que escalan con HubSpot como núcleo tecnológico.",
+            "title": "Soluciones de Ingeniería para Content Hub.",
+            "description": "Activos digitales que no solo se ven bien, sino que están construidos para escalar y durar.",
             "header_layout": "split"
           },
           "items": [
             {
               "show_icon": false,
-              "mono_label": "[ PROYECTOS ]",
-              "card_title": "Refactorización de Portal",
-              "content": "Auditoría y limpieza profunda de portales HubSpot existentes para recuperar la eficiencia y eliminar la deuda técnica."
+              "mono_label": "[ HUBDB & CUSTOM OBJECTS ]",
+              "card_title": "Arquitectura de Datos Dinámicos.",
+              "content": "Transformo páginas estáticas en sistemas inteligentes. Implemento catálogos de productos, directorios y áreas de miembros utilizando HubDB y Custom Objects. Estructuras robustas que permiten a tu equipo gestionar miles de datos sin tocar una línea de código."
             },
             {
               "show_icon": false,
-              "mono_label": "[ CMS HUB ]",
-              "card_title": "Diseño de Sistemas",
-              "content": "Creación de temas y módulos globales personalizados que permiten al equipo de marketing construir páginas en minutos."
+              "mono_label": "[ OPTIMIZACION TÉCNICA ]",
+              "card_title": "Eliminación de Deuda Técnica",
+              "content": "¿Tu portal es lento o difícil de editar? Rescato sitios HubSpot mal estructurados. Refactorizo código HubL para mejorar el performance y aseguro que tu frontend sea modular y rápido."
             },
             {
               "show_icon": false,
-              "mono_label": "[ RETAINERS ]",
-              "card_title": "Arquitecto Fraccional",
-              "content": "Soporte técnico continuo y consultoría estratégica para asegurar que HubSpot crezca alineado a los objetivos de negocio."
+              "mono_label": "[ MARCA BLANCA ]",
+              "card_title": "Partner Técnico para Agencias B2B",
+              "content": "Actúo como el especialista senior invisible para agencias que exigen resultados de alta ingeniería. Ejecución técnica de precisión, comunicación transparente y cumplimiento estricto de rutas críticas para que tú solo te preocupes por la relación con el cliente."
             }
           ]
         },
@@ -189,7 +194,7 @@
             "alt": "Green Macaw Logo"
           },
           "title": "Local roots, global quality.",
-          "text": "<p>Desde las montañas de Sarapiquí, Costa Rica, opero bajo el concepto de <strong>Green Macaw Engineering</strong>: Soluciones que respetan el entorno del negocio, son vibrantes, inteligentes y diseñadas para perdurar en el tiempo.</p>"
+          "text": "<p>Con más de 12 años transformando requerimientos complejos en soluciones digitales, me especializo en la arquitectura técnica de HubSpot Content Hub. Mi enfoque no es solo que tu sitio 'funcione', sino eliminar la deuda técnica y construir infraestructuras de datos escalables y listas para la IA.</p><br><p>Desde mi estudio en Sarapiquí, combino el rigor de la ingeniería con la atención al detalle de un artesano, garantizando que cada línea de código sea un activo estratégico para tu negocio.</p>"
         },
         styles={
           "dark_mode_style": "deep",
@@ -218,6 +223,18 @@
     %}
       {% dnd_module
         path="../modules/cta",
+        content={
+          "icon": "psychology",
+          "title": "<h2>Construyamos una infraestructura que no se detenga</h2>",
+          "subtext": "<p>¿Listo para eliminar la deuda técnica de tu portal o escalar con sistemas dinámicos en HubSpot? Ya sea que necesites un brazo técnico de marca blanca o una refactorización profunda, estoy listo para ejecutar con rigor de ingeniería.</p>",
+          "cta_button": {
+            "text": "Iniciar mi evaluación ahora",
+            "link": {
+              "url": { "href": "#" }
+            }
+          },
+          "show_secondary_button": false
+        },
         styles={
           "dark_mode_style": "alt"
         }
