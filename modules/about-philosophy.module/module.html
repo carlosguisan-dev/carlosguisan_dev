@@ -17,7 +17,7 @@
       </h2>
     {% endif %}
     
-    <div class="text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-relaxed font-light">
+    <div class="text-lg md:text-xl text-slate-700 dark:text-slate-300 leading-relaxed font-light [&_b]:font-bold [&_strong]:font-bold [&_b]:text-primary [&_strong]:text-primary dark:[&_b]:text-white dark:[&_strong]:text-white">
       {% inline_rich_text field="content.text", value="{{ module.content.text }}" %}
     </div>
   </div>

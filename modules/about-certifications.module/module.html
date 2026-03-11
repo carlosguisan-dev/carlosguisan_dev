@@ -1,0 +1,67 @@
+{% set module_id = name %}
+{% require_css %}
+<style>
+  {% scope_css %}
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    
+    .marquee-content {
+      display: flex;
+      width: fit-content;
+      animation: marquee {{ module.styles.speed|default(30) }}s linear infinite;
+    }
+    
+    .marquee-content:hover {
+      animation-play-state: paused;
+    }
+    
+    .cert-card {
+      flex: 0 0 auto;
+      width: 200px;
+      margin-right: 2rem;
+    }
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+<section class="cert-marquee-{{ module_id }} py-12 overflow-hidden border-y border-accent/10 js-dark-alt bg-background-alt-light dark:bg-background-alt-dark transition-colors">
+  <div class="max-w-7xl mx-auto px-6 mb-8 text-center sm:text-left">
+    <span class="font-mono text-accent text-xs font-bold tracking-widest uppercase mb-2 block">// VALIDATED_CREDENTIALS.JSON</span>
+    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Certificaciones Oficiales</h2>
+  </div>
+
+  <div class="relative">
+    {# Double the list for seamless loop #}
+    <div class="marquee-content">
+      {% for i in range(2) %}
+        {% for item in module.certs %}
+          {% set has_link = item.link.url.href %}
+          {% set card_tag = has_link ? 'a' : 'div' %}
+          {% set card_link_attrs = has_link ? 'href="' ~ item.link.url.href ~ '"' ~ (item.link.open_in_new_tab ? ' target="_blank"' : '') ~ (item.link.rel ? ' rel="' ~ item.link.rel ~ '"' : '') : '' %}
+          
+          <{{ card_tag }} {{ card_link_attrs }} class="cert-card bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-white/5 flex flex-col items-center justify-center text-center group transition-all hover:border-accent/50 hover:shadow-lg hover:no-underline">
+            {% if item.image.src %}
+              <div class="h-20 flex items-center justify-center mb-4">
+                <img src="{{ item.image.src }}" alt="{{ item.image.alt or item.title }}" class="max-h-full w-auto object-contain transition-transform group-hover:scale-110" loading="lazy">
+              </div>
+            {% else %}
+              <div class="h-20 w-20 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center mb-4">
+                <span class="material-symbols-outlined text-slate-400 text-3xl">workspace_premium</span>
+              </div>
+            {% endif %}
+            
+            <p class="text-xs font-bold leading-tight text-slate-700 dark:text-slate-300 transition-colors group-hover:text-accent">
+              {{ item.title }}
+            </p>
+          </{{ card_tag }}>
+        {% endfor %}
+      {% endfor %}
+    </div>
+    
+    {# Gradients for fading effect #}
+    <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background-alt-light dark:from-background-alt-dark to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background-alt-light dark:from-background-alt-dark to-transparent z-10 pointer-events-none"></div>
+  </div>
+</section>

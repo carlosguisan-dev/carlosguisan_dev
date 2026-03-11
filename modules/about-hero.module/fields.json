@@ -43,16 +43,10 @@
         }
       },
       {
-        "label": "Status Label",
-        "name": "status_label",
+        "label": "Certification Embed HTML",
+        "name": "certification_embed",
         "type": "text",
-        "default": "// SYSTEM STATUS"
-      },
-      {
-        "label": "Status Text",
-        "name": "status_text",
-        "type": "text",
-        "default": "Roots deep, system operational."
+        "default": ""
       }
     ]
   },
@@ -67,6 +61,21 @@
         "name": "spacing",
         "type": "spacing",
         "display": "composite"
+      }
+    ]
+  },
+  {
+    "name": "optimization",
+    "label": "Optimization",
+    "type": "group",
+    "tab": "CONTENT",
+    "children": [
+      {
+        "name": "eager_load_image",
+        "label": "Eager load hero image (LCP)",
+        "type": "boolean",
+        "default": true,
+        "help_text": "Enable this to eagerly load the active hero image to improve Largest Contentful Paint (LCP). Only use this if the module is at the top of the page."
       }
     ]
   }

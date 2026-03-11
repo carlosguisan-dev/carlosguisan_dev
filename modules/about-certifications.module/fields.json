@@ -1,0 +1,62 @@
+[
+  {
+    "label": "Certifications",
+    "name": "certs",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 20,
+      "default": 4
+    },
+    "children": [
+      {
+        "label": "Badge Image",
+        "name": "image",
+        "type": "image"
+      },
+      {
+        "label": "Title",
+        "name": "title",
+        "type": "text"
+      },
+      {
+        "label": "Link",
+        "name": "link",
+        "type": "link"
+      }
+    ],
+    "default": [
+      { "title": "HubSpot CMS for Developers" },
+      { "title": "HubSpot Solutions Architect" },
+      { "title": "HubSpot CMS Implementation" },
+      { "title": "HubSpot API Integration" }
+    ]
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Speed (seconds)",
+        "name": "speed",
+        "type": "number",
+        "step": 1,
+        "default": 30
+      },
+      {
+        "label": "Background Color",
+        "name": "bg_color",
+        "type": "color",
+        "default": { "color": "#f9faf8" }
+      },
+      {
+        "label": "Spacing",
+        "name": "spacing",
+        "type": "spacing",
+        "display": "composite"
+      }
+    ]
+  }
+]

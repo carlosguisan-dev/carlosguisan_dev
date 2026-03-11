@@ -1,0 +1,85 @@
+[
+  {
+    "label": "Content",
+    "name": "content",
+    "type": "group",
+    "children": [
+      {
+        "label": "Mono Label",
+        "name": "mono_label",
+        "type": "text",
+        "default": "// PROTOCOLO DE EJECUCIÓN"
+      },
+      {
+        "label": "Section Title",
+        "name": "title",
+        "type": "text",
+        "default": "Ingeniería de precisión. Cero improvisación."
+      },
+      {
+        "label": "Section Description",
+        "name": "description",
+        "type": "text",
+        "default": "Un ecosistema web no escala con buenas intenciones, escala con procesos estrictos."
+      },
+      {
+        "label": "Steps",
+        "name": "steps",
+        "type": "group",
+        "occurrence": {
+          "min": 1,
+          "max": 6,
+          "default": 4
+        },
+        "children": [
+          {
+            "label": "Phase Label",
+            "name": "label",
+            "type": "text"
+          },
+          {
+            "label": "Title",
+            "name": "title",
+            "type": "text"
+          },
+          {
+            "label": "Description",
+            "name": "description",
+            "type": "text"
+          },
+          {
+            "label": "Icon",
+            "name": "icon",
+            "type": "text"
+          }
+        ],
+        "default": [
+          { "label": "FASE 01", "title": "Discovery", "icon": "architecture" },
+          { "label": "FASE 02", "title": "Desarrollo", "icon": "terminal" },
+          { "label": "FASE 03", "title": "QA", "icon": "speed" },
+          { "label": "FASE 04", "title": "Despliegue", "icon": "rocket_launch" }
+        ]
+      }
+    ]
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Background Color",
+        "name": "bg_color",
+        "type": "color",
+        "default": { "color": "#fdfefc" }
+      },
+      {
+        "label": "Spacing",
+        "name": "spacing",
+        "type": "spacing",
+        "display": "composite"
+      }
+    ]
+  }
+]

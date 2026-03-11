@@ -42,20 +42,36 @@
       
       <div class="relative group">
         <div class="absolute -inset-4 bg-accent/20 rounded-2xl blur-3xl group-hover:bg-accent/30 transition-all"></div>
-        <div class="relative bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-2xl overflow-hidden border border-slate-200 dark:border-white/5">
+        <div class="relative bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-2xl border border-slate-200 dark:border-white/5">
           <div class="aspect-[4/5] rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-800">
             {% if module.content.image.src %}
+              {% set sizeAttrs = 'width="{{ module.content.image.width }}" height="{{ module.content.image.height }}"' %}
+              {% if module.content.image.size_type == 'auto' %}
+                {% set sizeAttrs = '' %}
+              {% endif %}
               <img class="w-full h-full object-cover" 
                    src="{{ module.content.image.src }}" 
                    alt="{{ module.content.image.alt }}"
-                   loading="lazy">
+                   {{ sizeAttrs }}
+                   {% if module.optimization.eager_load_image %}
+                     loading="eager" fetchpriority="high"
+                   {% else %}
+                     loading="lazy"
+                   {% endif %}>
             {% endif %}
           </div>
           
-          <div class="absolute bottom-8 left-8 right-8 p-4 bg-primary/90 dark:bg-slate-950/90 backdrop-blur-md rounded-lg border border-white/10 text-white">
-            <p class="font-mono text-[10px] text-accent mb-1">{{ module.content.status_label }}</p>
-            <p class="text-xs md:text-sm font-medium">{{ module.content.status_text }}</p>
-          </div>
+          {% if module.content.certification_embed %}
+            <div class="absolute bottom-6 sm:bottom-8 left-0 right-0 flex justify-center px-8 z-10 transition-transform duration-300 hover:scale-[1.03]">
+              <div class="shadow-2xl rounded-sm sm:rounded-md bg-white w-full max-w-[240px] sm:max-w-[280px] border border-black/5 [&_.academy-badge_img]:w-full [&_.academy-badge_img]:h-auto [&_.academy-badge_img]:block">
+                {{ module.content.certification_embed }}
+              </div>
+            </div>
+          {% else %}
+            <div class="absolute bottom-8 left-8 right-8 p-4 bg-primary/90 dark:bg-slate-950/90 backdrop-blur-md rounded-lg border border-white/10 text-white flex justify-center items-center">
+              <div class="text-xs text-center text-slate-300">Pegar HTML de Certificación aquí</div>
+            </div>
+          {% endif %}
         </div>
       </div>
     </div>

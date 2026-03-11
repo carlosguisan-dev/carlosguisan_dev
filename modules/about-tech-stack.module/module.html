@@ -41,9 +41,15 @@
           <h4 class="font-mono text-accent text-xs font-bold mb-6 tracking-widest uppercase">{{ group.group_label }}</h4>
           <div class="flex flex-wrap gap-3">
             {% for tag in group.tags %}
-              <span class="px-3 py-1.5 border border-accent/30 rounded text-xs font-mono hover:bg-accent/10 transition-colors">
-                {{ tag }}
-              </span>
+              {% set is_link = tag.link.url.href %}
+              {% set TagEl = is_link ? 'a' : 'span' %}
+              {% set link_attrs = is_link ? 'href="' ~ tag.link.url.href ~ '"' ~ (tag.link.open_in_new_tab ? ' target="_blank"' : '') ~ (tag.link.rel ? ' rel="' ~ tag.link.rel ~ '"' : '') : '' %}
+              <{{ TagEl }} {{ link_attrs }} class="px-3 py-1.5 border border-accent/30 rounded text-xs font-mono hover:bg-accent/10 transition-colors {% if is_link %}cursor-pointer hover:border-accent hover:text-white hover:no-underline flex items-center gap-1{% endif %}">
+                {{ tag.text|default(tag) }}
+                {% if is_link %}
+                  <span class="material-symbols-outlined text-[10px] leading-none opacity-60 transition-opacity group-hover:opacity-100">open_in_new</span>
+                {% endif %}
+              </{{ TagEl }}>
             {% endfor %}
           </div>
         </div>
