@@ -4,6 +4,8 @@
   label: About
   screenshotPath: ../images/template-previews/about.png
 -->
+{% set page_title = "Sobre Mí | Carlos Guisán - Content Hub Architect" %}
+{% set meta_description = "Content Hub Architect especializado en HubSpot. Descubre mi metodología de ingeniería web para erradicar la deuda técnica y construir ecosistemas digitales escalables." %}
 {% extends "./layouts/base.html" %}
 
 {% block body %}
@@ -31,7 +33,7 @@
           "src": get_asset_url('../images/about-me.jpg'),
           "alt": "Retrato de Carlos Guisán en el bosque"
         },
-        "certification_embed": "<!-- Begin: HubSpot Academy - HubSpot CMS for Developers Badge --><div class='academy-badge'><a href='http://academy.hubspot.com/certification' title='HubSpot CMS for Developers'><img src='https://hubspot-academy.s3.amazonaws.com/prod/tracks/user-badges/43c08334d5b74388be737b8b1afa25ff-1589763595436.png' /></a></div><!-- End: HubSpot Academy - HubSpot CMS for Developers Badge -->"
+        "certification_embed": "<!-- Begin: HubSpot Academy - HubSpot CMS for Developers Badge --><div class='academy-badge'><a href='http://academy.hubspot.com/certification' title='HubSpot CMS for Developers'><img src='https://hubspot-academy.s3.amazonaws.com/prod/tracks/user-badges/43c08334d5b74388be737b8b1afa25ff-1589763595436.png' alt='Certificación HubSpot CMS for Developers' /></a></div><!-- End: HubSpot Academy - HubSpot CMS for Developers Badge -->"
       },
       optimization={
         "eager_load_image": true
