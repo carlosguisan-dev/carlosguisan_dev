@@ -16,10 +16,10 @@
     </div>
 
     {# Terminal Body #}
-    <div class="p-8 font-mono text-sm leading-relaxed text-slate-300">
+    <div class="p-8 font-mono text-sm leading-relaxed text-brand-lime/80">
       {% for section in module.content.sections %}
         <p class="mb-4 text-accent font-bold">{{ section.section_heading }}</p>
-        <div class="{% if not loop.last %}mb-6{% endif %} {% if loop.last %}text-white/60{% endif %}">
+        <div class="{% if not loop.last %}mb-6{% endif %} {% if loop.last %}opacity-60{% endif %}">
           {{ section.section_body }}
         </div>
       {% endfor %}

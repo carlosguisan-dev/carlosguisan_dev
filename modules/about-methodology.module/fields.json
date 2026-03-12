@@ -34,7 +34,7 @@
         "children": [
           {
             "label": "Phase Label",
-            "name": "label",
+            "name": "step_label",
             "type": "text"
           },
           {
@@ -54,10 +54,10 @@
           }
         ],
         "default": [
-          { "label": "FASE 01", "title": "Discovery", "icon": "architecture" },
-          { "label": "FASE 02", "title": "Desarrollo", "icon": "terminal" },
-          { "label": "FASE 03", "title": "QA", "icon": "speed" },
-          { "label": "FASE 04", "title": "Despliegue", "icon": "rocket_launch" }
+          { "step_label": "FASE 01", "title": "Discovery", "icon": "architecture" },
+          { "step_label": "FASE 02", "title": "Desarrollo", "icon": "terminal" },
+          { "step_label": "FASE 03", "title": "QA", "icon": "speed" },
+          { "step_label": "FASE 04", "title": "Despliegue", "icon": "rocket_launch" }
         ]
       }
     ]

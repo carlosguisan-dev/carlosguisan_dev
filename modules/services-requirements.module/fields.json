@@ -1,0 +1,52 @@
+[
+  {
+    "name": "title",
+    "label": "Title",
+    "type": "text",
+    "default": "Requisitos de Infraestructura (Matriz de Compatibilidad)"
+  },
+  {
+    "name": "description",
+    "label": "Description",
+    "type": "text",
+    "default": "La alta ingeniería requiere las herramientas correctas. Para garantizar la viabilidad técnica y habilitar los entornos de prueba seguros (Content Staging), tu portal debe contar con el nivel de licenciamiento adecuado:"
+  },
+  {
+    "name": "items",
+    "label": "Requirement Items",
+    "type": "group",
+    "occurrence": {
+      "min": 1,
+      "max": 5,
+      "default": 3
+    },
+    "children": [
+      {
+        "name": "item_label",
+        "label": "Requirement Label",
+        "type": "text"
+      },
+      {
+        "name": "content",
+        "label": "Content",
+        "type": "text"
+      }
+    ],
+    "default": [
+      {
+        "item_label": "Content Hub Professional",
+        "content": "Requerido para despliegues modulares, entornos de prueba y Sistemas Dinámicos basados en HubDB o contenido privado."
+      },
+      {
+        "item_label": "Content Hub Enterprise",
+        "content": "Estrictamente requerido si la arquitectura de tu ecosistema exige el modelado con Objetos Personalizados (Custom Objects)."
+      }
+    ]
+  },
+  {
+    "name": "note",
+    "label": "Footer Note",
+    "type": "text",
+    "default": "Nota: Para licencias Starter, los despliegues de Child Themes o Landing Pages se realizan a través de páginas de prueba."
+  }
+]

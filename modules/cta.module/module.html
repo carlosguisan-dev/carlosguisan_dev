@@ -23,13 +23,13 @@
     {% endif %}
 
     {% if module.content.title %}
-      <div class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-950 dark:text-white tracking-tight leading-tight mb-8">
+      <div class="text-4xl md:text-5xl lg:text-6xl font-black text-brand-green dark:text-white tracking-tight leading-tight mb-8">
         {% inline_rich_text field="content.title", value="{{ module.content.title }}" %}
       </div>
     {% endif %}
 
     {% if module.content.subtext %}
-      <div class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-[1.8] mb-12 text-pretty font-medium">
+      <div class="text-lg md:text-xl text-brand-green/80 dark:text-brand-lime/80 max-w-3xl mx-auto leading-[1.8] mb-12 text-pretty font-medium">
         {% inline_rich_text field="content.subtext", value="{{ module.content.subtext }}" %}
       </div>
     {% endif %}

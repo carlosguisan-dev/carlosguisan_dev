@@ -19,9 +19,9 @@
       {% dnd_module 
         path="../modules/services-hero",
         content={
-          "mono_label": "// EXPERTISE TÉCNICO EN HUBSPOT CMS",
-          "title": "Arquitectura de Soluciones y CMS de Alto Impacto",
-          "description": "Transformo portales corporativos en activos estratégicos. Optimizando el rendimiento, eliminando la deuda técnica y escalando su negocio en el ecosistema HubSpot.",
+          "mono_label": "// EXPERTISE TÉCNICO EN CONTENT HUB",
+          "title": "Arquitectura web robusta. CMS de alta precisión.",
+          "description": "No me limito a maquetar páginas; estructuro plataformas digitales complejas. Optimizando el rendimiento mediante HubL y HubDB, erradicando la deuda técnica y construyendo un entorno en HubSpot que le da libertad total a tu equipo de marketing.",
           "primary_cta_text": "Ver Servicios",
           "secondary_cta_text": "Hablar con un Experto"
         },
@@ -46,11 +46,25 @@
       {% dnd_module 
         path="../modules/services-problem",
         content={
-          "title": "¿Tu portal de HubSpot te impulsa o te frena?",
-          "description": "<p>Muchos equipos enfrentan el mismo muro: flujos de trabajo rotos, temas de CMS lentos que dañan el SEO y una arquitectura de datos que nadie entiende. La deuda técnica en HubSpot no solo cuesta dinero, cuesta agilidad competitiva.</p>",
-          "icon_1": "settings",
-          "icon_2": "account_tree",
-          "icon_3": "memory"
+          "title": "¿Tu ecosistema en HubSpot te impulsa o te frena?",
+          "description": "<p>Muchos equipos de marketing chocan contra el mismo muro: un frontend rígido, temas de CMS lentos que penalizan el SEO y modelos de contenido que nadie entiende. La deuda técnica en tu sitio web no solo drena tu presupuesto; bloquea tu agilidad competitiva y te impide adoptar la Inteligencia Artificial.</p>",
+          "problems": {
+            "item_1": {
+              "icon": "settings",
+              "title": "Fricción Operativa",
+              "description": "Dependencia total de un desarrollador para editar textos o crear landings por la falta de un sistema modular nativo (Drag-and-Drop)."
+            },
+            "item_2": {
+              "icon": "account_tree",
+              "title": "Caos Estructural",
+              "description": "Catálogos, recursos y directorios gestionados manualmente en lugar de utilizar arquitecturas de contenido dinámicas (HubDB y Custom Objects)."
+            },
+            "item_3": {
+              "icon": "memory",
+              "title": "Rendimiento y AEO Deficiente",
+              "description": "Código basura y temas pesados que arruinan los Core Web Vitals, dañan el posicionamiento y confunden a los motores de respuesta de IA."
+            }
+          }
         },
         styles={
           "spacing": {
@@ -64,100 +78,198 @@
       {% end_dnd_module %}
     {% end_dnd_section %}
 
-    {# Ladder Section #}
+    {# Pricing Section #}
     {% dnd_section
       full_width=true,
-      padding={ "top": "0", "bottom": "0" },
+      padding={ "top": "120px", "bottom": "0" },
       margin={ "top": "0", "bottom": "0" }
     %}
       {% dnd_module 
-        path="../modules/services-ladder",
+        path="../modules/pricing-cards",
         header={
-          "mono_label": "< carlosguisan >",
-          "title": "Soluciones a Medida"
+          "title": "Inversión transparente.<br/>Cero costos ocultos.",
+          "subtitle": "Ingeniería de alta calidad aplicada a ecosistemas CRM. Sin sorpresas, solo arquitectura escalable diseñada para el crecimiento de tu negocio."
         },
-        services=[
+        projects_tab_label="Proyectos",
+        retainers_tab_label="Retainers",
+        cards=[
           {
-            "tag": "[ EL ARQUITECTO ]",
+            "mono_label": "[ ARQUITECTURA DINÁMICA ]",
             "title": "Sistemas Dinámicos",
-            "feature_1": "Implementación HubDB & CRM Objects",
-            "feature_2": "Arquitectura de datos y portal base",
-            "feature_3": "Workflows de automatización avanzada",
-            "feature_4": "Documentación técnica de procesos",
-            "price": "Desde $2,250 USD"
+            "price_prefix": "Desde",
+            "price": "$2,250",
+            "price_suffix": "USD",
+            "feature_icon": "check_circle",
+            "features": ["Modelado avanzado con HubDB y Custom Objects.", 'Estructuración de ecosistemas de contenido "AI-Ready"', "Lógica condicional y consultas HubL complejas.", "Documentación técnica para tu equipo."],
+            "button_text": "Iniciar Arquitectura",
+            "delivery_time": "4-5 semanas",
+            "button_link": { "url": { "href": "#" } }
           },
           {
-            "tag": "[ EL DEVELOPER ]",
+            "mono_label": "[ DESARROLLO A MEDIDA ]",
             "title": "Tema Personalizado",
-            "feature_1": "Desarrollo HubL de alto rendimiento",
-            "feature_2": "Conversión Figma to Code pixel-perfect",
-            "feature_3": "Módulos custom drag-and-drop",
-            "feature_4": "Optimización seo técnico y Web Vitals",
-            "price": "Desde $2,400 USD"
+            "price_prefix": "Desde",
+            "price": "$2,400",
+            "price_suffix": "USD",
+            "feature_icon": "verified",
+            "features": ["De Figma a Código modular limpio (Pixel-Perfect).", "Autonomía total para marketing (Drag-and-Drop).", "QA riguroso, Core Web Vitals y optimización AEO.", "Despliegue seguro mediante Content Staging."],
+            "is_featured": true,
+            "featured_badge_text": "Más Popular",
+            "button_text": "Cotizar desarrollo",
+            "delivery_time": "6 semanas",
+            "button_link": { "url": { "href": "#" } }
           },
           {
-            "tag": "[ PARTNER CONTINUO ]",
-            "title": "Retainer Técnico",
-            "feature_1": "Optimización e iteración continua del CMS",
-            "feature_2": "Soporte y resolución proactiva de bugs",
-            "feature_3": "Consultoría estratégica del ecosistema",
-            "feature_4": "Contratos flexibles de 20h - 40h mensuales",
-            "price": "$63 USD / hora"
+            "mono_label": "[ DESPLIEGUE RÁPIDO ]",
+            "title": "Child Themes",
+            "price_prefix": "Desde",
+            "price": "$1,125",
+            "price_suffix": "USD",
+            "feature_icon": "check_circle",
+            "features": ["Setup sobre temas del Marketplace de HubSpot.", "Override técnico de estilos globales (CSS).", "Personalización y creación de módulos nativos.", "QA cruzado y soporte técnico de lanzamiento."],
+            "delivery_time": "3 semanas",
+            "button_text": "Cotizar Child Theme",
+            "button_link": { "url": { "href": "#" } }
           }
         ],
-        styles={
-          "spacing": {
-            "padding": {
-              "top": { "value": 120, "units": "px" },
-              "bottom": { "value": 120, "units": "px" }
-            }
+        tactical_banner={
+          "show": true,
+          "mono_label": "DESPLIEGUE TÁCTICO",
+          "title": "¿Necesitas ejecutar una campaña puntual?",
+          "subtitle": "Landing Pages de Alta Conversión",
+          "description": "Si ya tienes tu ecosistema funcionando pero necesitas maquetar páginas de aterrizaje para Ads, webinars o lead magnets, las despliego en 8 días hábiles. Entrego código limpio, validación de formularios y la estructura lista para escalar sin romper tu marca. Requiere diseño final en Figma.",
+          "price": "$412",
+          "price_suffix": "USD",
+          "delivery_info": "8 días hábiles",
+          "button_text": "Lanzar Campaña",
+          "button_link": { "url": { "href": "#" } }
+        },
+        retainer={
+          "icon": "terminal",
+          "mono_label": "[ ALIANZA ESTRATÉGICA ]",
+          "title": "Fractional Content Hub Architect",
+          "description": "Actúo como el líder técnico de tu portal o como el brazo de ingeniería en marca blanca (White-Label) para tu agencia. Ideal para equipos que necesitan refactorizar código, lanzar campañas continuas y mantener su ecosistema sin el costo de contratar a un perfil Senior a tiempo completo.",
+          "price": "$63",
+          "price_unit": "USD / hora",
+          "contract_info": "Contratos dedicados de 20h a 40h mensuales",
+          "features": [
+            "Soporte y refactorización continua para erradicar deuda técnica.",
+            "Ingeniería en marca blanca (confidencialidad total para agencias).",
+            "Mantenimiento de integraciones API y Serverless Functions.",
+            "Gobernanza de datos y CMS preparado para Inteligencia Artificial (Breeze)."
+          ],
+          "button": {
+            "text": "Aplicar a Retainer Mensual",
+            "link": { "url": { "type": "EXTERNAL", "href": "#" } }
           }
+        },
+        styles={
+          "dark_mode_style": "alt"
         }
       %}
       {% end_dnd_module %}
     {% end_dnd_section %}
 
-    {# Methodology Section #}
+    {# Infrastructure Requirements #}
     {% dnd_section
       full_width=true,
-      padding={ "top": "0", "bottom": "0" },
+      padding={ "top": "120px", "bottom": "0" },
+      margin={ "top": "0", "bottom": "0" }
+    %}
+      {% dnd_module
+        path="../modules/services-requirements",
+        title="Requisitos de Infraestructura (Matriz de Compatibilidad)",
+        description="La alta ingeniería requiere las herramientas correctas. Para garantizar la viabilidad técnica y habilitar los entornos de prueba seguros (Content Staging), tu portal debe contar con el nivel de licenciamiento adecuado:",
+        items=[
+          {
+            "item_label": "Content Hub Professional",
+            "content": "Requerido para despliegues modulares, entornos de prueba y Sistemas Dinámicos basados en HubDB o contenido privado (Membresías)."
+          },
+          {
+            "item_label": "Content Hub Enterprise",
+            "content": "Estrictamente requerido si la arquitectura de tu ecosistema exige el modelado con Objetos Personalizados (Custom Objects)."
+          }
+        ],
+        note="Nota: Para licencias Starter, los despliegues de Child Themes o Landing Pages se realizan a través de páginas de prueba."
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_section %}
+
+    {# Methodology Section (Pipeline Design) #}
+    {% dnd_section
+      full_width=true,
+      padding={ "top": "120px", "bottom": "120px" },
       margin={ "top": "0", "bottom": "0" }
     %}
       {% dnd_module 
-        path="../modules/services-methodology",
-        header={
-          "title": "Cómo trabajamos: Rigor y Claridad",
-          "subtitle": "Un proceso estructurado para eliminar la incertidumbre técnica."
-        },
-        steps=[
-          {
-            "icon": "calendar_month",
-            "title": "Planificación Ágil",
-            "description": "Sprints definidos y entregas constantes para mantener el ritmo del proyecto sin sorpresas."
-          },
-          {
-            "icon": "token",
-            "title": "Figma to HubSpot",
-            "description": "Traducción pixel-perfect de diseños complejos a código HubL limpio y optimizado."
-          },
-          {
-            "icon": "verified_user",
-            "title": "Seguridad y QA",
-            "description": "Pruebas exhaustivas en todos los navegadores y validación de seguridad de datos."
-          },
-          {
-            "icon": "handshake",
-            "title": "Socio Estratégico",
-            "description": "No somos solo ejecutores; nos involucramos en los objetivos de negocio de tu portal."
-          }
-        ],
-        styles={
-          "spacing": {
-            "padding": {
-              "top": { "value": 120, "units": "px" },
-              "bottom": { "value": 120, "units": "px" }
+        path="../modules/about-methodology",
+        content={
+          "mono_label": "// PROTOCOLO DE EJECUCIÓN",
+          "title": "Un proceso de ingeniería para ecosistemas sin fricción.",
+          "description": "No improviso. Cada línea de código y cada objeto de datos sigue un flujo de validación riguroso desde tu diseño en Figma hasta el despliegue final. Así es como garantizo calidad Enterprise:",
+          "steps": [
+            {
+              "step_label": "FASE 01",
+              "title": "Discovery y Arquitectura Web",
+              "description": 'Análisis de tu infraestructura actual y definición del modelo de contenido optimizado (HubDB y Custom Objects) para garantizar que tu sitio nazca "AI-Ready"',
+              "icon": "architecture"
+            },
+            {
+              "step_label": "FASE 02",
+              "title": "Desarrollo Frontend Modular",
+              "description": "Construcción de componentes pixel-perfect y lógica HubL escalable, traducidos a una interfaz Drag-and-Drop para darle autonomía total a tu equipo de marketing.",
+              "icon": "terminal"
+            },
+            {
+              "step_label": "FASE 03",
+              "title": "Calibración y Performance",
+              "description": "Ajuste milimétrico de Core Web Vitals, SEO técnico y estructuración semántica para Motores de Respuesta de IA (AEO - Answer Engine Optimization).",
+              "icon": "speed"
+            },
+            {
+              "step_label": "FASE 04",
+              "title": "QA y Despliegue Seguro",
+              "description": "Pruebas exhaustivas cross-browser y migración ejecutada exclusivamente mediante Content Staging de HubSpot. Cero caídas, cero riesgo para tu portal en vivo.",
+              "icon": "rocket_launch"
             }
-          }
+          ]
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_section %}
+
+    {# Terms Section #}
+    {% dnd_section
+      full_width=true,
+      padding={ "top": "120px", "bottom": "120px" },
+      margin={ "top": "0", "bottom": "0" }
+    %}
+      {% dnd_module 
+        path="../modules/pricing-terms",
+        content={
+          "terminal_title": ">_ CONDICIONES_COMERCIALES.md",
+          "sections": [
+            {
+              "section_heading": "# ESTRUCTURA DE INVERSIÓN",
+              "section_body": "<p>Los proyectos cerrados operan bajo un esquema inamovible de 50% de anticipo para la reserva de agenda / kickoff, y 50% contra entrega al finalizar la fase de QA.</p>"
+            },
+            {
+              "section_heading": "# PROPIEDAD INTELECTUAL Y CONFIDENCIALIDAD",
+              "section_body": "<p>La propiedad intelectual del código se transfiere íntegramente a tu empresa o agencia únicamente tras la recepción del pago final. Me reservo el derecho de exhibir el proyecto en mi portafolio técnico, salvo que operemos bajo un Acuerdo de Confidencialidad (NDA) estricto para despliegues en marca blanca (White-Label).</p>"
+            },
+            {
+              "section_heading": "# FUENTE DE VERDAD Y ALCANCE",
+              "section_body": '<p>Mi enfoque es 100% arquitectura web e ingeniería frontend. <b>No ofrezco servicios de diseño gráfico, UI/UX ni redacción (copywriting).</b><br> Figma es mi única "Fuente de Verdad". <br>El cronograma del proyecto inicia oficialmente solo cuando los diseños en Figma, textos y accesos son entregados en su totalidad.</p>'
+            },
+            {
+              "section_heading": "# PROTOCOLO DE COMUNICACIÓN",
+              "section_body": "<p>Mantenemos un flujo de trabajo ágil y documentado. Los canales oficiales de comunicación técnica son correo electrónico, Slack y Asana, incluyendo una revisión de sprint semanal de 30 minutos. Toda la documentación técnica y el código se entregan centralizados mediante guías de uso nativas.</p>"
+            },
+            {
+              "section_heading": "# EXCLUSIONES Y GARANTÍA TÉCNICA",
+              "section_body": "<p>Los costos no incluyen licenciamiento de HubSpot, compra de assets (imágenes/fuentes) ni APIs de terceros. Todo requerimiento que exceda el alcance original (Change Request) será evaluado y cotizado bajo la tarifa horaria de $63 USD. Además, todo ecosistema entregado cuenta con 15 días de garantía técnica post-lanzamiento para garantizar estabilidad absoluta.</p>"
+            }
+          ]
         }
       %}
       {% end_dnd_module %}
@@ -172,12 +284,13 @@
       {% dnd_module
         path="../modules/cta",
         content={
-          "title": "¿Listo para escalar tu infraestructura en HubSpot?",
-          "description": "Hablemos sobre tus desafíos técnicos y cómo podemos construir una solución que realmente funcione para tu equipo de marketing y ventas.",
-          "show_icon": true,
-          "icon_name": "rocket_launch",
-          "cta_text": "Agendar Discovery Call",
-          "cta_link": { "url": { "type": "EXTERNAL", "href": "#" } }
+          "title": "<h2>¿Listo para refactorizar tu ecosistema en HubSpot?</h2>",
+          "subtext": "<p>Agenda un diagnóstico técnico de 15 minutos. Analizaremos tu arquitectura actual en Content Hub, identificaremos la deuda técnica oculta y detectaremos los cuellos de botella que frenan tu escalabilidad.</p>",
+          "icon": "rocket_launch",
+          "cta_button": {
+            "text": "Iniciar Diagnóstico Técnico",
+            "link": { "url": { "type": "EXTERNAL", "href": "#" } }
+          }
         }
       %}
       {% end_dnd_module %}

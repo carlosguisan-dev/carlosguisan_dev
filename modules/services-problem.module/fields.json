@@ -17,22 +17,41 @@
         "default": "<p>Muchos equipos enfrentan el mismo muro: flujos de trabajo rotos, temas de CMS lentos que dañan el SEO y una arquitectura de datos que nadie entiende. La deuda técnica en HubSpot no solo cuesta dinero, cuesta agilidad competitiva.</p>"
       },
       {
-        "name": "icon_1",
-        "label": "Icon 1 (Material Symbol ID)",
-        "type": "text",
-        "default": "settings"
-      },
-      {
-        "name": "icon_2",
-        "label": "Icon 2 (Material Symbol ID)",
-        "type": "text",
-        "default": "account_tree"
-      },
-      {
-        "name": "icon_3",
-        "label": "Icon 3 (Material Symbol ID)",
-        "type": "text",
-        "default": "memory"
+        "name": "problems",
+        "label": "Diagnostic Problems",
+        "type": "group",
+        "children": [
+          {
+            "name": "item_1",
+            "label": "Problem 1",
+            "type": "group",
+            "children": [
+              { "name": "icon", "label": "Icon", "type": "text", "default": "settings" },
+              { "name": "title", "label": "Title", "type": "text", "default": "Fricción Operativa" },
+              { "name": "description", "label": "Description", "type": "text", "default": "Dependencia total de un desarrollador para editar textos o crear landings." }
+            ]
+          },
+          {
+            "name": "item_2",
+            "label": "Problem 2",
+            "type": "group",
+            "children": [
+              { "name": "icon", "label": "Icon", "type": "text", "default": "account_tree" },
+              { "name": "title", "label": "Title", "type": "text", "default": "Caos Estructural" },
+              { "name": "description", "label": "Description", "type": "text", "default": "Catálogos y directorios gestionados manualmente en lugar de utilizar HubDB." }
+            ]
+          },
+          {
+            "name": "item_3",
+            "label": "Problem 3",
+            "type": "group",
+            "children": [
+              { "name": "icon", "label": "Icon", "type": "text", "default": "memory" },
+              { "name": "title", "label": "Title", "type": "text", "default": "Rendimiento Deficiente" },
+              { "name": "description", "label": "Description", "type": "text", "default": "Código basura que arruina los Core Web Vitals y daña el posicionamiento." }
+            ]
+          }
+        ]
       }
     ]
   },

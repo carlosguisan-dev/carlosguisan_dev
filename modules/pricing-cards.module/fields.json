@@ -1,5 +1,24 @@
 [
   {
+    "name": "header",
+    "label": "Header Section",
+    "type": "group",
+    "children": [
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "Transparencia técnica. Cero costos ocultos."
+      },
+      {
+        "name": "subtitle",
+        "label": "Subtitle",
+        "type": "text",
+        "default": "Ingeniería de alta calidad aplicada a ecosistemas CRM. Sin sorpresas, solo arquitectura escalable."
+      }
+    ]
+  },
+  {
     "label": "Projects Tab Label",
     "name": "projects_tab_label",
     "type": "text",
@@ -97,6 +116,12 @@
         "default": "Seleccionar"
       },
       {
+        "label": "Delivery Time",
+        "name": "delivery_time",
+        "type": "text",
+        "default": "15-20 días hábiles"
+      },
+      {
         "label": "Button Link",
         "name": "button_link",
         "type": "link",
@@ -173,22 +198,28 @@
     "type": "group",
     "children": [
       {
+        "label": "Mono Label",
+        "name": "mono_label",
+        "type": "text",
+        "default": "[ ALIANZA ESTRATÉGICA ]"
+      },
+      {
         "label": "Icon",
         "name": "icon",
         "type": "text",
-        "default": "engineering"
+        "default": "terminal"
       },
       {
         "label": "Title",
         "name": "title",
         "type": "text",
-        "default": "Partner Técnico Mensual"
+        "default": "Fractional Content Hub Architect"
       },
       {
         "label": "Description",
         "name": "description",
         "type": "text",
-        "default": "Optimización continua, consultoría y desarrollo proactivo."
+        "default": "Actúo como el líder técnico de tu portal o como el brazo de ingeniería en marca blanca (White-Label) para tu agencia."
       },
       {
         "label": "Price",
@@ -200,13 +231,115 @@
         "label": "Price Unit",
         "name": "price_unit",
         "type": "text",
-        "default": "USD/hora"
+        "default": "USD / hora"
       },
       {
         "label": "Contract Info",
         "name": "contract_info",
         "type": "text",
-        "default": "Contratos de 20h - 40h mensuales"
+        "default": "Contratos dedicados de 20h - 40h mensuales"
+      },
+      {
+        "label": "Features (Deliverables)",
+        "name": "features",
+        "type": "text",
+        "occurrence": {
+          "min": 0,
+          "max": 10,
+          "default": 4
+        },
+        "default": [
+          "Soporte y refactorización continua para erradicar deuda técnica.",
+          "Ingeniería en marca blanca (confidencialidad total para agencias).",
+          "Mantenimiento de integraciones API y Serverless Functions.",
+          "Gobernanza de datos y CMS preparado para Inteligencia Artificial."
+        ]
+      },
+      {
+        "label": "Button",
+        "name": "button",
+        "type": "group",
+        "children": [
+          {
+            "label": "Text",
+            "name": "text",
+            "type": "text",
+            "default": "Aplicar a Retainer Mensual"
+          },
+          {
+            "label": "Link",
+            "name": "link",
+            "type": "link",
+            "supported_types": ["EXTERNAL", "CONTENT"]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "tactical_banner",
+    "label": "Tactical Deployment Banner",
+    "type": "group",
+    "children": [
+      {
+        "name": "show",
+        "label": "Show Banner",
+        "type": "boolean",
+        "default": false
+      },
+      {
+        "name": "mono_label",
+        "label": "Mono Label",
+        "type": "text",
+        "default": "DESPLIEGUE TÁCTICO"
+      },
+      {
+        "name": "title",
+        "label": "Title",
+        "type": "text",
+        "default": "¿Necesitas ejecutar una campaña puntual?"
+      },
+      {
+        "name": "subtitle",
+        "label": "Subtitle",
+        "type": "text",
+        "default": "Landing Pages de Alta Conversión"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "text",
+        "default": "Si ya tienes tu ecosistema funcionando pero necesitas maquetar páginas de aterrizaje en tiempo récord."
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "text",
+        "default": "$412"
+      },
+      {
+        "name": "price_suffix",
+        "label": "Price Suffix",
+        "type": "text",
+        "default": "USD"
+      },
+      {
+        "name": "delivery_info",
+        "label": "Delivery Info",
+        "type": "text",
+        "default": "8 días hábiles"
+      },
+      {
+        "name": "button_text",
+        "label": "Button Text",
+        "type": "text",
+        "default": "Lanzar Campaña"
+      },
+      {
+        "name": "button_link",
+        "label": "Button Link",
+        "type": "link",
+        "supported_types": ["EXTERNAL", "CONTENT"]
       }
     ]
   },

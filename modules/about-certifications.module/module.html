@@ -29,7 +29,7 @@
 <section class="cert-marquee-{{ module_id }} py-12 overflow-hidden border-y border-accent/10 js-dark-alt bg-background-alt-light dark:bg-background-alt-dark transition-colors">
   <div class="max-w-7xl mx-auto px-6 mb-8 text-center sm:text-left">
     <span class="font-mono text-accent text-xs font-bold tracking-widest uppercase mb-2 block">// VALIDATED_CREDENTIALS.JSON</span>
-    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Certificaciones Oficiales</h2>
+    <h2 class="text-2xl font-bold text-brand-green dark:text-white">Certificaciones Oficiales</h2>
   </div>
 
   <div class="relative">
@@ -41,7 +41,7 @@
           {% set card_tag = has_link ? 'a' : 'div' %}
           {% set card_link_attrs = has_link ? 'href="' ~ item.link.url.href ~ '"' ~ (item.link.open_in_new_tab ? ' target="_blank"' : '') ~ (item.link.rel ? ' rel="' ~ item.link.rel ~ '"' : '') : '' %}
           
-          <{{ card_tag }} {{ card_link_attrs }} class="cert-card bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-white/5 flex flex-col items-center justify-center text-center group transition-all hover:border-accent/50 hover:shadow-lg hover:no-underline">
+          <{{ card_tag }} {{ card_link_attrs }} class="cert-card bg-white dark:bg-slate-900 p-6 rounded-xl border border-brand-green/10 dark:border-white/5 flex flex-col items-center justify-center text-center group transition-all hover:border-accent/50 hover:shadow-lg hover:no-underline">
             {% if item.image.src %}
               <div class="h-20 flex items-center justify-center mb-4">
                 <img src="{{ item.image.src }}" alt="{{ item.image.alt or item.title }}" class="max-h-full w-auto object-contain transition-transform group-hover:scale-110" loading="lazy">
@@ -52,7 +52,7 @@
               </div>
             {% endif %}
             
-            <p class="text-xs font-bold leading-tight text-slate-700 dark:text-slate-300 transition-colors group-hover:text-accent">
+            <p class="text-xs font-bold leading-tight text-brand-green/90 dark:text-slate-200/90 transition-colors group-hover:text-accent">
               {{ item.title }}
             </p>
           </{{ card_tag }}>
