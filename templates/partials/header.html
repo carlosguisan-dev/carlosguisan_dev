@@ -2,11 +2,19 @@
 <style>
   .site-header {
     background-color: color-mix(in srgb, var(--header-bg-light) calc(var(--header-bg-light-opacity) * 100%), transparent);
-    border-bottom-color: var(--header-border-light);
+    box-shadow: 0 4px 12px -2px rgba(45, 80, 22, 0.15);
+    {% if theme.header.menu.behavior.fixed_header != false %}
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 1000;
+    {% endif %}
   }
   .dark .site-header {
     background-color: color-mix(in srgb, var(--header-bg-dark) calc(var(--header-bg-dark-opacity) * 100%), transparent);
-    border-bottom-color: var(--header-border-dark);
+    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.8);
   }
   
   .site-header-icon {
@@ -24,7 +32,7 @@
 </style>
 {% end_require_css %}
 <nav
-  class="site-header w-full border-b {% if theme.header.menu.behavior.fixed_header != false %}sticky top-0 z-50{% endif %} {% if theme.header.menu.behavior.glassmorphism != false %}backdrop-blur-md{% endif %}"
+  class="site-header w-full {% if theme.header.menu.behavior.fixed_header != false %}fixed top-0 z-50{% endif %} {% if theme.header.menu.behavior.glassmorphism != false %}backdrop-blur-md{% endif %} transition-all duration-300"
 >
   <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
     {# Logo Module #}

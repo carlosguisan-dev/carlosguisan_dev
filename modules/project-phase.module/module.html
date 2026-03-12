@@ -92,11 +92,19 @@
     {# ─────────────────────────────────────────────── #}
     {% elif layout == "checklist_code" %}
 
-      {% if module.content.title %}
-        <h2 class="text-4xl font-black mb-16 text-center text-primary dark:text-white">
-          {% inline_text field="content.title", value="{{ module.content.title }}" %}
-        </h2>
-      {% endif %}
+      <div class="mb-12 {% if layout == 'checklist_code' %}text-center{% endif %}">
+        {% if module.content.phase_number %}
+          <span class="font-mono text-primary dark:text-white text-sm font-bold block mb-4">
+            {{ module.content.phase_number }}. {{ module.content.phase_label }}
+          </span>
+        {% endif %}
+
+        {% if module.content.title %}
+          <h2 class="text-3xl md:text-4xl font-black text-primary dark:text-white">
+            {% inline_text field="content.title", value="{{ module.content.title }}" %}
+          </h2>
+        {% endif %}
+      </div>
 
       <div class="grid md:grid-cols-12 gap-12 items-center">
 

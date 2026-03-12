@@ -307,6 +307,9 @@
   .inset-y-0 {
     inset-block: calc(var(--spacing) * 0);
   }
+  .start {
+    inset-inline-start: var(--spacing);
+  }
   .-top-4 {
     top: calc(var(--spacing) * -4);
   }
@@ -1034,6 +1037,9 @@
   .overflow-x-auto {
     overflow-x: auto;
   }
+  .overflow-x-clip {
+    overflow-x: clip;
+  }
   .overflow-x-hidden {
     overflow-x: hidden;
   }
@@ -1566,6 +1572,9 @@
   }
   .fill-brand-lime {
     fill: var(--color-brand-lime);
+  }
+  .fill-current {
+    fill: currentcolor;
   }
   .object-contain {
     object-fit: contain;

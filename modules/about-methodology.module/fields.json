@@ -75,6 +75,16 @@
         "default": { "color": "#fdfefc" }
       },
       {
+        "label": "Dark Mode Style Coordination",
+        "name": "dark_mode_style",
+        "type": "choice",
+        "choices": [
+          ["deep", "Deep (Primary Background)"],
+          ["alt", "Alt (Secondary Background)"]
+        ],
+        "default": "alt"
+      },
+      {
         "label": "Spacing",
         "name": "spacing",
         "type": "spacing",

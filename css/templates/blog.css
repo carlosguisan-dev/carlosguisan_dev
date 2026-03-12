@@ -5,20 +5,7 @@
 /* ── Overflow fix for sticky TOC ── */
 /* Parent elements have overflow:hidden which breaks position:sticky */
 
-.body-container--blog-post,
-.body-container--blog-post .body-wrapper {
-  overflow: visible !important;
-}
-
-/* Scoped to blog post pages to avoid breaking other templates */
-body:has(.body-container--blog-post) {
-  overflow-x: clip !important; /* clip works like hidden for overflow but doesn't create a scroll container */
-}
-
-body:has(.body-container--blog-post) .body-wrapper,
-body:has(.body-container--blog-post) .body-container-wrapper {
-  overflow: visible !important;
-}
+/* Scoped blog post styles */
 
 /* ── Reading Progress Bar ── */
 

@@ -19,7 +19,8 @@
 </style>
 {% end_require_css %}
 
-<section class="methodology-{{ module_id }} py-24 bg-background-alt-light dark:bg-background-alt-dark js-dark-alt overflow-hidden transition-colors border-y border-accent/10">
+{% set style = module.styles.dark_mode_style or "alt" %}
+<section class="methodology-{{ module_id }} py-24 bg-background-{{ style }}-light dark:bg-background-{{ style }}-dark js-dark-{{ style }} overflow-hidden transition-colors">
   <div class="max-w-7xl mx-auto px-6">
     
     {# Section Header #}

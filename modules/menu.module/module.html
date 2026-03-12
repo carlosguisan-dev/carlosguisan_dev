@@ -6,14 +6,31 @@
   .site-menu-link {
     color: var(--header-link-light);
   }
-  .site-menu-link:hover {
+  .site-menu-link:hover,
+  .site-menu-link.is-active {
     color: var(--header-link-hover-light);
   }
   .dark .site-menu-link {
     color: var(--header-link-dark);
   }
-  .dark .site-menu-link:hover {
+  .dark .site-menu-link:hover,
+  .dark .site-menu-link.is-active {
     color: var(--header-link-hover-dark);
+  }
+
+  /* Distinctive active indicator */
+  .site-menu-link.is-active {
+    position: relative;
+  }
+  .site-menu-link.is-active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-brand-lime);
+    border-radius: 2px;
   }
 </style>
 {% end_require_css %}
@@ -25,7 +42,7 @@
     <a
       href="{{ node.url or 'javascript:void(0);' }}"
       class="site-menu-link text-sm font-semibold transition-colors duration-200 block py-1
-                  {{ 'font-bold' if node.activeNode or node.activeBranch }}"
+                  {{ 'is-active' if node.activeNode or node.activeBranch }}"
       {%
       if
       node.linkTarget

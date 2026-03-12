@@ -11,7 +11,7 @@
 
 {% set dark_style = module.styles.dark_mode_style or "alt" %}
 
-<section class="cta-{{ module_id }} js-cta js-dark-{{ dark_style }} flex items-center justify-center">
+<section class="cta-{{ module_id }} js-cta bg-background-{{ dark_style }}-light dark:bg-background-{{ dark_style }}-dark js-dark-{{ dark_style }} flex items-center justify-center py-24">
   <div class="max-w-5xl mx-auto px-6 text-center">
 
     {% if module.content.icon %}

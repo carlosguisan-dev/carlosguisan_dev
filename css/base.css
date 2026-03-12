@@ -9,8 +9,12 @@ body {
   padding: 0;
   width: 100%;
   max-width: 100%;
-  overflow-x: clip; /* Fix for right-side spacing without breaking sticky */
+  overflow-x: visible !important;
   position: relative;
+}
+
+body {
+  padding-top: var(--header-height, 80px) !important;
 }
 :root {
   /* Colors - Mapping HubSpot Theme Fields to CSS Variable Tokens */
@@ -78,6 +82,7 @@ body {
   --radius-3xl: 1.5rem;
   /* HubSpot Grid Variables */
   --hs-grid-gutter: 20px;
+  --header-height: 80px;
 }
 
 /* Material Symbols support */
@@ -112,25 +117,30 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Global Layout Reset */
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  position: relative;
+/* Global resets consolidated at start of file */
+
+.body-wrapper {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: visible !important;
 }
 
-.body-wrapper,
 .body-container-wrapper {
   width: 100% !important;
   max-width: none !important;
   margin: 0 !important;
   padding: 0 !important;
-  overflow-x: hidden;
+  overflow-x: visible !important;
 }
+
+/* Ensure first section clears fixed header */
+.body-container-wrapper > *:first-child {
+  margin-top: 0 !important;
+}
+
+
 
 /* HubSpot Drag-and-Drop Grid Support */
 .content-wrapper {

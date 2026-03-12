@@ -9,7 +9,7 @@
 </style>
 {% end_require_css %}
 
-<section class="services-hero-{{ module_id }} relative overflow-hidden bg-background-light dark:bg-background-dark">
+<section class="services-hero-{{ module_id }} relative overflow-hidden bg-background-light dark:bg-background-dark js-dark-deep">
   {# Pattern Overlay #}
   <div class="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none">
     <div class="absolute inset-0" style="background-image: radial-gradient(var(--color-brand-green) 1px, transparent 1px); background-size: 40px 40px;"></div>
@@ -22,7 +22,7 @@
       </span>
     {% endif %}
 
-    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-slate-100 mb-8 leading-tight tracking-tight">
+    <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-slate-100 mb-8 leading-[1.1] tracking-tight">
       {{ module.content.title }}
     </h1>
 
