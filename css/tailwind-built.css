@@ -675,6 +675,9 @@
   .max-h-12 {
     max-height: calc(var(--spacing) * 12);
   }
+  .max-h-\[90vh\] {
+    max-height: 90vh;
+  }
   .max-h-full {
     max-height: 100%;
   }
@@ -2991,6 +2994,11 @@
   .md\:h-\[450px\] {
     @media (width >= 48rem) {
       height: 450px;
+    }
+  }
+  .md\:h-\[800px\] {
+    @media (width >= 48rem) {
+      height: 800px;
     }
   }
   .md\:h-auto {

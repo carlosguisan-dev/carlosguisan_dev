@@ -24,12 +24,12 @@
         {% end_dnd_row %}
         {% dnd_row %}
           {% dnd_module path="@hubspot/rich_text",
-            html="<h1 class='text-brand-green dark:text-white text-4xl md:text-5xl font-black leading-tight mb-8 text-center tracking-tight'>¡Mensaje recibido con éxito!</h1>"
+            html="<h1 class='text-brand-green dark:text-white text-4xl md:text-5xl font-black leading-tight mb-8 text-center tracking-tight'>Información recibida con éxito.</h1>"
           %}{% end_dnd_module %}
         {% end_dnd_row %}
         {% dnd_row %}
           {% dnd_module path="@hubspot/rich_text",
-            html="<p class='text-slate-600 dark:text-brand-lime/80 text-lg md:text-xl leading-relaxed mb-12 max-w-2xl mx-auto text-center'>Gracias por tu interés. Analizaré los detalles técnicos de tu propuesta y me pondré en contacto contigo en las próximas 24-48 horas laborables.</p>"
+            html="<p class='text-slate-600 dark:text-brand-lime/80 text-lg md:text-xl leading-relaxed mb-12 max-w-2xl mx-auto text-center'>Gracias por dar el primer paso. Estudiaré los detalles técnicos de tu ecosistema y me pondré en contacto contigo en las próximas 24 a 48 horas laborables para trazar nuestra ruta de acción.</p>"
           %}{% end_dnd_module %}
         {% end_dnd_row %}
       {% end_dnd_column %}
@@ -54,7 +54,8 @@
             icon_name="home",
             link={ "url": { "href": "/", "type": "CONTENT" } },
             styles={ "alignment": { "alignment": { "horizontal_align": "RIGHT" } } }
-          %}{% end_dnd_module %}
+          %}
+          {% end_dnd_module %}
           {% dnd_module path="../modules/button",
             offset=6,
             width=4,
@@ -64,7 +65,8 @@
             icon_name="database",
             link={ "url": { "href": "/#portafolio", "type": "EXTERNAL" } },
             styles={ "alignment": { "alignment": { "horizontal_align": "LEFT" } } }
-          %}{% end_dnd_module %}
+          %}        
+          {% end_dnd_module %}
         {% end_dnd_row %}
       {% end_dnd_column %}
     {% end_dnd_section %}
@@ -78,7 +80,7 @@
       {% dnd_column width=12 %}
         {% dnd_row %}
           {% dnd_module path="@hubspot/rich_text",
-            html="<p class='text-slate-500 dark:text-slate-400 text-base mb-12 text-center max-w-lg mx-auto'>Mientras tanto, puedes revisar mi blog o seguirme en redes sociales para ver en qué estoy trabajando.</p>"
+            html="<p class='text-slate-500 dark:text-slate-400 text-base mb-12 text-center max-w-lg mx-auto'>Mientras tanto, acompáñame en LinkedIn o revisa GreenSpot para ver en qué estoy trabajando y cómo optimizo ecosistemas en HubSpot.</p>"
           %}{% end_dnd_module %}
         {% end_dnd_row %}
       {% end_dnd_column %}

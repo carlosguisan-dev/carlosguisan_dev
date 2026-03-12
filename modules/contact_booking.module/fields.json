@@ -42,6 +42,12 @@
         "default": "Reserva una sesión de descubrimiento de 30 minutos. Analizaremos tu arquitectura actual y definiremos los primeros pasos técnicos sin rodeos comerciales."
       },
       {
+        "label": "Modal Title",
+        "name": "modal_title",
+        "type": "text",
+        "default": "Agendar Diagnóstico Técnico"
+      },
+      {
         "label": "Meeting Link",
         "name": "meeting_link",
         "type": "url"

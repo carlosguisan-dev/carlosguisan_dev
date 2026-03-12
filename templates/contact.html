@@ -21,7 +21,27 @@
     }
   %}
     {% dnd_module path="../modules/contact_booking.module"
-      label="Contact Booking Hero"
+      label="Contact Booking Hero",
+      hero={
+        "pre_title": "// INICIAR_SISTEMA",
+        "title": "Hablemos de tu ecosistema en <span class='text-brand-green'>HubSpot.</span>",
+        "description": "¿Atrapado con deuda técnica en tu frontend, necesitas <b>estructurar arquitecturas de contenido dinámico (HubDB / Custom Objects)</b> o buscas un brazo de ingeniería en marca blanca para tu agencia? Cuéntame tu reto y diseñemos la infraestructura web correcta."
+      },
+      booking={
+        "title": "¿Prefieres ir directo al código?",
+        "description": "Reserva un Diagnóstico Técnico de 30 minutos. Analizaremos tu infraestructura actual en Content Hub, evaluaremos la viabilidad de tus diseños y trazaremos la ruta técnica. Alta ingeniería, cero rodeos comerciales.",
+        "modal_title": "Agendar Diagnóstico Técnico",
+        "requirements": {
+          "items": [
+            { "text": "<b>Figma como única fuente de verdad:</b> Mi especialidad es la ingeniería web. No ofrezco servicios de diseño gráfico, UI/UX ni redacción de textos. Tu diseño debe estar aprobado antes de iniciar." },
+            { "text": "<b>Enfoque exclusivo en la Web:</b> Mi área de dominio es Content Hub (CMS, HubDB, y Custom Objects aplicados a la web). No realizo configuración de embudos de ventas, RevOps ni Sales Hub." },
+            { "text": "<b>Infraestructura compatible:</b> Los desarrollos a medida y el uso de entornos seguros (Content Staging) requieren que el portal cuente con una licencia de <b>Content Hub Professional o Enterprise.</b>" }
+          ]
+        }
+      },
+      form_section={
+        "title": "O detalla la arquitectura de tu proyecto:"
+      }
     %}
     {% end_dnd_module %}
   {% end_dnd_section %}
