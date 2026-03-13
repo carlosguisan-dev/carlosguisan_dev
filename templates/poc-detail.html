@@ -124,7 +124,7 @@
           { "icon": "precision_manufacturing", "title": "Volumen de Alta Precisión", "description": "Generación de 22 módulos custom y 21 plantillas dinámicas en menos de una semana." },
           { "icon": "rule", "title": "Refactorización Real-Time", "description": "Auditoría ejecutada por IA para cumplir con los estándares de validación de HubSpot." }
         ],
-        "code_snippet": "{% raw %}<div data-ai-entity='HubLFragment'>{% set projects = hubdb_table_rows(56821) %}\n{% for item in projects %}\n  <div class='project'>{{ item.name }}</div>\n{% endfor %}</div>{% endraw %}",
+        "code_snippet": "{% raw %}<div data-ai-entity='HubLFragment'>{% set projects = hubdb_table_rows(56821) %} {% for item in projects %} <div class='project'>{{ item.name }}</div> {% endfor %}</div>{% endraw %}",
         "code_filename": "dynamic_query.hubl"
       },
       styles={

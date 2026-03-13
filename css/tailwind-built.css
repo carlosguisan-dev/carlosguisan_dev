@@ -1294,6 +1294,9 @@
   .bg-emerald-500 {
     background-color: var(--color-emerald-500);
   }
+  .bg-forest {
+    background-color: var(--color-forest);
+  }
   .bg-green-400 {
     background-color: var(--color-green-400);
   }
@@ -1865,6 +1868,9 @@
     @supports (color: color-mix(in lab, red, red)) {
       color: color-mix(in oklab, var(--color-brand-lime) 80%, transparent);
     }
+  }
+  .text-dark-slate {
+    color: var(--color-dark-slate);
   }
   .text-forest {
     color: var(--color-forest);
