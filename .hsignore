@@ -1,0 +1,30 @@
+# Exclude development files from HubSpot
+.git/
+.gitignore
+.hsignore
+.prettierignore
+.prettierrc
+.vite/
+.vscode/
+.idea/
+.github/
+
+# Development sources and config
+node_modules/
+package.json
+package-lock.json
+tailwind/
+tailwind.config.js
+
+# Documentation
+README.md
+LICENSE
+*.md
+**/*.md
+
+# Avoid uploading any brain/temp files if they ever end up here
+brain/
+
+# Exclude HubDB templates due to plan limitations
+templates/hubdb.html
+images/template-previews/hubdb.png
