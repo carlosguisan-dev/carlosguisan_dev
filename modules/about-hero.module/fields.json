@@ -14,7 +14,7 @@
         "label": "Headline",
         "name": "headline",
         "type": "richtext",
-        "default": "Mucho más que código. Alta ingeniería desde el <span class=\"text-accent italic\">bosque lluvioso.</span>"
+        "default": "Mucho más que código. Alta ingeniería desde el <span class=\"text-accent-contrast italic\">bosque lluvioso.</span>"
       },
       {
         "label": "Description",

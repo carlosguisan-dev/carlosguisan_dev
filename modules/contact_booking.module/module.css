@@ -1,8 +1,8 @@
 /* Contact Booking Module Styles */
 
 .contact-booking {
-  --form-bg: var(--color-background-light);
-  --form-border: var(--color-background-alt-light);
+  --form-bg: var(--color-form-input-bg);
+  --form-border: var(--color-form-input-border);
 }
 
 .dark .contact-booking {
@@ -32,8 +32,8 @@
   display: block;
   font-size: 0.875rem;
   font-weight: 700;
-  color: var(--color-brand-green);
-  margin-bottom: 0.5rem;
+  color: var(--color-form-label);
+  margin-bottom: 0.75rem;
   margin-left: 0.25rem;
 }
 
@@ -48,12 +48,12 @@
 .contact-form-container select,
 .contact-form-container textarea {
   width: 100% !important;
-  border-radius: 0.75rem !important;
-  border: 1px solid var(--form-border) !important;
-  background-color: var(--form-bg) !important;
-  padding: 0.75rem 1rem !important;
+  border-radius: 1rem !important; /* Standardize to rounded-2xl */
+  border: 1px solid var(--color-form-input-border) !important;
+  background-color: var(--color-form-input-bg) !important;
+  padding: 1rem 1.25rem !important;
   font-size: 1rem !important;
-  color: #0f172a !important;
+  color: var(--color-form-input-text) !important;
   transition: all 0.2s ease !important;
   outline: none !important;
 }
@@ -63,14 +63,16 @@
 .dark .contact-form-container input[type="tel"],
 .dark .contact-form-container select,
 .dark .contact-form-container textarea {
-  color: #f1f5f9 !important;
+  background-color: var(--color-form-input-bg) !important;
+  border-color: var(--color-form-input-border) !important;
+  color: var(--color-form-input-text) !important;
 }
 
 .contact-form-container input:focus,
 .contact-form-container select:focus,
 .contact-form-container textarea:focus {
-  border-color: var(--color-brand-lime) !important;
-  box-shadow: 0 0 0 4px rgba(163, 217, 119, 0.1) !important;
+  border-color: var(--color-accent-contrast) !important;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent-contrast), transparent 80%) !important;
 }
 
 .contact-form-container .hs-button {

@@ -2,6 +2,7 @@
   templateType: page
   isAvailableForNewContent: true
   label: Home
+  screenshotPath: ../images/template-previews/home.png
 -->
 {% extends "./layouts/base.html" %}
 {% block body %}
@@ -44,7 +45,7 @@
         path="../modules/homepage_feature_cards",
         cards={
           "section_header": {
-            "title": "<span class=\"text-brand-lime\">Tu contenido en HubSpot es infraestructura,</span><br/> no solo páginas.",
+            "title": "<span class=\"text-accent-contrast\">Tu contenido en HubSpot es infraestructura,</span><br/> no solo páginas.",
             "description": "",
             "header_layout": "centered"
           },
@@ -211,8 +212,8 @@
     {% dnd_section
       full_width=true,
       padding={
-        "top": "120px",
-        "bottom": "120px",
+        "top": "0",
+        "bottom": "0",
         "left": "0",
         "right": "0"
       },

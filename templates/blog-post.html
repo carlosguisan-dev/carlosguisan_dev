@@ -53,7 +53,7 @@
           {% endif %}
         </div>
         <div class="flex flex-col">
-          <a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}" rel="author" class="font-bold text-primary dark:text-slate-200 text-lg hover:text-accent transition-colors">
+          <a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}" rel="author" class="font-bold text-primary dark:text-slate-200 text-lg hover:text-accent-contrast transition-colors">
             {{ content.blog_post_author.display_name }}
           </a>
           <span class="text-sm text-slate-500 dark:text-slate-400 font-medium">
@@ -125,7 +125,7 @@
           <div class="flex-1">
             <div class="flex items-center gap-2 mb-1">
               <h3 class="text-xl font-bold text-primary dark:text-slate-100">{{ content.blog_post_author.display_name }}</h3>
-              <span class="material-symbols-outlined text-accent text-base">verified</span>
+              <span class="material-symbols-outlined text-accent-contrast text-base">verified</span>
             </div>
             {% if content.blog_post_author.bio %}
               <p class="text-slate-600 dark:text-brand-lime/80 mb-6">
@@ -134,18 +134,18 @@
             {% endif %}
             <div class="flex gap-4">
               {% if content.blog_post_author.website %}
-                <a class="text-primary dark:text-accent hover:text-accent dark:hover:text-white transition-colors" href="{{ content.blog_post_author.website }}" target="_blank" rel="noopener" title="Website">
-                  <span class="material-symbols-outlined">public</span>
+                <a class="text-primary dark:text-accent hover:text-accent-contrast dark:hover:text-white transition-colors" href="{{ content.blog_post_author.website }}" target="_blank" rel="noopener" title="Website">
+                  <span class="material-symbols-outlined">language</span>
                 </a>
               {% endif %}
               {% if content.blog_post_author.linkedin %}
-                <a class="text-primary dark:text-accent hover:text-accent dark:hover:text-white transition-colors" href="{{ content.blog_post_author.linkedin }}" target="_blank" rel="noopener" title="LinkedIn">
-                   <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                <a class="text-primary dark:text-accent hover:text-accent-contrast dark:hover:text-white transition-colors" href="{{ content.blog_post_author.linkedin }}" target="_blank" rel="noopener" title="LinkedIn">
+                  <span class="material-symbols-outlined">share</span>
                 </a>
               {% endif %}
               {% if content.blog_post_author.twitter %}
-                <a class="text-primary dark:text-accent hover:text-accent dark:hover:text-white transition-colors" href="{{ content.blog_post_author.twitter }}" target="_blank" rel="noopener" title="X (Twitter)">
-                  <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <a class="text-primary dark:text-accent hover:text-accent-contrast dark:hover:text-white transition-colors" href="{{ content.blog_post_author.twitter }}" target="_blank" rel="noopener" title="X (Twitter)">
+                  <span class="material-symbols-outlined">x</span>
                 </a>
               {% endif %}
             </div>
@@ -183,9 +183,9 @@
               </div>
             {% endif %}
             {% if post.tag_list %}
-              <span class="font-mono text-[10px] text-accent font-bold uppercase tracking-widest mb-3 block">{{ post.tag_list[0].name }}</span>
+              <span class="font-mono text-[10px] text-accent-contrast font-bold uppercase tracking-widest mb-3 block">{{ post.tag_list[0].name }}</span>
             {% endif %}
-            <h3 class="text-xl font-bold text-primary dark:text-slate-100 mb-3 font-display group-hover:text-accent transition-colors">
+            <h3 class="text-xl font-bold text-primary dark:text-slate-100 mb-3 font-display group-hover:text-accent-contrast transition-colors">
               {{ post.name }}
             </h3>
             <p class="text-sm text-slate-600 dark:text-brand-lime/80 line-clamp-3">

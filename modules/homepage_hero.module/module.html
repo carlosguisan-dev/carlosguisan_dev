@@ -7,10 +7,10 @@
       color:{{ module.styles.text_color.color }}; {{ module.styles.spacing.css }}
     }
     .hero-{{ module_id }} .text-brand-lime {
-      color: {{ module.styles.lime_accent.color }};
+      color: var(--color-accent-contrast, {{ module.styles.lime_accent.color }});
     }
     .hero-{{ module_id }} .code-text {
-      color: {{ module.styles.lime_accent.color }};
+      color: var(--color-accent-contrast, {{ module.styles.lime_accent.color }});
     }
   {% end_scope_css %}
 </style>

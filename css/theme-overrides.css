@@ -353,9 +353,9 @@ form input[type=number],
 form input[type=file],
 form select,
 form textarea {
-  {{ form_field_border }}
-  background-color: {{ form_field_bg_color }};
-  color: {{ form_field_font_color }};
+  border: 1px solid var(--color-form-input-border);
+  background-color: var(--color-form-input-bg);
+  color: var(--color-form-input-text);
   border-radius: {{ form_field_corner_radius }};
 }
 

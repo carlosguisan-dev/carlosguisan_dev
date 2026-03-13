@@ -1,0 +1,12 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Blank (DND Area)
+  screenshotPath: ../images/template-previews/blank.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+  {% dnd_area "blank_dnd_area" %}
+  {% end_dnd_area %}
+{% end_block %}

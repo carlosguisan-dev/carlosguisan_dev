@@ -1,7 +1,7 @@
 <!--
   templateType: membership_login_page
-  isAvailableForNewContent: true
-  label: Boilerplate - membership login
+  isAvailableForNewContent: false
+  label: Membership Login
   screenshotPath: ../../images/template-previews/membership-login.png
 -->
 {% set template_css = "../../css/templates/system.css" %}
@@ -20,7 +20,7 @@
       <!-- Header Section -->
       <div class="space-y-4">
         <div class="space-y-2">
-          <p class="mono-text text-xs font-bold tracking-widest text-accent uppercase">
+          <p class="mono-text text-xs font-bold tracking-widest text-accent-contrast uppercase">
             // PORTAL_PRIVADO
           </p>
           <h1 class="text-4xl md:text-5xl font-black text-primary leading-tight">
@@ -51,7 +51,7 @@
           <input id="custom-login-remember" type="checkbox" class="rounded border-slate-300 text-primary focus:ring-primary">
           <label for="custom-login-remember">Recordarme</label>
         </div>
-        <button id="custom-login-submit" class="w-full bg-primary hover:bg-primary/90 text-accent font-bold py-4 rounded-xl flex items-center justify-center gap-3 transition-all transform hover:-translate-y-0.5 shadow-lg active:scale-95">
+        <button id="custom-login-submit" class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-3 transition-all transform hover:-translate-y-0.5 shadow-lg active:scale-95">
           Iniciar Sesión
         </button>
       </div>
@@ -70,11 +70,11 @@
       <!-- Custom Shadow-Sync UI: Passwordless Area -->
       <div id="custom-passwordless-ui" class="space-y-4">
         <p class="font-mono text-xs font-bold text-primary flex items-center gap-2 mb-4 uppercase tracking-wider">
-          <span class="text-accent">&gt;_</span> ACCESO SIN CONTRASEÑA
+          <span class="text-accent-contrast">&gt;_</span> ACCESO SIN CONTRASEÑA
         </p>
         <div class="flex flex-col sm:flex-row gap-3">
           <input id="custom-passwordless-email" class="flex-grow px-4 py-3 rounded-xl border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all text-sm" placeholder="Enlace mágico por email" type="email">
-          <button id="custom-passwordless-submit" class="px-8 py-3 bg-white border-2 border-primary text-primary hover:bg-primary hover:text-accent font-bold rounded-xl transition-all text-sm whitespace-nowrap shadow-sm active:scale-95">
+          <button id="custom-passwordless-submit" class="px-8 py-3 bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold rounded-xl transition-all text-sm whitespace-nowrap shadow-sm active:scale-95">
             Enviar Enlace
           </button>
         </div>
@@ -117,12 +117,12 @@
     <!-- Text Overlay Content -->
     <div class="relative z-10 max-w-lg space-y-8">
       <div class="size-16 bg-accent/20 rounded-2xl flex items-center justify-center border border-accent/30 backdrop-blur-sm">
-        <span class="material-symbols-outlined text-accent text-4xl">rocket_launch</span>
+        <span class="material-symbols-outlined text-accent-contrast text-4xl">rocket_launch</span>
       </div>
       <h2 class="text-4xl lg:text-5xl font-black text-white leading-tight font-display">
         Estrategia para escalar. Código para ejecutar.
       </h2>
-      <p class="text-accent text-xl font-light leading-relaxed">
+      <p class="text-accent-contrast text-xl font-light leading-relaxed">
         Todo en un solo Partner Técnico. Gestiona tu infraestructura, despliega con confianza y escala sin límites.
       </p>
       
@@ -139,7 +139,7 @@
           </div>
         </div>
         <p class="text-white/80 text-sm font-medium">
-          Únete a más de <span class="text-accent">500+</span> empresas líderes.
+          Únete a más de <span class="text-accent-contrast">500+</span> empresas líderes.
         </p>
       </div>
     </div>

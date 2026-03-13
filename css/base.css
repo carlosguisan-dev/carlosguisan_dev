@@ -26,6 +26,9 @@ body {
   --color-dark-slate: {{ theme.brand_colors.dark_slate.color or "#0f172a" }};
   
   --color-primary: {{ theme.brand_colors.brand_green.color or "#2D5016" }};
+  /* Adaptive Contrast Tokens */
+  --color-accent-contrast: var(--color-brand-green);
+  
   --color-accent: {{ theme.brand_colors.brand_lime.color or "#A3D977" }};
   --color-accent-vibrant: {{ theme.brand_colors.brand_lime_vibrant.color or "#BEF264" }};
   
@@ -83,6 +86,12 @@ body {
   /* HubSpot Grid Variables */
   --hs-grid-gutter: 20px;
   --header-height: 80px;
+
+  /* Form Design System Tokens - Light Mode */
+  --color-form-label: var(--color-brand-green);
+  --color-form-input-bg: #f1f5f9; /* slate-100 */
+  --color-form-input-border: #334155; /* slate-700 - Much Higher Contrast */
+  --color-form-input-text: #0f172a; /* slate-900 */
 }
 
 /* Material Symbols support */
@@ -164,30 +173,78 @@ body {
   /* Removed padding: 0 to let HubSpot handle it via vertical_spacing */
 }
 
-/* HubSpot Forms - Minimal resets for better Tailwind compatibility */
-form fieldset {
+/* HubSpot Forms - Design System Integrated Styling */
+body .hs-form fieldset {
   max-width: 100% !important;
   border: none !important;
   padding: 0 !important;
   margin: 0 !important;
 }
 
-.hs-form-field {
-  margin-bottom: 1.5rem;
+body .hs-form-field {
+  margin-bottom: 2rem !important;
 }
 
-.hs-input.invalid.error {
-  border-color: #ef4444 !important; /* Tailwind red-500 */
+body .hs-form-field label {
+  display: block !important;
+  font-size: 0.875rem !important; /* text-sm */
+  font-weight: 700 !important; /* font-bold */
+  margin-bottom: 0.75rem !important; /* mb-3 */
+  color: var(--color-form-label) !important;
 }
 
-.hs-error-msg {
+body .hs-input, 
+body form input[type="text"], 
+body form input[type="email"], 
+body form input[type="tel"], 
+body form input[type="number"], 
+body form select, 
+body form textarea {
+  display: block !important;
+  width: 100% !important;
+  padding: 1rem 1.25rem !important; /* px-5 py-4 */
+  border-radius: 1rem !important; /* rounded-2xl */
+  border: 1px solid !important; /* border-1 */
+  font-size: 1rem !important; /* text-base */
+  font-family: var(--font-sans) !important;
+  transition: all 0.2s ease !important; /* transition-all duration-200 */
+  background-color: var(--color-form-input-bg) !important;
+  border-color: var(--color-form-input-border) !important;
+  color: var(--color-form-input-text) !important;
+}
+
+body .hs-input:focus, 
+body form input:focus,
+body form select:focus,
+body form textarea:focus {
+  outline: none !important;
+  border-color: var(--color-accent-contrast) !important;
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent-contrast), transparent 80%) !important;
+}
+
+.dark body .hs-input:focus, 
+.dark body form input:focus, 
+.dark body form select:focus, 
+.dark body form textarea:focus {
+  background-color: rgba(25, 35, 25, 0.6) !important;
+}
+
+body .hs-input.invalid.error {
+  border-color: #ef4444 !important;
+}
+
+body .hs-error-msg {
   color: #ef4444 !important;
   font-size: 0.875rem;
-  margin-top: 0.25rem;
+  margin-top: 0.75rem !important;
+  font-weight: 600 !important;
 }
 
-.hs-button, form input[type="submit"] {
-  @apply inline-block cursor-pointer transition-all;
+body .hs-button, body form input[type="submit"] {
+  display: inline-block !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
 }
 
 /* Specific override for DND sections with explicit background colors in dark mode */
@@ -229,4 +286,20 @@ form fieldset {
 }
 .dark .js-action-card {
   background-color: #162216 !important; /* Matches --color-background-card-dark */
+}
+
+/* Dark mode adaptive color remapping */
+.dark {
+  --color-accent-contrast: var(--color-brand-lime);
+
+  /* Form Tokens - Dark Mode */
+  --color-form-label: #e2e8f0; /* slate-200 */
+  --color-form-input-bg: rgba(255, 255, 255, 0.08);
+  --color-form-input-border: rgba(255, 255, 255, 0.25);
+  --color-form-input-text: #f8fafc; /* slate-50 */
+}
+
+/* Force high-contrast accent in dark-branded sections even when theme is light */
+.js-dark-deep, .js-dark-alt {
+  --color-accent-contrast: var(--color-brand-lime);
 }

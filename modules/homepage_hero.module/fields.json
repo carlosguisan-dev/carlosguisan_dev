@@ -14,7 +14,7 @@
         "label": "Headline",
         "name": "headline",
         "type": "richtext",
-        "default": "Arquitectura escalable <span class=\"text-brand-lime\">para el ecosistema Hubspot.</span>"
+        "default": "Arquitectura escalable <span class=\"text-accent-contrast\">para el ecosistema Hubspot.</span>"
       },
       {
         "label": "Description",

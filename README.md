@@ -29,6 +29,10 @@ Los colores principales están definidos en HubSpot y son accesibles vía clases
 | **Lime Vibrant** | `text-brand-lime-vibrant` | `--color-brand-lime-vibrant` |
 | **Forest** | `bg-forest` | `--color-forest` |
 | **Dark Slate** | `text-dark-slate` | `--color-dark-slate` |
+| **Accent Contrast** | `text-accent-contrast` | `--color-accent-contrast` |
+
+> [!TIP]
+> **Accesibilidad Adaptativa**: El tema utiliza un token inteligente para elementos de acento (como etiquetas y badges). `--color-accent-contrast` cambia automáticamente de **Verde Bosque** (oscuro) en modo claro a **Verde Lima** (brillante) en modo oscuro, garantizando el cumplimiento de contraste WCAG sin sacrificar la estética.
 
 ### Tipografía
 | Uso | Clase Tailwind | Fuente |

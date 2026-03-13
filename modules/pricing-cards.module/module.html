@@ -89,7 +89,7 @@
           <ul class="space-y-4 mb-10 flex-grow">
             {% for feature in card.features %}
               <li class="flex items-start gap-3 text-sm text-brand-green/80 dark:text-white/70">
-                <span class="material-symbols-outlined text-accent text-lg shrink-0">{{ card.feature_icon }}</span>
+                <span class="material-symbols-outlined text-accent-contrast text-lg shrink-0">{{ card.feature_icon }}</span>
                 {{ feature }}
               </li>
             {% endfor %}
@@ -105,7 +105,7 @@
             </a>
           {% else %}
             <a href="{{ card.button_link.url.href }}"
-               class="w-full border-2 border-brand-green dark:border-accent py-3 rounded-xl font-bold text-brand-green dark:text-accent hover:bg-brand-green hover:text-white dark:hover:bg-accent dark:hover:text-brand-green transition-all text-center block"
+               class="w-full border-2 border-accent-contrast py-3 rounded-xl font-bold text-accent-contrast hover:bg-brand-green hover:text-white dark:hover:bg-accent dark:hover:text-brand-green transition-all text-center block"
                {% if card.button_link.open_in_new_tab %}target="_blank"{% endif %}
             >
               {{ card.button_text }}
@@ -132,7 +132,7 @@
               <div class="bg-white dark:bg-background-card-dark p-3 rounded-2xl shadow-sm border border-brand-green/5 dark:border-white/5">
                 <span class="material-symbols-outlined text-primary dark:text-accent text-3xl">{{ module.retainer.icon }}</span>
               </div>
-              <span class="font-mono text-xs font-bold tracking-widest text-brand-green dark:text-accent uppercase">
+              <span class="font-mono text-xs font-bold tracking-widest text-accent-contrast uppercase">
                 >_ {{ module.retainer.mono_label }}
               </span>
             </div>
@@ -149,7 +149,7 @@
             <div class="grid sm:grid-cols-2 gap-4 mb-8">
               {% for feature in module.retainer.features %}
                 <div class="flex items-start gap-3 text-sm text-brand-green/70 dark:text-white/60">
-                  <span class="material-symbols-outlined text-accent text-lg shrink-0">check_circle</span>
+                  <span class="material-symbols-outlined text-accent-contrast text-lg shrink-0">check_circle</span>
                   <span>{{ feature }}</span>
                 </div>
               {% endfor %}
@@ -194,12 +194,12 @@
           <div class="lg:max-w-2xl text-left">
             <h3 class="text-xl font-bold text-brand-green dark:text-white mb-2 flex items-center gap-3">
               {{ module.tactical_banner.title }}
-              <span class="font-mono text-[10px] bg-brand-green dark:bg-brand-lime text-white dark:text-brand-green px-2 py-0.5 rounded leading-none flex items-center h-4">
+              <span class="font-mono text-[10px] bg-brand-green dark:bg-accent-contrast text-white dark:text-brand-green px-2 py-0.5 rounded leading-none flex items-center h-4">
                 >_ {{ module.tactical_banner.mono_label }}
               </span>
             </h3>
             <p class="text-lg font-bold text-brand-green/90 dark:text-slate-200 mb-4">
-              {{ module.tactical_banner.subtitle }} — <span class="text-brand-green dark:text-brand-lime">Desde {{ module.tactical_banner.price }} {{ module.tactical_banner.price_suffix }}</span>
+              {{ module.tactical_banner.subtitle }} — <span class="text-brand-green dark:text-accent-contrast">Desde {{ module.tactical_banner.price }} {{ module.tactical_banner.price_suffix }}</span>
             </p>
             <p class="text-sm text-brand-green/70 dark:text-slate-400 leading-relaxed mb-6">
               {{ module.tactical_banner.description }}

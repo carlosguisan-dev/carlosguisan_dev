@@ -1,7 +1,7 @@
 <!--
   templateType: search_results_page
-  isAvailableForNewContent: true
-  label: Boilerplate - search results
+  isAvailableForNewContent: false
+  label: Search Results
   screenshotPath: ../../images/template-previews/search-results.png
 -->
 {% set template_css = "../../css/templates/system.css" %}
@@ -28,11 +28,11 @@
 
       <div class="search-results__input-group">
         <form action="/{{ site_settings.content_search_results_page_path }}" class="flex flex-col md:flex-row gap-3 w-full">
-          <div class="search-results__input-wrapper">
-            <span class="material-symbols-outlined font-bold">search</span>
-            <input class="search-results__input focus:ring-4 focus:ring-primary/50 outline-none" name="q" placeholder="Buscar en el ecosistema..." type="text" value="{{ (request.query_dict.q|escape_html) if request.query_dict.q else '' }}"/>
+          <div class="search-results__input-wrapper relative flex-grow flex items-center">
+            <span class="material-symbols-outlined font-bold absolute left-4 text-slate-400 select-none pointer-events-none">search</span>
+            <input class="search-results__input focus:ring-4 focus:ring-primary/50 outline-none w-full" style="padding-left: 60px !important;" name="q" placeholder="Buscar en el ecosistema..." type="text" value="{{ (request.query_dict.q|escape_html) if request.query_dict.q else '' }}"/>
           </div>
-          <button class="bg-primary hover:bg-primary/90 text-accent font-bold px-10 py-4 rounded-xl transition-all flex items-center justify-center gap-2">
+          <button class="bg-accent hover:bg-white text-primary font-bold px-10 py-4 rounded-xl transition-all flex items-center justify-center gap-2 shadow-lg">
             <span class="material-symbols-outlined font-bold">search</span>
             Buscar
           </button>

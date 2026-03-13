@@ -1,7 +1,7 @@
 <!--
   templateType: error_page
-  isAvailableForNewContent: true
-  label: Boilerplate - 500 error
+  isAvailableForNewContent: false
+  label: 500 Error
   screenshotPath: ../../images/template-previews/500.png
 -->
 {% set template_css = "../../css/templates/system.css" %}
@@ -18,7 +18,7 @@
     </div>
     <div class="relative z-10 flex flex-col items-center">
       <!-- Minimalist Server Rack / Tree Root Icon -->
-      <svg class="w-32 h-32 md:w-48 md:h-48 text-accent tree-roots glitch-effect" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24">
+      <svg class="w-32 h-32 md:w-48 md:h-48 text-accent-contrast tree-roots glitch-effect" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1" viewbox="0 0 24 24">
         <rect height="8" rx="2" width="20" x="2" y="2"></rect>
         <rect height="8" rx="2" width="20" x="2" y="14"></rect>
         <path d="M6 6h.01M6 18h.01"></path>
@@ -51,11 +51,11 @@
         <span>🔄</span> Reintentar conexión
       </button>
       <div class="flex flex-col items-start gap-3 font-mono text-sm text-gray-500">
-        <a class="hover:text-accent transition-colors flex items-center gap-2" href="mailto:{{ site_settings.membershipWebsiteAdmin }}">
-          <span class="text-accent">&gt;_</span> Notificar emergencia <span class="text-xs opacity-70">(Email directo)</span>
+        <a class="hover:text-accent-contrast transition-colors flex items-center gap-2" href="mailto:{{ site_settings.membershipWebsiteAdmin }}">
+          <span class="text-accent-contrast">&gt;_</span> Notificar emergencia <span class="text-xs opacity-70">(Email directo)</span>
         </a>
-        <a class="hover:text-accent transition-colors flex items-center gap-2" href="#">
-          <span class="text-accent">&gt;_</span> Contactar por LinkedIn
+        <a class="hover:text-accent-contrast transition-colors flex items-center gap-2" href="#">
+          <span class="text-accent-contrast">&gt;_</span> Contactar por LinkedIn
         </a>
       </div>
     </div>

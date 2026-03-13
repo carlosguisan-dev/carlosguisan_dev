@@ -23,13 +23,13 @@
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
       <div>
         {% if module.content.mono_label %}
-          <span class="font-mono text-accent text-sm mb-4 block">{{ module.content.mono_label }}</span>
+          <span class="font-mono text-accent-contrast text-sm mb-4 block">{{ module.content.mono_label }}</span>
         {% endif %}
         <h2 class="text-4xl font-bold">{{ module.content.title }}</h2>
       </div>
       
       {% if module.content.status_text %}
-        <div class="text-accent/60 font-mono text-sm hidden lg:block js-tech-status">
+        <div class="text-accent-contrast/80 font-mono text-sm hidden lg:block js-tech-status border border-accent-contrast/20 px-4 py-2 rounded-lg bg-white/5">
           Compilation: <span class="js-counter">0</span>% efficient
         </div>
       {% endif %}
@@ -38,13 +38,13 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
       {% for group in module.content.groups %}
         <div class="tech-group js-tech-group">
-          <h4 class="font-mono text-accent text-xs font-bold mb-6 tracking-widest uppercase">{{ group.group_label }}</h4>
+          <h4 class="font-mono text-accent-contrast text-xs font-bold mb-6 tracking-widest uppercase">{{ group.group_label }}</h4>
           <div class="flex flex-wrap gap-3">
             {% for tag in group.tags %}
               {% set is_link = tag.link.url.href %}
               {% set TagEl = is_link ? 'a' : 'span' %}
               {% set link_attrs = is_link ? 'href="' ~ tag.link.url.href ~ '"' ~ (tag.link.open_in_new_tab ? ' target="_blank"' : '') ~ (tag.link.rel ? ' rel="' ~ tag.link.rel ~ '"' : '') : '' %}
-              <{{ TagEl }} {{ link_attrs }} class="px-3 py-1.5 border border-accent/30 rounded text-xs font-mono hover:bg-accent/10 transition-colors {% if is_link %}cursor-pointer hover:border-accent hover:text-white hover:no-underline flex items-center gap-1{% endif %}">
+              <{{ TagEl }} {{ link_attrs }} class="px-3 py-1.5 border border-accent-contrast/30 rounded text-xs font-mono hover:bg-accent-contrast/20 transition-all {% if is_link %}cursor-pointer hover:border-accent-contrast hover:text-white hover:no-underline flex items-center gap-1{% endif %}">
                 {{ tag.text|default(tag) }}
                 {% if is_link %}
                   <span class="material-symbols-outlined text-[10px] leading-none opacity-60 transition-opacity group-hover:opacity-100">open_in_new</span>

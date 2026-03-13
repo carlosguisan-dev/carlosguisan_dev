@@ -9,12 +9,12 @@
 
 {% if layout == "inline" %}
 {# ── Inline Strip (case_study style) ── #}
-<section class="project-stats-{{ module_id }} {{ bg_classes[bg] }} py-20 px-6">
+<section class="project-stats-{{ module_id }} {{ bg_classes[bg] }} py-20 px-6 js-dark-deep">
   <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12 text-white">
     {% for stat in module.content.stats %}
       <div class="text-center md:text-left">
-        <div class="font-mono text-5xl font-black text-brand-lime mb-2">{{ stat.value }}</div>
-        <p class="text-slate-300 font-medium">{{ stat.stat_label }}</p>
+        <div class="font-mono text-5xl font-black text-accent-contrast mb-2">{{ stat.value }}</div>
+        <p class="text-white/70 font-medium">{{ stat.stat_label }}</p>
       </div>
     {% endfor %}
   </div>
@@ -22,15 +22,15 @@
 
 {% elif layout == "cards" %}
 {# ── Cards with Icons (poc_detail style) ── #}
-<section class="project-stats-{{ module_id }} {{ bg_classes[bg] }} py-24 px-6">
+<section class="project-stats-{{ module_id }} {{ bg_classes[bg] }} py-24 px-6 js-dark-deep">
   <div class="max-w-7xl mx-auto">
     <div class="grid md:grid-cols-{{ module.content.stats|length }} gap-8">
       {% for stat in module.content.stats %}
         <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm">
           {% if stat.icon %}
-            <span class="material-symbols-outlined text-brand-lime text-4xl mb-6">{{ stat.icon }}</span>
+            <span class="material-symbols-outlined text-accent-contrast text-4xl mb-6">{{ stat.icon }}</span>
           {% endif %}
-          <h3 class="text-brand-lime font-mono text-4xl font-bold mb-2">{{ stat.value }}</h3>
+          <h3 class="text-accent-contrast font-mono text-4xl font-bold mb-2">{{ stat.value }}</h3>
           <p class="text-white/80 font-medium">{{ stat.stat_label }}</p>
           {% if stat.sublabel %}
             <div class="mt-4 pt-4 border-t border-white/10 text-white/40 text-xs font-mono uppercase">{{ stat.sublabel }}</div>

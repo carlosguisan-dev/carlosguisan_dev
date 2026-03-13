@@ -26,7 +26,7 @@
     {# Section Header #}
     <div class="max-w-4xl mb-24 relative z-20 mx-auto text-center">
       {% if module.content.mono_label %}
-        <span class="font-mono text-brand-green dark:text-accent text-sm font-bold tracking-widest block mb-4 uppercase">
+        <span class="font-mono text-accent-contrast text-sm font-bold tracking-widest block mb-4 uppercase">
           {{ module.content.mono_label }}
         </span>
       {% endif %}
@@ -49,7 +49,7 @@
             
             {# Node / Icon #}
             <div class="relative z-10 flex-shrink-0">
-              <div class="step-node size-16 rounded-2xl bg-white dark:bg-slate-900 border-2 border-brand-green/40 dark:border-accent/50 flex items-center justify-center text-brand-green dark:text-accent transition-transform group-hover:scale-110 group-hover:border-accent">
+              <div class="step-node size-16 rounded-2xl bg-white dark:bg-slate-900 border-2 border-accent-contrast/40 flex items-center justify-center text-accent-contrast transition-transform group-hover:scale-110 group-hover:border-accent-contrast">
                 <span class="material-symbols-outlined text-3xl font-light">
                   {{ step.icon }}
                 </span>
@@ -63,7 +63,7 @@
             {# Content Card #}
             <div class="flex-1 bg-white/70 dark:bg-slate-800/50 backdrop-blur-md p-8 md:p-10 rounded-3xl border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-xl hover:border-accent/30 transition-all duration-500">
               <div class="flex flex-col md:flex-row md:items-baseline gap-4 mb-6">
-                <span class="font-mono text-brand-green dark:text-accent text-xs font-bold tracking-widest uppercase">
+                <span class="font-mono text-accent-contrast text-xs font-bold tracking-widest uppercase">
                   {{ step.step_label }}
                 </span>
                 <h3 class="text-2xl font-bold text-slate-900 dark:text-white">

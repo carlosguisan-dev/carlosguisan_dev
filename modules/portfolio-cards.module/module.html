@@ -13,7 +13,7 @@
           <div class="border-2 border-dashed border-white/20 rounded-xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 bg-primary relative z-10">
             <div class="flex-1 space-y-6">
               {% if card.coming_soon_label %}
-                <span class="inline-block bg-accent/20 text-accent border border-accent/30 font-mono text-[10px] px-3 py-1 rounded uppercase tracking-widest font-bold">
+                <span class="inline-block bg-accent-contrast/10 text-accent-contrast border border-accent-contrast/20 font-mono text-[10px] px-3 py-1 rounded uppercase tracking-widest font-bold">
                   {{ card.coming_soon_label }}
                 </span>
               {% endif %}
@@ -83,14 +83,14 @@
               {% if card.challenge.heading and card.challenge.description %}
                 <div>
                   <h4 class="font-mono text-[10px] text-accent font-bold uppercase tracking-wider mb-2">{{ card.challenge.heading }}</h4>
-                  <p class="text-slate-600 dark:text-brand-lime/80 text-sm leading-relaxed">{{ card.challenge.description }}</p>
+                  <p class="text-slate-600 dark:text-accent-contrast/80 text-sm leading-relaxed">{{ card.challenge.description }}</p>
                 </div>
               {% endif %}
 
               {% if card.solution.heading and card.solution.description %}
                 <div>
                   <h4 class="font-mono text-[10px] text-accent font-bold uppercase tracking-wider mb-2">{{ card.solution.heading }}</h4>
-                  <p class="text-slate-600 dark:text-brand-lime/80 text-sm leading-relaxed">{{ card.solution.description }}</p>
+                  <p class="text-slate-600 dark:text-accent-contrast/80 text-sm leading-relaxed">{{ card.solution.description }}</p>
                 </div>
               {% endif %}
             </div>

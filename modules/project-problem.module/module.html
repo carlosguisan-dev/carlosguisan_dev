@@ -19,7 +19,7 @@
           <span class="font-mono text-xs font-bold uppercase tracking-widest">{{ module.content.alert_label }}</span>
         </div>
       {% elif module.content.icon %}
-        <span class="material-symbols-outlined text-4xl text-forest dark:text-brand-lime mb-4 block">{{ module.content.icon }}</span>
+        <span class="material-symbols-outlined text-4xl text-accent-contrast dark:text-accent-contrast mb-4 block">{{ module.content.icon }}</span>
       {% endif %}
 
       {% if module.content.title %}
@@ -32,7 +32,7 @@
     {# Right Column: Paragraphs #}
     <div class="space-y-6">
       {% for paragraph in module.content.paragraphs %}
-        <div class="text-xl text-slate-600 dark:text-brand-lime/80 leading-relaxed">
+        <div class="text-xl text-slate-600 dark:text-accent-contrast/80 leading-relaxed">
           {{ paragraph }}
         </div>
       {% endfor %}
