@@ -1,0 +1,82 @@
+{#
+  templateType: none
+  label: Schema & AIO Metadata
+#}
+
+{# --- Configuration --- #}
+{% set site_name = "Carlos Guillermo Sanchez Cabezas | Senior HubSpot Content Hub Architect & CMS Developer." %}
+{% set site_url = site_origin %}
+{% set author_name = "Carlos Guillermo Sanchez Cabezas" %}
+{% set same_as = [
+  "https://www.linkedin.com/in/carlos-guillermo-sanchez-cabezas/",
+  "https://app.hubspot.com/academy/achievements/qhrn6tzt/en/1/carlos-guillermo-sanchez-cabezas"
+] %}
+
+{# --- AI Optimization (AIO) Meta Tags --- #}
+{% if content.post_summary or meta_description %}
+  <meta name="ai-context-summary" content="{{ (content.post_summary or meta_description)|striptags|truncate(155) }}">
+{% endif %}
+
+{# --- JSON-LD Logic --- #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  {% if is_blog_post %}
+    {# --- BLOG POST SCHEMA --- #}
+    "@type": "BlogPosting",
+    "headline": "{{ content.name|escape_json }}",
+    "image": "{{ content.featured_image }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ content.blog_post_author.display_name }}",
+      "url": "{{ group.absolute_url }}/author/{{ content.blog_post_author.slug }}"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site_name }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ get_asset_url('../../images/logo/logo-horizontal.svg') }}"
+      }
+    },
+    "datePublished": "{{ content.publish_date }}",
+    "description": "{{ content.post_summary|striptags|escape_json }}"
+
+  {% elif template_type == "page" and "poc-detail" in content.template_path %}
+    {# --- POC DETAIL (TECH ARTICLE) --- #}
+    "@type": "TechArticle",
+    "headline": "{{ content.name|escape_json }}",
+    "image": "{{ content.featured_image }}",
+    "author": {
+      "@type": "Person",
+      "name": "{{ author_name }}"
+    },
+    "proficiencyLevel": "Expert",
+    "articleSection": "AI Migration Proof of Concept",
+    "description": "{{ meta_description|escape_json }}"
+
+  {% elif template_type == "page" and "about" in content.template_path %}
+    {# --- ABOUT PAGE (PERSON) --- #}
+    "@type": "Person",
+    "name": "{{ author_name }}",
+    "jobTitle": "Content Hub Architect",
+    "url": "{{ content.absolute_url }}",
+    "sameAs": {{ same_as|tojson }},
+    "description": "{{ meta_description|escape_json }}",
+    "knowsAbout": ["HubSpot Content Hub", "HubL", "Custom Objects", "HubDB", "Web Engineering"]
+
+  {% else %}
+    {# --- DEFAULT / HOME (PROFESSIONAL SERVICE) --- #}
+    "@type": "ProfessionalService",
+    "name": "{{ site_name }}",
+    "image": "{{ get_asset_url('../../images/about-me.jpg') }}",
+    "url": "{{ site_url }}",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sarapiquí",
+      "addressCountry": "CR"
+    },
+    "description": "{{ meta_description|escape_json }}"
+  {% endif %}
+}
+</script>

@@ -11,6 +11,7 @@
   --color-brand-lime: var(--color-brand-lime);
   --color-brand-lime-vibrant: var(--color-brand-lime-vibrant);
   --color-brand-orange: var(--color-brand-orange);
+  --color-dark-slate: var(--color-dark-slate);
   --color-forest: var(--color-forest);
   --color-accent: var(--color-accent);
   --color-accent-vibrant: var(--color-accent-vibrant);
@@ -22,7 +23,9 @@
 
   /* Fonts */
   --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
+  --font-body: var(--font-body);
 }
 
 @layer base {

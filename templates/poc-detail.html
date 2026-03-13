@@ -92,7 +92,8 @@
         "side_image": {
           "src": get_asset_url("../images/poc/infrastructure.png"),
           "alt": "Infraestructura CI/CD y despliegue automatizado"
-        }
+        },
+        "image_caption": "<span data-ai-entity='TechnicalArchitecture'>Ecosistema HubSpot AI-Ready</span>"
       },
       styles={
         "layout": "checklist_image",
@@ -123,8 +124,8 @@
           { "icon": "precision_manufacturing", "title": "Volumen de Alta Precisión", "description": "Generación de 22 módulos custom y 21 plantillas dinámicas en menos de una semana." },
           { "icon": "rule", "title": "Refactorización Real-Time", "description": "Auditoría ejecutada por IA para cumplir con los estándares de validación de HubSpot." }
         ],
-        "code_snippet": "{% raw %}{# AI-Driven Module Generator #} | {% scope_css %} | .module { bg: 'forest'; } | {% end_scope_css %} | <div class=\"poc-ai-module\">...</div>{% endraw %}",
-        "code_filename": "ai_migration_engine.hubl"
+        "code_snippet": "{% raw %}<div data-ai-entity='HubLFragment'>{% set projects = hubdb_table_rows(56821) %}\n{% for item in projects %}\n  <div class='project'>{{ item.name }}</div>\n{% endfor %}</div>{% endraw %}",
+        "code_filename": "dynamic_query.hubl"
       },
       styles={
         "layout": "checklist_code",
