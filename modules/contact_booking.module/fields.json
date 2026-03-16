@@ -53,8 +53,8 @@
         "name": "booking_type",
         "type": "choice",
         "choices": [
-          { "value": "hubspot_url", "label": "HubSpot Meeting URL" },
-          { "value": "custom_embed", "label": "Custom Embed Code" }
+          ["hubspot_url", "HubSpot Meeting URL"],
+          ["custom_embed", "Custom Embed Code"]
         ],
         "default": "hubspot_url"
       },
@@ -64,7 +64,7 @@
         "name": "meeting_link",
         "type": "url",
         "visibility": {
-          "controlling_field": "booking.booking_type",
+          "controlling_field": "booking_type",
           "controlling_value_regex": "hubspot_url"
         }
       },
@@ -74,7 +74,7 @@
         "name": "custom_embed",
         "type": "text",
         "visibility": {
-          "controlling_field": "booking.booking_type",
+          "controlling_field": "booking_type",
           "controlling_value_regex": "custom_embed"
         }
       },
