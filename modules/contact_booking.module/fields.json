@@ -48,16 +48,18 @@
         "default": "Agendar Diagnóstico Técnico"
       },
       {
+        "id": "booking_type",
         "label": "Booking Type",
         "name": "booking_type",
         "type": "choice",
         "choices": [
-          ["hubspot_url", "HubSpot Meeting URL"],
-          ["custom_embed", "Custom Embed Code"]
+          { "value": "hubspot_url", "label": "HubSpot Meeting URL" },
+          { "value": "custom_embed", "label": "Custom Embed Code" }
         ],
         "default": "hubspot_url"
       },
       {
+        "id": "meeting_link",
         "label": "Meeting Link",
         "name": "meeting_link",
         "type": "url",
@@ -67,6 +69,7 @@
         }
       },
       {
+        "id": "custom_embed",
         "label": "Custom Embed Code",
         "name": "custom_embed",
         "type": "text",
@@ -115,6 +118,7 @@
         "default": "Cuéntame sobre el proyecto"
       },
       {
+        "id": "form",
         "label": "HubSpot Form",
         "name": "form",
         "type": "form"
