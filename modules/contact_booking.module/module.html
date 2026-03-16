@@ -33,10 +33,11 @@
           <button 
             id="open-meeting-modal"
             class="flex items-center gap-3 bg-brand-green hover:bg-brand-green/95 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-brand-green/20 group uppercase tracking-wide text-sm"
+            data-booking-type="{{ module.booking.booking_type|default('hubspot_url') }}"
             data-meeting-url="{{ module.booking.meeting_link.url.href|default('#') }}"
           >
             <span class="material-symbols-outlined text-accent-contrast group-hover:scale-110 transition-transform">calendar_today</span>
-            Agendar en HubSpot Meetings
+            {{ module.booking.booking_type == 'custom_embed' ? 'Reservar Cita' : 'Agendar en HubSpot Meetings' }}
           </button>
         </div>
 
@@ -94,11 +95,19 @@
         <span class="material-symbols-outlined text-2xl">close</span>
       </button>
     </div>
-    <div class="flex-1 overflow-hidden">
-      <iframe id="meeting-iframe" class="w-full h-full border-0" src="" frameborder="0"></iframe>
+    <div class="flex-1 overflow-y-auto">
+      <div id="meeting-content-area" class="w-full h-full">
+        <iframe id="meeting-iframe" class="w-full h-full border-0 hidden" src="" frameborder="0"></iframe>
+        <div id="custom-embed-container" class="w-full h-full hidden p-1"></div>
+      </div>
     </div>
   </div>
 </div>
+
+{# Hidden template for custom embed code to prevent early execution #}
+<template id="custom-embed-source">
+  {{ module.booking.custom_embed }}
+</template>
 
 {% require_js %}
 <script>
@@ -108,14 +117,40 @@
     const overlay = document.getElementById('modal-overlay');
     const modal = document.getElementById('meeting-modal');
     const iframe = document.getElementById('meeting-iframe');
+    const customContainer = document.getElementById('custom-embed-container');
+    const customSource = document.getElementById('custom-embed-source');
 
     if (openBtn && modal) {
       openBtn.addEventListener('click', () => {
+        const type = openBtn.getAttribute('data-booking-type');
         const url = openBtn.getAttribute('data-meeting-url');
-        if (url) {
+
+        // Hide both initially
+        iframe.classList.add('hidden');
+        customContainer.classList.add('hidden');
+        customContainer.innerHTML = '';
+
+        if (type === 'hubspot_url' && url && url !== '#') {
           // HubSpot meetings embed URL often needs ?embed=true for clean UI
           const embedUrl = url.includes('?') ? `${url}&embed=true` : `${url}?embed=true`;
           iframe.src = embedUrl;
+          iframe.classList.remove('hidden');
+          modal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        } else if (type === 'custom_embed' && customSource) {
+          // Render custom embed directly
+          customContainer.innerHTML = customSource.innerHTML;
+          
+          // Execute any scripts found in the custom content
+          const scripts = customContainer.querySelectorAll('script');
+          scripts.forEach(oldScript => {
+            const newScript = document.createElement('script');
+            Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+            newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+            oldScript.parentNode.replaceChild(newScript, oldScript);
+          });
+
+          customContainer.classList.remove('hidden');
           modal.classList.remove('hidden');
           document.body.style.overflow = 'hidden';
         }
@@ -125,6 +160,7 @@
     const closeModal = () => {
       modal.classList.add('hidden');
       iframe.src = '';
+      customContainer.innerHTML = '';
       document.body.style.overflow = '';
     };
 

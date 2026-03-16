@@ -48,9 +48,32 @@
         "default": "Agendar Diagnóstico Técnico"
       },
       {
+        "label": "Booking Type",
+        "name": "booking_type",
+        "type": "choice",
+        "choices": [
+          ["hubspot_url", "HubSpot Meeting URL"],
+          ["custom_embed", "Custom Embed Code"]
+        ],
+        "default": "hubspot_url"
+      },
+      {
         "label": "Meeting Link",
         "name": "meeting_link",
-        "type": "url"
+        "type": "url",
+        "visibility": {
+          "controlling_field": "booking_type",
+          "controlling_value_regex": "hubspot_url"
+        }
+      },
+      {
+        "label": "Custom Embed Code",
+        "name": "custom_embed",
+        "type": "text",
+        "visibility": {
+          "controlling_field": "booking_type",
+          "controlling_value_regex": "custom_embed"
+        }
       },
       {
         "label": "Requirements",
