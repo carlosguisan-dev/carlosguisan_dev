@@ -1,7 +1,9 @@
 {
-  "label": "Social Links",
-  "content_types": ["SITE_PAGE", "LANDING_PAGE", "BLOG_POST", "BLOG_LISTING"],
-  "global": false,
-  "icon": "fontawesome-5.14.0:share-alt:SOLID",
-  "host_template_types": ["PAGE"]
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 208854077564,
+  "label" : "Social Links",
+  "icon" : "fontawesome-5.14.0:share-alt:SOLID",
+  "is_available_for_new_content" : true
 }

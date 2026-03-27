@@ -1,365 +1,552 @@
-[
-  {
-    "name": "header",
-    "label": "Header Section",
-    "type": "group",
-    "children": [
-      {
-        "name": "title",
-        "label": "Title",
-        "type": "text",
-        "default": "Transparencia técnica. Cero costos ocultos."
-      },
-      {
-        "name": "subtitle",
-        "label": "Subtitle",
-        "type": "text",
-        "default": "Ingeniería de alta calidad aplicada a ecosistemas CRM. Sin sorpresas, solo arquitectura escalable."
-      }
-    ]
+[ {
+  "id" : "header",
+  "name" : "header",
+  "label" : "Header Section",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "header.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Transparencia técnica. Cero costos ocultos."
+  }, {
+    "id" : "header.subtitle",
+    "name" : "subtitle",
+    "label" : "Subtitle",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Ingeniería de alta calidad aplicada a ecosistemas CRM. Sin sorpresas, solo arquitectura escalable."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "projects_tab_label",
+  "name" : "projects_tab_label",
+  "label" : "Projects Tab Label",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "Proyectos"
+}, {
+  "id" : "retainers_tab_label",
+  "name" : "retainers_tab_label",
+  "label" : "Retainers Tab Label",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "display_width" : null,
+  "type" : "text",
+  "default" : "Retainers"
+}, {
+  "id" : "cards",
+  "name" : "cards",
+  "label" : "Pricing Cards",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 6,
+    "sorting_label_field" : null,
+    "default" : 3
   },
-  {
-    "label": "Projects Tab Label",
-    "name": "projects_tab_label",
-    "type": "text",
-    "default": "Proyectos"
-  },
-  {
-    "label": "Retainers Tab Label",
-    "name": "retainers_tab_label",
-    "type": "text",
-    "default": "Retainers"
-  },
-  {
-    "label": "Pricing Cards",
-    "name": "cards",
-    "type": "group",
-    "occurrence": {
-      "min": 1,
-      "max": 6,
-      "default": 3
+  "children" : [ {
+    "id" : "cards.mono_label",
+    "name" : "mono_label",
+    "label" : "Mono Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "[ SERVICIO ]"
+  }, {
+    "id" : "cards.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Plan Name"
+  }, {
+    "id" : "cards.price_prefix",
+    "name" : "price_prefix",
+    "label" : "Price Prefix",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Desde"
+  }, {
+    "id" : "cards.price",
+    "name" : "price",
+    "label" : "Price",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "$0"
+  }, {
+    "id" : "cards.price_suffix",
+    "name" : "price_suffix",
+    "label" : "Price Suffix",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "USD"
+  }, {
+    "id" : "cards.feature_icon",
+    "name" : "feature_icon",
+    "label" : "Feature Icon",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "check_circle", "Check Circle" ], [ "verified", "Verified" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "display_width" : null,
+    "type" : "choice",
+    "default" : "check_circle"
+  }, {
+    "id" : "cards.features",
+    "name" : "features",
+    "label" : "Features",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : 12,
+      "sorting_label_field" : null,
+      "default" : 4
     },
-    "children": [
-      {
-        "label": "Mono Label",
-        "name": "mono_label",
-        "type": "text",
-        "default": "[ SERVICIO ]"
-      },
-      {
-        "label": "Title",
-        "name": "title",
-        "type": "text",
-        "default": "Plan Name"
-      },
-      {
-        "label": "Price Prefix",
-        "name": "price_prefix",
-        "type": "text",
-        "default": "Desde"
-      },
-      {
-        "label": "Price",
-        "name": "price",
-        "type": "text",
-        "default": "$0"
-      },
-      {
-        "label": "Price Suffix",
-        "name": "price_suffix",
-        "type": "text",
-        "default": "USD"
-      },
-      {
-        "label": "Feature Icon",
-        "name": "feature_icon",
-        "type": "choice",
-        "choices": [
-          ["check_circle", "Check Circle"],
-          ["verified", "Verified"]
-        ],
-        "display": "radio",
-        "default": "check_circle"
-      },
-      {
-        "label": "Features",
-        "name": "features",
-        "type": "text",
-        "occurrence": {
-          "min": 1,
-          "max": 12,
-          "default": 4
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : [ "Feature one", "Feature two", "Feature three", "Feature four" ]
+  }, {
+    "id" : "cards.is_featured",
+    "name" : "is_featured",
+    "label" : "Is Featured",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "display_width" : null,
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "cards.featured_badge_text",
+    "name" : "featured_badge_text",
+    "label" : "Featured Badge Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Más Popular"
+  }, {
+    "id" : "cards.button_text",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Seleccionar"
+  }, {
+    "id" : "cards.delivery_time",
+    "name" : "delivery_time",
+    "label" : "Delivery Time",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "15-20 días hábiles"
+  }, {
+    "id" : "cards.button_link",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT" ],
+    "show_advanced_rel_options" : false,
+    "display_width" : null,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : "#"
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group",
+  "default" : [ {
+    "mono_label" : "[ EL ARQUITECTO ]",
+    "title" : "Sistemas Dinámicos",
+    "price_prefix" : "Desde",
+    "price" : "$2,250",
+    "price_suffix" : "USD",
+    "feature_icon" : "check_circle",
+    "features" : [ "Implementación HubDB & CRM Objects", "Arquitectura de Datos Personalizada", "Workflows de Automatización Avanzada", "Documentación Técnica de Procesos" ],
+    "is_featured" : false,
+    "featured_badge_text" : "Más Popular",
+    "button_text" : "Seleccionar",
+    "button_link" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "#"
+      }
+    }
+  }, {
+    "mono_label" : "[ EL DEVELOPER ]",
+    "title" : "Tema Personalizado",
+    "price_prefix" : "Desde",
+    "price" : "$2,400",
+    "price_suffix" : "USD",
+    "feature_icon" : "verified",
+    "features" : [ "Desarrollo HubL de Alto Rendimiento", "Figma to Code (Pixel Perfect)", "Módulos Custom Drag-and-Drop", "QA Riguroso & Optimización Core Web Vitals" ],
+    "is_featured" : true,
+    "featured_badge_text" : "Más Popular",
+    "button_text" : "Seleccionar Plan",
+    "button_link" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "#"
+      }
+    }
+  }, {
+    "mono_label" : "[ DESPLIEGUE RÁPIDO ]",
+    "title" : "Child Themes & LPs",
+    "price_prefix" : "Desde",
+    "price" : "$412",
+    "price_suffix" : "USD",
+    "feature_icon" : "check_circle",
+    "features" : [ "Configuración de Child Themes", "Creación de Landing Pages Conversion-Ready", "Ajustes de Branding UI/UX", "Soporte de Lanzamiento" ],
+    "is_featured" : false,
+    "featured_badge_text" : "Más Popular",
+    "button_text" : "Seleccionar",
+    "button_link" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "#"
+      }
+    }
+  } ]
+}, {
+  "id" : "retainer",
+  "name" : "retainer",
+  "label" : "Retainer",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "retainer.mono_label",
+    "name" : "mono_label",
+    "label" : "Mono Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "[ ALIANZA ESTRATÉGICA ]"
+  }, {
+    "id" : "retainer.icon",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "terminal"
+  }, {
+    "id" : "retainer.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Fractional Content Hub Architect"
+  }, {
+    "id" : "retainer.description",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Actúo como el líder técnico de tu portal o como el brazo de ingeniería en marca blanca (White-Label) para tu agencia."
+  }, {
+    "id" : "retainer.price",
+    "name" : "price",
+    "label" : "Price",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "$63"
+  }, {
+    "id" : "retainer.price_unit",
+    "name" : "price_unit",
+    "label" : "Price Unit",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "USD / hora"
+  }, {
+    "id" : "retainer.contract_info",
+    "name" : "contract_info",
+    "label" : "Contract Info",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Contratos dedicados de 20h - 40h mensuales"
+  }, {
+    "id" : "retainer.features",
+    "name" : "features",
+    "label" : "Features (Deliverables)",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 0,
+      "max" : 10,
+      "sorting_label_field" : null,
+      "default" : 4
+    },
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : [ "Soporte y refactorización continua para erradicar deuda técnica.", "Ingeniería en marca blanca (confidencialidad total para agencias).", "Mantenimiento de integraciones API y Serverless Functions.", "Gobernanza de datos y CMS preparado para Inteligencia Artificial." ]
+  }, {
+    "id" : "retainer.button",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "retainer.button.text",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : "Aplicar a Retainer Mensual"
+    }, {
+      "id" : "retainer.button.link",
+      "name" : "link",
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT" ],
+      "show_advanced_rel_options" : false,
+      "display_width" : null,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "type" : "EXTERNAL",
+          "content_id" : null,
+          "href" : "",
+          "href_with_scheme" : ""
         },
-        "default": [
-          "Feature one",
-          "Feature two",
-          "Feature three",
-          "Feature four"
-        ]
-      },
-      {
-        "label": "Is Featured",
-        "name": "is_featured",
-        "type": "boolean",
-        "default": false
-      },
-      {
-        "label": "Featured Badge Text",
-        "name": "featured_badge_text",
-        "type": "text",
-        "default": "Más Popular"
-      },
-      {
-        "label": "Button Text",
-        "name": "button_text",
-        "type": "text",
-        "default": "Seleccionar"
-      },
-      {
-        "label": "Delivery Time",
-        "name": "delivery_time",
-        "type": "text",
-        "default": "15-20 días hábiles"
-      },
-      {
-        "label": "Button Link",
-        "name": "button_link",
-        "type": "link",
-        "supported_types": ["EXTERNAL", "CONTENT"],
-        "default": {
-          "url": {
-            "content_id": null,
-            "type": "EXTERNAL",
-            "href": "#"
-          }
-        }
+        "open_in_new_tab" : false,
+        "no_follow" : false,
+        "sponsored" : false,
+        "user_generated_content" : false
       }
-    ],
-    "default": [
-      {
-        "mono_label": "[ EL ARQUITECTO ]",
-        "title": "Sistemas Dinámicos",
-        "price_prefix": "Desde",
-        "price": "$2,250",
-        "price_suffix": "USD",
-        "feature_icon": "check_circle",
-        "features": [
-          "Implementación HubDB & CRM Objects",
-          "Arquitectura de Datos Personalizada",
-          "Workflows de Automatización Avanzada",
-          "Documentación Técnica de Procesos"
-        ],
-        "is_featured": false,
-        "featured_badge_text": "Más Popular",
-        "button_text": "Seleccionar",
-        "button_link": { "url": { "type": "EXTERNAL", "href": "#" } }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "display_width" : null,
+    "type" : "group"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "tactical_banner",
+  "name" : "tactical_banner",
+  "label" : "Tactical Deployment Banner",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "tactical_banner.show",
+    "name" : "show",
+    "label" : "Show Banner",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "display_width" : null,
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "tactical_banner.mono_label",
+    "name" : "mono_label",
+    "label" : "Mono Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "DESPLIEGUE TÁCTICO"
+  }, {
+    "id" : "tactical_banner.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "¿Necesitas ejecutar una campaña puntual?"
+  }, {
+    "id" : "tactical_banner.subtitle",
+    "name" : "subtitle",
+    "label" : "Subtitle",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Landing Pages de Alta Conversión"
+  }, {
+    "id" : "tactical_banner.description",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Si ya tienes tu ecosistema funcionando pero necesitas maquetar páginas de aterrizaje en tiempo récord."
+  }, {
+    "id" : "tactical_banner.price",
+    "name" : "price",
+    "label" : "Price",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "$412"
+  }, {
+    "id" : "tactical_banner.price_suffix",
+    "name" : "price_suffix",
+    "label" : "Price Suffix",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "USD"
+  }, {
+    "id" : "tactical_banner.delivery_info",
+    "name" : "delivery_info",
+    "label" : "Delivery Info",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "8 días hábiles"
+  }, {
+    "id" : "tactical_banner.button_text",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Lanzar Campaña"
+  }, {
+    "id" : "tactical_banner.button_link",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT" ],
+    "show_advanced_rel_options" : false,
+    "display_width" : null,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "content_id" : null,
+        "href" : "",
+        "href_with_scheme" : ""
       },
-      {
-        "mono_label": "[ EL DEVELOPER ]",
-        "title": "Tema Personalizado",
-        "price_prefix": "Desde",
-        "price": "$2,400",
-        "price_suffix": "USD",
-        "feature_icon": "verified",
-        "features": [
-          "Desarrollo HubL de Alto Rendimiento",
-          "Figma to Code (Pixel Perfect)",
-          "Módulos Custom Drag-and-Drop",
-          "QA Riguroso & Optimización Core Web Vitals"
-        ],
-        "is_featured": true,
-        "featured_badge_text": "Más Popular",
-        "button_text": "Seleccionar Plan",
-        "button_link": { "url": { "type": "EXTERNAL", "href": "#" } }
-      },
-      {
-        "mono_label": "[ DESPLIEGUE RÁPIDO ]",
-        "title": "Child Themes & LPs",
-        "price_prefix": "Desde",
-        "price": "$412",
-        "price_suffix": "USD",
-        "feature_icon": "check_circle",
-        "features": [
-          "Configuración de Child Themes",
-          "Creación de Landing Pages Conversion-Ready",
-          "Ajustes de Branding UI/UX",
-          "Soporte de Lanzamiento"
-        ],
-        "is_featured": false,
-        "featured_badge_text": "Más Popular",
-        "button_text": "Seleccionar",
-        "button_link": { "url": { "type": "EXTERNAL", "href": "#" } }
-      }
-    ]
-  },
-  {
-    "label": "Retainer",
-    "name": "retainer",
-    "type": "group",
-    "children": [
-      {
-        "label": "Mono Label",
-        "name": "mono_label",
-        "type": "text",
-        "default": "[ ALIANZA ESTRATÉGICA ]"
-      },
-      {
-        "label": "Icon",
-        "name": "icon",
-        "type": "text",
-        "default": "terminal"
-      },
-      {
-        "label": "Title",
-        "name": "title",
-        "type": "text",
-        "default": "Fractional Content Hub Architect"
-      },
-      {
-        "label": "Description",
-        "name": "description",
-        "type": "text",
-        "default": "Actúo como el líder técnico de tu portal o como el brazo de ingeniería en marca blanca (White-Label) para tu agencia."
-      },
-      {
-        "label": "Price",
-        "name": "price",
-        "type": "text",
-        "default": "$63"
-      },
-      {
-        "label": "Price Unit",
-        "name": "price_unit",
-        "type": "text",
-        "default": "USD / hora"
-      },
-      {
-        "label": "Contract Info",
-        "name": "contract_info",
-        "type": "text",
-        "default": "Contratos dedicados de 20h - 40h mensuales"
-      },
-      {
-        "label": "Features (Deliverables)",
-        "name": "features",
-        "type": "text",
-        "occurrence": {
-          "min": 0,
-          "max": 10,
-          "default": 4
-        },
-        "default": [
-          "Soporte y refactorización continua para erradicar deuda técnica.",
-          "Ingeniería en marca blanca (confidencialidad total para agencias).",
-          "Mantenimiento de integraciones API y Serverless Functions.",
-          "Gobernanza de datos y CMS preparado para Inteligencia Artificial."
-        ]
-      },
-      {
-        "label": "Button",
-        "name": "button",
-        "type": "group",
-        "children": [
-          {
-            "label": "Text",
-            "name": "text",
-            "type": "text",
-            "default": "Aplicar a Retainer Mensual"
-          },
-          {
-            "label": "Link",
-            "name": "link",
-            "type": "link",
-            "supported_types": ["EXTERNAL", "CONTENT"]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "tactical_banner",
-    "label": "Tactical Deployment Banner",
-    "type": "group",
-    "children": [
-      {
-        "name": "show",
-        "label": "Show Banner",
-        "type": "boolean",
-        "default": false
-      },
-      {
-        "name": "mono_label",
-        "label": "Mono Label",
-        "type": "text",
-        "default": "DESPLIEGUE TÁCTICO"
-      },
-      {
-        "name": "title",
-        "label": "Title",
-        "type": "text",
-        "default": "¿Necesitas ejecutar una campaña puntual?"
-      },
-      {
-        "name": "subtitle",
-        "label": "Subtitle",
-        "type": "text",
-        "default": "Landing Pages de Alta Conversión"
-      },
-      {
-        "name": "description",
-        "label": "Description",
-        "type": "text",
-        "default": "Si ya tienes tu ecosistema funcionando pero necesitas maquetar páginas de aterrizaje en tiempo récord."
-      },
-      {
-        "name": "price",
-        "label": "Price",
-        "type": "text",
-        "default": "$412"
-      },
-      {
-        "name": "price_suffix",
-        "label": "Price Suffix",
-        "type": "text",
-        "default": "USD"
-      },
-      {
-        "name": "delivery_info",
-        "label": "Delivery Info",
-        "type": "text",
-        "default": "8 días hábiles"
-      },
-      {
-        "name": "button_text",
-        "label": "Button Text",
-        "type": "text",
-        "default": "Lanzar Campaña"
-      },
-      {
-        "name": "button_link",
-        "label": "Button Link",
-        "type": "link",
-        "supported_types": ["EXTERNAL", "CONTENT"]
-      }
-    ]
-  },
-  {
-    "label": "Styles",
-    "name": "styles",
-    "type": "group",
-    "tab": "STYLE",
-    "children": [
-      {
-        "label": "Dark Mode Style",
-        "name": "dark_mode_style",
-        "type": "choice",
-        "choices": [
-          ["deep", "Deep Dark"],
-          ["alt", "Alt Dark"]
-        ],
-        "default": "alt",
-        "display": "radio"
-      }
-    ]
-  }
-]
+      "open_in_new_tab" : false,
+      "no_follow" : false,
+      "sponsored" : false,
+      "user_generated_content" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.dark_mode_style",
+    "name" : "dark_mode_style",
+    "label" : "Dark Mode Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "deep", "Deep Dark" ], [ "alt", "Alt Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "display_width" : null,
+    "type" : "choice",
+    "default" : "alt"
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

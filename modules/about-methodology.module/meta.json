@@ -1,7 +1,9 @@
 {
-  "name": "About Methodology",
-  "display_name": "About Methodology",
-  "icon": "fa-project-diagram",
-  "is_available_for_new_content": true,
-  "label": "About Methodology"
+  "global" : false,
+  "content_types" : [ "ANY" ],
+  "host_template_types" : [ "ANY" ],
+  "module_id" : 209139363382,
+  "label" : "About Methodology",
+  "icon" : "fa-project-diagram",
+  "is_available_for_new_content" : true
 }

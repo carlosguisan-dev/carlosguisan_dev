@@ -1,27 +1,43 @@
-[
-  {
-    "label": "Content",
-    "name": "content",
-    "type": "group",
-    "children": [
-      {
-        "label": "Mono Label",
-        "name": "mono_label",
-        "type": "text",
-        "default": "GREENSPOT : EL BLOG TÉCNICO"
-      },
-      {
-        "label": "Title",
-        "name": "title",
-        "type": "text",
-        "default": "Ecosistemas HubSpot explicados a fondo."
-      },
-      {
-        "label": "Search Placeholder",
-        "name": "search_placeholder",
-        "type": "text",
-        "default": "Buscar guías técnicas, funciones HubL o arquitectura..."
-      }
-    ]
-  }
-]
+[ {
+  "id" : "content",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "content.mono_label",
+    "name" : "mono_label",
+    "label" : "Mono Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "GREENSPOT : EL BLOG TÉCNICO"
+  }, {
+    "id" : "content.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Ecosistemas HubSpot explicados a fondo."
+  }, {
+    "id" : "content.search_placeholder",
+    "name" : "search_placeholder",
+    "label" : "Search Placeholder",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Buscar guías técnicas, funciones HubL o arquitectura..."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

@@ -1,53 +1,70 @@
-[
-  {
-    "label": "Content",
-    "name": "content",
-    "type": "group",
-    "children": [
-      {
-        "label": "Terminal Title",
-        "name": "terminal_title",
-        "type": "text",
-        "default": ">_ CONDICIONES_COMERCIALES.md"
-      },
-      {
-        "label": "Sections",
-        "name": "sections",
-        "type": "group",
-        "occurrence": {
-          "min": 1,
-          "max": 10,
-          "default": 3
-        },
-        "children": [
-          {
-            "label": "Section Heading",
-            "name": "section_heading",
-            "type": "text",
-            "default": "# HEADING"
-          },
-          {
-            "label": "Section Body",
-            "name": "section_body",
-            "type": "richtext",
-            "default": "<p>Content goes here.</p>"
-          }
-        ],
-        "default": [
-          {
-            "section_heading": "# ESTRUCTURA DE PAGOS",
-            "section_body": "<p>50% Inicial para reserva de kickoff / 50% Finalización (entrega de QA).</p>"
-          },
-          {
-            "section_heading": "# FLUJO DE TRABAJO",
-            "section_body": "<p>1. Figma es el 'Source of Truth' para UI.<br/>2. Revisión de Sprint semanal via Slack/Asana.<br/>3. Documentación técnica incluida en GitHub.</p>"
-          },
-          {
-            "section_heading": "# EXCLUSIONES",
-            "section_body": "<p>No incluye costos de licencias HubSpot, compra de dominios, o APIs de terceros. Todo requerimiento fuera de scope será cotizado bajo tarifa horaria de retainer.</p>"
-          }
-        ]
-      }
-    ]
-  }
-]
+[ {
+  "id" : "content",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "content.terminal_title",
+    "name" : "terminal_title",
+    "label" : "Terminal Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : ">_ CONDICIONES_COMERCIALES.md"
+  }, {
+    "id" : "content.sections",
+    "name" : "sections",
+    "label" : "Sections",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : 10,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "children" : [ {
+      "id" : "content.sections.section_heading",
+      "name" : "section_heading",
+      "label" : "Section Heading",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : "# HEADING"
+    }, {
+      "id" : "content.sections.section_body",
+      "name" : "section_body",
+      "label" : "Section Body",
+      "required" : false,
+      "locked" : false,
+      "display_width" : null,
+      "type" : "richtext",
+      "default" : "<p>Content goes here.</p>"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "display_width" : null,
+    "type" : "group",
+    "default" : [ {
+      "section_heading" : "# ESTRUCTURA DE PAGOS",
+      "section_body" : "<p>50% Inicial para reserva de kickoff / 50% Finalización (entrega de QA).</p>"
+    }, {
+      "section_heading" : "# FLUJO DE TRABAJO",
+      "section_body" : "<p>1. Figma es el 'Source of Truth' para UI.<br/>2. Revisión de Sprint semanal via Slack/Asana.<br/>3. Documentación técnica incluida en GitHub.</p>"
+    }, {
+      "section_heading" : "# EXCLUSIONES",
+      "section_body" : "<p>No incluye costos de licencias HubSpot, compra de dominios, o APIs de terceros. Todo requerimiento fuera de scope será cotizado bajo tarifa horaria de retainer.</p>"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

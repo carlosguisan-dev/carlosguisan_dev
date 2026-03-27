@@ -1,10 +1,9 @@
 {
-  "label": "Portfolio Hero",
-  "css_assets": [],
-  "js_assets": [],
-  "global": false,
-  "host_template_types": ["PAGE"],
-  "icon": "auto_awesome",
-  "smart_type": "NOT_SMART",
-  "is_available_for_new_content": true
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 209001330233,
+  "label" : "Portfolio Hero",
+  "icon" : "auto_awesome",
+  "is_available_for_new_content" : true
 }

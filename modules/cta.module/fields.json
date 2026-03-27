@@ -1,100 +1,184 @@
-[
-  {
-    "label": "Content",
-    "name": "content",
-    "type": "group",
-    "children": [
-      {
-        "label": "Icon",
-        "name": "icon",
-        "type": "text",
-        "default": "",
-        "help_text": "Material Symbols icon name (e.g. psychology). Leave empty to hide."
-      },
-      {
-        "label": "Title",
-        "name": "title",
-        "type": "richtext",
-        "default": "<h2>¿Listo para ordenar la casa y escalar tu portal?</h2>"
-      },
-      {
-        "label": "Subtext",
-        "name": "subtext",
-        "type": "richtext",
-        "default": "<p>Evaluación técnica de 15 minutos para identificar cuellos de botella en tu arquitectura de HubSpot.</p>"
-      },
-      {
-        "label": "CTA Button",
-        "name": "cta_button",
-        "type": "group",
-        "children": [
-          {
-            "label": "Text",
-            "name": "text",
-            "type": "text",
-            "default": "Iniciar mi evaluación ahora"
-          },
-          {
-            "label": "Link",
-            "name": "link",
-            "type": "link"
-          }
-        ]
-      },
-      {
-        "label": "Show Secondary Button",
-        "name": "show_secondary_button",
-        "type": "boolean",
-        "default": false,
-        "display": "toggle"
-      },
-      {
-        "label": "Secondary Button",
-        "name": "secondary_button",
-        "type": "group",
-        "visibility": {
-          "controlling_field": "content.show_secondary_button",
-          "controlling_value_regex": "true"
+[ {
+  "id" : "content",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "content.icon",
+    "name" : "icon",
+    "label" : "Icon",
+    "help_text" : "Material Symbols icon name (e.g. psychology). Leave empty to hide.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : ""
+  }, {
+    "id" : "content.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "richtext",
+    "default" : "<h2>¿Listo para ordenar la casa y escalar tu portal?</h2>"
+  }, {
+    "id" : "content.subtext",
+    "name" : "subtext",
+    "label" : "Subtext",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "richtext",
+    "default" : "<p>Evaluación técnica de 15 minutos para identificar cuellos de botella en tu arquitectura de HubSpot.</p>"
+  }, {
+    "id" : "content.cta_button",
+    "name" : "cta_button",
+    "label" : "CTA Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "content.cta_button.text",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : "Iniciar mi evaluación ahora"
+    }, {
+      "id" : "content.cta_button.link",
+      "name" : "link",
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "display_width" : null,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "type" : "EXTERNAL",
+          "content_id" : null,
+          "href" : "",
+          "href_with_scheme" : ""
         },
-        "children": [
-          {
-            "label": "Text",
-            "name": "text",
-            "type": "text",
-            "default": "Ver Portfolio"
-          },
-          {
-            "label": "Link",
-            "name": "link",
-            "type": "link"
-          }
-        ]
+        "open_in_new_tab" : false,
+        "no_follow" : false,
+        "sponsored" : false,
+        "user_generated_content" : false
       }
-    ]
-  },
-  {
-    "label": "Styles",
-    "name": "styles",
-    "type": "group",
-    "tab": "STYLE",
-    "children": [
-      {
-        "label": "Dark Mode Style",
-        "name": "dark_mode_style",
-        "type": "choice",
-        "choices": [
-          ["deep", "Deep Dark"],
-          ["alt", "Alt Dark"]
-        ],
-        "default": "alt",
-        "display": "radio"
-      },
-      {
-        "label": "Spacing",
-        "name": "spacing",
-        "type": "spacing",
-        "display": "composite"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "display_width" : null,
+    "type" : "group"
+  }, {
+    "id" : "content.show_secondary_button",
+    "name" : "show_secondary_button",
+    "label" : "Show Secondary Button",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "display_width" : null,
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "content.secondary_button",
+    "name" : "secondary_button",
+    "label" : "Secondary Button",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "content.show_secondary_button",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : null,
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "content.secondary_button.text",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : "Ver Portfolio"
+    }, {
+      "id" : "content.secondary_button.link",
+      "name" : "link",
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "display_width" : null,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "type" : "EXTERNAL",
+          "content_id" : null,
+          "href" : "",
+          "href_with_scheme" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false,
+        "sponsored" : false,
+        "user_generated_content" : false
       }
-    ]
-  }
-]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "display_width" : null,
+    "type" : "group"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.dark_mode_style",
+    "name" : "dark_mode_style",
+    "label" : "Dark Mode Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "deep", "Deep Dark" ], [ "alt", "Alt Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "display_width" : null,
+    "type" : "choice",
+    "default" : "alt"
+  }, {
+    "id" : "styles.spacing",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "display" : "composite",
+    "display_width" : null,
+    "type" : "spacing",
+    "default" : { }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

@@ -1,82 +1,143 @@
-[
-  {
-    "label": "Content",
-    "name": "content",
-    "type": "group",
-    "children": [
-      {
-        "label": "Mono Label",
-        "name": "mono_label",
-        "type": "text",
-        "default": "// CONOCE AL ARQUITECTO"
+[ {
+  "id" : "content",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "content.mono_label",
+    "name" : "mono_label",
+    "label" : "Mono Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "// CONOCE AL ARQUITECTO"
+  }, {
+    "id" : "content.headline",
+    "name" : "headline",
+    "label" : "Headline",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "richtext",
+    "default" : "Mucho más que código. Alta ingeniería desde el <span class=\"text-accent-contrast italic\">bosque lluvioso.</span>"
+  }, {
+    "id" : "content.description",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "richtext",
+    "default" : "<p>Combinando la precisión de la ingeniería de software con la resiliencia orgánica de la naturaleza de Sarapiquí.</p>"
+  }, {
+    "id" : "content.button_text",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Ver Metodología"
+  }, {
+    "id" : "content.button_link",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "display_width" : null,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "content_id" : null,
+        "href" : "",
+        "href_with_scheme" : ""
       },
-      {
-        "label": "Headline",
-        "name": "headline",
-        "type": "richtext",
-        "default": "Mucho más que código. Alta ingeniería desde el <span class=\"text-accent-contrast italic\">bosque lluvioso.</span>"
-      },
-      {
-        "label": "Description",
-        "name": "description",
-        "type": "richtext",
-        "default": "<p>Combinando la precisión de la ingeniería de software con la resiliencia orgánica de la naturaleza de Sarapiquí.</p>"
-      },
-      {
-        "label": "Button Text",
-        "name": "button_text",
-        "type": "text",
-        "default": "Ver Metodología"
-      },
-      {
-        "label": "Button Link",
-        "name": "button_link",
-        "type": "link"
-      },
-      {
-        "label": "Image",
-        "name": "image",
-        "type": "image",
-        "default": {
-          "src": "https://lh3.googleusercontent.com/aida-public/AB6AXuA_qtxEI90ifU3QExEJZ-oGMjX8KhklE9vVLbKxSBP_19imc6GhXU6aI-BdKA6m3ipDlDk_vJ15UESMq8ckTiAUmpY6F-WW0xYrxtGNM7PWIKg0ADa4BKUCxJHq7b54_drkydylqkaDxxUuvnwbmmR920oAVAoIo5aZTxsgHGb62lEh33renkn7A0ZXZI6wdiBZCWcQoFQAPQJDHuKUJnBMB8Iv4XKVsEYo4u32b-jRML0HfZ9cTbLxAlvsBieyV26q5kN80r-3syc",
-          "alt": "Professional portrait"
-        }
-      },
-      {
-        "label": "Certification Embed HTML",
-        "name": "certification_embed",
-        "type": "text",
-        "default": ""
-      }
-    ]
-  },
-  {
-    "label": "Styles",
-    "name": "styles",
-    "type": "group",
-    "tab": "STYLE",
-    "children": [
-      {
-        "label": "Spacing",
-        "name": "spacing",
-        "type": "spacing",
-        "display": "composite"
-      }
-    ]
-  },
-  {
-    "name": "optimization",
-    "label": "Optimization",
-    "type": "group",
-    "tab": "CONTENT",
-    "children": [
-      {
-        "name": "eager_load_image",
-        "label": "Eager load hero image (LCP)",
-        "type": "boolean",
-        "default": true,
-        "help_text": "Enable this to eagerly load the active hero image to improve Largest Contentful Paint (LCP). Only use this if the module is at the top of the page."
-      }
-    ]
-  }
-]
+      "open_in_new_tab" : false,
+      "no_follow" : false,
+      "sponsored" : false,
+      "user_generated_content" : false
+    }
+  }, {
+    "id" : "content.image",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "display_width" : null,
+    "type" : "image",
+    "default" : {
+      "src" : "https://lh3.googleusercontent.com/aida-public/AB6AXuA_qtxEI90ifU3QExEJZ-oGMjX8KhklE9vVLbKxSBP_19imc6GhXU6aI-BdKA6m3ipDlDk_vJ15UESMq8ckTiAUmpY6F-WW0xYrxtGNM7PWIKg0ADa4BKUCxJHq7b54_drkydylqkaDxxUuvnwbmmR920oAVAoIo5aZTxsgHGb62lEh33renkn7A0ZXZI6wdiBZCWcQoFQAPQJDHuKUJnBMB8Iv4XKVsEYo4u32b-jRML0HfZ9cTbLxAlvsBieyV26q5kN80r-3syc",
+      "alt" : "Professional portrait"
+    }
+  }, {
+    "id" : "content.certification_embed",
+    "name" : "certification_embed",
+    "label" : "Certification Embed HTML",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : ""
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.spacing",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "display" : "composite",
+    "display_width" : null,
+    "type" : "spacing",
+    "default" : { }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "optimization",
+  "name" : "optimization",
+  "label" : "Optimization",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "optimization.eager_load_image",
+    "name" : "eager_load_image",
+    "label" : "Eager load hero image (LCP)",
+    "help_text" : "Enable this to eagerly load the active hero image to improve Largest Contentful Paint (LCP). Only use this if the module is at the top of the page.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "display_width" : null,
+    "type" : "boolean",
+    "default" : true
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

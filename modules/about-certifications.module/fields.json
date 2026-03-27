@@ -1,62 +1,124 @@
-[
-  {
-    "label": "Certifications",
-    "name": "certs",
-    "type": "group",
-    "occurrence": {
-      "min": 1,
-      "max": 20,
-      "default": 4
-    },
-    "children": [
-      {
-        "label": "Badge Image",
-        "name": "image",
-        "type": "image"
-      },
-      {
-        "label": "Title",
-        "name": "title",
-        "type": "text"
-      },
-      {
-        "label": "Link",
-        "name": "link",
-        "type": "link"
-      }
-    ],
-    "default": [
-      { "title": "HubSpot CMS for Developers" },
-      { "title": "HubSpot Solutions Architect" },
-      { "title": "HubSpot CMS Implementation" },
-      { "title": "HubSpot API Integration" }
-    ]
+[ {
+  "id" : "certs",
+  "name" : "certs",
+  "label" : "Certifications",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 20,
+    "sorting_label_field" : null,
+    "default" : 4
   },
-  {
-    "label": "Styles",
-    "name": "styles",
-    "type": "group",
-    "tab": "STYLE",
-    "children": [
-      {
-        "label": "Speed (seconds)",
-        "name": "speed",
-        "type": "number",
-        "step": 1,
-        "default": 30
+  "children" : [ {
+    "id" : "certs.image",
+    "name" : "image",
+    "label" : "Badge Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "display_width" : null,
+    "type" : "image",
+    "default" : {
+      "src" : "",
+      "alt" : null,
+      "size_type" : null,
+      "width" : null,
+      "height" : null,
+      "max_width" : null,
+      "max_height" : null,
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "certs.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text"
+  }, {
+    "id" : "certs.link",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "display_width" : null,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "content_id" : null,
+        "href" : "",
+        "href_with_scheme" : ""
       },
-      {
-        "label": "Background Color",
-        "name": "bg_color",
-        "type": "color",
-        "default": { "color": "#f9faf8" }
-      },
-      {
-        "label": "Spacing",
-        "name": "spacing",
-        "type": "spacing",
-        "display": "composite"
-      }
-    ]
-  }
-]
+      "open_in_new_tab" : false,
+      "no_follow" : false,
+      "sponsored" : false,
+      "user_generated_content" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group",
+  "default" : [ {
+    "title" : "HubSpot CMS for Developers"
+  }, {
+    "title" : "HubSpot Solutions Architect"
+  }, {
+    "title" : "HubSpot CMS Implementation"
+  }, {
+    "title" : "HubSpot API Integration"
+  } ]
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.speed",
+    "name" : "speed",
+    "label" : "Speed (seconds)",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "display_width" : null,
+    "type" : "number",
+    "default" : 30
+  }, {
+    "id" : "styles.bg_color",
+    "name" : "bg_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "color",
+    "default" : {
+      "color" : "#f9faf8"
+    }
+  }, {
+    "id" : "styles.spacing",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "display" : "composite",
+    "display_width" : null,
+    "type" : "spacing",
+    "default" : { }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

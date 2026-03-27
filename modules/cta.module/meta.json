@@ -1,12 +1,9 @@
 {
-  "name": "CTA",
-  "display_name": "CTA",
-  "icon": "fa-bullhorn",
-  "is_available_for_new_content": true,
-  "external_js": [],
-  "external_css": [],
-  "module_id": null,
-  "master_id": null,
-  "path": null,
-  "label": "CTA"
+  "global" : false,
+  "content_types" : [ "ANY" ],
+  "host_template_types" : [ "ANY" ],
+  "module_id" : 209060642695,
+  "label" : "CTA",
+  "icon" : "fa-bullhorn",
+  "is_available_for_new_content" : true
 }

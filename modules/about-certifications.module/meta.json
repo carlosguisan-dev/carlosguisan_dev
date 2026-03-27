@@ -1,7 +1,9 @@
 {
-  "name": "About Certifications",
-  "display_name": "About Certifications",
-  "icon": "fa-certificate",
-  "is_available_for_new_content": true,
-  "label": "About Certifications"
+  "global" : false,
+  "content_types" : [ "ANY" ],
+  "host_template_types" : [ "ANY" ],
+  "module_id" : 209135497229,
+  "label" : "About Certifications",
+  "icon" : "fa-certificate",
+  "is_available_for_new_content" : true
 }

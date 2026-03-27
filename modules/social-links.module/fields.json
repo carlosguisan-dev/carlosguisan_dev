@@ -1,80 +1,92 @@
-[
-  {
-    "label": "Social Networks",
-    "name": "social_networks",
-    "type": "group",
-    "occurrence": {
-      "min": 1,
-      "max": 10,
-      "default": 2
+[ {
+  "id" : "social_networks",
+  "name" : "social_networks",
+  "label" : "Social Networks",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 10,
+    "sorting_label_field" : null,
+    "default" : 2
+  },
+  "children" : [ {
+    "id" : "social_networks.network_name",
+    "name" : "network_name",
+    "label" : "Network Name",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "LinkedIn"
+  }, {
+    "id" : "social_networks.link",
+    "name" : "link",
+    "label" : "Link",
+    "required" : true,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "display_width" : null,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://linkedin.com"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "social_networks.icon",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-6.4.2",
+    "display_width" : null,
+    "type" : "icon",
+    "default" : {
+      "name" : "linkedin-in",
+      "type" : "SOLID",
+      "unicode" : "f08c"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group",
+  "default" : [ {
+    "network_name" : "LinkedIn",
+    "link" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://linkedin.com"
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
     },
-    "children": [
-      {
-        "label": "Network Name",
-        "name": "network_name",
-        "type": "text",
-        "required": true,
-        "default": "LinkedIn"
+    "icon" : {
+      "name" : "linkedin-in",
+      "type" : "SOLID",
+      "unicode" : "f08c"
+    }
+  }, {
+    "network_name" : "GitHub",
+    "link" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://github.com"
       },
-      {
-        "label": "Link",
-        "name": "link",
-        "type": "link",
-        "required": true,
-        "default": {
-          "url": {
-            "type": "EXTERNAL",
-            "href": "https://linkedin.com"
-          },
-          "open_in_new_tab": true,
-          "no_follow": false
-        }
-      },
-      {
-        "label": "Icon",
-        "name": "icon",
-        "type": "icon",
-        "icon_set": "fontawesome-6.4.2",
-        "default": {
-          "name": "linkedin-in",
-          "type": "SOLID",
-          "unicode": "f08c"
-        }
-      }
-    ],
-    "default": [
-      {
-        "network_name": "LinkedIn",
-        "link": {
-          "url": {
-            "type": "EXTERNAL",
-            "href": "https://linkedin.com"
-          },
-          "open_in_new_tab": true,
-          "no_follow": false
-        },
-        "icon": {
-          "name": "linkedin-in",
-          "type": "SOLID",
-          "unicode": "f08c"
-        }
-      },
-      {
-        "network_name": "GitHub",
-        "link": {
-          "url": {
-            "type": "EXTERNAL",
-            "href": "https://github.com"
-          },
-          "open_in_new_tab": true,
-          "no_follow": false
-        },
-        "icon": {
-          "name": "github",
-          "type": "SOLID",
-          "unicode": "f09b"
-        }
-      }
-    ]
-  }
-]
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    },
+    "icon" : {
+      "name" : "github",
+      "type" : "SOLID",
+      "unicode" : "f09b"
+    }
+  } ]
+} ]

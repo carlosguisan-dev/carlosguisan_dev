@@ -1,12 +1,8 @@
 {
-  "display_name": "Services Problem",
-  "is_available_for_new_content": true,
-  "guid": "services_problem_migrated",
-  "icon": "fontawesome-5.14.0/solid/exclamation-triangle",
-  "host_template_types": [
-    "PAGE"
-  ],
-  "module_tag": "services_problem",
-  "full_width": false,
-  "content_types": []
+  "global" : false,
+  "content_types" : [ ],
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 209064962953,
+  "icon" : "fontawesome-5.14.0/solid/exclamation-triangle",
+  "is_available_for_new_content" : true
 }

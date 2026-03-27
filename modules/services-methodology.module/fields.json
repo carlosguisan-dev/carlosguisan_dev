@@ -1,90 +1,127 @@
-[
-  {
-    "name": "header",
-    "label": "Header",
-    "type": "group",
-    "children": [
-      {
-        "name": "title",
-        "label": "Title",
-        "type": "text",
-        "default": "Cómo trabajamos: Rigor y Claridad"
-      },
-      {
-        "name": "subtitle",
-        "label": "Subtitle",
-        "type": "text",
-        "default": "Un proceso estructurado para eliminar la incertidumbre técnica."
-      }
-    ]
+[ {
+  "id" : "header",
+  "name" : "header",
+  "label" : "Header",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "header.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Cómo trabajamos: Rigor y Claridad"
+  }, {
+    "id" : "header.subtitle",
+    "name" : "subtitle",
+    "label" : "Subtitle",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Un proceso estructurado para eliminar la incertidumbre técnica."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "steps",
+  "name" : "steps",
+  "label" : "Steps",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 0,
+    "max" : null,
+    "sorting_label_field" : "title",
+    "default" : null
   },
-  {
-    "name": "steps",
-    "label": "Steps",
-    "type": "group",
-    "occurrence": {
-      "min": 0,
-      "max": null,
-      "default": null,
-      "sorting_label_field": "title"
-    },
-    "default": [
-      {
-        "icon": "calendar_month",
-        "title": "Planificación Ágil",
-        "description": "Sprints definidos y entregas constantes para mantener el ritmo del proyecto sin sorpresas."
-      },
-      {
-        "icon": "token",
-        "title": "Figma to HubSpot",
-        "description": "Traducción pixel-perfect de diseños complejos a código HubL limpio y optimizado."
-      },
-      {
-        "icon": "verified_user",
-        "title": "Seguridad y QA",
-        "description": "Pruebas exhaustivas en todos los navegadores y validación de seguridad de datos."
-      },
-      {
-        "icon": "handshake",
-        "title": "Socio Estratégico",
-        "description": "No somos solo ejecutores; nos involucramos en los objetivos de negocio de tu portal."
-      }
-    ],
-    "children": [
-      {
-        "name": "icon",
-        "label": "Material Icon ID",
-        "type": "text"
-      },
-      {
-        "name": "title",
-        "label": "Title",
-        "type": "text"
-      },
-      {
-        "name": "description",
-        "label": "Description",
-        "type": "text"
-      }
-    ]
-  },
-  {
-    "name": "styles",
-    "label": "Styles",
-    "type": "group",
-    "tab": "STYLE",
-    "children": [
-      {
-        "name": "spacing",
-        "label": "Spacing",
-        "type": "spacing",
-        "default": {
-          "padding": {
-            "top": { "value": 80, "units": "px" },
-            "bottom": { "value": 80, "units": "px" }
-          }
+  "children" : [ {
+    "id" : "steps.icon",
+    "name" : "icon",
+    "label" : "Material Icon ID",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text"
+  }, {
+    "id" : "steps.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text"
+  }, {
+    "id" : "steps.description",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group",
+  "default" : [ {
+    "icon" : "calendar_month",
+    "title" : "Planificación Ágil",
+    "description" : "Sprints definidos y entregas constantes para mantener el ritmo del proyecto sin sorpresas."
+  }, {
+    "icon" : "token",
+    "title" : "Figma to HubSpot",
+    "description" : "Traducción pixel-perfect de diseños complejos a código HubL limpio y optimizado."
+  }, {
+    "icon" : "verified_user",
+    "title" : "Seguridad y QA",
+    "description" : "Pruebas exhaustivas en todos los navegadores y validación de seguridad de datos."
+  }, {
+    "icon" : "handshake",
+    "title" : "Socio Estratégico",
+    "description" : "No somos solo ejecutores; nos involucramos en los objetivos de negocio de tu portal."
+  } ]
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.spacing",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "spacing",
+    "default" : {
+      "padding" : {
+        "top" : {
+          "value" : 80,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 80,
+          "units" : "px"
         }
       }
-    ]
-  }
-]
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

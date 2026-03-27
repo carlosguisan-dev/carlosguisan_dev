@@ -1,10 +1,9 @@
 {
-  "label": "Project Testimonial",
-  "css_assets": [],
-  "js_assets": [],
-  "global": false,
-  "host_template_types": ["PAGE"],
-  "icon": "format_quote",
-  "smart_type": "NOT_SMART",
-  "is_available_for_new_content": true
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 209006842416,
+  "label" : "Project Testimonial",
+  "icon" : "format_quote",
+  "is_available_for_new_content" : true
 }

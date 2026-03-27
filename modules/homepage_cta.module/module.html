@@ -1,0 +1,41 @@
+{% set module_id = name %}
+{% require_css %}
+<style>
+  {% scope_css %}
+    .cta-{{ module_id }} {
+      {{ module.styles.spacing.css }}
+    }
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+{% set dark_style = module.styles.dark_mode_style or "alt" %}
+
+<section class="cta-{{ module_id }} js-cta js-dark-{{ dark_style }} flex items-center justify-center">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    
+    {% if module.content.title %}
+      <div class="text-4xl md:text-7xl font-black text-slate-900 dark:text-white tracking-tight leading-tight mb-8">
+        {% inline_rich_text field="content.title", value="{{ module.content.title }}" %}
+      </div>
+    {% endif %}
+
+    {% if module.content.subtext %}
+      <div class="text-lg md:text-2xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed mb-12">
+        {% inline_rich_text field="content.subtext", value="{{ module.content.subtext }}" %}
+      </div>
+    {% endif %}
+
+    {% if module.content.cta_button.text %}
+      <div class="flex justify-center">
+        <a href="{{ module.content.cta_button.link.url.href }}" 
+           class="btn btn-primary-alt px-10 py-5 rounded-2xl text-xl"
+           {% if module.content.cta_button.link.open_in_new_tab %}target="_blank"{% endif %}
+           {% if module.content.cta_button.link.rel %}rel="{{ module.content.cta_button.link.rel }}"{% endif %}>
+          {{ module.content.cta_button.text }}
+        </a>
+      </div>
+    {% endif %}
+
+  </div>
+</section>

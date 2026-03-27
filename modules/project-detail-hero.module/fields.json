@@ -1,60 +1,90 @@
-[
-  {
-    "label": "Content",
-    "name": "content",
-    "type": "group",
-    "children": [
-      {
-        "label": "Mono Label",
-        "name": "mono_label",
-        "type": "text",
-        "default": "// CASO DE ESTUDIO: SECTOR EDUCACIÓN"
-      },
-      {
-        "label": "Title",
-        "name": "title",
-        "type": "text",
-        "default": "Arquitectura Escalable para Plataformas Educativas"
-      },
-      {
-        "label": "Tags",
-        "name": "tags",
-        "type": "text",
-        "occurrence": {
-          "min": 0,
-          "max": 10,
-          "default": 3
-        },
-        "default": ["Custom Objects", "HubDB", "HubL"]
-      },
-      {
-        "label": "Hero Image",
-        "name": "hero_image",
-        "type": "image",
-        "default": {
-          "src": "",
-          "alt": "Project hero image"
-        }
-      }
-    ]
-  },
-  {
-    "label": "Styles",
-    "name": "styles",
-    "type": "group",
-    "tab": "STYLE",
-    "children": [
-      {
-        "label": "Dark Mode Style",
-        "name": "dark_mode_style",
-        "type": "choice",
-        "choices": [
-          ["deep", "Deep Dark"],
-          ["alt", "Alt Dark"]
-        ],
-        "default": "alt",
-        "display": "radio"
-      }
-    ]
-  }
-]
+[ {
+  "id" : "content",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "content.mono_label",
+    "name" : "mono_label",
+    "label" : "Mono Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "// CASO DE ESTUDIO: SECTOR EDUCACIÓN"
+  }, {
+    "id" : "content.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Arquitectura Escalable para Plataformas Educativas"
+  }, {
+    "id" : "content.tags",
+    "name" : "tags",
+    "label" : "Tags",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 0,
+      "max" : 10,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : [ "Custom Objects", "HubDB", "HubL" ]
+  }, {
+    "id" : "content.hero_image",
+    "name" : "hero_image",
+    "label" : "Hero Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "display_width" : null,
+    "type" : "image",
+    "default" : {
+      "src" : "",
+      "alt" : "Project hero image"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.dark_mode_style",
+    "name" : "dark_mode_style",
+    "label" : "Dark Mode Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "deep", "Deep Dark" ], [ "alt", "Alt Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "display_width" : null,
+    "type" : "choice",
+    "default" : "alt"
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

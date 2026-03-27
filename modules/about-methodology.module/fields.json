@@ -1,95 +1,161 @@
-[
-  {
-    "label": "Content",
-    "name": "content",
-    "type": "group",
-    "children": [
-      {
-        "label": "Mono Label",
-        "name": "mono_label",
-        "type": "text",
-        "default": "// PROTOCOLO DE EJECUCIÓN"
-      },
-      {
-        "label": "Section Title",
-        "name": "title",
-        "type": "text",
-        "default": "Ingeniería de precisión. Cero improvisación."
-      },
-      {
-        "label": "Section Description",
-        "name": "description",
-        "type": "text",
-        "default": "Un ecosistema web no escala con buenas intenciones, escala con procesos estrictos."
-      },
-      {
-        "label": "Steps",
-        "name": "steps",
-        "type": "group",
-        "occurrence": {
-          "min": 1,
-          "max": 6,
-          "default": 4
-        },
-        "children": [
-          {
-            "label": "Phase Label",
-            "name": "step_label",
-            "type": "text"
-          },
-          {
-            "label": "Title",
-            "name": "title",
-            "type": "text"
-          },
-          {
-            "label": "Description",
-            "name": "description",
-            "type": "text"
-          },
-          {
-            "label": "Icon",
-            "name": "icon",
-            "type": "text"
-          }
-        ],
-        "default": [
-          { "step_label": "FASE 01", "title": "Discovery", "icon": "architecture" },
-          { "step_label": "FASE 02", "title": "Desarrollo", "icon": "terminal" },
-          { "step_label": "FASE 03", "title": "QA", "icon": "speed" },
-          { "step_label": "FASE 04", "title": "Despliegue", "icon": "rocket_launch" }
-        ]
-      }
-    ]
-  },
-  {
-    "label": "Styles",
-    "name": "styles",
-    "type": "group",
-    "tab": "STYLE",
-    "children": [
-      {
-        "label": "Background Color",
-        "name": "bg_color",
-        "type": "color",
-        "default": { "color": "#fdfefc" }
-      },
-      {
-        "label": "Dark Mode Style Coordination",
-        "name": "dark_mode_style",
-        "type": "choice",
-        "choices": [
-          ["deep", "Deep (Primary Background)"],
-          ["alt", "Alt (Secondary Background)"]
-        ],
-        "default": "alt"
-      },
-      {
-        "label": "Spacing",
-        "name": "spacing",
-        "type": "spacing",
-        "display": "composite"
-      }
-    ]
-  }
-]
+[ {
+  "id" : "content",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "content.mono_label",
+    "name" : "mono_label",
+    "label" : "Mono Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "// PROTOCOLO DE EJECUCIÓN"
+  }, {
+    "id" : "content.title",
+    "name" : "title",
+    "label" : "Section Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Ingeniería de precisión. Cero improvisación."
+  }, {
+    "id" : "content.description",
+    "name" : "description",
+    "label" : "Section Description",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Un ecosistema web no escala con buenas intenciones, escala con procesos estrictos."
+  }, {
+    "id" : "content.steps",
+    "name" : "steps",
+    "label" : "Steps",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : 6,
+      "sorting_label_field" : null,
+      "default" : 4
+    },
+    "children" : [ {
+      "id" : "content.steps.step_label",
+      "name" : "step_label",
+      "label" : "Phase Label",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text"
+    }, {
+      "id" : "content.steps.title",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text"
+    }, {
+      "id" : "content.steps.description",
+      "name" : "description",
+      "label" : "Description",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text"
+    }, {
+      "id" : "content.steps.icon",
+      "name" : "icon",
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "display_width" : null,
+    "type" : "group",
+    "default" : [ {
+      "step_label" : "FASE 01",
+      "title" : "Discovery",
+      "icon" : "architecture"
+    }, {
+      "step_label" : "FASE 02",
+      "title" : "Desarrollo",
+      "icon" : "terminal"
+    }, {
+      "step_label" : "FASE 03",
+      "title" : "QA",
+      "icon" : "speed"
+    }, {
+      "step_label" : "FASE 04",
+      "title" : "Despliegue",
+      "icon" : "rocket_launch"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.bg_color",
+    "name" : "bg_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "color",
+    "default" : {
+      "color" : "#fdfefc"
+    }
+  }, {
+    "id" : "styles.dark_mode_style",
+    "name" : "dark_mode_style",
+    "label" : "Dark Mode Style Coordination",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "deep", "Deep (Primary Background)" ], [ "alt", "Alt (Secondary Background)" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "display_width" : null,
+    "type" : "choice",
+    "default" : "alt"
+  }, {
+    "id" : "styles.spacing",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "display" : "composite",
+    "display_width" : null,
+    "type" : "spacing",
+    "default" : { }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

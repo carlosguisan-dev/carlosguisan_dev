@@ -1,10 +1,9 @@
 {
-  "label": "Portfolio Cards",
-  "css_assets": [],
-  "js_assets": [],
-  "global": false,
-  "host_template_types": ["PAGE"],
-  "icon": "grid_view",
-  "smart_type": "NOT_SMART",
-  "is_available_for_new_content": true
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 209006842414,
+  "label" : "Portfolio Cards",
+  "icon" : "grid_view",
+  "is_available_for_new_content" : true
 }

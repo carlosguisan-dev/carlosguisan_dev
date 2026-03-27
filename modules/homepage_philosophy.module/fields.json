@@ -1,66 +1,120 @@
-[
-  {
-    "label": "Content",
-    "name": "content",
-    "type": "group",
-    "children": [
-      {
-        "label": "Background Image",
-        "name": "bg_image",
-        "type": "image",
-        "default": {
-          "src": "../../images/philosophy_bg.png",
-          "alt": "Bosque tropical de Sarapiquí"
-        }
-      },
-      {
-        "label": "Icon (Material Symbol)",
-        "name": "icon",
-        "type": "text",
-        "default": "eco"
-      },
-      {
-        "label": "Icon (Image)",
-        "name": "icon_image",
-        "type": "image"
-      },
-      {
-        "label": "Title",
-        "name": "title",
-        "type": "text",
-        "default": "Filosofía de Ingeniería"
-      },
-      {
-        "label": "Text",
-        "name": "text",
-        "type": "richtext",
-        "default": "<p>Creo en sistemas que respetan el entorno digital. Mi enfoque combina la precisión técnica con la sostenibilidad a largo plazo, utilizando HubSpot como plataforma para construir ecosistemas de datos eficientes y escalables.</p>"
-      }
-    ]
-  },
-  {
-    "label": "Styles",
-    "name": "styles",
-    "type": "group",
-    "tab": "STYLE",
-    "children": [
-      {
-        "label": "Dark Mode Style",
-        "name": "dark_mode_style",
-        "type": "choice",
-        "choices": [
-          ["deep", "Deep Dark"],
-          ["alt", "Alt Dark"]
-        ],
-        "default": "deep",
-        "display": "radio"
-      },
-      {
-        "label": "Spacing",
-        "name": "spacing",
-        "type": "spacing",
-        "display": "composite"
-      }
-    ]
-  }
-]
+[ {
+  "id" : "content",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "content.bg_image",
+    "name" : "bg_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "display_width" : null,
+    "type" : "image",
+    "default" : {
+      "src" : "https://50594343.fs1.hubspotusercontent-na1.net/hubfs/50594343/raw_assets/public/carlosguisan_dev/images/philosophy_bg.png",
+      "alt" : "Bosque tropical de Sarapiquí",
+      "size_type" : null,
+      "width" : null,
+      "height" : null,
+      "max_width" : null,
+      "max_height" : null,
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "content.icon",
+    "name" : "icon",
+    "label" : "Icon (Material Symbol)",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "eco"
+  }, {
+    "id" : "content.icon_image",
+    "name" : "icon_image",
+    "label" : "Icon (Image)",
+    "required" : false,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "display_width" : null,
+    "type" : "image",
+    "default" : {
+      "src" : "",
+      "alt" : null,
+      "size_type" : null,
+      "width" : null,
+      "height" : null,
+      "max_width" : null,
+      "max_height" : null,
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "content.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Filosofía de Ingeniería"
+  }, {
+    "id" : "content.text",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "richtext",
+    "default" : "<p>Creo en sistemas que respetan el entorno digital. Mi enfoque combina la precisión técnica con la sostenibilidad a largo plazo, utilizando HubSpot como plataforma para construir ecosistemas de datos eficientes y escalables.</p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.dark_mode_style",
+    "name" : "dark_mode_style",
+    "label" : "Dark Mode Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "deep", "Deep Dark" ], [ "alt", "Alt Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "display_width" : null,
+    "type" : "choice",
+    "default" : "deep"
+  }, {
+    "id" : "styles.spacing",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "display" : "composite",
+    "display_width" : null,
+    "type" : "spacing",
+    "default" : { }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

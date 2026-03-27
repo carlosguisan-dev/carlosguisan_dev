@@ -1,72 +1,98 @@
-[
-  {
-    "label": "Content",
-    "name": "content",
-    "type": "group",
-    "children": [
-      {
-        "label": "Icon",
-        "name": "icon",
-        "type": "text",
-        "default": "settings_suggest"
-      },
-      {
-        "label": "Alert Label",
-        "name": "alert_label",
-        "type": "text",
-        "default": ""
-      },
-      {
-        "label": "Title",
-        "name": "title",
-        "type": "text",
-        "default": "El problema: Crecimiento frenado por deuda técnica"
-      },
-      {
-        "label": "Paragraphs",
-        "name": "paragraphs",
-        "type": "richtext",
-        "occurrence": {
-          "min": 1,
-          "max": 5,
-          "default": 2
-        },
-        "default": [
-          "La institución educativa presentaba una arquitectura de datos fragmentada.",
-          "La falta de una estructura de Custom Objects impedía la automatización de procesos críticos."
-        ]
-      }
-    ]
-  },
-  {
-    "label": "Styles",
-    "name": "styles",
-    "type": "group",
-    "tab": "STYLE",
-    "children": [
-      {
-        "label": "Background Style",
-        "name": "bg_style",
-        "type": "choice",
-        "choices": [
-          ["light", "Light"],
-          ["alt", "Alt"],
-          ["white", "White"]
-        ],
-        "default": "alt",
-        "display": "radio"
-      },
-      {
-        "label": "Dark Mode Style",
-        "name": "dark_mode_style",
-        "type": "choice",
-        "choices": [
-          ["deep", "Deep Dark"],
-          ["alt", "Alt Dark"]
-        ],
-        "default": "alt",
-        "display": "radio"
-      }
-    ]
-  }
-]
+[ {
+  "id" : "content",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "content.icon",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "settings_suggest"
+  }, {
+    "id" : "content.alert_label",
+    "name" : "alert_label",
+    "label" : "Alert Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : ""
+  }, {
+    "id" : "content.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "El problema: Crecimiento frenado por deuda técnica"
+  }, {
+    "id" : "content.paragraphs",
+    "name" : "paragraphs",
+    "label" : "Paragraphs",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : 5,
+      "sorting_label_field" : null,
+      "default" : 2
+    },
+    "display_width" : null,
+    "type" : "richtext",
+    "default" : [ "La institución educativa presentaba una arquitectura de datos fragmentada.", "La falta de una estructura de Custom Objects impedía la automatización de procesos críticos." ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.bg_style",
+    "name" : "bg_style",
+    "label" : "Background Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "light", "Light" ], [ "alt", "Alt" ], [ "white", "White" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "display_width" : null,
+    "type" : "choice",
+    "default" : "alt"
+  }, {
+    "id" : "styles.dark_mode_style",
+    "name" : "dark_mode_style",
+    "label" : "Dark Mode Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "deep", "Deep Dark" ], [ "alt", "Alt Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "display_width" : null,
+    "type" : "choice",
+    "default" : "alt"
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

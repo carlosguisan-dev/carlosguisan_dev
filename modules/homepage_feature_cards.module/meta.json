@@ -1,9 +1,9 @@
 {
-  "global": false,
-  "host_template_types": [
-    "PAGE"
-  ],
-  "icon": "fa-th-large",
-  "is_available_for_new_content": true,
-  "label": "Feature Cards"
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 208919371617,
+  "label" : "Feature Cards",
+  "icon" : "fa-th-large",
+  "is_available_for_new_content" : true
 }

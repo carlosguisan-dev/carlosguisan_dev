@@ -1,175 +1,307 @@
-[
-  {
-    "label": "Content",
-    "name": "content",
-    "type": "group",
-    "children": [
-      {
-        "label": "Mono Label",
-        "name": "mono_label",
-        "type": "text",
-        "default": "// Senior HubSpot Content Hub Architect & CMS Developer"
-      },
-      {
-        "label": "Headline",
-        "name": "headline",
-        "type": "richtext",
-        "default": "Arquitectura escalable <span class=\"text-accent-contrast\">para el ecosistema Hubspot.</span>"
-      },
-      {
-        "label": "Description",
-        "name": "description",
-        "type": "richtext",
-        "default": "Desarrollo sistemas dinámicos, elimino deuda técnica y construyo infraestructuras de contenido listas para IA. Código de alta ingeniería desde el corazón de Sarapiquí."
-      },
-      {
-        "label": "Primary Button",
-        "name": "primary_button",
-        "type": "group",
-        "children": [
-          {
-            "label": "Text",
-            "name": "text",
-            "type": "text",
-            "default": "Ver Soluciones Técnicas"
-          },
-          {
-            "label": "Link",
-            "name": "link",
-            "type": "link"
-          }
-        ]
-      },
-      {
-        "label": "Secondary Button",
-        "name": "secondary_button",
-        "type": "group",
-        "children": [
-          {
-            "label": "Text",
-            "name": "text",
-            "type": "text",
-            "default": "Ver portafolio"
-          },
-          {
-            "label": "Link",
-            "name": "link",
-            "type": "link"
-          }
-        ]
-      },
-      {
-        "label": "Code Snippet",
-        "name": "code_snippet",
-        "type": "text",
-        "display": "textarea",
-        "default": "/* Optimize HubSpot Portal */\nasync function scaleArchitecture(portal) {\n  const currentStatus = await portal.getHealth();\n  if (currentStatus.isLegacy) {\n    return await portal.refactor({\n      engine: 'HubL',\n      performance: '99+',\n      scalability: true\n    });\n  }\n}"
-      },
-      {
-        "label": "Client Logos",
-        "name": "client_logos",
-        "type": "group",
-        "occurrence": {
-          "min": 0,
-          "max": 10,
-          "default": 5
+[ {
+  "id" : "content",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "content.mono_label",
+    "name" : "mono_label",
+    "label" : "Mono Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "// Senior HubSpot Content Hub Architect & CMS Developer"
+  }, {
+    "id" : "content.headline",
+    "name" : "headline",
+    "label" : "Headline",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "richtext",
+    "default" : "Arquitectura escalable <span class=\"text-accent-contrast\">para el ecosistema Hubspot.</span>"
+  }, {
+    "id" : "content.description",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "richtext",
+    "default" : "Desarrollo sistemas dinámicos, elimino deuda técnica y construyo infraestructuras de contenido listas para IA. Código de alta ingeniería desde el corazón de Sarapiquí."
+  }, {
+    "id" : "content.primary_button",
+    "name" : "primary_button",
+    "label" : "Primary Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "content.primary_button.text",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : "Ver Soluciones Técnicas"
+    }, {
+      "id" : "content.primary_button.link",
+      "name" : "link",
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "display_width" : null,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "type" : "EXTERNAL",
+          "content_id" : null,
+          "href" : "",
+          "href_with_scheme" : ""
         },
-        "children": [
-          {
-            "id": "logo_type",
-            "label": "Logo Type",
-            "name": "logo_type",
-            "type": "choice",
-            "choices": [
-              ["text", "Text"],
-              ["image", "Image"]
-            ],
-            "default": "text",
-            "display": "radio"
-          },
-          {
-            "label": "Logo Text",
-            "name": "logo_text",
-            "type": "text",
-            "default": "Company Name",
-            "visibility": {
-              "controlling_field": "logo_type",
-              "controlling_value_regex": "text"
-            }
-          },
-          {
-            "label": "Logo Image",
-            "name": "logo_image",
-            "type": "image",
-            "visibility": {
-              "controlling_field": "logo_type",
-              "controlling_value_regex": "image"
-            }
-          }
-        ],
-        "default": [
-          { "logo_type": "text", "logo_text": "SaaS Global" },
-          { "logo_type": "text", "logo_text": "Fintech Co" },
-          { "logo_type": "text", "logo_text": "EduTech Pro" },
-          { "logo_type": "text", "logo_text": "MarTech Solutions" },
-          { "logo_type": "text", "logo_text": "HealthStack" }
-        ]
+        "open_in_new_tab" : false,
+        "no_follow" : false,
+        "sponsored" : false,
+        "user_generated_content" : false
       }
-    ]
-  },
-  {
-    "label": "Styles",
-    "name": "styles",
-    "type": "group",
-    "tab": "STYLE",
-    "children": [
-      {
-        "label": "Background Color",
-        "name": "bg_color",
-        "type": "color",
-        "inherited_value": {
-          "property_value_paths": {
-            "color": "theme.brand_colors.brand_green.color"
-          }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "display_width" : null,
+    "type" : "group"
+  }, {
+    "id" : "content.secondary_button",
+    "name" : "secondary_button",
+    "label" : "Secondary Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "content.secondary_button.text",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : "Ver portafolio"
+    }, {
+      "id" : "content.secondary_button.link",
+      "name" : "link",
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "display_width" : null,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "type" : "EXTERNAL",
+          "content_id" : null,
+          "href" : "",
+          "href_with_scheme" : ""
         },
-        "default": {
-          "color": "#2d5016",
-          "opacity": 100
-        }
-      },
-      {
-        "label": "Text Color",
-        "name": "text_color",
-        "type": "color",
-        "inherited_value": {
-          "property_value_paths": {
-            "color": "theme.backgrounds.light.background_light.color"
-          }
-        },
-        "default": {
-          "color": "#FFFFFF",
-          "opacity": 100
-        }
-      },
-      {
-        "label": "Lime Accents",
-        "name": "lime_accent",
-        "type": "color",
-        "inherited_value": {
-          "property_value_paths": {
-            "color": "theme.brand_colors.brand_lime.color"
-          }
-        },
-        "default": {
-          "color": "#a3d977",
-          "opacity": 100
-        }
-      },
-      {
-        "label": "Spacing",
-        "name": "spacing",
-        "type": "spacing"
+        "open_in_new_tab" : false,
+        "no_follow" : false,
+        "sponsored" : false,
+        "user_generated_content" : false
       }
-    ]
-  }
-]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "display_width" : null,
+    "type" : "group"
+  }, {
+    "id" : "content.code_snippet",
+    "name" : "code_snippet",
+    "label" : "Code Snippet",
+    "required" : false,
+    "locked" : false,
+    "display" : "textarea",
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "/* Optimize HubSpot Portal */\nasync function scaleArchitecture(portal) {\n  const currentStatus = await portal.getHealth();\n  if (currentStatus.isLegacy) {\n    return await portal.refactor({\n      engine: 'HubL',\n      performance: '99+',\n      scalability: true\n    });\n  }\n}"
+  }, {
+    "id" : "content.client_logos",
+    "name" : "client_logos",
+    "label" : "Client Logos",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 0,
+      "max" : 10,
+      "sorting_label_field" : null,
+      "default" : 5
+    },
+    "children" : [ {
+      "id" : "logo_type",
+      "name" : "logo_type",
+      "label" : "Logo Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "radio",
+      "choices" : [ [ "text", "Text" ], [ "image", "Image" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "display_width" : null,
+      "type" : "choice",
+      "default" : "text"
+    }, {
+      "id" : "content.client_logos.logo_text",
+      "name" : "logo_text",
+      "label" : "Logo Text",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "logo_type",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "text",
+        "property" : null,
+        "operator" : null,
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : "Company Name"
+    }, {
+      "id" : "content.client_logos.logo_image",
+      "name" : "logo_image",
+      "label" : "Logo Image",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "logo_type",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "image",
+        "property" : null,
+        "operator" : null,
+        "access" : null
+      },
+      "responsive" : false,
+      "resizable" : true,
+      "show_loading" : false,
+      "display_width" : null,
+      "type" : "image",
+      "default" : {
+        "src" : "",
+        "alt" : null,
+        "size_type" : null,
+        "width" : null,
+        "height" : null,
+        "max_width" : null,
+        "max_height" : null,
+        "loading" : "disabled"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "display_width" : null,
+    "type" : "group",
+    "default" : [ {
+      "logo_type" : "text",
+      "logo_text" : "SaaS Global"
+    }, {
+      "logo_type" : "text",
+      "logo_text" : "Fintech Co"
+    }, {
+      "logo_type" : "text",
+      "logo_text" : "EduTech Pro"
+    }, {
+      "logo_type" : "text",
+      "logo_text" : "MarTech Solutions"
+    }, {
+      "logo_type" : "text",
+      "logo_text" : "HealthStack"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.bg_color",
+    "name" : "bg_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "inherited_value" : {
+      "property_value_paths" : {
+        "color" : "theme.brand_colors.brand_green.color"
+      }
+    },
+    "display_width" : null,
+    "type" : "color",
+    "default" : {
+      "color" : "#2d5016",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "styles.text_color",
+    "name" : "text_color",
+    "label" : "Text Color",
+    "required" : false,
+    "locked" : false,
+    "inherited_value" : {
+      "property_value_paths" : {
+        "color" : "theme.backgrounds.light.background_light.color"
+      }
+    },
+    "display_width" : null,
+    "type" : "color",
+    "default" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "styles.lime_accent",
+    "name" : "lime_accent",
+    "label" : "Lime Accents",
+    "required" : false,
+    "locked" : false,
+    "inherited_value" : {
+      "property_value_paths" : {
+        "color" : "theme.brand_colors.brand_lime.color"
+      }
+    },
+    "display_width" : null,
+    "type" : "color",
+    "default" : {
+      "color" : "#a3d977",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "styles.spacing",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "spacing",
+    "default" : { }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

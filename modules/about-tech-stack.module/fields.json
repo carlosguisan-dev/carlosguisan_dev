@@ -1,109 +1,187 @@
-[
-  {
-    "label": "Content",
-    "name": "content",
-    "type": "group",
-    "children": [
-      {
-        "label": "Mono Label",
-        "name": "mono_label",
-        "type": "text",
-        "default": "// TECH_ECOSYSTEM.JSON"
+[ {
+  "id" : "content",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "content.mono_label",
+    "name" : "mono_label",
+    "label" : "Mono Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "// TECH_ECOSYSTEM.JSON"
+  }, {
+    "id" : "content.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Mi Ecosistema Tecnológico"
+  }, {
+    "id" : "content.status_text",
+    "name" : "status_text",
+    "label" : "Status Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Compilation success: 100% efficient"
+  }, {
+    "id" : "content.groups",
+    "name" : "groups",
+    "label" : "Groups",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : 10,
+      "sorting_label_field" : null,
+      "default" : 4
+    },
+    "children" : [ {
+      "id" : "content.groups.group_label",
+      "name" : "group_label",
+      "label" : "Group Label",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : "[ CATEGORY ]"
+    }, {
+      "id" : "content.groups.tags",
+      "name" : "tags",
+      "label" : "Tags",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : 1,
+        "max" : 20,
+        "sorting_label_field" : null,
+        "default" : 3
       },
-      {
-        "label": "Title",
-        "name": "title",
-        "type": "text",
-        "default": "Mi Ecosistema Tecnológico"
-      },
-      {
-        "label": "Status Text",
-        "name": "status_text",
-        "type": "text",
-        "default": "Compilation success: 100% efficient"
-      },
-      {
-        "label": "Groups",
-        "name": "groups",
-        "type": "group",
-        "occurrence": {
-          "min": 1,
-          "max": 10,
-          "default": 4
-        },
-        "children": [
-          {
-            "label": "Group Label",
-            "name": "group_label",
-            "type": "text",
-            "default": "[ CATEGORY ]"
+      "children" : [ {
+        "id" : "content.groups.tags.text",
+        "name" : "text",
+        "label" : "Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "display_width" : null,
+        "type" : "text",
+        "default" : "Tag"
+      }, {
+        "id" : "content.groups.tags.link",
+        "name" : "link",
+        "label" : "Link",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+        "show_advanced_rel_options" : false,
+        "display_width" : null,
+        "type" : "link",
+        "default" : {
+          "url" : {
+            "type" : "EXTERNAL",
+            "content_id" : null,
+            "href" : "",
+            "href_with_scheme" : ""
           },
-          {
-            "label": "Tags",
-            "name": "tags",
-            "type": "group",
-            "occurrence": {
-              "min": 1,
-              "max": 20,
-              "default": 3
-            },
-            "children": [
-              {
-                "label": "Text",
-                "name": "text",
-                "type": "text",
-                "default": "Tag"
-              },
-              {
-                "label": "Link",
-                "name": "link",
-                "type": "link"
-              }
-            ],
-            "default": [
-              { "text": "Tag 1" },
-              { "text": "Tag 2" },
-              { "text": "Tag 3" }
-            ]
-          }
-        ],
-        "default": [
-          {
-            "group_label": "[ CERTIFICACIONES ]",
-            "tags": [
-              { "text": "HubSpot Solutions Architect" }, 
-              { "text": "CMS Implementation" }, 
-              { "text": "API Integration Expert" }
-            ]
-          },
-          {
-            "group_label": "[ CORE EXPERTISE ]",
-            "tags": [{ "text": "HubDB Architecture" }, { "text": "Custom Objects" }, { "text": "Advanced HubL" }]
-          },
-          {
-            "group_label": "[ FRONTEND ]",
-            "tags": [{ "text": "Tailwind CSS" }, { "text": "React & Vue" }, { "text": "SASS / PostCSS" }]
-          },
-          {
-            "group_label": "[ ENTORNOS HÍBRIDOS ]",
-            "tags": [{ "text": "Node.js Serverless" }, { "text": "AWS Lambda" }, { "text": "Git/CLI Workflows" }]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "label": "Styles",
-    "name": "styles",
-    "type": "group",
-    "tab": "STYLE",
-    "children": [
-      {
-        "label": "Spacing",
-        "name": "spacing",
-        "type": "spacing",
-        "display": "composite"
-      }
-    ]
-  }
-]
+          "open_in_new_tab" : false,
+          "no_follow" : false,
+          "sponsored" : false,
+          "user_generated_content" : false
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "display_width" : null,
+      "type" : "group",
+      "default" : [ {
+        "text" : "Tag 1"
+      }, {
+        "text" : "Tag 2"
+      }, {
+        "text" : "Tag 3"
+      } ]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "display_width" : null,
+    "type" : "group",
+    "default" : [ {
+      "group_label" : "[ CERTIFICACIONES ]",
+      "tags" : [ {
+        "text" : "HubSpot Solutions Architect"
+      }, {
+        "text" : "CMS Implementation"
+      }, {
+        "text" : "API Integration Expert"
+      } ]
+    }, {
+      "group_label" : "[ CORE EXPERTISE ]",
+      "tags" : [ {
+        "text" : "HubDB Architecture"
+      }, {
+        "text" : "Custom Objects"
+      }, {
+        "text" : "Advanced HubL"
+      } ]
+    }, {
+      "group_label" : "[ FRONTEND ]",
+      "tags" : [ {
+        "text" : "Tailwind CSS"
+      }, {
+        "text" : "React & Vue"
+      }, {
+        "text" : "SASS / PostCSS"
+      } ]
+    }, {
+      "group_label" : "[ ENTORNOS HÍBRIDOS ]",
+      "tags" : [ {
+        "text" : "Node.js Serverless"
+      }, {
+        "text" : "AWS Lambda"
+      }, {
+        "text" : "Git/CLI Workflows"
+      } ]
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.spacing",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "display" : "composite",
+    "display_width" : null,
+    "type" : "spacing",
+    "default" : { }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

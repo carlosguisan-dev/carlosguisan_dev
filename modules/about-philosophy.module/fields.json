@@ -1,35 +1,54 @@
-[
-  {
-    "label": "Content",
-    "name": "content",
-    "type": "group",
-    "children": [
-      {
-        "label": "Title",
-        "name": "title",
-        "type": "text",
-        "default": "Local roots, global quality."
-      },
-      {
-        "label": "Text",
-        "name": "text",
-        "type": "richtext",
-        "default": "<p>Desde el corazón de <span class=\"font-bold text-primary dark:text-white\">Sarapiquí, Costa Rica</span>, desarrollo ecosistemas digitales que escalan. Mi enfoque no es solo construir sitios, sino arquitecturar soluciones de HubSpot que respiran con tu negocio, integrando limpieza técnica con la adaptabilidad de un organismo vivo.</p>"
-      }
-    ]
-  },
-  {
-    "label": "Styles",
-    "name": "styles",
-    "type": "group",
-    "tab": "STYLE",
-    "children": [
-      {
-        "label": "Spacing",
-        "name": "spacing",
-        "type": "spacing",
-        "display": "composite"
-      }
-    ]
-  }
-]
+[ {
+  "id" : "content",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "content.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Local roots, global quality."
+  }, {
+    "id" : "content.text",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "richtext",
+    "default" : "<p>Desde el corazón de <span class=\"font-bold text-primary dark:text-white\">Sarapiquí, Costa Rica</span>, desarrollo ecosistemas digitales que escalan. Mi enfoque no es solo construir sitios, sino arquitecturar soluciones de HubSpot que respiran con tu negocio, integrando limpieza técnica con la adaptabilidad de un organismo vivo.</p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.spacing",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "display" : "composite",
+    "display_width" : null,
+    "type" : "spacing",
+    "default" : { }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

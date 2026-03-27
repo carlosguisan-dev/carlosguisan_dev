@@ -1,77 +1,202 @@
-[
-  {
-    "name": "content",
-    "label": "Content",
-    "type": "group",
-    "children": [
-      {
-        "name": "title",
-        "label": "Title",
-        "type": "text",
-        "default": "¿Tu portal de HubSpot te impulsa o te frena?"
-      },
-      {
-        "name": "description",
-        "label": "Description",
-        "type": "richtext",
-        "default": "<p>Muchos equipos enfrentan el mismo muro: flujos de trabajo rotos, temas de CMS lentos que dañan el SEO y una arquitectura de datos que nadie entiende. La deuda técnica en HubSpot no solo cuesta dinero, cuesta agilidad competitiva.</p>"
-      },
-      {
-        "name": "problems",
-        "label": "Diagnostic Problems",
-        "type": "group",
-        "children": [
-          {
-            "name": "item_1",
-            "label": "Problem 1",
-            "type": "group",
-            "children": [
-              { "name": "icon", "label": "Icon", "type": "text", "default": "settings" },
-              { "name": "title", "label": "Title", "type": "text", "default": "Fricción Operativa" },
-              { "name": "description", "label": "Description", "type": "text", "default": "Dependencia total de un desarrollador para editar textos o crear landings." }
-            ]
-          },
-          {
-            "name": "item_2",
-            "label": "Problem 2",
-            "type": "group",
-            "children": [
-              { "name": "icon", "label": "Icon", "type": "text", "default": "account_tree" },
-              { "name": "title", "label": "Title", "type": "text", "default": "Caos Estructural" },
-              { "name": "description", "label": "Description", "type": "text", "default": "Catálogos y directorios gestionados manualmente en lugar de utilizar HubDB." }
-            ]
-          },
-          {
-            "name": "item_3",
-            "label": "Problem 3",
-            "type": "group",
-            "children": [
-              { "name": "icon", "label": "Icon", "type": "text", "default": "memory" },
-              { "name": "title", "label": "Title", "type": "text", "default": "Rendimiento Deficiente" },
-              { "name": "description", "label": "Description", "type": "text", "default": "Código basura que arruina los Core Web Vitals y daña el posicionamiento." }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "styles",
-    "label": "Styles",
-    "type": "group",
-    "tab": "STYLE",
-    "children": [
-      {
-        "name": "spacing",
-        "label": "Spacing",
-        "type": "spacing",
-        "default": {
-          "padding": {
-            "top": { "value": 80, "units": "px" },
-            "bottom": { "value": 80, "units": "px" }
-          }
+[ {
+  "id" : "content",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "content.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "¿Tu portal de HubSpot te impulsa o te frena?"
+  }, {
+    "id" : "content.description",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "richtext",
+    "default" : "<p>Muchos equipos enfrentan el mismo muro: flujos de trabajo rotos, temas de CMS lentos que dañan el SEO y una arquitectura de datos que nadie entiende. La deuda técnica en HubSpot no solo cuesta dinero, cuesta agilidad competitiva.</p>"
+  }, {
+    "id" : "content.problems",
+    "name" : "problems",
+    "label" : "Diagnostic Problems",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "content.problems.item_1",
+      "name" : "item_1",
+      "label" : "Problem 1",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "content.problems.item_1.icon",
+        "name" : "icon",
+        "label" : "Icon",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "display_width" : null,
+        "type" : "text",
+        "default" : "settings"
+      }, {
+        "id" : "content.problems.item_1.title",
+        "name" : "title",
+        "label" : "Title",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "display_width" : null,
+        "type" : "text",
+        "default" : "Fricción Operativa"
+      }, {
+        "id" : "content.problems.item_1.description",
+        "name" : "description",
+        "label" : "Description",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "display_width" : null,
+        "type" : "text",
+        "default" : "Dependencia total de un desarrollador para editar textos o crear landings."
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "display_width" : null,
+      "type" : "group"
+    }, {
+      "id" : "content.problems.item_2",
+      "name" : "item_2",
+      "label" : "Problem 2",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "content.problems.item_2.icon",
+        "name" : "icon",
+        "label" : "Icon",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "display_width" : null,
+        "type" : "text",
+        "default" : "account_tree"
+      }, {
+        "id" : "content.problems.item_2.title",
+        "name" : "title",
+        "label" : "Title",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "display_width" : null,
+        "type" : "text",
+        "default" : "Caos Estructural"
+      }, {
+        "id" : "content.problems.item_2.description",
+        "name" : "description",
+        "label" : "Description",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "display_width" : null,
+        "type" : "text",
+        "default" : "Catálogos y directorios gestionados manualmente en lugar de utilizar HubDB."
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "display_width" : null,
+      "type" : "group"
+    }, {
+      "id" : "content.problems.item_3",
+      "name" : "item_3",
+      "label" : "Problem 3",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "content.problems.item_3.icon",
+        "name" : "icon",
+        "label" : "Icon",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "display_width" : null,
+        "type" : "text",
+        "default" : "memory"
+      }, {
+        "id" : "content.problems.item_3.title",
+        "name" : "title",
+        "label" : "Title",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "display_width" : null,
+        "type" : "text",
+        "default" : "Rendimiento Deficiente"
+      }, {
+        "id" : "content.problems.item_3.description",
+        "name" : "description",
+        "label" : "Description",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "display_width" : null,
+        "type" : "text",
+        "default" : "Código basura que arruina los Core Web Vitals y daña el posicionamiento."
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "display_width" : null,
+      "type" : "group"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "display_width" : null,
+    "type" : "group"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.spacing",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "spacing",
+    "default" : {
+      "padding" : {
+        "top" : {
+          "value" : 80,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 80,
+          "units" : "px"
         }
       }
-    ]
-  }
-]
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

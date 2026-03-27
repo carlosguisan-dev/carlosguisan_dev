@@ -1,126 +1,193 @@
-[
-  {
-    "label": "Content",
-    "name": "content",
-    "type": "group",
-    "children": [
-      {
-        "label": "Phase Number",
-        "name": "phase_number",
-        "type": "text",
-        "default": "01"
-      },
-      {
-        "label": "Phase Label",
-        "name": "phase_label",
-        "type": "text",
-        "default": "DATA MODELING"
-      },
-      {
-        "label": "Title",
-        "name": "title",
-        "type": "text",
-        "default": "Fase 1: Modelado de Datos y Arquitectura"
-      },
-      {
-        "label": "Items",
-        "name": "items",
-        "type": "group",
-        "occurrence": {
-          "min": 1,
-          "max": 6,
-          "default": 3
-        },
-        "children": [
-          {
-            "label": "Icon",
-            "name": "icon",
-            "type": "text",
-            "default": "database"
-          },
-          {
-            "label": "Title",
-            "name": "title",
-            "type": "text",
-            "default": "HubDB Engine"
-          },
-          {
-            "label": "Description",
-            "name": "description",
-            "type": "text",
-            "default": "Implementación de bases de datos relacionales dinámicas."
-          }
-        ],
-        "default": [
-          { "icon": "database", "title": "HubDB Engine", "description": "Implementación de bases de datos relacionales dinámicas para la gestión de catálogo." },
-          { "icon": "filter_list", "title": "Data Cleaning", "description": "Normalización de datos históricos mediante scripts de limpieza masiva." },
-          { "icon": "lock_person", "title": "Membership Logic", "description": "Creación de niveles de acceso personalizados basados en propiedades de contacto." }
-        ]
-      },
-      {
-        "label": "Code Snippet",
-        "name": "code_snippet",
-        "type": "text",
-        "default": ""
-      },
-      {
-        "label": "Code Filename",
-        "name": "code_filename",
-        "type": "text",
-        "default": "dynamic_listing.hubl"
-      },
-      {
-        "label": "Side Image",
-        "name": "side_image",
-        "type": "image",
-        "default": {
-          "src": "",
-          "alt": ""
-        }
-      }
-    ]
-  },
-  {
-    "label": "Styles",
-    "name": "styles",
-    "type": "group",
-    "tab": "STYLE",
-    "children": [
-      {
-        "label": "Layout",
-        "name": "layout",
-        "type": "choice",
-        "choices": [
-          ["cards", "Cards Grid"],
-          ["checklist_image", "Checklist + Image"],
-          ["checklist_code", "Checklist + Code Block"]
-        ],
-        "default": "cards",
-        "display": "select"
-      },
-      {
-        "label": "Background Style",
-        "name": "bg_style",
-        "type": "choice",
-        "choices": [
-          ["light", "Light"],
-          ["alt", "Alt"],
-          ["transparent", "Transparent"]
-        ],
-        "default": "alt",
-        "display": "radio"
-      },
-      {
-        "label": "Dark Mode Style",
-        "name": "dark_mode_style",
-        "type": "choice",
-        "choices": [
-          ["deep", "Deep Dark"],
-          ["alt", "Alt Dark"]
-        ],
-        "default": "alt",
-        "display": "radio"
-      }
-    ]
-  }
-]
+[ {
+  "id" : "content",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "content.phase_number",
+    "name" : "phase_number",
+    "label" : "Phase Number",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "01"
+  }, {
+    "id" : "content.phase_label",
+    "name" : "phase_label",
+    "label" : "Phase Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "DATA MODELING"
+  }, {
+    "id" : "content.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Fase 1: Modelado de Datos y Arquitectura"
+  }, {
+    "id" : "content.items",
+    "name" : "items",
+    "label" : "Items",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : 6,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "children" : [ {
+      "id" : "content.items.icon",
+      "name" : "icon",
+      "label" : "Icon",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : "database"
+    }, {
+      "id" : "content.items.title",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : "HubDB Engine"
+    }, {
+      "id" : "content.items.description",
+      "name" : "description",
+      "label" : "Description",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : "Implementación de bases de datos relacionales dinámicas."
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "display_width" : null,
+    "type" : "group",
+    "default" : [ {
+      "icon" : "database",
+      "title" : "HubDB Engine",
+      "description" : "Implementación de bases de datos relacionales dinámicas para la gestión de catálogo."
+    }, {
+      "icon" : "filter_list",
+      "title" : "Data Cleaning",
+      "description" : "Normalización de datos históricos mediante scripts de limpieza masiva."
+    }, {
+      "icon" : "lock_person",
+      "title" : "Membership Logic",
+      "description" : "Creación de niveles de acceso personalizados basados en propiedades de contacto."
+    } ]
+  }, {
+    "id" : "content.code_snippet",
+    "name" : "code_snippet",
+    "label" : "Code Snippet",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : ""
+  }, {
+    "id" : "content.code_filename",
+    "name" : "code_filename",
+    "label" : "Code Filename",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "dynamic_listing.hubl"
+  }, {
+    "id" : "content.side_image",
+    "name" : "side_image",
+    "label" : "Side Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "display_width" : null,
+    "type" : "image",
+    "default" : {
+      "src" : "",
+      "alt" : ""
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.layout",
+    "name" : "layout",
+    "label" : "Layout",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "cards", "Cards Grid" ], [ "checklist_image", "Checklist + Image" ], [ "checklist_code", "Checklist + Code Block" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "display_width" : null,
+    "type" : "choice",
+    "default" : "cards"
+  }, {
+    "id" : "styles.bg_style",
+    "name" : "bg_style",
+    "label" : "Background Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "light", "Light" ], [ "alt", "Alt" ], [ "transparent", "Transparent" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "display_width" : null,
+    "type" : "choice",
+    "default" : "alt"
+  }, {
+    "id" : "styles.dark_mode_style",
+    "name" : "dark_mode_style",
+    "label" : "Dark Mode Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "deep", "Deep Dark" ], [ "alt", "Alt Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "display_width" : null,
+    "type" : "choice",
+    "default" : "alt"
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

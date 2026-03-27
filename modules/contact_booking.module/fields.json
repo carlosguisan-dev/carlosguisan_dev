@@ -1,141 +1,242 @@
-[
-  {
-    "label": "Hero Section",
-    "name": "hero",
-    "type": "group",
-    "children": [
-      {
-        "label": "Pre-title",
-        "name": "pre_title",
-        "type": "text",
-        "default": "// INICIAR_SISTEMA"
+[ {
+  "id" : "hero",
+  "name" : "hero",
+  "label" : "Hero Section",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "hero.pre_title",
+    "name" : "pre_title",
+    "label" : "Pre-title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "// INICIAR_SISTEMA"
+  }, {
+    "id" : "hero.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "richtext",
+    "default" : "Hablemos de tu ecosistema <span style='color: var(--color-brand-green);'>HubSpot.</span>"
+  }, {
+    "id" : "hero.description",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "¿Atrapado con deuda técnica, necesitas escalar un portal complejo o buscas un partner técnico para tu agencia? Cuéntame tu reto y estructuremos la solución."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "booking",
+  "name" : "booking",
+  "label" : "Booking Info (Left Column)",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "booking.title",
+    "name" : "title",
+    "label" : "Secondary Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "¿Prefieres ir directo al grano?"
+  }, {
+    "id" : "booking.description",
+    "name" : "description",
+    "label" : "Secondary Description",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Reserva una sesión de descubrimiento de 30 minutos. Analizaremos tu arquitectura actual y definiremos los primeros pasos técnicos sin rodeos comerciales."
+  }, {
+    "id" : "booking.modal_title",
+    "name" : "modal_title",
+    "label" : "Modal Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Agendar Diagnóstico Técnico"
+  }, {
+    "id" : "booking_type",
+    "name" : "booking_type",
+    "label" : "Booking Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "hubspot_url", "HubSpot Meeting URL" ], [ "custom_embed", "Custom Embed Code" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "display_width" : null,
+    "type" : "choice",
+    "default" : "hubspot_url"
+  }, {
+    "id" : "meeting_link",
+    "name" : "meeting_link",
+    "label" : "Meeting Link",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "booking_type",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "hubspot_url",
+      "property" : null,
+      "operator" : null,
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "display_width" : null,
+    "type" : "url",
+    "default" : {
+      "type" : "EXTERNAL",
+      "content_id" : null,
+      "href" : "",
+      "href_with_scheme" : ""
+    }
+  }, {
+    "id" : "custom_embed",
+    "name" : "custom_embed",
+    "label" : "Custom Embed Code",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "booking_type",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom_embed",
+      "property" : null,
+      "operator" : null,
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text"
+  }, {
+    "id" : "booking.requirements",
+    "name" : "requirements",
+    "label" : "Requirements",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "booking.requirements.items",
+      "name" : "items",
+      "label" : "Requirements List",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : null,
+        "default" : 3
       },
-      {
-        "label": "Title",
-        "name": "title",
-        "type": "richtext",
-        "default": "Hablemos de tu ecosistema <span style='color: var(--color-brand-green);'>HubSpot.</span>"
-      },
-      {
-        "label": "Description",
-        "name": "description",
-        "type": "text",
-        "default": "¿Atrapado con deuda técnica, necesitas escalar un portal complejo o buscas un partner técnico para tu agencia? Cuéntame tu reto y estructuremos la solución."
-      }
-    ]
-  },
-  {
-    "label": "Booking Info (Left Column)",
-    "name": "booking",
-    "type": "group",
-    "children": [
-      {
-        "label": "Secondary Title",
-        "name": "title",
-        "type": "text",
-        "default": "¿Prefieres ir directo al grano?"
-      },
-      {
-        "label": "Secondary Description",
-        "name": "description",
-        "type": "text",
-        "default": "Reserva una sesión de descubrimiento de 30 minutos. Analizaremos tu arquitectura actual y definiremos los primeros pasos técnicos sin rodeos comerciales."
-      },
-      {
-        "label": "Modal Title",
-        "name": "modal_title",
-        "type": "text",
-        "default": "Agendar Diagnóstico Técnico"
-      },
-      {
-        "id": "booking_type",
-        "label": "Booking Type",
-        "name": "booking_type",
-        "type": "choice",
-        "choices": [
-          ["hubspot_url", "HubSpot Meeting URL"],
-          ["custom_embed", "Custom Embed Code"]
-        ],
-        "default": "hubspot_url"
-      },
-      {
-        "id": "meeting_link",
-        "label": "Meeting Link",
-        "name": "meeting_link",
-        "type": "url",
-        "visibility": {
-          "controlling_field": "booking_type",
-          "controlling_value_regex": "hubspot_url"
-        }
-      },
-      {
-        "id": "custom_embed",
-        "label": "Custom Embed Code",
-        "name": "custom_embed",
-        "type": "text",
-        "visibility": {
-          "controlling_field": "booking_type",
-          "controlling_value_regex": "custom_embed"
-        }
-      },
-      {
-        "label": "Requirements",
-        "name": "requirements",
-        "type": "group",
-        "children": [
-          {
-            "label": "Requirements List",
-            "name": "items",
-            "type": "group",
-            "occurrence": {
-              "min": null,
-              "max": null,
-              "sorting_label_field": null,
-              "default": 3
-            },
-            "children": [
-              {
-                "label": "Requirement Text",
-                "name": "text",
-                "type": "text",
-                "default": "Figma como única fuente de verdad"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "label": "Form (Right Column)",
-    "name": "form_section",
-    "type": "group",
-    "children": [
-      {
-        "label": "Form Title",
-        "name": "title",
-        "type": "text",
-        "default": "Cuéntame sobre el proyecto"
-      },
-      {
-        "id": "form",
-        "label": "HubSpot Form",
-        "name": "form",
-        "type": "form"
-      }
-    ]
-  },
-  {
-    "label": "Styles",
-    "name": "styles",
-    "type": "group",
-    "children": [
-      {
-        "label": "Inherit Theme Styles",
-        "name": "inherit_theme",
-        "type": "boolean",
-        "default": true
-      }
-    ]
-  }
-]
+      "children" : [ {
+        "id" : "booking.requirements.items.text",
+        "name" : "text",
+        "label" : "Requirement Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "display_width" : null,
+        "type" : "text",
+        "default" : "Figma como única fuente de verdad"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "display_width" : null,
+      "type" : "group"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "display_width" : null,
+    "type" : "group"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "form_section",
+  "name" : "form_section",
+  "label" : "Form (Right Column)",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "form_section.title",
+    "name" : "title",
+    "label" : "Form Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Cuéntame sobre el proyecto"
+  }, {
+    "id" : "form",
+    "name" : "form",
+    "label" : "HubSpot Form",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "form",
+    "default" : {
+      "form_id" : null,
+      "redirect_url" : null,
+      "redirect_id" : null,
+      "gotowebinar_webinar_key" : null,
+      "form_type" : null,
+      "follow_up_type_simple" : null,
+      "webinar_id" : null,
+      "webinar_source" : null,
+      "response_type" : "inline",
+      "message" : "Thanks for submitting the form."
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.inherit_theme",
+    "name" : "inherit_theme",
+    "label" : "Inherit Theme Styles",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "display_width" : null,
+    "type" : "boolean",
+    "default" : true
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

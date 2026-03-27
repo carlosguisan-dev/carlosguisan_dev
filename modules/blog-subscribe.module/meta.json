@@ -1,12 +1,9 @@
 {
-  "name": "Blog Subscribe",
-  "display_name": "Blog Subscribe",
-  "icon": "fa-envelope",
-  "is_available_for_new_content": true,
-  "external_js": [],
-  "external_css": [],
-  "module_id": null,
-  "master_id": null,
-  "path": null,
-  "label": "Blog Subscribe"
+  "global" : false,
+  "content_types" : [ "ANY" ],
+  "host_template_types" : [ "ANY" ],
+  "module_id" : 209001295729,
+  "label" : "Blog Subscribe",
+  "icon" : "fa-envelope",
+  "is_available_for_new_content" : true
 }

@@ -1,207 +1,259 @@
-[
-  {
-    "label": "Cards",
-    "name": "cards",
-    "type": "group",
-    "children": [
-      {
-        "label": "Section Header",
-        "name": "section_header",
-        "type": "group",
-        "children": [
-          {
-            "label": "Title",
-            "name": "title",
-            "type": "richtext",
-            "default": "El crecimiento rápido suele romper los portales.<br/><span class=\"text-primary\">Yo los refactorizo.</span>"
-          },
-          {
-            "label": "Description",
-            "name": "description",
-            "type": "richtext",
-            "default": ""
-          },
-          {
-            "label": "Header Layout",
-            "name": "header_layout",
-            "type": "choice",
-            "choices": [
-              ["centered", "Centered"],
-              ["split", "Split (Title Left, Description Right)"]
-            ],
-            "default": "centered",
-            "display": "radio"
-          }
-        ]
+[ {
+  "id" : "cards",
+  "name" : "cards",
+  "label" : "Cards",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "cards.section_header",
+    "name" : "section_header",
+    "label" : "Section Header",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "cards.section_header.title",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "display_width" : null,
+      "type" : "richtext",
+      "default" : "El crecimiento rápido suele romper los portales.<br/><span class=\"text-primary\">Yo los refactorizo.</span>"
+    }, {
+      "id" : "cards.section_header.description",
+      "name" : "description",
+      "label" : "Description",
+      "required" : false,
+      "locked" : false,
+      "display_width" : null,
+      "type" : "richtext",
+      "default" : ""
+    }, {
+      "id" : "cards.section_header.header_layout",
+      "name" : "header_layout",
+      "label" : "Header Layout",
+      "required" : false,
+      "locked" : false,
+      "display" : "radio",
+      "choices" : [ [ "centered", "Centered" ], [ "split", "Split (Title Left, Description Right)" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "display_width" : null,
+      "type" : "choice",
+      "default" : "centered"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "display_width" : null,
+    "type" : "group"
+  }, {
+    "id" : "cards.items",
+    "name" : "items",
+    "label" : "Items",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : 6,
+      "sorting_label_field" : null,
+      "default" : 2
+    },
+    "children" : [ {
+      "id" : "show_icon",
+      "name" : "show_icon",
+      "label" : "Show Icon",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "display_width" : null,
+      "type" : "boolean",
+      "default" : true
+    }, {
+      "id" : "icon_type",
+      "name" : "icon_type",
+      "label" : "Icon Type",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "show_icon",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : null,
+        "access" : null
       },
-      {
-        "label": "Items",
-        "name": "items",
-        "type": "group",
-        "occurrence": {
-          "min": 1,
-          "max": 6,
-          "default": 2
-        },
-        "children": [
-          {
-            "label": "Show Icon",
-            "name": "show_icon",
-            "id": "show_icon",
-            "type": "boolean",
-            "default": true
-          },
-          {
-            "label": "Icon Type",
-            "name": "icon_type",
-            "id": "icon_type",
-            "type": "choice",
-            "choices": [
-              [
-                "material-symbols-outlined",
-                "Material Symbols"
-              ],
-              [
-                "material-icons",
-                "Material Icons"
-              ],
-              [
-                "fontawesome",
-                "Font Awesome"
-              ]
-            ],
-            "default": "material-symbols-outlined",
-            "display": "select",
-            "visibility": {
-              "controlling_field": "show_icon",
-              "controlling_value_regex": "true"
-            }
-          },
-          {
-            "label": "Icon Identifier",
-            "name": "icon_id",
-            "placeholder": "database, code, or fa-rocket",
-            "type": "text",
-            "default": "database",
-            "visibility": {
-              "controlling_field": "show_icon",
-              "controlling_value_regex": "true"
-            }
-          },
-          {
-            "label": "Mono Label",
-            "name": "mono_label",
-            "type": "text",
-            "default": ">_ ESTRATEGIA"
-          },
-          {
-            "label": "Card Title",
-            "name": "card_title",
-            "type": "text",
-            "default": "Raíces Profundas"
-          },
-          {
-            "label": "Content",
-            "name": "content",
-            "type": "richtext",
-            "default": "Arquitectura técnica sobre HubSpot CRM. Limpieza de propiedades duplicadas, configuración de Custom Objects y automatizaciones que soportan el volumen sin romperse."
-          }
-        ],
-        "default": [
-          {
-            "icon_type": "material-symbols-outlined",
-            "icon_id": "database",
-            "mono_label": ">_ ESTRATEGIA",
-            "card_title": "Raíces Profundas",
-            "content": "Arquitectura técnica sobre HubSpot CRM. Limpieza de propiedades duplicadas, configuración de Custom Objects y automatizaciones que soportan el volumen sin romperse."
-          },
-          {
-            "icon_type": "material-symbols-outlined",
-            "icon_id": "code",
-            "mono_label": ">_ EJECUCIÓN",
-            "card_title": "Destreza Frontend",
-            "content": "Desarrollo de módulos complejos en CMS Hub utilizando HubL, CSS moderno y JavaScript de alto rendimiento. Experiencias web rápidas para el usuario y fáciles de editar para marketing."
-          }
-        ]
+      "display" : "select",
+      "choices" : [ [ "material-symbols-outlined", "Material Symbols" ], [ "material-icons", "Material Icons" ], [ "fontawesome", "Font Awesome" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "display_width" : null,
+      "type" : "choice",
+      "default" : "material-symbols-outlined"
+    }, {
+      "id" : "cards.items.icon_id",
+      "name" : "icon_id",
+      "label" : "Icon Identifier",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "show_icon",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "true",
+        "property" : null,
+        "operator" : null,
+        "access" : null
+      },
+      "placeholder" : "database, code, or fa-rocket",
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : "database"
+    }, {
+      "id" : "cards.items.mono_label",
+      "name" : "mono_label",
+      "label" : "Mono Label",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : ">_ ESTRATEGIA"
+    }, {
+      "id" : "cards.items.card_title",
+      "name" : "card_title",
+      "label" : "Card Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : "Raíces Profundas"
+    }, {
+      "id" : "cards.items.content",
+      "name" : "content",
+      "label" : "Content",
+      "required" : false,
+      "locked" : false,
+      "display_width" : null,
+      "type" : "richtext",
+      "default" : "Arquitectura técnica sobre HubSpot CRM. Limpieza de propiedades duplicadas, configuración de Custom Objects y automatizaciones que soportan el volumen sin romperse."
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "display_width" : null,
+    "type" : "group",
+    "default" : [ {
+      "icon_type" : "material-symbols-outlined",
+      "icon_id" : "database",
+      "mono_label" : ">_ ESTRATEGIA",
+      "card_title" : "Raíces Profundas",
+      "content" : "Arquitectura técnica sobre HubSpot CRM. Limpieza de propiedades duplicadas, configuración de Custom Objects y automatizaciones que soportan el volumen sin romperse."
+    }, {
+      "icon_type" : "material-symbols-outlined",
+      "icon_id" : "code",
+      "mono_label" : ">_ EJECUCIÓN",
+      "card_title" : "Destreza Frontend",
+      "content" : "Desarrollo de módulos complejos en CMS Hub utilizando HubL, CSS moderno y JavaScript de alto rendimiento. Experiencias web rápidas para el usuario y fáciles de editar para marketing."
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.columns",
+    "name" : "columns",
+    "label" : "Columns",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "2", "2 Columns" ], [ "3", "3 Columns" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "display_width" : null,
+    "type" : "choice",
+    "default" : "2"
+  }, {
+    "id" : "styles.dark_mode_style",
+    "name" : "dark_mode_style",
+    "label" : "Dark Mode style",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "deep", "Deep Dark (Primary)" ], [ "alt", "Alt Dark (Lighter)" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "display_width" : null,
+    "type" : "choice",
+    "default" : "alt"
+  }, {
+    "id" : "styles.bg_color",
+    "name" : "bg_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "inherited_value" : {
+      "property_value_paths" : {
+        "color" : "theme.backgrounds.light.background_light.color"
       }
-    ]
-  },
-  {
-    "label": "Styles",
-    "name": "styles",
-    "type": "group",
-    "tab": "STYLE",
-    "children": [
-      {
-        "label": "Columns",
-        "name": "columns",
-        "type": "choice",
-        "choices": [
-          [
-            "2",
-            "2 Columns"
-          ],
-          [
-            "3",
-            "3 Columns"
-          ]
-        ],
-        "default": "2",
-        "display": "radio"
-      },
-      {
-        "label": "Dark Mode style",
-        "name": "dark_mode_style",
-        "type": "choice",
-        "choices": [
-          ["deep", "Deep Dark (Primary)"],
-          ["alt", "Alt Dark (Lighter)"]
-        ],
-        "default": "alt",
-        "display": "radio"
-      },
-      {
-        "label": "Background Color",
-        "name": "bg_color",
-        "type": "color",
-        "inherited_value": {
-          "property_value_paths": {
-            "color": "theme.backgrounds.light.background_light.color"
-          }
-        },
-        "default": {
-          "color": "#f9faf8",
-          "opacity": 100
-        }
-      },
-      {
-        "label": "Text Color",
-        "name": "text_color",
-        "type": "color",
-        "inherited_value": {
-          "property_value_paths": {
-            "color": "theme.brand_colors.dark_slate.color"
-          }
-        },
-        "default": {
-          "color": "#0f172a",
-          "opacity": 100
-        }
-      },
-      {
-        "label": "Accent Color",
-        "name": "accent_color",
-        "type": "color",
-        "inherited_value": {
-          "property_value_paths": {
-            "color": "theme.brand_colors.brand_green.color"
-          }
-        },
-        "default": {
-          "color": "#2d5016",
-          "opacity": 100
-        }
+    },
+    "display_width" : null,
+    "type" : "color",
+    "default" : {
+      "color" : "#f9faf8",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "styles.text_color",
+    "name" : "text_color",
+    "label" : "Text Color",
+    "required" : false,
+    "locked" : false,
+    "inherited_value" : {
+      "property_value_paths" : {
+        "color" : "theme.brand_colors.dark_slate.color"
       }
-    ]
-  }
-]
+    },
+    "display_width" : null,
+    "type" : "color",
+    "default" : {
+      "color" : "#0f172a",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "styles.accent_color",
+    "name" : "accent_color",
+    "label" : "Accent Color",
+    "required" : false,
+    "locked" : false,
+    "inherited_value" : {
+      "property_value_paths" : {
+        "color" : "theme.brand_colors.brand_green.color"
+      }
+    },
+    "display_width" : null,
+    "type" : "color",
+    "default" : {
+      "color" : "#2d5016",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

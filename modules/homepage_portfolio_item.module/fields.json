@@ -1,123 +1,194 @@
-[
-  {
-    "label": "Content",
-    "name": "content",
-    "type": "group",
-    "children": [
-      {
-        "label": "Image",
-        "name": "image",
-        "type": "image"
-      },
-      {
-        "label": "Tags",
-        "name": "tags",
-        "type": "text",
-        "occurrence": {
-          "min": 0,
-          "max": 10,
-          "default": 2
-        }
-      },
-      {
-        "label": "Title",
-        "name": "title",
-        "type": "text",
-        "default": "Ecosistema Global de Datos"
-      },
-      {
-        "label": "Description",
-        "name": "description",
-        "type": "richtext",
-        "default": "Refactorización completa de la infraestructura de leads para una multinacional de logística, integrando sistemas legacy con HubSpot CMS."
-      },
-      {
-        "label": "Metrics",
-        "name": "metrics",
-        "type": "group",
-        "occurrence": {
-          "min": 1,
-          "max": 3,
-          "default": 2
-        },
-        "children": [
-          {
-            "label": "Value",
-            "name": "metric_value",
-            "type": "text",
-            "default": "-80%"
-          },
-          {
-            "label": "Label",
-            "name": "metric_label",
-            "type": "text",
-            "default": "Reducción en trabajo manual"
-          }
-        ],
-        "default": [
-          { "metric_value": "-80%", "metric_label": "Reducción en trabajo manual" },
-          { "metric_value": "+45%", "metric_label": "Mejora en velocidad LCP" }
-        ]
-      },
-      {
-        "label": "Link",
-        "name": "link",
-        "type": "link",
-        "default": {
-          "url": {
-            "href": "#"
-          }
-        }
-      },
-      {
-        "label": "Link Text",
-        "name": "link_text",
-        "type": "text",
-        "default": "Leer caso de estudio"
+[ {
+  "id" : "content",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "content.image",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "display_width" : null,
+    "type" : "image",
+    "default" : {
+      "src" : "",
+      "alt" : null,
+      "size_type" : null,
+      "width" : null,
+      "height" : null,
+      "max_width" : null,
+      "max_height" : null,
+      "loading" : "disabled"
+    }
+  }, {
+    "id" : "content.tags",
+    "name" : "tags",
+    "label" : "Tags",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 0,
+      "max" : 10,
+      "sorting_label_field" : null,
+      "default" : 2
+    },
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text"
+  }, {
+    "id" : "content.title",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Ecosistema Global de Datos"
+  }, {
+    "id" : "content.description",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "richtext",
+    "default" : "Refactorización completa de la infraestructura de leads para una multinacional de logística, integrando sistemas legacy con HubSpot CMS."
+  }, {
+    "id" : "content.metrics",
+    "name" : "metrics",
+    "label" : "Metrics",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : 3,
+      "sorting_label_field" : null,
+      "default" : 2
+    },
+    "children" : [ {
+      "id" : "content.metrics.metric_value",
+      "name" : "metric_value",
+      "label" : "Value",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : "-80%"
+    }, {
+      "id" : "content.metrics.metric_label",
+      "name" : "metric_label",
+      "label" : "Label",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "display_width" : null,
+      "type" : "text",
+      "default" : "Reducción en trabajo manual"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "display_width" : null,
+    "type" : "group",
+    "default" : [ {
+      "metric_value" : "-80%",
+      "metric_label" : "Reducción en trabajo manual"
+    }, {
+      "metric_value" : "+45%",
+      "metric_label" : "Mejora en velocidad LCP"
+    } ]
+  }, {
+    "id" : "content.link",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "display_width" : null,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "href" : "#"
       }
-    ]
-  },
-  {
-    "label": "Styles",
-    "name": "styles",
-    "type": "group",
-    "tab": "STYLE",
-    "children": [
-      {
-        "label": "Image Position",
-        "name": "image_position",
-        "type": "choice",
-        "choices": [
-          ["left", "Left"],
-          ["right", "Right"]
-        ],
-        "default": "left",
-        "display": "radio"
-      },
-      {
-        "label": "Dark Mode Style",
-        "name": "dark_mode_style",
-        "type": "choice",
-        "choices": [
-          ["deep", "Deep Dark"],
-          ["alt", "Alt Dark"]
-        ],
-        "default": "alt",
-        "display": "radio"
-      },
-      {
-        "label": "Accent Color",
-        "name": "accent_color",
-        "type": "color",
-        "inherited_value": {
-          "property_value_paths": {
-            "color": "theme.brand_colors.brand_lime_vibrant.color"
-          }
-        },
-        "default": {
-          "color": "#94F21B"
-        }
+    }
+  }, {
+    "id" : "content.link_text",
+    "name" : "link_text",
+    "label" : "Link Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Leer caso de estudio"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.image_position",
+    "name" : "image_position",
+    "label" : "Image Position",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "display_width" : null,
+    "type" : "choice",
+    "default" : "left"
+  }, {
+    "id" : "styles.dark_mode_style",
+    "name" : "dark_mode_style",
+    "label" : "Dark Mode Style",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "deep", "Deep Dark" ], [ "alt", "Alt Dark" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "display_width" : null,
+    "type" : "choice",
+    "default" : "alt"
+  }, {
+    "id" : "styles.accent_color",
+    "name" : "accent_color",
+    "label" : "Accent Color",
+    "required" : false,
+    "locked" : false,
+    "inherited_value" : {
+      "property_value_paths" : {
+        "color" : "theme.brand_colors.brand_lime_vibrant.color"
       }
-    ]
-  }
-]
+    },
+    "display_width" : null,
+    "type" : "color",
+    "default" : {
+      "color" : "#94F21B"
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]

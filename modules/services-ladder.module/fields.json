@@ -1,117 +1,171 @@
-[
-  {
-    "name": "header",
-    "label": "Header",
-    "type": "group",
-    "children": [
-      {
-        "name": "mono_label",
-        "label": "Mono Label",
-        "type": "text",
-        "default": "< carlosguisan >"
-      },
-      {
-        "name": "title",
-        "label": "Section Title",
-        "type": "text",
-        "default": "Soluciones a Medida"
-      }
-    ]
+[ {
+  "id" : "header",
+  "name" : "header",
+  "label" : "Header",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "header.mono_label",
+    "name" : "mono_label",
+    "label" : "Mono Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "< carlosguisan >"
+  }, {
+    "id" : "header.title",
+    "name" : "title",
+    "label" : "Section Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text",
+    "default" : "Soluciones a Medida"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+}, {
+  "id" : "services",
+  "name" : "services",
+  "label" : "Service Cards",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 0,
+    "max" : null,
+    "sorting_label_field" : "title",
+    "default" : null
   },
-  {
-    "name": "services",
-    "label": "Service Cards",
-    "type": "group",
-    "occurrence": {
-      "min": 0,
-      "max": null,
-      "default": null,
-      "sorting_label_field": "title"
-    },
-    "default": [
-      {
-        "tag": "[ PROYECTOS HIGH-TICKET ]",
-        "title": "Auditorías y Sistemas Dinámicos",
-        "feature_1": "Auditoría técnica de infraestructura HubSpot.",
-        "feature_2": "Refactorización de HubDB y CRM Objects.",
-        "feature_3": "Optimización avanzada de Core Web Vitals (LCP/CLS).",
-        "feature_4": "Arquitectura de datos para escalabilidad empresarial.",
-        "price": "Desde $2,500 / proyecto"
-      },
-      {
-        "tag": "[ DESARROLLO A MEDIDA ]",
-        "title": "Temas Personalizados y CMS Hub",
-        "feature_1": "Desarrollo de Temas (Boilerplate-free) con HubL.",
-        "feature_2": "Módulos complejos, dinámicos y reutilizables.",
-        "feature_3": "Migraciones pixel-perfect desde Figma/Webflow.",
-        "feature_4": "Integración nativa con APIs externas y JS.",
-        "price": "Cotización según alcance"
-      },
-      {
-        "tag": "[ INGRESO RECURRENTE ]",
-        "title": "Mantenimiento y Retainers",
-        "feature_1": "Soporte técnico prioritario (SLA < 4h).",
-        "feature_2": "Actualizaciones continuas de UX/UI y seguridad.",
-        "feature_3": "Resolución proactiva de bugs y deuda técnica.",
-        "feature_4": "Consultoría estratégica mensual de arquitectura.",
-        "price": "Desde $800 / mes"
-      }
-    ],
-    "children": [
-      {
-        "name": "tag",
-        "label": "Tag Label",
-        "type": "text"
-      },
-      {
-        "name": "title",
-        "label": "Card Title",
-        "type": "text"
-      },
-      {
-        "name": "feature_1",
-        "label": "Feature 1",
-        "type": "text"
-      },
-      {
-        "name": "feature_2",
-        "label": "Feature 2",
-        "type": "text"
-      },
-      {
-        "name": "feature_3",
-        "label": "Feature 3",
-        "type": "text"
-      },
-      {
-        "name": "feature_4",
-        "label": "Feature 4",
-        "type": "text"
-      },
-      {
-        "name": "price",
-        "label": "Price",
-        "type": "text"
-      }
-    ]
-  },
-  {
-    "name": "styles",
-    "label": "Styles",
-    "type": "group",
-    "tab": "STYLE",
-    "children": [
-      {
-        "name": "spacing",
-        "label": "Spacing",
-        "type": "spacing",
-        "default": {
-          "padding": {
-            "top": { "value": 80, "units": "px" },
-            "bottom": { "value": 80, "units": "px" }
-          }
+  "children" : [ {
+    "id" : "services.tag",
+    "name" : "tag",
+    "label" : "Tag Label",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text"
+  }, {
+    "id" : "services.title",
+    "name" : "title",
+    "label" : "Card Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text"
+  }, {
+    "id" : "services.feature_1",
+    "name" : "feature_1",
+    "label" : "Feature 1",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text"
+  }, {
+    "id" : "services.feature_2",
+    "name" : "feature_2",
+    "label" : "Feature 2",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text"
+  }, {
+    "id" : "services.feature_3",
+    "name" : "feature_3",
+    "label" : "Feature 3",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text"
+  }, {
+    "id" : "services.feature_4",
+    "name" : "feature_4",
+    "label" : "Feature 4",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text"
+  }, {
+    "id" : "services.price",
+    "name" : "price",
+    "label" : "Price",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "display_width" : null,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group",
+  "default" : [ {
+    "tag" : "[ PROYECTOS HIGH-TICKET ]",
+    "title" : "Auditorías y Sistemas Dinámicos",
+    "feature_1" : "Auditoría técnica de infraestructura HubSpot.",
+    "feature_2" : "Refactorización de HubDB y CRM Objects.",
+    "feature_3" : "Optimización avanzada de Core Web Vitals (LCP/CLS).",
+    "feature_4" : "Arquitectura de datos para escalabilidad empresarial.",
+    "price" : "Desde $2,500 / proyecto"
+  }, {
+    "tag" : "[ DESARROLLO A MEDIDA ]",
+    "title" : "Temas Personalizados y CMS Hub",
+    "feature_1" : "Desarrollo de Temas (Boilerplate-free) con HubL.",
+    "feature_2" : "Módulos complejos, dinámicos y reutilizables.",
+    "feature_3" : "Migraciones pixel-perfect desde Figma/Webflow.",
+    "feature_4" : "Integración nativa con APIs externas y JS.",
+    "price" : "Cotización según alcance"
+  }, {
+    "tag" : "[ INGRESO RECURRENTE ]",
+    "title" : "Mantenimiento y Retainers",
+    "feature_1" : "Soporte técnico prioritario (SLA < 4h).",
+    "feature_2" : "Actualizaciones continuas de UX/UI y seguridad.",
+    "feature_3" : "Resolución proactiva de bugs y deuda técnica.",
+    "feature_4" : "Consultoría estratégica mensual de arquitectura.",
+    "price" : "Desde $800 / mes"
+  } ]
+}, {
+  "id" : "styles",
+  "name" : "styles",
+  "label" : "Styles",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "styles.spacing",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "display_width" : null,
+    "type" : "spacing",
+    "default" : {
+      "padding" : {
+        "top" : {
+          "value" : 80,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 80,
+          "units" : "px"
         }
       }
-    ]
-  }
-]
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "display_width" : null,
+  "type" : "group"
+} ]
